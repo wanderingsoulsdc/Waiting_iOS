@@ -1,0 +1,35 @@
+广告
+设置人群:ad_crowd
+    覆盖店铺:ad_crowd_shop
+设置时间:ad_time
+设置创意:ad_creative
+    更换模板:ad_creative_template
+    更换素材:ad_creative_material
+    详情页:ad_creative_details
+创建成功:ad_succeed
+
+通知
+设置人群:push_crowd
+    覆盖店铺:push_crowd_shop
+设置时间:push_time
+设置创意:push_creative
+    更换素材:push_creative_material
+    详情页:push_creative_details
+创建成功:push_succeed
+
+短信
+行业模板-选择短信模板:message_choice_template
+设置内容:message_content
+   短信内容说明:message_tips
+设置人群:message_crowd
+    覆盖店铺:message_crowd_shop
+创建成功:message_succeed
+
+电话
+设置时间:phone_time
+列表页:phone_list
+    标注记录:phone_mark_record
+详情页:phone_details
+通话标记:phone_mark
+
+itype:1首页(第1模块) 2客流分析(第2模块) 3营销管理(第3模块) 4客流统计

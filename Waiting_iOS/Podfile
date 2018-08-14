@@ -1,0 +1,27 @@
+platform :ios, '8.0'
+use_frameworks!
+inhibit_all_warnings!
+#【inhibit_all_warnings!】可以去掉pods警告,加入需要重新pod install才能生效
+target ‘Waiting_iOS’ do
+  pod 'AFNetworking', '~> 3.1.0'
+  pod 'Aspects'
+  pod 'NullSafe', '~> 1.2.2'
+  pod 'NJKWebViewProgress'
+  pod 'SAMKeychain'
+  pod 'Masonry'
+  pod 'MBProgressHUD'
+  pod 'SDWebImage'
+  pod 'MJRefresh'
+  pod 'YBPopupMenu'
+  pod 'WechatOpenSDK'
+  pod 'RSKImageCropper'
+  pod 'JPush'
+  pod 'SobotKit', '~> 2.6.2'
+  pod 'FSActionSheet'
+  pod 'IQKeyboardManager'
+  pod 'SDCycleScrollView'
+  pod 'UMCCommon'
+  pod 'UMCAnalytics'
+  pod 'BMKLocationKit'
+  pod 'YYKit'
+end

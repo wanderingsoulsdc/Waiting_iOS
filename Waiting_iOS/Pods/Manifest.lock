@@ -1,0 +1,124 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
+  - BMKLocationKit (1.2.1)
+  - FSActionSheet (1.0.1)
+  - IQKeyboardManager (6.1.1)
+  - JCore (1.2.1)
+  - JPush (3.1.0):
+    - JCore (~> 1.2.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.15.3)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - NullSafe (1.2.3)
+  - RSKImageCropper (2.1.0)
+  - SAMKeychain (1.5.3)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SobotKit (2.6.2)
+  - UMCAnalytics (5.5.0):
+    - UMCCommon
+  - UMCCommon (1.5.2)
+  - WechatOpenSDK (1.8.2)
+  - YBPopupMenu (1.1.2)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - Aspects
+  - BMKLocationKit
+  - FSActionSheet
+  - IQKeyboardManager
+  - JPush
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - NJKWebViewProgress
+  - NullSafe (~> 1.2.2)
+  - RSKImageCropper
+  - SAMKeychain
+  - SDCycleScrollView
+  - SDWebImage
+  - SobotKit (~> 2.6.2)
+  - UMCAnalytics
+  - UMCCommon
+  - WechatOpenSDK
+  - YBPopupMenu
+  - YYKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Aspects
+    - BMKLocationKit
+    - FSActionSheet
+    - IQKeyboardManager
+    - JCore
+    - JPush
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - NJKWebViewProgress
+    - NullSafe
+    - RSKImageCropper
+    - SAMKeychain
+    - SDCycleScrollView
+    - SDWebImage
+    - SobotKit
+    - UMCAnalytics
+    - UMCCommon
+    - WechatOpenSDK
+    - YBPopupMenu
+    - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  BMKLocationKit: c0fd588904738a6865e9311ed445c38452039007
+  FSActionSheet: 69539289555a515c9cba29a00c91fa3d5d3901aa
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
+  JCore: 467b5b56bd367c548f88ee1b5794d94ee07ab319
+  JPush: 5921e25ad13e0386351079217b009f2039084eac
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  NullSafe: c5dde0d07fe0136a8194d6af9e285b0322b6c068
+  RSKImageCropper: 0d0c6d8525a2381f03fde32a47c6703817a2feed
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SobotKit: 8c7bbd9f21ab94e8a9c2008c31f07fe276ead482
+  UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
+  UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
+  WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
+  YBPopupMenu: 6efb286385d95ba5f97c58b8464ec873645e8764
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: ba9a11864d7350b2d5d7d5bbd58d385314d3a79b
+
+COCOAPODS: 1.5.2

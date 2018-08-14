@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  iGanDong
+//
+//  Created by qiyun on 16/5/19.
+//  Copyright © 2016年 iGanDong. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "ApiHeader.h"
+#import "WebHeader.h"
+#import "ToolsHeader.h"
+#import "StorageHeader.h"
+#import "VendorHeader.h"
+#import "ColorHeader.h"
+#import "NotificationHeader.h"
+#import "EnumHeader.h"
+
+#import "ShowHUDTool.h"
+#import "UIView+Addition.h"
+#import "FSLaunchManager.h"
+#import "BHDataReportManager.h"
+#import "BHWebViewController.h"
+#import <UMAnalytics/MobClick.h>
+#import "NSDictionary+YYAdd.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+// Building Setting中搜索Prefix Header，修改为$(SRCROOT)/DefineHeader/PrefixHeader.pch
+
+#endif /* PrefixHeader_pch */
