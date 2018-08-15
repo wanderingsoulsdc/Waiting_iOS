@@ -13,6 +13,7 @@
 #import "BHUserModel.h"
 #import "LiteDeviceAddViewController.h"
 //#import "UITabBar+Badge.h"
+#import "HomeViewController.h"
 
 @interface FSLaunchManager () <UITabBarControllerDelegate>
 
@@ -52,7 +53,8 @@
             break;
         case LaunchWindowTypeMain:
         {   // Tab Bar
-            [self.rootTabBarController launchTabbar];
+//            [self.rootTabBarController launchTabbar];
+            [self launchHomeView];
         }
             break;
         case LaunchWindowTypeAddDevice:
@@ -150,6 +152,14 @@
     LiteDeviceAddViewController * DeviceAddViewController = [[LiteDeviceAddViewController alloc] init];
     FSBaseNavigationController * DeviceAddNavigationController = [[FSBaseNavigationController alloc] initWithRootViewController:DeviceAddViewController];
     SharedApp.window.rootViewController = DeviceAddNavigationController;
+}
+
+//切换到根页面
+- (void)launchHomeView
+{
+    HomeViewController * homeViewController = [[HomeViewController alloc] init];
+    FSBaseNavigationController * homeNavigationController = [[FSBaseNavigationController alloc] initWithRootViewController:homeViewController];
+    SharedApp.window.rootViewController = homeNavigationController;
 }
 
 //tabbar切换代理方法

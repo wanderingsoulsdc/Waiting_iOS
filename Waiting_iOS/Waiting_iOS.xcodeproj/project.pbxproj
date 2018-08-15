@@ -120,6 +120,15 @@
 		C14CCD49210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD47210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.m */; };
 		C14CCD4A210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14CCD48210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib */; };
 		C15082F62121868800D18753 /* LitePhoneSelectLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15082F52121868800D18753 /* LitePhoneSelectLabelViewController.m */; };
+		C150830D21226C4B00D18753 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150830B21226C4B00D18753 /* MyViewController.m */; };
+		C150830E21226C4B00D18753 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150830C21226C4B00D18753 /* MyViewController.xib */; };
+		C150831221226C5A00D18753 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831021226C5A00D18753 /* ChatListViewController.m */; };
+		C150831321226C5A00D18753 /* ChatListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150831121226C5A00D18753 /* ChatListViewController.xib */; };
+		C150831721226C6A00D18753 /* MatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831521226C6A00D18753 /* MatchListViewController.m */; };
+		C150831821226C6A00D18753 /* MatchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150831621226C6A00D18753 /* MatchListViewController.xib */; };
+		C150831C21226FBF00D18753 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831B21226FBF00D18753 /* HomeViewController.m */; };
+		C15083262122EE2300D18753 /* ChatListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C15083252122EE2300D18753 /* ChatListModel.m */; };
+		C150832B2122F7DC00D18753 /* ChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C150832A2122F7DC00D18753 /* ChatListCell.m */; };
 		C159031B210975F00027285A /* animation_9.png in Resources */ = {isa = PBXBuildFile; fileRef = C15902DF210975F00027285A /* animation_9.png */; };
 		C159031C210975F00027285A /* animation_45.png in Resources */ = {isa = PBXBuildFile; fileRef = C15902E0210975F00027285A /* animation_45.png */; };
 		C159031D210975F00027285A /* animation_51.png in Resources */ = {isa = PBXBuildFile; fileRef = C15902E1210975F00027285A /* animation_51.png */; };
@@ -510,6 +519,21 @@
 		C14CCD48210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiteADsMessageDetailViewController.xib; sourceTree = "<group>"; };
 		C15082F42121868800D18753 /* LitePhoneSelectLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LitePhoneSelectLabelViewController.h; sourceTree = "<group>"; };
 		C15082F52121868800D18753 /* LitePhoneSelectLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LitePhoneSelectLabelViewController.m; sourceTree = "<group>"; };
+		C150830A21226C4B00D18753 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		C150830B21226C4B00D18753 /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		C150830C21226C4B00D18753 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		C150830F21226C5A00D18753 /* ChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
+		C150831021226C5A00D18753 /* ChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
+		C150831121226C5A00D18753 /* ChatListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListViewController.xib; sourceTree = "<group>"; };
+		C150831421226C6A00D18753 /* MatchListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchListViewController.h; sourceTree = "<group>"; };
+		C150831521226C6A00D18753 /* MatchListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchListViewController.m; sourceTree = "<group>"; };
+		C150831621226C6A00D18753 /* MatchListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchListViewController.xib; sourceTree = "<group>"; };
+		C150831A21226FBF00D18753 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		C150831B21226FBF00D18753 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C15083242122EE2300D18753 /* ChatListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListModel.h; sourceTree = "<group>"; };
+		C15083252122EE2300D18753 /* ChatListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListModel.m; sourceTree = "<group>"; };
+		C15083292122F7DC00D18753 /* ChatListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListCell.h; sourceTree = "<group>"; };
+		C150832A2122F7DC00D18753 /* ChatListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListCell.m; sourceTree = "<group>"; };
 		C15902DF210975F00027285A /* animation_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation_9.png; sourceTree = "<group>"; };
 		C15902E0210975F00027285A /* animation_45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation_45.png; sourceTree = "<group>"; };
 		C15902E1210975F00027285A /* animation_51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation_51.png; sourceTree = "<group>"; };
@@ -1168,6 +1192,7 @@
 		076687F91EE50BD3007FE539 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C15083232122EDF600D18753 /* ChatListModel */,
 				C1932FF720FF3EFC00C8EE4E /* LiteADsMessageListModel */,
 				C1932FEC20FF21B200C8EE4E /* LiteADsPhoneListModel */,
 				C1F7A5F120E39187001D5A88 /* LiteLabelModel */,
@@ -1188,6 +1213,10 @@
 		076687FD1EE50BD3007FE539 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C150831921226F9300D18753 /* Home - 根视图控制器 */,
+				C150830921226BD400D18753 /* My - 我的 */,
+				C150830821226BD200D18753 /* Chat - 聊天 */,
+				C150830721226BCF00D18753 /* Match - 匹配 */,
 				C18AD3FE20D0B03800ED98C1 /* Base - 基础控制器 */,
 				07C3C25E1FB31E2E005A8EED /* Main - 首页 */,
 				0766880B1EE50BD3007FE539 /* Manager - 营销 */,
@@ -1277,6 +1306,7 @@
 		076688161EE50BD3007FE539 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C15083282122F79100D18753 /* ChatListView */,
 				C1932FE720FF16CA00C8EE4E /* LiteADsView */,
 				C1F7A63020EA0F6C001D5A88 /* LiteMainView */,
 				C18AD44320D8A66100ED98C1 /* LiteAccountView */,
@@ -1542,6 +1572,71 @@
 				C14CCD322109D2E200D0AFD9 /* MyAnnotationView.m */,
 			);
 			path = MyAnnotationView;
+			sourceTree = "<group>";
+		};
+		C150830721226BCF00D18753 /* Match - 匹配 */ = {
+			isa = PBXGroup;
+			children = (
+				C150831421226C6A00D18753 /* MatchListViewController.h */,
+				C150831521226C6A00D18753 /* MatchListViewController.m */,
+				C150831621226C6A00D18753 /* MatchListViewController.xib */,
+			);
+			path = "Match - 匹配";
+			sourceTree = "<group>";
+		};
+		C150830821226BD200D18753 /* Chat - 聊天 */ = {
+			isa = PBXGroup;
+			children = (
+				C150830F21226C5A00D18753 /* ChatListViewController.h */,
+				C150831021226C5A00D18753 /* ChatListViewController.m */,
+				C150831121226C5A00D18753 /* ChatListViewController.xib */,
+			);
+			path = "Chat - 聊天";
+			sourceTree = "<group>";
+		};
+		C150830921226BD400D18753 /* My - 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				C150830A21226C4B00D18753 /* MyViewController.h */,
+				C150830B21226C4B00D18753 /* MyViewController.m */,
+				C150830C21226C4B00D18753 /* MyViewController.xib */,
+			);
+			path = "My - 我的";
+			sourceTree = "<group>";
+		};
+		C150831921226F9300D18753 /* Home - 根视图控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				C150831A21226FBF00D18753 /* HomeViewController.h */,
+				C150831B21226FBF00D18753 /* HomeViewController.m */,
+			);
+			path = "Home - 根视图控制器";
+			sourceTree = "<group>";
+		};
+		C15083232122EDF600D18753 /* ChatListModel */ = {
+			isa = PBXGroup;
+			children = (
+				C15083242122EE2300D18753 /* ChatListModel.h */,
+				C15083252122EE2300D18753 /* ChatListModel.m */,
+			);
+			path = ChatListModel;
+			sourceTree = "<group>";
+		};
+		C15083272122F76D00D18753 /* ChatListCell */ = {
+			isa = PBXGroup;
+			children = (
+				C15083292122F7DC00D18753 /* ChatListCell.h */,
+				C150832A2122F7DC00D18753 /* ChatListCell.m */,
+			);
+			path = ChatListCell;
+			sourceTree = "<group>";
+		};
+		C15083282122F79100D18753 /* ChatListView */ = {
+			isa = PBXGroup;
+			children = (
+				C15083272122F76D00D18753 /* ChatListCell */,
+			);
+			path = ChatListView;
 			sourceTree = "<group>";
 		};
 		C15902DE210975F00027285A /* animationImages */ = {
@@ -2293,6 +2388,7 @@
 				C1590330210975F00027285A /* animation_27.png in Resources */,
 				C1590336210975F00027285A /* animation_30.png in Resources */,
 				C159032B210975F00027285A /* animation_55.png in Resources */,
+				C150831321226C5A00D18753 /* ChatListViewController.xib in Resources */,
 				C1590356210975F00027285A /* animation_4.png in Resources */,
 				C159032C210975F00027285A /* animation_41.png in Resources */,
 				C159032E210975F00027285A /* animation_32.png in Resources */,
@@ -2329,9 +2425,11 @@
 				076687B11EE4FEB3007FE539 /* Assets.xcassets in Resources */,
 				C1590334210975F00027285A /* animation_18.png in Resources */,
 				C159034D210975F00027285A /* animation_59.png in Resources */,
+				C150831821226C6A00D18753 /* MatchListViewController.xib in Resources */,
 				C1590338210975F00027285A /* animation_20.png in Resources */,
 				C1590347210975F00027285A /* animation_14.png in Resources */,
 				C159031C210975F00027285A /* animation_45.png in Resources */,
+				C150830E21226C4B00D18753 /* MyViewController.xib in Resources */,
 				C1590332210975F00027285A /* animation_25.png in Resources */,
 				C159034F210975F00027285A /* animation_3.png in Resources */,
 				C1590335210975F00027285A /* animation_24.png in Resources */,
@@ -2461,6 +2559,7 @@
 				C1F7A64120EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.m in Sources */,
 				C18AD40B20D0B76900ED98C1 /* LiteAccountViewController.m in Sources */,
 				C1FA39A420DB2C070025E07F /* PGDatePicker+Time.m in Sources */,
+				C150832B2122F7DC00D18753 /* ChatListCell.m in Sources */,
 				C113B260211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m in Sources */,
 				C19330112106C57D00C8EE4E /* LitePhoneDetailViewController.m in Sources */,
 				C1FA39A120DB2C070025E07F /* PGDatePicker+MonthDayHour.m in Sources */,
@@ -2482,6 +2581,7 @@
 				0775964D1FC5AB720036CC1F /* ZLProgressHUD.m in Sources */,
 				0775964F1FC5AB720036CC1F /* ZLThumbnailViewController.m in Sources */,
 				077596401FC5AB720036CC1F /* ToastUtils.m in Sources */,
+				C150830D21226C4B00D18753 /* MyViewController.m in Sources */,
 				C1FA399C20DB2C070025E07F /* PGDatePicker+Date.m in Sources */,
 				07215B841FD0302C000E16DA /* FSTools.m in Sources */,
 				076688201EE50BD3007FE539 /* UIViewController+NavigationItem.m in Sources */,
@@ -2534,6 +2634,7 @@
 				076687A61EE4FEB3007FE539 /* main.m in Sources */,
 				C1FA390220DA71210025E07F /* LLSegmentBarConfig.m in Sources */,
 				0768E87D1F31CF1D00AB1D15 /* BHTreasureModel.m in Sources */,
+				C150831C21226FBF00D18753 /* HomeViewController.m in Sources */,
 				C1FA399920DB2C070025E07F /* PGPickerColumnView.m in Sources */,
 				C1FA39E120DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.m in Sources */,
 				C18AD40220D0B09600ED98C1 /* LiteBaseViewController.m in Sources */,
@@ -2545,6 +2646,7 @@
 				077596411FC5AB720036CC1F /* UIButton+EnlargeTouchArea.m in Sources */,
 				C18AD43B20D3E66500ED98C1 /* LiteAccountRechargeViewController.m in Sources */,
 				C1FA39BB20DB83220025E07F /* LiteAccountInvoiceReportViewController.m in Sources */,
+				C150831221226C5A00D18753 /* ChatListViewController.m in Sources */,
 				C1FA39A820DB2C080025E07F /* PGDatePicker+MonthDayHourMinute.m in Sources */,
 				C1FA39AE20DB2C080025E07F /* PGDatePicker+TimeAndSecond.m in Sources */,
 				0775963C1FC5AB720036CC1F /* NSBundle+ZLPhotoBrowser.m in Sources */,
@@ -2584,6 +2686,7 @@
 				C1FA38F020D919960025E07F /* LiteAccountQualificationICPCell.m in Sources */,
 				C1FA39DB20DFC5BF0025E07F /* LiteAccountInvoiceCell.m in Sources */,
 				C1F7A65820F5FF6E001D5A88 /* LiteDeviceLabelListViewController.m in Sources */,
+				C150831721226C6A00D18753 /* MatchListViewController.m in Sources */,
 				C1F7A63420EA0FE9001D5A88 /* LiteShowBorderCardsView.m in Sources */,
 				070F038D2058C26400B63CCA /* GuideView.m in Sources */,
 				C1FA39B120DB2C080025E07F /* PGDatePicker+MonthDay.m in Sources */,
@@ -2606,6 +2709,7 @@
 				C18AD43220D3E4C100ED98C1 /* LiteAccountTransactionViewController.m in Sources */,
 				076688171EE50BD3007FE539 /* NSString+Helper.m in Sources */,
 				C1FA399B20DB2C070025E07F /* PGPickerTableView.m in Sources */,
+				C15083262122EE2300D18753 /* ChatListModel.m in Sources */,
 				0766881B1EE50BD3007FE539 /* UIImage+category.m in Sources */,
 				C18AD40820D0B23C00ED98C1 /* LiteADsManagerViewController.m in Sources */,
 				C1F7A62120E60C5E001D5A88 /* LiteDeviceAddViewController.m in Sources */,
