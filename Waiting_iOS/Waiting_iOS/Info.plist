@@ -38,6 +38,12 @@
 				<string>litetreasure</string>
 			</array>
 		</dict>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb231041614282422</string>
+            </array>
+        </dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.0</string>
@@ -47,6 +53,10 @@
 		<string>weixin</string>
 		<string>alipay</string>
 		<string>youku</string>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -102,5 +112,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>FacebookAppID</key>
+    <string>231041614282422</string>
+    <key>FacebookDisplayName</key>
+    <string>Waiting</string>
 </dict>
 </plist>

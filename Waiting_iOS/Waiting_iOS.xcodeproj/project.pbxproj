@@ -189,6 +189,8 @@
 		C1590354210975F00027285A /* animation_49.png in Resources */ = {isa = PBXBuildFile; fileRef = C1590318210975F00027285A /* animation_49.png */; };
 		C1590355210975F00027285A /* animation_48.png in Resources */ = {isa = PBXBuildFile; fileRef = C1590319210975F00027285A /* animation_48.png */; };
 		C1590356210975F00027285A /* animation_4.png in Resources */ = {isa = PBXBuildFile; fileRef = C159031A210975F00027285A /* animation_4.png */; };
+		C15C3A3C21329506008BBF38 /* MatchCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C15C3A3B21329506008BBF38 /* MatchCardView.m */; };
+		C15C3A3F213295A7008BBF38 /* MatchCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C15C3A3E213295A7008BBF38 /* MatchCardCell.m */; };
 		C18AD40220D0B09600ED98C1 /* LiteBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40120D0B09600ED98C1 /* LiteBaseViewController.m */; };
 		C18AD40520D0B0C700ED98C1 /* LiteMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40420D0B0C700ED98C1 /* LiteMainViewController.m */; };
 		C18AD40820D0B23C00ED98C1 /* LiteADsManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40720D0B23C00ED98C1 /* LiteADsManagerViewController.m */; };
@@ -594,6 +596,10 @@
 		C1590318210975F00027285A /* animation_49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation_49.png; sourceTree = "<group>"; };
 		C1590319210975F00027285A /* animation_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation_48.png; sourceTree = "<group>"; };
 		C159031A210975F00027285A /* animation_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animation_4.png; sourceTree = "<group>"; };
+		C15C3A3A21329506008BBF38 /* MatchCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchCardView.h; sourceTree = "<group>"; };
+		C15C3A3B21329506008BBF38 /* MatchCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchCardView.m; sourceTree = "<group>"; };
+		C15C3A3D213295A7008BBF38 /* MatchCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchCardCell.h; sourceTree = "<group>"; };
+		C15C3A3E213295A7008BBF38 /* MatchCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchCardCell.m; sourceTree = "<group>"; };
 		C18AD40020D0B09600ED98C1 /* LiteBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteBaseViewController.h; sourceTree = "<group>"; };
 		C18AD40120D0B09600ED98C1 /* LiteBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteBaseViewController.m; sourceTree = "<group>"; };
 		C18AD40320D0B0C700ED98C1 /* LiteMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteMainViewController.h; sourceTree = "<group>"; };
@@ -1306,6 +1312,7 @@
 		076688161EE50BD3007FE539 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C15C3A39213294D2008BBF38 /* MatchView */,
 				C15083282122F79100D18753 /* ChatListView */,
 				C1932FE720FF16CA00C8EE4E /* LiteADsView */,
 				C1F7A63020EA0F6C001D5A88 /* LiteMainView */,
@@ -1704,6 +1711,17 @@
 				C159031A210975F00027285A /* animation_4.png */,
 			);
 			path = animationImages;
+			sourceTree = "<group>";
+		};
+		C15C3A39213294D2008BBF38 /* MatchView */ = {
+			isa = PBXGroup;
+			children = (
+				C15C3A3A21329506008BBF38 /* MatchCardView.h */,
+				C15C3A3B21329506008BBF38 /* MatchCardView.m */,
+				C15C3A3D213295A7008BBF38 /* MatchCardCell.h */,
+				C15C3A3E213295A7008BBF38 /* MatchCardCell.m */,
+			);
+			path = MatchView;
 			sourceTree = "<group>";
 		};
 		C18AD3FE20D0B03800ED98C1 /* Base - 基础控制器 */ = {
@@ -2323,6 +2341,9 @@
 							com.apple.HotspotConfiguration = {
 								enabled = 0;
 							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.Push = {
 								enabled = 0;
 							};
@@ -2553,6 +2574,7 @@
 				077596441FC5AB720036CC1F /* ZLEditVideoController.m in Sources */,
 				076688281EE50BD3007FE539 /* ShowHUDTool.m in Sources */,
 				C1F7A66020F721D9001D5A88 /* LiteDeviceLabelDetailViewController.m in Sources */,
+				C15C3A3C21329506008BBF38 /* MatchCardView.m in Sources */,
 				0775964A1FC5AB720036CC1F /* ZLPhotoBrowserCell.m in Sources */,
 				C1FA39DE20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.m in Sources */,
 				C18AD43820D3E63F00ED98C1 /* LiteAccountQualificationViewController.m in Sources */,
@@ -2672,6 +2694,7 @@
 				C1FA38E920D917C50025E07F /* LiteAccountQualificationICPViewController.m in Sources */,
 				076688331EE50BD3007FE539 /* FSWebViewController.m in Sources */,
 				C1FA39AB20DB2C080025E07F /* NSDate+PGCategory.m in Sources */,
+				C15C3A3F213295A7008BBF38 /* MatchCardCell.m in Sources */,
 				C19330002100BFE700C8EE4E /* LiteADsSelectLabelCell.m in Sources */,
 				0768F52A2017255300183087 /* BHQualificationListModel.m in Sources */,
 				0775964E1FC5AB720036CC1F /* ZLShowBigImgViewController.m in Sources */,

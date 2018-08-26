@@ -16,11 +16,11 @@
 
 // APP
 #if     TARGET_MODE==2          // 测试环境（TEST_DEBUG）
-#define kApiHostPort @"https://testzcbapi.behe.com/"
+#define kApiHostPort @"https://tcatapi.behe.com/"
 #elif   TARGET_MODE==1          // 开发环境（DEBUG）
-#define kApiHostPort @"https://developzcbapi.behe.com/"
-#else                           // 正式环境（Release）  
-#define kApiHostPort @"https://zcbapi.behe.com/"
+#define kApiHostPort @"https://dcatapi.behe.com/"
+#else                           // 正式环境（Release）
+#define kApiHostPort @"https://catapi.behe.com/"
 #endif
 
 

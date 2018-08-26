@@ -10,6 +10,13 @@
 
 @interface BHUserModel : NSObject
 
+@property (nonatomic, copy) NSString * userName;            //用户名
+@property (nonatomic, copy) NSString * userHeadImageUrl;    //头像(主)
+@property (nonatomic, copy) NSString * age;                 //年龄
+@property (nonatomic, copy) NSString * gender;              //性别
+@property (nonatomic, copy) NSString * photoNum;            //照片数量
+@property (nonatomic, retain) NSArray * photoArray;         //照片数组
+
 @property (nonatomic, copy) NSString * mobile;
 @property (nonatomic, copy) NSString * passwd;
 @property (nonatomic, copy) NSString * userID;              //accountId
@@ -23,10 +30,6 @@
 @property (nonatomic, copy) NSString * aptitudeOneId;       //资质行业一级分类
 @property (nonatomic, copy) NSString * aptitudeTwoId;       //资质行业二级分类
 @property (nonatomic, copy) NSString * balance;             //账户余额
-
-
-
-
 
 @property (nonatomic, copy) NSString * isSubAccount;        // 是否是子账号  0 不是  1 是
 @property (nonatomic, copy) NSString * agreementUpdate;     // 协议是否有更新 0 无更新  1 有更新
