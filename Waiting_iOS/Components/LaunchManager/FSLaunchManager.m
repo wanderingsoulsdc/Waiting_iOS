@@ -14,6 +14,7 @@
 #import "LiteDeviceAddViewController.h"
 //#import "UITabBar+Badge.h"
 #import "HomeViewController.h"
+#import "LoginViewController.h"
 
 @interface FSLaunchManager () <UITabBarControllerDelegate>
 
@@ -141,7 +142,7 @@
 //切换登陆页面
 - (void)launchLoginView
 {
-    BHLoginViewController * loginViewController = [[BHLoginViewController alloc] init];
+    LoginViewController * loginViewController = [[LoginViewController alloc] init];
     FSBaseNavigationController * loginNavigationController = [[FSBaseNavigationController alloc] initWithRootViewController:loginViewController];
     SharedApp.window.rootViewController = loginNavigationController;
 }

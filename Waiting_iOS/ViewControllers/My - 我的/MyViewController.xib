@@ -68,6 +68,11 @@
                     <state key="normal" title="编辑资料">
                         <color key="titleColor" red="0.56470588235294117" green="0.078431372549019607" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="editInformationButtonAction:" destination="-1" eventType="touchUpInside" id="09K-Py-1nv"/>
                     </connections>
@@ -75,13 +80,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdb-85-KQr">
                     <rect key="frame" x="0.0" y="383" width="375" height="60"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账户余额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2U-Df-X10">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2U-Df-X10">
                             <rect key="frame" x="15" y="0.0" width="80" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="K6r-pq-DaX"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-IB-pee">
@@ -142,7 +147,7 @@
                                 <constraint firstAttribute="width" constant="80" id="OWY-ua-fvh"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="sb9-Ht-NaV">
@@ -215,6 +220,6 @@
     </objects>
     <resources>
         <image name="my_arrow_right" width="18" height="18"/>
-        <image name="my_diamond" width="14" height="14"/>
+        <image name="my_diamond" width="20" height="20"/>
     </resources>
 </document>

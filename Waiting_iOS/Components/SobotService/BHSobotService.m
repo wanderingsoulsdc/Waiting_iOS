@@ -175,7 +175,7 @@
     //        kitInfo.goodSendBtnColor = [UIColor yellowColor];
     
     // “连接中。。。”  button 的背景色和文字的颜色
-    kitInfo.socketStatusButtonBgColor  = UIColorFromRGB(0x5394E2);
+//    kitInfo.socketStatusButtonBgColor  = UIColorFromRGB(0x5394E2);
     //    kitInfo.socketStatusButtonTitleColor = [UIColor redColor];
     
     

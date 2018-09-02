@@ -12,9 +12,12 @@
 #import "ChatListViewController.h"
 #import "Masonry.h"
 
+#define kscale (kScreenWidth/2 - 15 - 34/2)/kScreenWidth
+
 @interface HomeViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic , strong) UIView               * topView;
+@property (nonatomic , strong) UIView               * NavButtonBackView;
 @property (nonatomic , strong) UIButton             * leftButton;
 @property (nonatomic , strong) UIButton             * midButton;
 @property (nonatomic , strong) UIButton             * rightButton;
@@ -23,7 +26,10 @@
 @end
 
 @implementation HomeViewController
-
+{
+    CGFloat xxx;
+    CGFloat nnn;
+}
 #pragma mark - ******* Life Cycle *******
 
 - (void)viewDidLoad {
@@ -56,9 +62,11 @@
 - (void)createUI{
     [self.view addSubview:self.topView];
 
-    [self.topView addSubview:self.leftButton];
-    [self.topView addSubview:self.midButton];
-    [self.topView addSubview:self.rightButton];
+    [self.topView addSubview:self.NavButtonBackView];
+
+    [self.NavButtonBackView addSubview:self.leftButton];
+    [self.NavButtonBackView addSubview:self.midButton];
+    [self.NavButtonBackView addSubview:self.rightButton];
     
     [self.view addSubview:self.scrollView];
     
@@ -83,34 +91,17 @@
     chatListVC.view.frame = CGRectMake(kScreenWidth * 2, 0, kScreenWidth, self.scrollView.height);
     [self.scrollView addSubview:chatListVC.view];    //2
     [chatListVC didMoveToParentViewController:self]; //3
+    
+    
+    xxx = kScreenWidth;
+    nnn = 15;
+    
+    [self.scrollView setContentOffset:CGPointMake(xxx, 0)];
+    self.midButton.selected = YES;
+    
 }
 
 - (void)layoutSubviews{
-    [self.topView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(self.view);
-        make.height.mas_equalTo(kStatusBarAndNavigationBarHeight);
-    }];
-    
-    [self.midButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.topView.mas_centerX);
-        make.bottom.equalTo(self.topView).offset(-5);
-        make.height.equalTo(@34);
-        make.width.equalTo(@34);
-    }];
-    
-    [self.leftButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.midButton.mas_centerY);
-        make.left.equalTo(self.topView).offset(15);
-        make.height.equalTo(@34);
-        make.width.equalTo(@34);
-    }];
-    
-    [self.rightButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.midButton.mas_centerY);
-        make.right.equalTo(self.topView).offset(-15);
-        make.height.equalTo(@34);
-        make.width.equalTo(@34);
-    }];
     
     [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
@@ -124,6 +115,16 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     [self.view endEditing:YES];
+    if (![scrollView isEqual:self.scrollView]) {
+        return;
+    }
+    NSLog(@"---%f--%f--%f--",scrollView.contentOffset.x,xxx,nnn);
+    if (scrollView.contentOffset.x - xxx >= 0) {//画面左移  nav左移
+        self.NavButtonBackView.left = nnn - (scrollView.contentOffset.x - xxx)*kscale;
+    } else {//画面右移 nav右移
+        self.NavButtonBackView.left = nnn - (scrollView.contentOffset.x - xxx)*kscale;
+    }
+#warning !!!!!!!!!!有问题
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -131,21 +132,27 @@
         return;
     }
     CGFloat OffsetX = scrollView.contentOffset.x;
+    xxx = OffsetX;
     if (OffsetX == kScreenWidth) {
         //滑到第二个按钮
         self.midButton.selected = YES;
         self.leftButton.selected = NO;
         self.rightButton.selected = NO;
+        nnn = 15;
+
     }else if (OffsetX == kScreenWidth * 2){
         //滑到第三个按钮
         self.midButton.selected = NO;
         self.leftButton.selected = NO;
         self.rightButton.selected = YES;
+        nnn = kScreenWidth/2 + 34/2;
+
     }else{
         //滑到第一个按钮
         self.midButton.selected = NO;
         self.leftButton.selected = YES;
         self.rightButton.selected = NO;
+        nnn = kScreenWidth/2 - 34/2;
     }
 }
 
@@ -158,7 +165,10 @@
     self.rightButton.selected = NO;
     [UIView animateWithDuration:0.2f animations:^{
         self.scrollView.contentOffset = CGPointMake(0, 0);
+        self.NavButtonBackView.left = kScreenWidth/2 - 34/2;
     }];
+    nnn = kScreenWidth/2 - 34/2;
+    xxx = 0;
 }
 //中间按钮点击
 - (void)midButtonAction{
@@ -167,7 +177,10 @@
     self.rightButton.selected = NO;
     [UIView animateWithDuration:0.2f animations:^{
         self.scrollView.contentOffset = CGPointMake(kScreenWidth, 0);
+        self.NavButtonBackView.left = 15;
     }];
+    nnn = 15;
+    xxx = kScreenWidth;
 }
 //右侧按钮点击
 - (void)rightButtonAction{
@@ -176,7 +189,10 @@
     self.rightButton.selected = YES;
     [UIView animateWithDuration:0.2f animations:^{
         self.scrollView.contentOffset = CGPointMake(kScreenWidth * 2, 0);
+        self.NavButtonBackView.right = kScreenWidth/2 + 34/2;
     }];
+    xxx = kScreenWidth * 2;
+    nnn = kScreenWidth/2 + 34/2;
 }
 
 
@@ -192,10 +208,18 @@
     return _topView;
 }
 
+- (UIView *)NavButtonBackView{
+    if (!_NavButtonBackView) {
+        _NavButtonBackView = [[UIView alloc] initWithFrame:CGRectMake(15, kStatusBarHeight, kScreenWidth-30, 44)];
+        _NavButtonBackView.backgroundColor = UIColorClearColor;
+    }
+    return _NavButtonBackView;
+}
+
 - (UIButton *)leftButton{
     if (!_leftButton) {
         _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _leftButton.frame = CGRectMake(15, 0, 70, 30);
+        _leftButton.frame = CGRectMake(0, 5, 34, 34);
         
         [_leftButton setImage:[UIImage imageNamed:@"ads_contact_customer_service"] forState:UIControlStateNormal];
         [_leftButton setImage:[UIImage imageNamed:@"ads_contact_customer_service_red"] forState:UIControlStateSelected];
@@ -208,7 +232,7 @@
 - (UIButton *)midButton{
     if (!_midButton) {
         _midButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _midButton.frame = CGRectMake(15, 0, 70, 30);
+        _midButton.frame = CGRectMake(kScreenWidth/2 - 15 - 34/2, 5, 34, 34);
         
         [_midButton setImage:[UIImage imageNamed:@"ads_contact_customer_service"] forState:UIControlStateNormal];
         [_midButton setImage:[UIImage imageNamed:@"ads_contact_customer_service_red"] forState:UIControlStateSelected];
@@ -221,7 +245,7 @@
 - (UIButton *)rightButton{
     if (!_rightButton) {
         _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _rightButton.frame = CGRectMake(15, 0, 70, 30);
+        _rightButton.frame = CGRectMake(kScreenWidth-15*2-34, 5, 34, 34);
         
         [_rightButton setImage:[UIImage imageNamed:@"ads_contact_customer_service"] forState:UIControlStateNormal];
         [_rightButton setImage:[UIImage imageNamed:@"ads_contact_customer_service_red"] forState:UIControlStateSelected];

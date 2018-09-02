@@ -7,6 +7,9 @@
 //
 
 #import "MyViewController.h"
+#import "MyRechargeViewController.h"
+#import "MySetViewController.h"
+#import "MyEditInfoViewController.h"
 
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView    * headImageView;
@@ -36,6 +39,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -45,8 +49,6 @@
 #pragma mark - ******* UI Methods *******
 
 - (void)createUI{
-    self.editInformationButton.layer.cornerRadius = 25;
-    self.editInformationButton.layer.masksToBounds = YES;
     self.editInformationButton.layer.borderWidth = 1;
     self.editInformationButton.layer.borderColor = UIColorFromRGB(0x9014FC).CGColor;
     
@@ -56,12 +58,18 @@
 #pragma mark - ******* Action Methods *******
 //编辑资料
 - (IBAction)editInformationButtonAction:(UIButton *)sender {
+    MyEditInfoViewController *vc = [[MyEditInfoViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 //点击账户余额
 - (IBAction)accountMoneyAction:(UIButton *)sender {
+    MyRechargeViewController *vc = [[MyRechargeViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 //点击设置
 - (IBAction)AccountSetButtonAction:(UIButton *)sender {
+    MySetViewController *vc = [[MySetViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - ******* Other *******
 

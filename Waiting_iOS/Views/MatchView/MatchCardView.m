@@ -49,7 +49,8 @@ CGFloat const MatchCardItemMargin = 7.0;
 }
 
 - (void)setupView {
-    
+    self.clipsToBounds = YES;//剪裁超出父视图范围的子视图部分
+
     currentIndex = 0;
     
     CGFloat collectionViewWidth = self.frame.size.width;
@@ -95,6 +96,8 @@ CGFloat const MatchCardItemMargin = 7.0;
     _panScrollView.alwaysBounceHorizontal = YES;
     
     _panScrollView.pagingEnabled = YES;
+    
+    _panScrollView.bounces = NO; //此属性打开容易卡顿父视图横向的偏移
     
     _panScrollView.delegate = self;
     [_collectionView addGestureRecognizer:_panScrollView.panGestureRecognizer];
