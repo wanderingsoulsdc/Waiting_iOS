@@ -237,7 +237,7 @@
 
     NSDictionary * params = @{@"mobile":mobile,@"token":self.token};
     [FSNetWorkManager requestWithType:HttpRequestTypeGet
-                        withUrlString:kApiCheckIsRegister
+                        withUrlString:@""
                         withParaments:params withSuccessBlock:^(NSDictionary *object) {
                             NSLog(@"请求成功");
                             
@@ -325,7 +325,7 @@
     {
         _mobileTextField = [[UITextField alloc] init];
         _mobileTextField.backgroundColor = [UIColor whiteColor];
-        _mobileTextField.textColor = UIColorDrakBlackText;
+        _mobileTextField.textColor = UIColorDarkBlack;
         _mobileTextField.textAlignment = NSTextAlignmentRight;
         _mobileTextField.font = [UIFont systemFontOfSize:14];
         _mobileTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入手机号" attributes:@{NSForegroundColorAttributeName:UIColorFromRGB(0xD3D9DF)}];
@@ -339,7 +339,7 @@
         UILabel * leftLabel = [[UILabel alloc] init];
         leftLabel.text = @"手机号码";
         leftLabel.font = [UIFont systemFontOfSize:14];
-        leftLabel.textColor = UIColorDrakBlackText;
+        leftLabel.textColor = UIColorDarkBlack;
         leftLabel.frame = CGRectMake(0, 0, 80, 50);
         leftLabel.textAlignment = NSTextAlignmentRight;
         _mobileTextField.leftView = leftLabel;

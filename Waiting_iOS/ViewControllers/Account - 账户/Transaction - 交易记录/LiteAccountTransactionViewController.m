@@ -54,7 +54,7 @@
     [self.segmentVC setUpWithItems:items childVCs:@[expense,recharge]];
     // 4  配置基本设置  可采用链式编程模式进行设置
     [self.segmentVC.segmentBar updateWithConfig:^(LLSegmentBarConfig *config) {
-        config.segmentBarBackColor(UIColorWhite).itemNormalColor(UIColorFromRGB(0x797E81)).itemSelectColor(UIColorDrakBlackText).itemFont([UIFont systemFontOfSize:14]).indicatorColor(UIColorBlue).indicatorHeight(3).indicatorExtraW(20);
+        config.segmentBarBackColor(UIColorWhite).itemNormalColor(UIColorFromRGB(0x797E81)).itemSelectColor(UIColorDarkBlack).itemFont([UIFont systemFontOfSize:14]).indicatorColor(UIColorBlue).indicatorHeight(3).indicatorExtraW(20);
     }];
 }
 

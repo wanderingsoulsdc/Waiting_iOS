@@ -17,6 +17,18 @@
 #define UMengAppKey     @"5abc4915f43e481b11000060"     // 友盟的App Key
 #define kAPPID          @"1271359380"       // App ID
 #define kBaiduMapKey    @"nBDGIICGOr9kdMd047eSIP8YBduqcjAH"   //百度地图key
+#define kShareSDKAppKey @"27aa36515fd42"   //ShareSDK内的AppKey
+
+//twitter
+#define kTwitterApiKey  @"BiotGp3QeUF3GMaU9fOJj1TQX"   //twitter的ApiKey
+#define kTwitterSecretKey @"ikM4Wjz2iRUgYSMZqYuBZlYXktZTuQJIO6vZQpfSqfrf3xDOVG"//twitter的ApiSecretKey
+#define kTwitterRedirectUri @"https://waitfy.net" //twitter的redirectUri
+
+//Facebook
+#define kFacebookApiKey       @"2193106177615371"   //Facebook的ApiKey
+#define kFacebookSecretKey    @"822214cbfe7b2de89195ebb4ba421b71"//Facebook的ApiSecretKey
+#define kFacebookDisplayName  @"Waiting" //Facebook的redirectUri
+
 
 #define kTokenLocalKey  @"tt0adc3949ba59abbe56e057f20f883f" //token本地私钥
 

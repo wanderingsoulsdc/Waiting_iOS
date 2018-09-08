@@ -97,7 +97,7 @@
     if (!_titleLabel)
     {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.textColor = UIColorDrakBlackText;
+        _titleLabel.textColor = UIColorDarkBlack;
         _titleLabel.text = @"烧开后翻滚吧我看了广播网别怪我了";
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.font = [UIFont systemFontOfSize:14];

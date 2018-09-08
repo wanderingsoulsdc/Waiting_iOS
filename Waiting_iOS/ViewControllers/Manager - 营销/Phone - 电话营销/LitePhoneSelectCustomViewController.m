@@ -655,7 +655,7 @@
     if (!_custonNumLabel){
         _custonNumLabel = [[UILabel alloc] init];
         _custonNumLabel.text = @"共找到0人";
-        _custonNumLabel.textColor = UIColorDrakBlackText;
+        _custonNumLabel.textColor = UIColorDarkBlack;
         _custonNumLabel.textAlignment = NSTextAlignmentLeft;
         _custonNumLabel.font = [UIFont systemFontOfSize:12];
     }
@@ -669,7 +669,7 @@
         _selectButton.backgroundColor = [UIColor clearColor];
         [_selectButton setTitle:@"全部" forState:UIControlStateNormal];
         _selectButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        [_selectButton setTitleColor:UIColorDrakBlackText forState:UIControlStateNormal];
+        [_selectButton setTitleColor:UIColorDarkBlack forState:UIControlStateNormal];
         [_selectButton addTarget:self action:@selector(selectButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [_selectButton setImage:[UIImage imageNamed:@"down_triangle"] forState:UIControlStateNormal];
         _selectButton.adjustsImageWhenHighlighted = NO;// 取消图片的高亮状态

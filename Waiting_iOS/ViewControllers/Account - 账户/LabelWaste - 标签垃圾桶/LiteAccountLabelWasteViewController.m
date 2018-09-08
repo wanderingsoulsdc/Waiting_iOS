@@ -461,7 +461,7 @@
         _deviceSelectButton.backgroundColor = [UIColor clearColor];
         [_deviceSelectButton setTitle:@"全部设备" forState:UIControlStateNormal];
         _deviceSelectButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        [_deviceSelectButton setTitleColor:UIColorDrakBlackText forState:UIControlStateNormal];
+        [_deviceSelectButton setTitleColor:UIColorDarkBlack forState:UIControlStateNormal];
         [_deviceSelectButton addTarget:self action:@selector(deviceSelectButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [_deviceSelectButton setImage:[UIImage imageNamed:@"down_triangle"] forState:UIControlStateNormal];
         _deviceSelectButton.adjustsImageWhenHighlighted = NO;// 取消图片的高亮状态

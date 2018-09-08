@@ -319,7 +319,7 @@
     if (!_progressLeftLabel) {
         _progressLeftLabel = [[UILabel alloc] init];
         _progressLeftLabel.text = @"发票信息";
-        _progressLeftLabel.textColor = UIColorDrakBlackText;
+        _progressLeftLabel.textColor = UIColorDarkBlack;
         _progressLeftLabel.font = [UIFont systemFontOfSize:12];
         _progressLeftLabel.textAlignment = NSTextAlignmentLeft;
     }
@@ -330,7 +330,7 @@
     if (!_progressRightLabel) {
         _progressRightLabel = [[UILabel alloc] init];
         _progressRightLabel.text = @"收件信息";
-        _progressRightLabel.textColor = UIColorDrakBlackText;
+        _progressRightLabel.textColor = UIColorDarkBlack;
         _progressRightLabel.font = [UIFont systemFontOfSize:12];
         _progressRightLabel.textAlignment = NSTextAlignmentRight;
     }

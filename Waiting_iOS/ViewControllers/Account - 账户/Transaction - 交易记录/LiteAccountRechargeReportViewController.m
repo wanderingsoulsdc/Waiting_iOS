@@ -134,7 +134,7 @@
                               @"date":self.currentDateStr
                               };
     [FSNetWorkManager requestWithType:HttpRequestTypeGet
-                        withUrlString:kApiAccountTradeList
+                        withUrlString:@""
                         withParaments:params
                      withSuccessBlock:^(NSDictionary *object) {
                          [ShowHUDTool hideAlert];
@@ -311,7 +311,7 @@
         _dateButton.backgroundColor = [UIColor clearColor];
         [_dateButton setTitle:@"2018年05月" forState:UIControlStateNormal];
         _dateButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        [_dateButton setTitleColor:UIColorDrakBlackText forState:UIControlStateNormal];
+        [_dateButton setTitleColor:UIColorDarkBlack forState:UIControlStateNormal];
         [_dateButton addTarget:self action:@selector(dateButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [_dateButton setImage:[UIImage imageNamed:@"down_triangle"] forState:UIControlStateNormal];
         _dateButton.adjustsImageWhenHighlighted = NO;// 取消图片的高亮状态

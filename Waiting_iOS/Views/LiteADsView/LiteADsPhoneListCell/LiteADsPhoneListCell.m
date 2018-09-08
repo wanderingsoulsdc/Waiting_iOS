@@ -194,7 +194,7 @@
     if (!_phoneLabel)
     {
         _phoneLabel = [[UILabel alloc] init];
-        _phoneLabel.textColor = UIColorDrakBlackText;
+        _phoneLabel.textColor = UIColorDarkBlack;
         _phoneLabel.textAlignment = NSTextAlignmentLeft;
         _phoneLabel.font = [UIFont systemFontOfSize:18];
     }

@@ -26,6 +26,9 @@
 #import <UMAnalytics/MobClick.h>
 #import <BaiduMapAPI_Base/BMKBaseComponent.h>
 
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+
 @interface AppDelegate () <WXApiDelegate, JPUSHRegisterDelegate,BMKGeneralDelegate>
 {
     BMKMapManager* _mapManager;
@@ -48,9 +51,9 @@
     
     [self launchWindows];
     
+    //注册shareSDK
+    [self registerShareSDK];
     
-    // 向微信注册
-    [WXApi registerApp:kWechatAppKey];
     
     // 向JPush注册
 //    [self registerJpushWithOption:launchOptions];
@@ -74,6 +77,54 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+#pragma mark - ******* ShareSDK *******
+
+- (void)registerShareSDK{
+    /**初始化ShareSDK应用
+     
+     @param activePlatforms
+     使用的分享平台集合
+     @param importHandler (onImport)
+     导入回调处理，当某个平台的功能需要依赖原平台提供的SDK支持时，需要在此方法中对原平台SDK进行导入操作
+     @param configurationHandler (onConfiguration)
+     配置回调处理，在此方法中根据设置的platformType来填充应用配置信息
+     */
+    [ShareSDK registerActivePlatforms:@[
+                                        @(SSDKPlatformTypeFacebook),
+                                        @(SSDKPlatformTypeTwitter),
+                                        @(SSDKPlatformTypeGooglePlus),
+                                        ]
+                             onImport:^(SSDKPlatformType platformType)
+     {
+         
+     }
+                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo)
+     {
+         
+         switch (platformType)
+         {
+             case SSDKPlatformTypeFacebook:
+                 [appInfo SSDKSetupFacebookByApiKey:kFacebookApiKey
+                                          appSecret:kFacebookSecretKey
+                                        displayName:kFacebookDisplayName
+                                           authType:SSDKAuthTypeBoth];
+                 break;
+             case SSDKPlatformTypeTwitter:
+                 [appInfo SSDKSetupTwitterByConsumerKey:kTwitterApiKey
+                                         consumerSecret:kTwitterSecretKey
+                                            redirectUri:kTwitterRedirectUri];
+                 break;
+             case SSDKPlatformTypeGooglePlus:
+                 [appInfo SSDKSetupGooglePlusByClientID:@"232554794995.apps.googleusercontent.com"
+                                           clientSecret:@"PEdFgtrMw97aCvf0joQj7EMk"
+                                            redirectUri:@"http://localhost"];
+                 break;
+             default:
+                 break;
+         }
+     }];
 }
 
 #pragma mark -
@@ -113,14 +164,14 @@
 - (void)checkToken:(NSString *)token{
     NSLog(@"开始自动登录");
     // 同步请求
-    NSString * urlString = [NSString stringWithFormat:@"%@%@", kApiHostPort, kApiGetUserInfo];
+    NSString * urlString = [NSString stringWithFormat:@"%@%@", kApiHostPort, kApiCheckToken];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
     NSURL *userInfoURL = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:userInfoURL];
     
     [request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
     [request setTimeoutInterval: 5];
-    [request setHTTPMethod:@"GET"];
+    [request setHTTPMethod:@"POST"];
     //无需参数只需要Header
     [request addValue:token forHTTPHeaderField:@"token"];
     
@@ -144,17 +195,7 @@
     if (NetResponseCheckStaus)
     {
         NSLog(@"自动登录成功");
-        
-        NSString  *deviceNum = @"0";
-        NSDictionary *deviceDic = object[@"data"];
-        [BHUserModel sharedInstance].deviceNum = [deviceDic stringValueForKey:@"deviceNum" default:@""];
-        deviceNum = [deviceDic stringValueForKey:@"deviceNum" default:@""];
-        
-        if ([deviceNum integerValue] < 1) {
-            [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeAddDevice];
-        }else{
-            [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
-        }
+        [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
     }
     else
     {

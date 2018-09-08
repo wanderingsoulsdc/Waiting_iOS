@@ -75,7 +75,7 @@
 {
     //标题文字属性
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           UIColorDrakBlackText, NSForegroundColorAttributeName, [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
+                                                           UIColorDarkBlack, NSForegroundColorAttributeName, [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
     
     UINavigationBar * navigationBar = [UINavigationBar appearance];
     // 始终绘制图片原始状态，不使用Tint Color。

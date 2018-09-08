@@ -261,7 +261,7 @@
     self.moneyTitleLabel = [[UILabel alloc] init];
     self.moneyTitleLabel.text = @"账户余额(元)";
     self.moneyTitleLabel.textAlignment = NSTextAlignmentLeft;
-    self.moneyTitleLabel.textColor = UIColorDrakBlackText;
+    self.moneyTitleLabel.textColor = UIColorDarkBlack;
     self.moneyTitleLabel.font = [UIFont systemFontOfSize:12];
     [self.moneyView addSubview:self.moneyTitleLabel];
     

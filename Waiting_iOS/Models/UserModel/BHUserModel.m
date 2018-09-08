@@ -90,6 +90,11 @@ static id user;
 
 }
 
+- (void)analysisUserInfoWithToken:(NSString *)token{
+    [BHUserModel sharedInstance].token  = token;
+    [[BHUserModel sharedInstance] saveToDisk];
+}
+
 - (void)analysisUserInfoWithDictionary:(NSDictionary *)dict Mobile:(NSString *)mobile Passwd:(NSString *)password Token:(NSString *)token
 {
 //    NSInteger treasureCount = [[dict objectForKey:@"shop"] integerValue];

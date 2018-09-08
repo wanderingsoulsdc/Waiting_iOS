@@ -165,9 +165,9 @@
 
 //    UINavigationBar *navigationBar = self.navigationController.navigationBar;
 //    navigationBar.barTintColor = [UIColor whiteColor];
-//    navigationBar.tintColor = UIColorDrakBlackText;
+//    navigationBar.tintColor = UIColorDarkBlack;
 //    [navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-//                                            UIColorDrakBlackText, NSForegroundColorAttributeName, [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
+//                                            UIColorDarkBlack, NSForegroundColorAttributeName, [UIFont systemFontOfSize:17], NSFontAttributeName, nil]];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
@@ -446,7 +446,7 @@
 - (UIView *)navView{
     if (!_navView) {
         _navView = [[UIView alloc] init];
-        _navView.backgroundColor = UIColorDrakBlackText;
+        _navView.backgroundColor = UIColorDarkBlack;
     }
     return _navView;
 }

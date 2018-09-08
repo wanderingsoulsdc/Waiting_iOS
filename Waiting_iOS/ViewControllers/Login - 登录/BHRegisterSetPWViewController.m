@@ -263,7 +263,7 @@
         UILabel * leftLabel = [[UILabel alloc] init];
         leftLabel.text = @"设置密码";
         leftLabel.font = [UIFont systemFontOfSize:14];
-        leftLabel.textColor = UIColorDrakBlackText;
+        leftLabel.textColor = UIColorDarkBlack;
         leftLabel.frame = CGRectMake(0, 0, 70, 50);
         leftLabel.textAlignment = NSTextAlignmentRight;
         _passwordTextField.leftView = leftLabel;

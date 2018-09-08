@@ -342,7 +342,7 @@
         UILabel * leftLabel = [[UILabel alloc] init];
         leftLabel.text = @"手机号码";
         leftLabel.font = [UIFont systemFontOfSize:14];
-        leftLabel.textColor = UIColorDrakBlackText;
+        leftLabel.textColor = UIColorDarkBlack;
         leftLabel.frame = CGRectMake(0, 0, 70, 50);
         leftLabel.textAlignment = NSTextAlignmentRight;
         _mobileTextField.leftView = leftLabel;
@@ -374,7 +374,7 @@
         UILabel * leftLabel = [[UILabel alloc] init];
         leftLabel.text = @"姓名";
         leftLabel.font = [UIFont systemFontOfSize:14];
-        leftLabel.textColor = UIColorDrakBlackText;
+        leftLabel.textColor = UIColorDarkBlack;
         leftLabel.frame = CGRectMake(0, 0, 42, 50);
         leftLabel.textAlignment = NSTextAlignmentRight;
         _nameTextField.leftView = leftLabel;
@@ -406,7 +406,7 @@
         UILabel * leftLabel = [[UILabel alloc] init];
         leftLabel.text = @"身份证号";
         leftLabel.font = [UIFont systemFontOfSize:14];
-        leftLabel.textColor = UIColorDrakBlackText;
+        leftLabel.textColor = UIColorDarkBlack;
         leftLabel.frame = CGRectMake(0, 0, 70, 50);
         leftLabel.textAlignment = NSTextAlignmentRight;
         _idCardTextField.leftView = leftLabel;
@@ -439,7 +439,7 @@
         UILabel * leftLabel = [[UILabel alloc] init];
         leftLabel.text = @"短信验证码";
         leftLabel.font = [UIFont systemFontOfSize:14];
-        leftLabel.textColor = UIColorDrakBlackText;
+        leftLabel.textColor = UIColorDarkBlack;
         leftLabel.frame = CGRectMake(0, 0, 85, 50);
         leftLabel.textAlignment = NSTextAlignmentRight;
         _verifyCodeTextField.leftView = leftLabel;

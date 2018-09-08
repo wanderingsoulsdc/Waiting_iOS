@@ -25,7 +25,7 @@
     // You should add subviews here, just add subviews
     
     [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                UIColorDrakBlackText,
+                                                UIColorDarkBlack,
                                                 NSForegroundColorAttributeName,
                                                 [UIFont systemFontOfSize:17],
                                                 NSFontAttributeName,

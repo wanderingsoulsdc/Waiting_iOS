@@ -47,6 +47,7 @@
 
 + (instancetype)sharedInstance;
 - (void)analysisUserInfoWithDictionary:(NSDictionary *)dict;
+- (void)analysisUserInfoWithToken:(NSString *)token;
 - (void)analysisUserInfoWithDictionary:(NSDictionary *)dict Mobile:(NSString *)mobile Passwd:(NSString *)password Token:(NSString *)token;
 - (void)modifyUserInfoWithDictionary:(NSDictionary *)dict;
 + (void)cleanupCache;

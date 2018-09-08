@@ -399,7 +399,7 @@
     [self.bankLicenseView addSubview:bankLicenseButton];
     self.bankLicenseView.leftTitleLabel.text = @"银行开户许可证";
     self.bankLicenseView.markLabel.text = @"未上传";
-    self.bankLicenseView.markLabel.textColor = UIColorDrakBlackText;
+    self.bankLicenseView.markLabel.textColor = UIColorDarkBlack;
     [self.companyScrollView addSubview:self.bankLicenseView];
     
     //银行纳税人证明
@@ -413,7 +413,7 @@
     [self.taxpayerProveView addSubview:button];
     self.taxpayerProveView.leftTitleLabel.text = @"银行纳税人证明";
     self.taxpayerProveView.markLabel.text = @"未上传";
-    self.taxpayerProveView.markLabel.textColor = UIColorDrakBlackText;
+    self.taxpayerProveView.markLabel.textColor = UIColorDarkBlack;
     [self.companyScrollView addSubview:self.taxpayerProveView];
     
     [self setCompanyScrollSubViewsFrame];
@@ -679,12 +679,12 @@
     if (type == ICPCellTypeTaxpayerCertify) { //纳税人证明
         self.taxpayerProveImg = url;
         self.taxpayerProveView.markLabel.text = @"已上传";
-        self.taxpayerProveView.markLabel.textColor = UIColorDrakBlackText;
+        self.taxpayerProveView.markLabel.textColor = UIColorDarkBlack;
         [self.companyFormDict setObject:self.taxpayerProveImg forKey:@"bankTaxpay"];
     }else if(type == ICPCellTypeBankLicense){ //银行开户许可证
         self.bankLicenseImg = url;
         self.bankLicenseView.markLabel.text = @"已上传";
-        self.bankLicenseView.markLabel.textColor = UIColorDrakBlackText;
+        self.bankLicenseView.markLabel.textColor = UIColorDarkBlack;
         [self.companyFormDict setObject:self.bankLicenseImg forKey:@"bankLicense"];
     }
     
@@ -817,7 +817,7 @@
     if (!_progressLeftLabel) {
         _progressLeftLabel = [[UILabel alloc] init];
         _progressLeftLabel.text = @"发票信息";
-        _progressLeftLabel.textColor = UIColorDrakBlackText;
+        _progressLeftLabel.textColor = UIColorDarkBlack;
         _progressLeftLabel.font = [UIFont systemFontOfSize:12];
         _progressLeftLabel.textAlignment = NSTextAlignmentLeft;
     }
@@ -915,7 +915,7 @@
         _companyWarningLabel.alertImageView.image = [UIImage imageNamed:@"account_warning_tips"];
         _companyWarningLabel.titleLabel.text = @"发票抬头默认资质信息内的公司主体名称。";
         _companyWarningLabel.titleLabel.textAlignment = NSTextAlignmentLeft;
-        _companyWarningLabel.titleLabel.textColor = UIColorDrakBlackText;
+        _companyWarningLabel.titleLabel.textColor = UIColorDarkBlack;
         _companyWarningLabel.titleLabel.font = [UIFont systemFontOfSize:14];
         _companyWarningLabel.layer.masksToBounds = NO;
         _companyWarningLabel.backgroundColor = UIColorClearColor;

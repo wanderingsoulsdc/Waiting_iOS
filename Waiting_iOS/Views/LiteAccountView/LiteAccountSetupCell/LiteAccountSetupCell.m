@@ -143,7 +143,7 @@
     if (!_leftTitleLabel)
     {
         _leftTitleLabel = [[UILabel alloc] init];
-        _leftTitleLabel.textColor = UIColorDrakBlackText;
+        _leftTitleLabel.textColor = UIColorDarkBlack;
         _leftTitleLabel.textAlignment = NSTextAlignmentLeft;
         _leftTitleLabel.font = [UIFont systemFontOfSize:14];
     }
@@ -155,7 +155,7 @@
     if (!_rightTitleLabel)
     {
         _rightTitleLabel = [[UILabel alloc] init];
-        _rightTitleLabel.textColor = UIColorDrakBlackText;
+        _rightTitleLabel.textColor = UIColorDarkBlack;
         _rightTitleLabel.textAlignment = NSTextAlignmentRight;
         _rightTitleLabel.font = [UIFont systemFontOfSize:14];
     }
@@ -168,7 +168,7 @@
     {
         _midTitleLabel = [[UILabel alloc] init];
         _midTitleLabel.textAlignment = NSTextAlignmentCenter;
-        _midTitleLabel.textColor = UIColorDrakBlackText;
+        _midTitleLabel.textColor = UIColorDarkBlack;
         _midTitleLabel.font = [UIFont systemFontOfSize:14];
     }
     return _midTitleLabel;

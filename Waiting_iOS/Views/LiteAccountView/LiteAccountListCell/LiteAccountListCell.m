@@ -138,7 +138,7 @@
     if (!_titleLabel)
     {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.textColor = UIColorDrakBlackText;
+        _titleLabel.textColor = UIColorDarkBlack;
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.font = [UIFont systemFontOfSize:14];
     }

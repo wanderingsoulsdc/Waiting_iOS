@@ -211,7 +211,7 @@
     if (!_nameLabel)
     {
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.textColor = UIColorDrakBlackText;
+        _nameLabel.textColor = UIColorDarkBlack;
         _nameLabel.textAlignment = NSTextAlignmentLeft;
         _nameLabel.font = [UIFont boldSystemFontOfSize:16];
     }
@@ -222,7 +222,7 @@
     if (!_addressLabel)
     {
         _addressLabel = [[UILabel alloc] init];
-        _addressLabel.textColor = UIColorDrakBlackText;
+        _addressLabel.textColor = UIColorDarkBlack;
         _addressLabel.textAlignment = NSTextAlignmentLeft;
         _addressLabel.font = [UIFont systemFontOfSize:12];
     }
@@ -247,7 +247,7 @@
     if (!_customNumLabel)
     {
         _customNumLabel = [[UILabel alloc] init];
-        _customNumLabel.textColor = UIColorDrakBlackText;
+        _customNumLabel.textColor = UIColorDarkBlack;
         _customNumLabel.textAlignment = NSTextAlignmentRight;
         _customNumLabel.numberOfLines = 0;
         _customNumLabel.font = [UIFont systemFontOfSize:32];
@@ -260,7 +260,7 @@
     if (!_customTitleLabel)
     {
         _customTitleLabel = [[UILabel alloc] init];
-        _customTitleLabel.textColor = UIColorDrakBlackText;
+        _customTitleLabel.textColor = UIColorDarkBlack;
         _customTitleLabel.text = @"客户人数";
         _customTitleLabel.textAlignment = NSTextAlignmentRight;
         _customTitleLabel.font = [UIFont systemFontOfSize:12];

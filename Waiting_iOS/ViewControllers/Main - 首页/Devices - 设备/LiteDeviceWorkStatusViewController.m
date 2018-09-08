@@ -1115,7 +1115,7 @@ static CGFloat  stopLongPressSecond = 0.00; //0.01秒递增
 - (UIView *)navView{
     if (!_navView) {
         _navView = [[UIView alloc] init];
-        _navView.backgroundColor = UIColorDrakBlackText;
+        _navView.backgroundColor = UIColorDarkBlack;
     }
     return _navView;
 }
@@ -1143,7 +1143,7 @@ static CGFloat  stopLongPressSecond = 0.00; //0.01秒递增
 - (UIView *)startBottomHandleView{
     if (!_startBottomHandleView) {
         _startBottomHandleView = [[UIView alloc] init];
-        _startBottomHandleView.backgroundColor = UIColorDrakBlackText;
+        _startBottomHandleView.backgroundColor = UIColorDarkBlack;
         _startBottomHandleView.hidden = YES;
     }
     return _startBottomHandleView;
@@ -1152,7 +1152,7 @@ static CGFloat  stopLongPressSecond = 0.00; //0.01秒递增
 - (UIView *)workingBottomHandleView{
     if (!_workingBottomHandleView) {
         _workingBottomHandleView = [[UIView alloc] init];
-        _workingBottomHandleView.backgroundColor = UIColorDrakBlackText;
+        _workingBottomHandleView.backgroundColor = UIColorDarkBlack;
         _workingBottomHandleView.hidden = YES;
     }
     return _workingBottomHandleView;
@@ -1161,7 +1161,7 @@ static CGFloat  stopLongPressSecond = 0.00; //0.01秒递增
 - (UIView *)successBottomHandleView{
     if (!_successBottomHandleView) {
         _successBottomHandleView = [[UIView alloc] init];
-        _successBottomHandleView.backgroundColor = UIColorDrakBlackText;
+        _successBottomHandleView.backgroundColor = UIColorDarkBlack;
         _successBottomHandleView.hidden = YES;
     }
     return _successBottomHandleView;

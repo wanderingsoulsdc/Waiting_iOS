@@ -51,7 +51,7 @@
 
 - (void)cellBecomeUnselected{
     self.selectImageView.hidden = YES;
-    self.messageContentLabel.textColor = UIColorDrakBlackText;
+    self.messageContentLabel.textColor = UIColorDarkBlack;
     self.messageContentNumLabel.textColor = UIColorFromRGB(0xFFA680);
     self.textViewBackView.backgroundColor = UIColorFromRGB(0xFFFCE7);
 }

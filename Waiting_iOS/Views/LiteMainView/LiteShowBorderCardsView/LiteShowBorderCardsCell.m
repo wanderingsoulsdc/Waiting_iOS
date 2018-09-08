@@ -367,7 +367,7 @@
         _deviceNameLabel.text = @"设备名称";
         _deviceNameLabel.textAlignment = NSTextAlignmentLeft;
         _deviceNameLabel.font = [UIFont systemFontOfSize:16];
-        _deviceNameLabel.textColor = UIColorDrakBlackText;
+        _deviceNameLabel.textColor = UIColorDarkBlack;
 //        _deviceNameLabel.hidden = YES;
     }
     return _deviceNameLabel;
@@ -400,7 +400,7 @@
         _customLabel.text = @"今日客户人数";
         _customLabel.textAlignment = NSTextAlignmentLeft;
         _customLabel.font = [UIFont systemFontOfSize:12];
-        _customLabel.textColor = UIColorDrakBlackText;
+        _customLabel.textColor = UIColorDarkBlack;
 //        _customLabel.hidden = YES;
     }
     return _customLabel;
@@ -411,7 +411,7 @@
         _customNumLabel.text = @"0";
         _customNumLabel.textAlignment = NSTextAlignmentRight;
         _customNumLabel.font = [UIFont systemFontOfSize:20];
-        _customNumLabel.textColor = UIColorDrakBlackText;
+        _customNumLabel.textColor = UIColorDarkBlack;
 //        _customNumLabel.hidden = YES;
     }
     return _customNumLabel;
@@ -422,7 +422,7 @@
         _labelNumLabel.text = @"未创建标签";
         _labelNumLabel.textAlignment = NSTextAlignmentLeft;
         _labelNumLabel.font = [UIFont systemFontOfSize:12];
-        _labelNumLabel.textColor = UIColorDrakBlackText;
+        _labelNumLabel.textColor = UIColorDarkBlack;
 //        _labelNumLabel.hidden = YES;
     }
     return _labelNumLabel;

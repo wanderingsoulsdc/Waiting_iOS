@@ -11,7 +11,7 @@
 
 /**定义方便处理请求结果的宏*/
 //#define NetResponseCheckStaus       ([[object objectForKey:@"code"] integerValue] == 0)
-#define NetResponseCheckStaus       ([[NSString stringWithFormat:@"%@",[object objectForKey:@"code"]] isEqualToString:@"200"])
+#define NetResponseCheckStaus       ([[NSString stringWithFormat:@"%@",[object objectForKey:@"status"]] isEqualToString:@"1"])
 #define NetResponseMessage          ([object objectForKey:@"msg"])
 #define NetResponseReason           ([object objectForKey:@"reason"])
 #define NetResponseForKey(key)      ([[object objectForKey:@"data"] objectForKey:key])

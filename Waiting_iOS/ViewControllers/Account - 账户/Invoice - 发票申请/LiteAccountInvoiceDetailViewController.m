@@ -134,7 +134,7 @@
             self.headContentLabel = [[UILabel alloc] init];
             self.headContentLabel.text = self.model.reason;
             self.headContentLabel.textAlignment = NSTextAlignmentLeft;
-            self.headContentLabel.textColor = UIColorDrakBlackText;
+            self.headContentLabel.textColor = UIColorDarkBlack;
             self.headContentLabel.font = [UIFont systemFontOfSize:14];
             [self.headerView addSubview:self.headContentLabel];
         }
@@ -145,7 +145,7 @@
             self.headContentLabel.text = [[NSString stringWithFormat:@"快递单号 : %@",self.model.expressNumber] stringByAppendingString:kStringNotNull(self.model.expressName) ? [NSString stringWithFormat:@" (%@)",self.model.expressName]:@""];
             
             self.headContentLabel.textAlignment = NSTextAlignmentLeft;
-            self.headContentLabel.textColor = UIColorDrakBlackText;
+            self.headContentLabel.textColor = UIColorDarkBlack;
             self.headContentLabel.font = [UIFont systemFontOfSize:14];
             [self.headerView addSubview:self.headContentLabel];
         }
@@ -381,7 +381,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UILabel *label = [[UILabel alloc] init];
-    label.textColor = UIColorDrakBlackText;
+    label.textColor = UIColorDarkBlack;
     label.font = [UIFont systemFontOfSize:12];
     label.backgroundColor = UIColorClearColor;
     if (section == 0) {

@@ -226,6 +226,12 @@
 		C19330072105AF1700C8EE4E /* LitePhoneListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19330062105AF1600C8EE4E /* LitePhoneListCell.m */; };
 		C19330112106C57D00C8EE4E /* LitePhoneDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C193300F2106C57D00C8EE4E /* LitePhoneDetailViewController.m */; };
 		C19330122106C57D00C8EE4E /* LitePhoneDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19330102106C57D00C8EE4E /* LitePhoneDetailViewController.xib */; };
+		C1AA5ED1213D5B66001F12DE /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED0213D5B66001F12DE /* libicucore.tbd */; };
+		C1AA5ED3213D5B83001F12DE /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED2213D5B83001F12DE /* libstdc++.tbd */; };
+		C1AA5ED5213D5B95001F12DE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED4213D5B95001F12DE /* JavaScriptCore.framework */; };
+		C1AA5ED7213D5BA8001F12DE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED6213D5BA8001F12DE /* AssetsLibrary.framework */; };
+		C1AA5ED9213D5BB1001F12DE /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED8213D5BB1001F12DE /* Photos.framework */; };
+		C1C1F45B2140FD8400592473 /* NoHighlightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1F45A2140FD8400592473 /* NoHighlightButton.m */; };
 		C1F7A5F420E3919D001D5A88 /* LiteLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A5F320E3919D001D5A88 /* LiteLabelModel.m */; };
 		C1F7A5FD20E40862001D5A88 /* LiteAccountVersionInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A5FC20E40862001D5A88 /* LiteAccountVersionInfoViewController.m */; };
 		C1F7A60B20E5DB18001D5A88 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F7A60120E5DB18001D5A88 /* BaiduMapAPI_Location.framework */; };
@@ -673,6 +679,13 @@
 		C193300E2106C57D00C8EE4E /* LitePhoneDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneDetailViewController.h; sourceTree = "<group>"; };
 		C193300F2106C57D00C8EE4E /* LitePhoneDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneDetailViewController.m; sourceTree = "<group>"; };
 		C19330102106C57D00C8EE4E /* LitePhoneDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LitePhoneDetailViewController.xib; sourceTree = "<group>"; };
+		C1AA5ED0213D5B66001F12DE /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		C1AA5ED2213D5B83001F12DE /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		C1AA5ED4213D5B95001F12DE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		C1AA5ED6213D5BA8001F12DE /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		C1AA5ED8213D5BB1001F12DE /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		C1C1F4592140FD8400592473 /* NoHighlightButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoHighlightButton.h; sourceTree = "<group>"; };
+		C1C1F45A2140FD8400592473 /* NoHighlightButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoHighlightButton.m; sourceTree = "<group>"; };
 		C1F7A5F220E3919D001D5A88 /* LiteLabelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteLabelModel.h; sourceTree = "<group>"; };
 		C1F7A5F320E3919D001D5A88 /* LiteLabelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteLabelModel.m; sourceTree = "<group>"; };
 		C1F7A5FB20E40862001D5A88 /* LiteAccountVersionInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountVersionInfoViewController.h; sourceTree = "<group>"; };
@@ -831,6 +844,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1AA5ED9213D5BB1001F12DE /* Photos.framework in Frameworks */,
+				C1AA5ED7213D5BA8001F12DE /* AssetsLibrary.framework in Frameworks */,
+				C1AA5ED5213D5B95001F12DE /* JavaScriptCore.framework in Frameworks */,
+				C1AA5ED3213D5B83001F12DE /* libstdc++.tbd in Frameworks */,
+				C1AA5ED1213D5B66001F12DE /* libicucore.tbd in Frameworks */,
 				C1F7A61B20E5DBE7001D5A88 /* libstdc++.6.0.9.tbd in Frameworks */,
 				C1F7A61920E5DBCF001D5A88 /* libsqlite3.0.tbd in Frameworks */,
 				C1F7A61720E5DBC0001D5A88 /* Security.framework in Frameworks */,
@@ -1648,6 +1666,8 @@
 			children = (
 				C150831A21226FBF00D18753 /* HomeViewController.h */,
 				C150831B21226FBF00D18753 /* HomeViewController.m */,
+				C1C1F4592140FD8400592473 /* NoHighlightButton.h */,
+				C1C1F45A2140FD8400592473 /* NoHighlightButton.m */,
 			);
 			path = "Home - 根视图控制器";
 			sourceTree = "<group>";
@@ -2312,6 +2332,11 @@
 		E72630772BA985561E2B1047 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1AA5ED8213D5BB1001F12DE /* Photos.framework */,
+				C1AA5ED6213D5BA8001F12DE /* AssetsLibrary.framework */,
+				C1AA5ED4213D5B95001F12DE /* JavaScriptCore.framework */,
+				C1AA5ED2213D5B83001F12DE /* libstdc++.tbd */,
+				C1AA5ED0213D5B66001F12DE /* libicucore.tbd */,
 				C1F7A61A20E5DBE7001D5A88 /* libstdc++.6.0.9.tbd */,
 				C1F7A61820E5DBCF001D5A88 /* libsqlite3.0.tbd */,
 				C1F7A61620E5DBBF001D5A88 /* Security.framework */,
@@ -2367,7 +2392,7 @@
 				TargetAttributes = {
 					076687A01EE4FEB3007FE539 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 238CHS5DQM;
+						DevelopmentTeam = D83AQ7D7VU;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HotspotConfiguration = {
@@ -2734,6 +2759,7 @@
 				076688261EE50BD3007FE539 /* UIView+SGFrame.m in Sources */,
 				C1FA38E920D917C50025E07F /* LiteAccountQualificationICPViewController.m in Sources */,
 				076688331EE50BD3007FE539 /* FSWebViewController.m in Sources */,
+				C1C1F45B2140FD8400592473 /* NoHighlightButton.m in Sources */,
 				C1FA39AB20DB2C080025E07F /* NSDate+PGCategory.m in Sources */,
 				C15C3A3F213295A7008BBF38 /* MatchCardCell.m in Sources */,
 				C19330002100BFE700C8EE4E /* LiteADsSelectLabelCell.m in Sources */,
@@ -2902,7 +2928,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 238CHS5DQM;
+				DEVELOPMENT_TEAM = D83AQ7D7VU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2922,7 +2948,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI/thirdlibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.behe.litetreasure2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.waitfy.waiting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2940,7 +2966,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 238CHS5DQM;
+				DEVELOPMENT_TEAM = D83AQ7D7VU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2961,7 +2987,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI/thirdlibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.behe.litetreasure2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.waitfy.waiting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3035,7 +3061,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 238CHS5DQM;
+				DEVELOPMENT_TEAM = D83AQ7D7VU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3055,7 +3081,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI/thirdlibs",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.behe.litetreasure2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.waitfy.waiting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

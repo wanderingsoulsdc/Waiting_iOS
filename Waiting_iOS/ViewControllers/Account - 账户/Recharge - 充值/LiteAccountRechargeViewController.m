@@ -664,7 +664,7 @@ typedef enum : NSUInteger {
         _rechargeNumLabel = [[UILabel alloc] init];
         _rechargeNumLabel.text = @"充值金额（元）";
         _rechargeNumLabel.font = [UIFont systemFontOfSize:14];
-        _rechargeNumLabel.textColor = UIColorDrakBlackText;
+        _rechargeNumLabel.textColor = UIColorDarkBlack;
     }
     return _rechargeNumLabel;
 }
@@ -673,7 +673,7 @@ typedef enum : NSUInteger {
         _wechatLabel = [[UILabel alloc] init];
         _wechatLabel.text = @"微信";
         _wechatLabel.font = [UIFont systemFontOfSize:14];
-        _wechatLabel.textColor = UIColorDrakBlackText;
+        _wechatLabel.textColor = UIColorDarkBlack;
     }
     return _wechatLabel;
 }
@@ -682,7 +682,7 @@ typedef enum : NSUInteger {
         _alipayLabel = [[UILabel alloc] init];
         _alipayLabel.text = @"支付宝";
         _alipayLabel.font = [UIFont systemFontOfSize:14];
-        _alipayLabel.textColor = UIColorDrakBlackText;
+        _alipayLabel.textColor = UIColorDarkBlack;
     }
     return _alipayLabel;
 }
@@ -692,7 +692,7 @@ typedef enum : NSUInteger {
     if (!_rechargeNumTextField)
     {
         _rechargeNumTextField = [[UITextField alloc] init];
-        _rechargeNumTextField.textColor = UIColorDrakBlackText;
+        _rechargeNumTextField.textColor = UIColorDarkBlack;
         _rechargeNumTextField.textAlignment = NSTextAlignmentRight;
         _rechargeNumTextField.font = [UIFont systemFontOfSize:14];
         _rechargeNumTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入充值金额" attributes:@{NSForegroundColorAttributeName: UIColorFooderText}];

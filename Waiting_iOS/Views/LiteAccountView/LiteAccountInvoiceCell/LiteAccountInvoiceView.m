@@ -224,7 +224,7 @@
     if (!_leftTitleLabel)
     {
         _leftTitleLabel = [[UILabel alloc] init];
-        _leftTitleLabel.textColor = UIColorDrakBlackText;
+        _leftTitleLabel.textColor = UIColorDarkBlack;
         _leftTitleLabel.textAlignment = NSTextAlignmentLeft;
         _leftTitleLabel.font = [UIFont systemFontOfSize:14];
     }
@@ -249,7 +249,7 @@
     if (!_rightTitleLabel)
     {
         _rightTitleLabel = [[UILabel alloc] init];
-        _rightTitleLabel.textColor = UIColorDrakBlackText;
+        _rightTitleLabel.textColor = UIColorDarkBlack;
         _rightTitleLabel.textAlignment = NSTextAlignmentRight;
         _rightTitleLabel.font = [UIFont systemFontOfSize:14];
         _rightTitleLabel.hidden = YES;
@@ -289,7 +289,7 @@
     if (!_invoiceTypeButton)
     {
         _invoiceTypeButton = [[UIButton alloc] init];
-        [_invoiceTypeButton setTitleColor:UIColorDrakBlackText forState:UIControlStateNormal];
+        [_invoiceTypeButton setTitleColor:UIColorDarkBlack forState:UIControlStateNormal];
         [_invoiceTypeButton setTitle:@"增值税普通发票" forState:UIControlStateNormal];
         _invoiceTypeButton.titleLabel.font = [UIFont systemFontOfSize:14];
         [_invoiceTypeButton addTarget:self action:@selector(invoiceTypeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -306,7 +306,7 @@
 - (UITextField *)textField{
     if (!_textField) {
         _textField = [[UITextField alloc] init];
-        _textField.textColor = UIColorDrakBlackText;
+        _textField.textColor = UIColorDarkBlack;
         _textField.textAlignment = NSTextAlignmentRight;
         _textField.font = [UIFont systemFontOfSize:14];
         _textField.borderStyle = UITextBorderStyleNone;
@@ -323,7 +323,7 @@
     if (!_textView) {
         _textView = [[UITextView alloc] initWithFrame:CGRectMake(15, 15+35, kScreenWidth - 30, 30)];
         _textView.placeholder = @"请输入收件地址";
-        _textView.textColor = UIColorDrakBlackText;
+        _textView.textColor = UIColorDarkBlack;
         _textView.textAlignment = NSTextAlignmentLeft;
         _textView.font = [UIFont systemFontOfSize:14];
         [_textView setContentInset:UIEdgeInsetsMake(-10, -5, -15, -5)];//设置UITextView的内边距

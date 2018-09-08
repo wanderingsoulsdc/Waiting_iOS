@@ -338,7 +338,7 @@
     if (!_leftTitleLabel)
     {
         _leftTitleLabel = [[UILabel alloc] init];
-        _leftTitleLabel.textColor = UIColorDrakBlackText;
+        _leftTitleLabel.textColor = UIColorDarkBlack;
         _leftTitleLabel.textAlignment = NSTextAlignmentLeft;
         _leftTitleLabel.font = [UIFont systemFontOfSize:14];
     }
@@ -350,7 +350,7 @@
     if (!_rightTitleLabel)
     {
         _rightTitleLabel = [[UILabel alloc] init];
-        _rightTitleLabel.textColor = UIColorDrakBlackText;
+        _rightTitleLabel.textColor = UIColorDarkBlack;
         _rightTitleLabel.textAlignment = NSTextAlignmentRight;
         _rightTitleLabel.font = [UIFont systemFontOfSize:14];
         _rightTitleLabel.hidden = YES;
@@ -361,7 +361,7 @@
 - (UITextField *)textField{
     if (!_textField) {
         _textField = [[UITextField alloc] init];
-        _textField.textColor = UIColorDrakBlackText;
+        _textField.textColor = UIColorDarkBlack;
         _textField.textAlignment = NSTextAlignmentRight;
         _textField.font = [UIFont systemFontOfSize:14];
         _textField.borderStyle = UITextBorderStyleNone;
@@ -379,7 +379,7 @@
     {
         _markLabel = [[UILabel alloc] init];
         _markLabel.textAlignment = NSTextAlignmentCenter;
-        _markLabel.textColor = UIColorDrakBlackText;
+        _markLabel.textColor = UIColorDarkBlack;
         _markLabel.font = [UIFont systemFontOfSize:14];
         _markLabel.hidden = YES;
     }
@@ -391,7 +391,7 @@
     if (!_firstLevelTradesButton)
     {
         _firstLevelTradesButton = [[UIButton alloc] init];
-        [_firstLevelTradesButton setTitleColor:UIColorDrakBlackText forState:UIControlStateNormal];
+        [_firstLevelTradesButton setTitleColor:UIColorDarkBlack forState:UIControlStateNormal];
         [_firstLevelTradesButton setTitle:@"一级分类" forState:UIControlStateNormal];
         _firstLevelTradesButton.titleLabel.font = [UIFont systemFontOfSize:14];
         [_firstLevelTradesButton addTarget:self action:@selector(firstLevelTradesButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -413,7 +413,7 @@
     if (!_secondLevelTradesButton)
     {
         _secondLevelTradesButton = [[UIButton alloc] init];
-        [_secondLevelTradesButton setTitleColor:UIColorDrakBlackText forState:UIControlStateNormal];
+        [_secondLevelTradesButton setTitleColor:UIColorDarkBlack forState:UIControlStateNormal];
         [_secondLevelTradesButton setTitle:@"二级分类" forState:UIControlStateNormal];
         _secondLevelTradesButton.titleLabel.font = [UIFont systemFontOfSize:14];
         [_secondLevelTradesButton addTarget:self action:@selector(secondLevelTradesButtonAction:) forControlEvents:UIControlEventTouchUpInside];

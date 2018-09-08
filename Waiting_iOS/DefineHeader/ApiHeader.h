@@ -18,13 +18,13 @@
 #if     TARGET_MODE==2          // 测试环境（TEST_DEBUG）
 #define kApiHostPort @"https://tcatapi.behe.com/"
 #elif   TARGET_MODE==1          // 开发环境（DEBUG）
-#define kApiHostPort @"https://dcatapi.behe.com/"
+#define kApiHostPort @"http://app.waitfy.net/"
 #else                           // 正式环境（Release）
 #define kApiHostPort @"https://catapi.behe.com/"
 #endif
 
 
-#define kApiVersionPort     @"V1/"
+#define kApiVersionPort     @"v1_"
 
 
 //#define kApiLogin                       @"login/loginall"         /* 登录BUG接口 */
@@ -32,24 +32,23 @@
 // 运营后台
 #define kApiManagerHostPort             @"https://mapi.behe.com/v1/"     // 正式环境
 
-#pragma mark - 注册&登录
+#pragma mark - ******* 注册&登录 *******
+
 #define kApiLoginGetToken               @"Token/getAccessToken"     /* 获取用户token */
-#define kApiCheckIsRegister             @"User/isRegister"           /* 验证手机号是否注册 */
+#define kApiCheckToken                  kApiVersionPort @"index/checkLogin"  /* 验证token */
 #define kApiLoginRegister               @"User/register"            /* 注册 */
 #define kApiLoginForgetPW               @"User/forgetPwd"           /* 找回密码 */
 #define kApiLoginResetPW                @"User/resetPwd"            /* 修改密码 */
 #define kApiLoginGetVerCode             @"User/sendSms"             /* 获取验证码 */
 #define kApiLoginCheckVerCode           @"User/checkSmsCode"        /* 检测验证码 */
-#define kApiLogin                       @"User/login"               /* 登录 */
+#define kApiLogin                       kApiVersionPort @"passport/snslogin"  /* 登录 */
 #define kApiLogout                      @"User/logout"              /* 退出登录 */
 
 #define kApiCheckVersion                @"https://luckycatv1.behe.com/V1/login/versions"      /* 检查版本 */
 #define kApiCheckAgreement              @"account/updateAccountUserAgreement"   /* 检查是否有协议更新 */
 
 #pragma mark - 账户
-#define kApiAccountAddAptitude          kApiVersionPort @"Aptitude/add"     /* 添加资质 */
-#define kApiAccountUploadAptitude       kApiVersionPort @"Aptitude/uploadAptitude"     /* 上传营业执照图片 */
-#define kApiAccountTradeList            kApiVersionPort @"Trade/list"        /* 交易管理列表 */
+#define kApiAccountUploadPicture        kApiVersionPort @"Index/uploadPic"  /* 资料上传照片 */
 
 #pragma mark - 发票
 #define kApiInvoiceUpdateStatus         kApiVersionPort @"Invoice/updateStatus"         /* 更改发票申请状态 */

@@ -126,7 +126,7 @@
     self.headTitleLabel = [[UILabel alloc] init];
     self.headTitleLabel.text = [NSString stringWithFormat:@"%@ %@",[FSDeviceManager sharedInstance].getAppName,[FSDeviceManager sharedInstance].getAppVersion];
     self.headTitleLabel.textAlignment = NSTextAlignmentCenter;
-    self.headTitleLabel.textColor = UIColorDrakBlackText;
+    self.headTitleLabel.textColor = UIColorDarkBlack;
     self.headTitleLabel.font = [UIFont systemFontOfSize:14];
     [self.headerView addSubview:self.headTitleLabel];
     

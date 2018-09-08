@@ -289,7 +289,7 @@
         _verifyCodeField.secureTextEntry = NO;
         _verifyCodeField.unitSpace = 12;
         _verifyCodeField.trackTintColor = UIColorFromRGB(0x4895F2); //已输入边框颜色
-        _verifyCodeField.textColor = UIColorDrakBlackText;
+        _verifyCodeField.textColor = UIColorDarkBlack;
         _verifyCodeField.cursorColor = UIColorFromRGB(0x6C8094);
         _verifyCodeField.tintColor = UIColorFromRGB(0xF0F0F0);      //未输入边框颜色
         _verifyCodeField.defaultReturnKeyType = UIReturnKeyDone;

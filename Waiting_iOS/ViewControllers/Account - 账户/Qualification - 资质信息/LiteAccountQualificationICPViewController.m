@@ -281,7 +281,7 @@
     
     NSString *urlStr;
     if (self.type == ICPCellTypeBusinessLicense) {
-        urlStr = [NSString stringWithFormat:@"%@%@",kApiHostPort,kApiAccountUploadAptitude];
+        urlStr = [NSString stringWithFormat:@"%@",kApiHostPort];
     } else {
         urlStr = [NSString stringWithFormat:@"%@%@",kApiHostPort,kApiInvoiceUpload];
     }

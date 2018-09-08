@@ -21,7 +21,7 @@
 #define UIColorlightGray       UIColorFromRGB(0xDFDFDF)      // 按钮失效主色
 #define UIColorBlueNav         UIColorFromRGB(0x4895F2)      // navigation主色
 #define UIColorDrakBlackNav    UIColorFromRGB(0x96A4B2)      // navigation文字主色
-#define UIColorDrakBlackText   UIColorFromRGB(0x292B2C)      // 文字颜色
+#define UIColorDarkBlack       UIColorFromRGB(0x292B2C)      // 文字颜色
 #define UIColorLine            UIColorFromRGB(0xEBEBEB)      // tableView分割线颜色
 #define UIColorGray            UIColorFromRGB(0xC9D0D7)      // 浅色文字颜色
 #define UIColorFooderText      UIColorFromRGB(0xCCCCCC)      // 上拉加载更多 文字颜色

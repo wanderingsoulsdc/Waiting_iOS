@@ -164,7 +164,7 @@
     if (!_nameLabel)
     {
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.textColor = UIColorDrakBlackText;
+        _nameLabel.textColor = UIColorDarkBlack;
         _nameLabel.textAlignment = NSTextAlignmentLeft;
         _nameLabel.font = [UIFont boldSystemFontOfSize:16];
     }
@@ -198,7 +198,7 @@
     if (!_customNumLabel)
     {
         _customNumLabel = [[UILabel alloc] init];
-        _customNumLabel.textColor = UIColorDrakBlackText;
+        _customNumLabel.textColor = UIColorDarkBlack;
         _customNumLabel.textAlignment = NSTextAlignmentRight;
         _customNumLabel.numberOfLines = 0;
         _customNumLabel.font = [UIFont systemFontOfSize:20];

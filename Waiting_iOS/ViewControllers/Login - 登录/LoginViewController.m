@@ -7,6 +7,9 @@
 //
 
 #import "LoginViewController.h"
+#import <ShareSDK/ShareSDK.h>
+#import "FSNetWorkManager.h"
+#import "BHUserModel.h"
 
 @interface LoginViewController ()
 
@@ -29,14 +32,93 @@
 }
 //twitter
 - (IBAction)twitterAction:(UIButton *)sender {
+    //twitter的登录
+    WEAKSELF
+    [ShareSDK getUserInfo:SSDKPlatformTypeTwitter
+           onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
+     {
+         if (state == SSDKResponseStateSuccess)
+         {
+             NSLog(@"uid=%@",user.uid);
+             NSLog(@"%@",user.credential);
+             NSLog(@"token=%@",user.credential.token);
+             NSLog(@"nickname=%@",user.nickname);
+             NSLog(@"nickname=%@",user.rawData);
+
+             NSString *email = [user.rawData objectForKey:@"email"];
+             if (!kStringNotNull(email)) {
+                 email = @"";
+             }
+             NSDictionary * params = @{@"uid":user.uid,
+                                       @"nickname":user.nickname,
+                                       @"icon":user.icon,
+                                       @"gender":[NSString stringWithFormat:@"%ld",user.gender],
+                                       @"email":email,
+                                       @"type":@"twitter"
+                                       };
+             [weakSelf requestLogin:params];
+         }
+         
+         else
+         {
+             NSLog(@"%@",error);
+         }
+         
+     }];
 }
 //facebook
 - (IBAction)facebookAction:(UIButton *)sender {
+    [ShareSDK getUserInfo:SSDKPlatformTypeFacebook
+           onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
+     {
+         if (state == SSDKResponseStateSuccess)
+         {
+             NSLog(@"uid=%@",user.uid);
+             NSLog(@"%@",user.credential);
+             NSLog(@"token=%@",user.credential.token);
+             NSLog(@"nickname=%@",user.nickname);
+             
+         }
+         
+         else
+         {
+             NSLog(@"%@",error);
+         }
+         
+     }];
 }
 //google
 - (IBAction)googleAction:(UIButton *)sender {
 }
 
+#pragma mark - ******* Request *******
+
+- (void)requestLogin:(NSDictionary *)params{
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiLogin
+                        withParaments:params
+                     withSuccessBlock:^(NSDictionary *object) {
+                            NSLog(@"请求成功");
+                            
+                            [ShowHUDTool hideAlert];
+                            
+                            if (NetResponseCheckStaus)
+                            {
+                                NSString *token = object[@"data"][@"token"];
+                                [[BHUserModel sharedInstance] analysisUserInfoWithToken:token];
+                                
+                                [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
+                            }
+                            else
+                            {
+                                [ShowHUDTool showBriefAlert:NetResponseMessage];
+                            }
+                        } withFailureBlock:^(NSError *error) {
+                            NSLog(@"error is %@", error);
+                            [ShowHUDTool hideAlert];
+                            [ShowHUDTool showBriefAlert:NetRequestFailed];
+                        }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

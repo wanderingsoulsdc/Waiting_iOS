@@ -84,7 +84,7 @@
     
     _textView = [[UITextView alloc] init];
     _textView.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"您可以在此处输入备注信息" attributes:@{NSForegroundColorAttributeName: UIColorlightGray}];
-    _textView.textColor = UIColorDrakBlackText;
+    _textView.textColor = UIColorDarkBlack;
     _textView.textAlignment = NSTextAlignmentCenter;
     _textView.font = [UIFont systemFontOfSize:14];
     [_textView setContentInset:UIEdgeInsetsMake(0, 5 , 0 , 5)];//设置UITextView的内边距

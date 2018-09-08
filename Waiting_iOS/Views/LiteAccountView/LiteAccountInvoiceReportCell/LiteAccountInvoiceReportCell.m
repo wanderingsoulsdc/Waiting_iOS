@@ -144,7 +144,7 @@
     {
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.backgroundColor = UIColorFromRGB(0xE3F0FE);
-        _nameLabel.textColor = UIColorDrakBlackText;
+        _nameLabel.textColor = UIColorDarkBlack;
         _nameLabel.textAlignment = NSTextAlignmentLeft;
         _nameLabel.font = [UIFont boldSystemFontOfSize:18];
     }
@@ -155,7 +155,7 @@
     if (!_titleLabel)
     {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.textColor = UIColorDrakBlackText;
+        _titleLabel.textColor = UIColorDarkBlack;
         _titleLabel.text = @"发票金额";
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.font = [UIFont systemFontOfSize:12];
@@ -168,7 +168,7 @@
     if (!_moneyLabel)
     {
         _moneyLabel = [[UILabel alloc] init];
-        _moneyLabel.textColor = UIColorDrakBlackText;
+        _moneyLabel.textColor = UIColorDarkBlack;
         _moneyLabel.textAlignment = NSTextAlignmentLeft;
         _moneyLabel.numberOfLines = 0;
         _moneyLabel.font = [UIFont systemFontOfSize:24];

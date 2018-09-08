@@ -94,7 +94,7 @@
     self.expireView.backgroundColor = UIColorWhite;
     UILabel *expireTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 7, kScreenWidth/2, 25)];
     expireTopLabel.text = @"距离下次续费还剩";
-    expireTopLabel.textColor = UIColorDrakBlackText;
+    expireTopLabel.textColor = UIColorDarkBlack;
     expireTopLabel.font = [UIFont systemFontOfSize:14];
     expireTopLabel.textAlignment = NSTextAlignmentLeft;
     [self.expireView addSubview:expireTopLabel];

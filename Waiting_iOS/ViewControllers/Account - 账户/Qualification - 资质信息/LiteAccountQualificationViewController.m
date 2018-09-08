@@ -262,7 +262,7 @@
 {
     NSDictionary * params = @{@"businessName":self.businessName, @"businessLicenceImg":self.businessLicenceImg, @"aptitudeOneId":self.aptitudeOneId,@"aptitudeTwoId":self.aptitudeTwoId};
     [FSNetWorkManager requestWithType:HttpRequestTypePost
-                        withUrlString:kApiAccountAddAptitude
+                        withUrlString:@""
                         withParaments:params
                      withSuccessBlock:^(NSDictionary *object) {
                          

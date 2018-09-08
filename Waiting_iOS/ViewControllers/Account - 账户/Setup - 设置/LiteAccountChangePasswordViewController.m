@@ -392,7 +392,7 @@
         _verifyCodeLabel = [[UILabel alloc] init];
         _verifyCodeLabel.text = @"短信验证码";
         _verifyCodeLabel.font = [UIFont systemFontOfSize:14];
-        _verifyCodeLabel.textColor = UIColorDrakBlackText;
+        _verifyCodeLabel.textColor = UIColorDarkBlack;
     }
     return _verifyCodeLabel;
 }
@@ -401,7 +401,7 @@
         _setPasswordLabel = [[UILabel alloc] init];
         _setPasswordLabel.text = @"新密码";
         _setPasswordLabel.font = [UIFont systemFontOfSize:14];
-        _setPasswordLabel.textColor = UIColorDrakBlackText;
+        _setPasswordLabel.textColor = UIColorDarkBlack;
     }
     return _setPasswordLabel;
 }
@@ -410,7 +410,7 @@
         _confirmPasswordLabel = [[UILabel alloc] init];
         _confirmPasswordLabel.text = @"确认新密码";
         _confirmPasswordLabel.font = [UIFont systemFontOfSize:14];
-        _confirmPasswordLabel.textColor = UIColorDrakBlackText;
+        _confirmPasswordLabel.textColor = UIColorDarkBlack;
     }
     return _confirmPasswordLabel;
 }
@@ -420,7 +420,7 @@
     if (!_verifyCodeTextField)
     {
         _verifyCodeTextField = [[UITextField alloc] init];
-        _verifyCodeTextField.textColor = UIColorDrakBlackText;
+        _verifyCodeTextField.textColor = UIColorDarkBlack;
         _verifyCodeTextField.textAlignment = NSTextAlignmentRight;
         _verifyCodeTextField.font = [UIFont systemFontOfSize:14];
         _verifyCodeTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入验证码" attributes:@{NSForegroundColorAttributeName: UIColorFooderText}];
@@ -438,7 +438,7 @@
     if (!_setPasswordTextField)
     {
         _setPasswordTextField = [[UITextField alloc] init];
-        _setPasswordTextField.textColor = UIColorDrakBlackText;
+        _setPasswordTextField.textColor = UIColorDarkBlack;
         _setPasswordTextField.textAlignment = NSTextAlignmentRight;
         _setPasswordTextField.font = [UIFont systemFontOfSize:14];
         _setPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请输入新密码" attributes:@{NSForegroundColorAttributeName: UIColorFooderText}];
@@ -456,7 +456,7 @@
     if (!_confirmPasswordField)
     {
         _confirmPasswordField = [[UITextField alloc] init];
-        _confirmPasswordField.textColor = UIColorDrakBlackText;
+        _confirmPasswordField.textColor = UIColorDarkBlack;
         _confirmPasswordField.textAlignment = NSTextAlignmentRight;
         _confirmPasswordField.font = [UIFont systemFontOfSize:14];
         _confirmPasswordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"请再次输入新密码" attributes:@{NSForegroundColorAttributeName: UIColorFooderText}];

@@ -49,7 +49,7 @@
         
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.textAlignment = NSTextAlignmentCenter;
-        _nameLabel.textColor = UIColorDrakBlackText;
+        _nameLabel.textColor = UIColorDarkBlack;
         _nameLabel.font = [UIFont systemFontOfSize:12];
         [self addSubview:_nameLabel];
         
@@ -774,7 +774,7 @@
     if (!_personTitleLabel) {
         _personTitleLabel = [[UILabel alloc] init];
         _personTitleLabel.text = @"预计覆盖人数";
-        _personTitleLabel.textColor = UIColorDrakBlackText;
+        _personTitleLabel.textColor = UIColorDarkBlack;
         _personTitleLabel.font = [UIFont systemFontOfSize:12];
         _personTitleLabel.textAlignment = NSTextAlignmentLeft;
     }
@@ -807,8 +807,8 @@
         _resetButton = [[UIButton alloc] init];
         [_resetButton setTitle:@"选择全部" forState:UIControlStateNormal];
         [_resetButton setTitle:@"重置" forState:UIControlStateSelected];
-        [_resetButton setTitleColor:UIColorDrakBlackText forState:UIControlStateNormal];
-        [_resetButton setTitleColor:UIColorDrakBlackText forState:UIControlStateSelected];
+        [_resetButton setTitleColor:UIColorDarkBlack forState:UIControlStateNormal];
+        [_resetButton setTitleColor:UIColorDarkBlack forState:UIControlStateSelected];
         [_resetButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
         [_resetButton setBackgroundColor:UIColorWhite];
         [_resetButton addTarget:self action:@selector(resetButtonAction:) forControlEvents:UIControlEventTouchUpInside];
