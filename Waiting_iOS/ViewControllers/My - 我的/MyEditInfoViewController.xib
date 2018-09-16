@@ -12,9 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyEditInfoViewController">
             <connections>
+                <outlet property="birthdayButton" destination="3Ot-cB-lbf" id="GVk-6W-ZEE"/>
+                <outlet property="genderButton" destination="dpi-ae-c97" id="PnI-iA-pi7"/>
                 <outlet property="headButton" destination="ksg-nv-AV6" id="u7s-bu-3AL"/>
                 <outlet property="scrollViewBottomConstraint" destination="4rW-UR-zUF" id="9AR-YU-eJV"/>
                 <outlet property="topViewHeightConstraint" destination="nVZ-Ap-eDr" id="kOJ-GA-DSW"/>
+                <outlet property="userNameButton" destination="KMC-Dv-XBH" id="1gT-Hv-Pe3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,6 +47,9 @@
                                 <constraint firstAttribute="width" constant="36" id="WCH-JU-X9V"/>
                             </constraints>
                             <state key="normal" image="my_check"/>
+                            <connections>
+                                <action selector="uploadUserInfoButtonAction:" destination="-1" eventType="touchUpInside" id="iwy-oq-SVV"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -214,31 +220,32 @@
                                             <color key="textColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入用户名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2H-1Q-USe">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMC-Dv-XBH">
                                             <rect key="frame" x="105" y="0.0" width="261" height="59.5"/>
-                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <state key="normal" title="张三">
+                                                <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
-                                                <outlet property="delegate" destination="-1" id="A83-ps-vTh"/>
+                                                <action selector="userNameButtonAction:" destination="-1" eventType="touchUpInside" id="ch1-nX-2Fs"/>
                                             </connections>
-                                        </textField>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="cLC-SX-8g5" secondAttribute="trailing" constant="15" id="1Ob-LJ-Lvh"/>
                                         <constraint firstAttribute="trailing" secondItem="dUe-jt-RcH" secondAttribute="trailing" constant="15" id="5JC-Lc-dbw"/>
-                                        <constraint firstItem="G2H-1Q-USe" firstAttribute="top" secondItem="aIx-xa-Ykj" secondAttribute="top" id="7cx-JU-0VR"/>
-                                        <constraint firstItem="dUe-jt-RcH" firstAttribute="top" secondItem="G2H-1Q-USe" secondAttribute="bottom" id="AQr-n3-pf2"/>
                                         <constraint firstAttribute="bottom" secondItem="dUe-jt-RcH" secondAttribute="bottom" id="BAZ-bi-TCQ"/>
                                         <constraint firstAttribute="bottom" secondItem="ntQ-JU-vYy" secondAttribute="bottom" id="HmC-3e-3Bq"/>
+                                        <constraint firstItem="cLC-SX-8g5" firstAttribute="leading" secondItem="KMC-Dv-XBH" secondAttribute="trailing" constant="10" id="Ko0-Nf-pHf"/>
+                                        <constraint firstItem="dUe-jt-RcH" firstAttribute="top" secondItem="KMC-Dv-XBH" secondAttribute="bottom" id="Kyp-G7-TX1"/>
                                         <constraint firstItem="cLC-SX-8g5" firstAttribute="centerY" secondItem="aIx-xa-Ykj" secondAttribute="centerY" id="Pyd-WN-koh"/>
                                         <constraint firstItem="dUe-jt-RcH" firstAttribute="leading" secondItem="aIx-xa-Ykj" secondAttribute="leading" constant="15" id="RMg-H4-thm"/>
-                                        <constraint firstItem="G2H-1Q-USe" firstAttribute="leading" secondItem="ntQ-JU-vYy" secondAttribute="trailing" constant="10" id="TQa-5t-DzZ"/>
                                         <constraint firstItem="ntQ-JU-vYy" firstAttribute="top" secondItem="aIx-xa-Ykj" secondAttribute="top" id="cFu-q4-Pht"/>
+                                        <constraint firstItem="KMC-Dv-XBH" firstAttribute="leading" secondItem="ntQ-JU-vYy" secondAttribute="trailing" constant="10" id="efY-S0-qNA"/>
                                         <constraint firstAttribute="height" constant="60" id="fGW-ZX-RJV"/>
-                                        <constraint firstItem="cLC-SX-8g5" firstAttribute="leading" secondItem="G2H-1Q-USe" secondAttribute="trailing" constant="10" id="gC6-sM-p2T"/>
                                         <constraint firstItem="ntQ-JU-vYy" firstAttribute="leading" secondItem="aIx-xa-Ykj" secondAttribute="leading" constant="15" id="kAV-Fc-Bfr"/>
+                                        <constraint firstItem="KMC-Dv-XBH" firstAttribute="top" secondItem="aIx-xa-Ykj" secondAttribute="top" id="sEZ-p1-3mo"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kho-oG-1gC">
@@ -270,7 +277,7 @@
                                             <color key="textColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ot-cB-lbf">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ot-cB-lbf">
                                             <rect key="frame" x="216" y="0.0" width="150" height="59.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="kvv-DL-Y4Y"/>
@@ -279,6 +286,9 @@
                                             <state key="normal" title="2018-09-09">
                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="birthdayButtonAction:" destination="-1" eventType="touchUpInside" id="49N-4d-GWd"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -335,6 +345,9 @@
                                             <state key="normal" title="N/A">
                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="genderButtonAction:" destination="-1" eventType="touchUpInside" id="cni-Ww-APP"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -531,7 +544,7 @@
                 <constraint firstAttribute="trailing" secondItem="Rg8-vP-wg3" secondAttribute="trailing" id="nJ7-dJ-ufH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-692" y="134"/>
+            <point key="canvasLocation" x="-921" y="84"/>
         </view>
     </objects>
     <resources>

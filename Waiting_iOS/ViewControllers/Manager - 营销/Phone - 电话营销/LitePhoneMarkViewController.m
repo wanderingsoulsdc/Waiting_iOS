@@ -8,7 +8,7 @@
 
 #import "LitePhoneMarkViewController.h"
 #import "UITextView+Placeholder.h"
-#import "BHSobotService.h"
+ 
 #import "FSNetWorkManager.h"
 #import "Masonry.h"
 
@@ -211,7 +211,7 @@
     }
 }
 - (IBAction)contactServiceAction:(UIButton *)sender {
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 
 - (void)didReceiveMemoryWarning {

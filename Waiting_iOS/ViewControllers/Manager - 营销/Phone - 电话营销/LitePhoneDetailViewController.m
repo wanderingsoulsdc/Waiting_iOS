@@ -14,7 +14,7 @@
 #import "BHCountDownView.h"
 #import "UIViewController+NavigationItem.h"
 #import "LitePhoneMarkViewController.h"
-#import "BHSobotService.h"
+
 
 @import CoreTelephony;
 
@@ -232,7 +232,7 @@
     }
 }
 - (IBAction)contactServiceAction:(UIButton *)sender {
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 #pragma mark - ******* Request *******
 //请求标记详情

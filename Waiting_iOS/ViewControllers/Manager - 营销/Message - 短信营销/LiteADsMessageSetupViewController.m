@@ -8,7 +8,7 @@
 
 #import "LiteADsMessageSetupViewController.h"
 #import "LitePhoneSelectLabelViewController.h"
-#import "BHSobotService.h"
+ 
 #import "FSNetWorkManager.h"
 
 @interface LiteADsMessageSetupViewController ()<SelectLabelDelegate>
@@ -242,7 +242,7 @@
 }
 //联系客服
 - (IBAction)contactServiceAction:(id)sender {
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 //底部按钮点击事件
 - (IBAction)bottomButtonAction:(UIButton *)sender {

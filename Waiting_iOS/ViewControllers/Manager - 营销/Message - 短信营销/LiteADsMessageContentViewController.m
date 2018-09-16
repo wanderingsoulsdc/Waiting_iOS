@@ -9,7 +9,7 @@
 #import "LiteADsMessageContentViewController.h"
 #import "FSNetWorkManager.h"
 #import "NSDictionary+YYAdd.h"
-#import "BHSobotService.h"
+ 
 #import "UITextView+Placeholder.h"
 #import "IQKeyboardManager.h"
 #import "LiteADsMessageSetupViewController.h"
@@ -306,7 +306,7 @@
 
 //联系在线客服
 - (IBAction)contactService:(UIButton *)sender {
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 //短信内容说明
 - (IBAction)messageContentInformationAction:(UIButton *)sender {

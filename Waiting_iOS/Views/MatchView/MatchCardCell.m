@@ -103,10 +103,10 @@
     _model = model;
     [self layoutSubviewsUI];
     
-    self.photoNumLabel.text = model.photoNum;
+    self.photoNumLabel.text = [NSString stringWithFormat:@"%ld",[model.photoArray count]];
     self.userNameLabel.text = model.userName;
-    self.ageAndGenderLabel.text = [NSString stringWithFormat:@"%@·%@岁",model.gender,model.age];
-    
+    self.ageAndGenderLabel.text = [NSString stringWithFormat:@"%@·%@岁",model.gender == 0 ? @"女":@"男",model.age];
+    [self.mainImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadImageUrl] placeholderImage:[UIImage imageNamed:@"login_register_success"]];
 }
 #pragma mark - action
 
@@ -165,7 +165,7 @@
         _userNameLabel.text = @"取个名字真难";
         _userNameLabel.textAlignment = NSTextAlignmentLeft;
         _userNameLabel.font = [UIFont systemFontOfSize:22];
-        _userNameLabel.textColor = UIColorlightGray;
+        _userNameLabel.textColor = UIColorWhite;
     }
     return _userNameLabel;
 }
@@ -175,7 +175,7 @@
         _ageAndGenderLabel.text = @"女 · 25岁";
         _ageAndGenderLabel.textAlignment = NSTextAlignmentLeft;
         _ageAndGenderLabel.font = [UIFont systemFontOfSize:16];
-        _ageAndGenderLabel.textColor = UIColorlightGray;
+        _ageAndGenderLabel.textColor = UIColorWhite;
     }
     return _ageAndGenderLabel;
 }

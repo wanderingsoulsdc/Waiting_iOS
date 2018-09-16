@@ -14,7 +14,7 @@
 #import "LitePhoneListCell.h"
 #import "UIImage+category.h"
 #import "LitePhoneDetailViewController.h"
-#import "BHSobotService.h"
+ 
 
 @interface LitePhoneSelectCustomViewController ()<UITableViewDelegate, UITableViewDataSource,XZPickViewDelegate, XZPickViewDataSource, UISearchBarDelegate>
 
@@ -234,7 +234,7 @@
 }
 //联系客服
 - (void)contactServiceAction:(UIButton *)sender {
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 
 #pragma mark - ******* Refresh *******

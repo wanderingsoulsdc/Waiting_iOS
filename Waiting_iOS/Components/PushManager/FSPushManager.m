@@ -9,11 +9,8 @@
 #import "FSPushManager.h"
 #import "FSLaunchManager.h"
 #import "FSNetWorkManager.h"
-#import "FSWebViewController.h"
 
 @interface FSPushManager () <UIAlertViewDelegate>
-
-
 
 @end
 
@@ -86,10 +83,8 @@
         case 99:
         {
             NSLog(@"任意url的推送");
-            NSString * url = userInfo[@"url"];
-            FSWebViewController * webViewController = [[FSWebViewController alloc] init];
-            webViewController.url = url;
-            [[FSLaunchManager sharedInstance].rootTabBarController pushToViewController:webViewController animated:YES];
+//            NSString * url = userInfo[@"url"];
+            
         }
             break;
         default:

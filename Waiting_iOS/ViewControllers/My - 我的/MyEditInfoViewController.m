@@ -15,13 +15,16 @@
 #import "BHUserModel.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
+#import "NSArray+JSONString.h"
+#import "PGDatePickManager.h"
+#import "MyInputViewController.h"
 
 typedef enum : NSUInteger {
     UploadImageTypeHead,
     UploadImageTypeOther,
 } UploadImageType;
 
-@interface MyEditInfoViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate, RSKImageCropViewControllerDataSource>
+@interface MyEditInfoViewController ()< UINavigationControllerDelegate , UIImagePickerControllerDelegate , RSKImageCropViewControllerDelegate , RSKImageCropViewControllerDataSource , PGDatePickerDelegate , MyInputViewControllerDelegate >
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * topViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * scrollViewBottomConstraint;
 
@@ -29,9 +32,18 @@ typedef enum : NSUInteger {
 @property (nonatomic , strong) UIButton                 * currentButton;//当前选的头像
 @property (nonatomic , strong) NSMutableArray           * picArr;       //照片数组
 @property (nonatomic , strong) NSString                 * headUrlStr;   //头像图片链接
+@property (nonatomic , strong) NSString                 * birthdayStr;   //生日
+@property (nonatomic , strong) NSString                 * userNameStr;   //用户名
+
 @property (nonatomic , assign) UploadImageType          currentUploadType;   //当前上传类型
 
 @property (weak, nonatomic) IBOutlet UIButton           * headButton; //大头像
+@property (weak, nonatomic) IBOutlet UIButton           * userNameButton; //用户名按钮
+@property (weak, nonatomic) IBOutlet UIButton           * birthdayButton; //生日按钮
+@property (weak, nonatomic) IBOutlet UIButton           * genderButton; //性别按钮
+
+
+@property (nonatomic , strong) PGDatePickManager        * datePickManager; //日期选择管理器
 
 @end
 
@@ -40,6 +52,7 @@ typedef enum : NSUInteger {
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
+    [self requestUserInfo];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -48,6 +61,19 @@ typedef enum : NSUInteger {
 - (void)createUI{
     self.topViewHeightConstraint.constant = kStatusBarAndNavigationBarHeight;
     self.scrollViewBottomConstraint.constant = SafeAreaBottomHeight;
+}
+
+- (void)reloadUserInfo{
+    self.headUrlStr = [BHUserModel sharedInstance].userHeadImageUrl;
+    self.picArr = [[BHUserModel sharedInstance].photoArray mutableCopy];
+
+    [self.userNameButton setTitle:[BHUserModel sharedInstance].userName forState:UIControlStateNormal];
+    [self.birthdayButton setTitle:[BHUserModel sharedInstance].birthday forState:UIControlStateNormal];
+    [self.genderButton setTitle:[[BHUserModel sharedInstance].gender intValue] == 1?@"男":@"女" forState:UIControlStateNormal];
+    [self.headButton sd_setImageWithURL:[NSURL URLWithString:self.headUrlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"my_info_add"]];
+    
+    [self sortDisplayOtherImage];
+    
 }
 
 #pragma mark - ******* Action *******
@@ -67,8 +93,101 @@ typedef enum : NSUInteger {
     [self selectUploadImageStyle];
 }
 
+//点击用户名
+- (IBAction)userNameButtonAction:(UIButton *)sender {
+    MyInputViewController * vc = [[MyInputViewController alloc] init];
+    vc.inputType = MyInputTypeTextField;
+    vc.titleStr = @"设置用户名";
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+//点击生日
+- (IBAction)birthdayButtonAction:(UIButton *)sender {
+    [self presentViewController:self.datePickManager animated:false completion:nil];
+}
+//点击性别
+- (IBAction)genderButtonAction:(UIButton *)sender {
+
+}
+//右上角确认
+- (IBAction)uploadUserInfoButtonAction:(UIButton *)sender {
+    [self uploadUserInfo];
+}
+#pragma mark - ******* Common Delegate *******
+
+- (void)inputResultString:(NSString *)string inputType:(MyInputType)type{
+    if (type == MyInputTypeTextField) {
+        self.userNameStr = string;
+        [self.userNameButton setTitle:string  forState:UIControlStateNormal];
+    }else if(type == MyInputTypeTextView){
+        
+    }
+    
+}
+
+#pragma mark - ******* PGDatePicker Delegate *******
+
+- (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
+    NSLog(@"year = %ld month = %ld day = %ld", (long)dateComponents.year , (long)dateComponents.month , (long)dateComponents.day);
+    self.birthdayStr = [NSString stringWithFormat:@"%ld-%02ld-%02ld",(long)dateComponents.year , (long)dateComponents.month, (long)dateComponents.day];
+    [self.birthdayButton setTitle:self.birthdayStr  forState:UIControlStateNormal];
+}
 
 #pragma mark - ******* Request *******
+//请求用户信息
+- (void)requestUserInfo{
+    WEAKSELF
+    NSDictionary * params = @{};
+    
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiAccountGetUserInfo
+                        withParaments:params withSuccessBlock:^(NSDictionary *object) {
+                            NSLog(@"请求成功");
+                            
+                            if (NetResponseCheckStaus){
+                                [[BHUserModel sharedInstance] analysisUserInfoWithDictionary:object];
+                                [weakSelf reloadUserInfo];
+                            }else{
+                                [ShowHUDTool showBriefAlert:NetResponseMessage];
+                            }
+                        } withFailureBlock:^(NSError *error) {
+                            
+                            [ShowHUDTool showBriefAlert:NetRequestFailed];
+                        }];
+}
+
+//用户信息上传
+- (void)uploadUserInfo{
+    WEAKSELF
+    NSString * picArrStr = @"";
+    if (kArrayNotNull(self.picArr)) {
+        picArrStr = [self.picArr JsonString];
+    }
+    
+    NSDictionary * params = @{@"nickname":self.userNameStr,
+                              @"birthday":self.birthdayStr,
+                              @"photo":self.headUrlStr,
+                              @"gender":@"1",
+                              @"remark":@"备注",
+                              @"hobby":@"[唱歌,跳舞]",
+                              @"picArr":picArrStr,
+                              };
+    
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiAccountSaveUserInfo
+                        withParaments:params withSuccessBlock:^(NSDictionary *object) {
+                            NSLog(@"请求成功");
+                            
+                            if (NetResponseCheckStaus){
+                                [weakSelf.navigationController popViewControllerAnimated:YES];
+                            }else{
+                                [ShowHUDTool showBriefAlert:NetResponseMessage];
+                            }
+                        } withFailureBlock:^(NSError *error) {
+                            
+                            [ShowHUDTool showBriefAlert:NetRequestFailed];
+                        }];
+}
 
 
 #pragma mark - ******* Pravite *******
@@ -350,6 +469,7 @@ typedef enum : NSUInteger {
             NSString *picUrl = dic[@"picurl"];
             if (weakSelf.currentUploadType == UploadImageTypeHead) {
                 [weakSelf.headButton sd_setImageWithURL:[NSURL URLWithString:picUrl] forState:UIControlStateNormal];
+                weakSelf.headUrlStr = picUrl;
             } else {
                 [self.picArr addObject:picUrl];
                 [weakSelf sortDisplayOtherImage];
@@ -372,6 +492,32 @@ typedef enum : NSUInteger {
         _picArr = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return _picArr;
+}
+
+- (PGDatePickManager *)datePickManager{
+    if (!_datePickManager)
+    {
+        _datePickManager = [[PGDatePickManager alloc] init];
+        _datePickManager.style = PGDatePickManagerStyle3;
+        _datePickManager.isShadeBackgroud = true;
+        
+        PGDatePicker *datePicker = _datePickManager.datePicker;
+        datePicker.delegate = self;
+        datePicker.datePickerType = PGPickerViewType2;
+        datePicker.datePickerMode = PGDatePickerModeDate;
+        
+        NSDate *currentDate = [NSDate date];
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        [dateComponents setYear:1950];
+        [dateComponents setMonth:01];
+        NSDate *miniDate = [calendar dateFromComponents:dateComponents];
+        
+        datePicker.minimumDate = miniDate;
+        datePicker.maximumDate = currentDate;
+    }
+    return _datePickManager;
 }
 
 - (ZLPhotoActionSheet *)albumActionSheet

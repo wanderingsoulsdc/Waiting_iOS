@@ -17,6 +17,8 @@
 #define UMengAppKey     @"5abc4915f43e481b11000060"     // 友盟的App Key
 #define kAPPID          @"1271359380"       // App ID
 #define kBaiduMapKey    @"nBDGIICGOr9kdMd047eSIP8YBduqcjAH"   //百度地图key
+
+//shareSDK
 #define kShareSDKAppKey @"27aa36515fd42"   //ShareSDK内的AppKey
 
 //twitter
@@ -28,6 +30,15 @@
 #define kFacebookApiKey       @"2193106177615371"   //Facebook的ApiKey
 #define kFacebookSecretKey    @"822214cbfe7b2de89195ebb4ba421b71"//Facebook的ApiSecretKey
 #define kFacebookDisplayName  @"Waiting" //Facebook的redirectUri
+
+//网易云信的key (换成自己的key,具体去官网看注册app后会有)
+#define kNIMAppKey      @"059672f09b8c5e1f6b0e1583f67fce5f"
+//两个测试帐号
+#define NIMCount1       @"waitingbengcaca1002"
+#define NIMPassword1    @"waitingbengcaca1002"
+
+#define NIMCount2       @"waitingbengcaca1001"
+#define NIMPassword2    @"waitingbengcaca1001"
 
 
 #define kTokenLocalKey  @"tt0adc3949ba59abbe56e057f20f883f" //token本地私钥

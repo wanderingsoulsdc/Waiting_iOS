@@ -12,7 +12,7 @@
 #import "LiteADsPhoneListViewController.h"
 #import "LiteADsMessageListViewController.h"
 #import "LitePhoneSelectLabelViewController.h"
-#import "BHSobotService.h"
+ 
 #import "LiteADsMessageContentViewController.h"
 #import "LiteAccountQualificationViewController.h"
 
@@ -160,7 +160,7 @@
 //左侧按钮点击
 - (void)leftButtonAction{
     NSLog(@"联系客服");
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 
 #pragma mark - ******* Private Methods *******

@@ -7,6 +7,10 @@
 //
 
 #import "MyRechargeViewController.h"
+#import <PassKit/PassKit.h>                                 //用户绑定的银行卡信息
+#import <PassKit/PKPaymentAuthorizationViewController.h>    //Apple pay的展示控件
+#import <AddressBook/AddressBook.h>                         //用户联系信息相关
+
 
 @interface MyRechargeViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * topViewTopConstraint; //顶部视图 距上约束
@@ -107,6 +111,12 @@
     self.currentSelectButton = sender;
 }
 - (IBAction)confirmButtonAction:(UIButton *)sender {
+    
+    if (![self checkApplePayStatus]) {
+        return;
+    }
+    
+    
     NSLog(@"充值金额-> %@   得到钻石-> %@",self.currentSelectMoney,self.currentSelectDiamond);
     self.diamondLabel.text = [NSString stringWithFormat:@"%ld",[self.currentSelectDiamond integerValue]+[self.diamondLabel.text integerValue]];
 }
@@ -115,6 +125,38 @@
 }
 
 #pragma mark - ******* Pravite *******
+//设备Applepay权限检测
+- (BOOL)checkApplePayStatus{
+    if (![PKPaymentAuthorizationViewController class]) {
+        //PKPaymentAuthorizationViewController需iOS8.0以上支持
+        NSLog(@"操作系统不支持ApplePay，请升级至9.0以上版本，且iPhone6以上设备才支持");
+        return NO;
+    }
+    //检查当前设备是否可以支付
+    if (![PKPaymentAuthorizationViewController canMakePayments]) {
+        //支付需iOS9.0以上支持
+        NSLog(@"设备不支持ApplePay，请升级至9.0以上版本，且iPhone6以上设备才支持");
+        return NO;
+    }
+    //检查用户是否可进行某种卡的支付，是否支持Amex、MasterCard、Visa与银联四种卡，根据自己项目的需要进行检测
+    NSArray *supportedNetworks = @[PKPaymentNetworkAmex, PKPaymentNetworkMasterCard,PKPaymentNetworkVisa,PKPaymentNetworkChinaUnionPay];
+    if (![PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:supportedNetworks]) {
+        NSLog(@"没有绑定支付卡");
+        return NO;
+    }
+    return YES;
+}
+
+//初始化支付信息
+- (void)initApplePayInfo{
+//    //设置币种、国家码及merchant标识符等基本信息
+//    PKPaymentRequest *payRequest = [[PKPaymentRequest alloc]init];
+//    payRequest.countryCode = @"CN";     //国家代码
+//    payRequest.currencyCode = @"CNY";       //RMB的币种代码
+//    payRequest.merchantIdentifier = @"merchant.ApplePayDemoYasin";  //申请的merchantID
+////    payRequest.supportedNetworks = supportedNetworks;   //用户可进行支付的银行卡
+//    payRequest.merchantCapabilities = PKMerchantCapability3DS|PKMerchantCapabilityEMV;      //设置支持的交易处理协议，3DS必须支持，EMV为可选，目前国内的话还是使用两者吧
+}
 
 - (void)setDiamond:(NSString *)diamond Money:(NSString *)money ForButton:(UIButton *)button{
     //第一行
@@ -136,6 +178,8 @@
     button.layer.borderWidth = 0.5f;
     button.layer.borderColor = UIColorFromRGB(0xE0E0E0).CGColor;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

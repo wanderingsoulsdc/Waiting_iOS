@@ -47,8 +47,17 @@
 #define kApiCheckVersion                @"https://luckycatv1.behe.com/V1/login/versions"      /* 检查版本 */
 #define kApiCheckAgreement              @"account/updateAccountUserAgreement"   /* 检查是否有协议更新 */
 
-#pragma mark - 账户
+#pragma mark - ******* 账户 *******
+
 #define kApiAccountUploadPicture        kApiVersionPort @"Index/uploadPic"  /* 资料上传照片 */
+#define kApiAccountGetUserInfo          kApiVersionPort @"ucenter/getUserInfo" /* 获取用户资料 */
+#define kApiAccountSaveUserInfo         kApiVersionPort @"ucenter/saveProfile" /* 保存用户资料 */
+
+#pragma mark - *******  主页 *******
+
+#define kApiMainGetUserList             kApiVersionPort @"index/getMemberList" /* 获取首页用户列表 */
+
+
 
 #pragma mark - 发票
 #define kApiInvoiceUpdateStatus         kApiVersionPort @"Invoice/updateStatus"         /* 更改发票申请状态 */

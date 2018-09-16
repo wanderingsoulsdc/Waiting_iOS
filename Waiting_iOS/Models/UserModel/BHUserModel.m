@@ -74,17 +74,17 @@ static id user;
 
 - (void)analysisUserInfoWithDictionary:(NSDictionary *)dict{
     
-    NSDictionary *dataDic = dict[@"data"];
+    NSDictionary *dataDic = dict[@"data"][@"userInfo"];
     
-    [BHUserModel sharedInstance].userID = [dataDic stringValueForKey:@"accountId" default:@""];
-    [BHUserModel sharedInstance].userMobile = [dataDic stringValueForKey:@"mobile" default:@""];
-    [BHUserModel sharedInstance].businessName = [dataDic stringValueForKey:@"businessName" default:@""];
-    [BHUserModel sharedInstance].businessLicenceImg = [dataDic stringValueForKey:@"businessLicenceImg" default:@""];
-    [BHUserModel sharedInstance].auditStatus = [dataDic stringValueForKey:@"auditStatus" default:@""];
-    [BHUserModel sharedInstance].aptitudeOneId = [dataDic stringValueForKey:@"aptitudeOneId" default:@""];
-    [BHUserModel sharedInstance].aptitudeTwoId = [dataDic stringValueForKey:@"aptitudeTwoId" default:@""];
-    [BHUserModel sharedInstance].balance = [dataDic stringValueForKey:@"balance" default:@""];
-    [BHUserModel sharedInstance].refuseReason = [dataDic stringValueForKey:@"refuseReason" default:@""];
+    [BHUserModel sharedInstance].userID = [dataDic stringValueForKey:@"uid" default:@""];
+    [BHUserModel sharedInstance].userName = [dataDic stringValueForKey:@"nickname" default:@""];
+    [BHUserModel sharedInstance].birthday = [dataDic stringValueForKey:@"birthday" default:@""];
+    [BHUserModel sharedInstance].gender = [dataDic stringValueForKey:@"gender" default:@""];
+    [BHUserModel sharedInstance].age = [dataDic stringValueForKey:@"age" default:@""];
+    [BHUserModel sharedInstance].userHeadImageUrl = [dataDic stringValueForKey:@"photo" default:@""];
+    [BHUserModel sharedInstance].photoArray = [dataDic objectForKey:@"pic"];
+    [BHUserModel sharedInstance].photoNum = [NSString stringWithFormat:@"%lu",(unsigned long)[[BHUserModel sharedInstance].photoArray count]];
+    [BHUserModel sharedInstance].hobbyArray = [dataDic objectForKey:@"hobby"];
     
     [[BHUserModel sharedInstance] saveToDisk];
 

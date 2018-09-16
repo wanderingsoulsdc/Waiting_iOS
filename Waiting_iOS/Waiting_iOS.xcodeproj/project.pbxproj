@@ -11,7 +11,6 @@
 		071A23AF1F04FE450054FED1 /* NSArray+JSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 071A23AE1F04FE450054FED1 /* NSArray+JSONString.m */; };
 		07215B7E1FD01CD3000E16DA /* BHNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07215B7D1FD01CD3000E16DA /* BHNotificationModel.m */; };
 		07215B841FD0302C000E16DA /* FSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 07215B811FD0302C000E16DA /* FSTools.m */; };
-		07215B891FD4EB72000E16DA /* BHSobotService.m in Sources */ = {isa = PBXBuildFile; fileRef = 07215B881FD4EB72000E16DA /* BHSobotService.m */; };
 		072449472006215E0055B754 /* BHDataReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072449462006215E0055B754 /* BHDataReportManager.m */; };
 		0724494D200792270055B754 /* BHQualificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0724494C200792270055B754 /* BHQualificationModel.m */; };
 		0730F8181EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0730F8171EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m */; };
@@ -48,7 +47,6 @@
 		0766882E1EE50BD3007FE539 /* BHRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688061EE50BD3007FE539 /* BHRegisterSuccessViewController.m */; };
 		076688311EE50BD3007FE539 /* FSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0766880E1EE50BD3007FE539 /* FSBaseNavigationController.m */; };
 		076688321EE50BD3007FE539 /* FSBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688121EE50BD3007FE539 /* FSBaseTabBarController.m */; };
-		076688331EE50BD3007FE539 /* FSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688151EE50BD3007FE539 /* FSWebViewController.m */; };
 		0768E87B1F31CF1D00AB1D15 /* BHPreAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E8711F31CF1D00AB1D15 /* BHPreAddressModel.m */; };
 		0768E87C1F31CF1D00AB1D15 /* BHStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E8741F31CF1D00AB1D15 /* BHStoreModel.m */; };
 		0768E87D1F31CF1D00AB1D15 /* BHTreasureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E8771F31CF1D00AB1D15 /* BHTreasureModel.m */; };
@@ -215,6 +213,14 @@
 		C18AD43F20D3E9FC00ED98C1 /* LiteAccountSetupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD43E20D3E9FC00ED98C1 /* LiteAccountSetupCell.m */; };
 		C18AD44220D4125000ED98C1 /* LiteAccountAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD44120D4125000ED98C1 /* LiteAccountAboutViewController.m */; };
 		C18AD44720D8AD7300ED98C1 /* LiteAccountQualificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */; };
+		C18DEA732144E49A00C823BE /* TestPayController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18DEA722144E49A00C823BE /* TestPayController.m */; };
+		C18DEAE321481D6B00C823BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE221481D6B00C823BE /* MobileCoreServices.framework */; };
+		C18DEAE521481D7C00C823BE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE421481D7C00C823BE /* AVFoundation.framework */; };
+		C18DEAE721481D8B00C823BE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE621481D8B00C823BE /* CoreMedia.framework */; };
+		C18DEAE921481D9F00C823BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE821481D9F00C823BE /* AudioToolbox.framework */; };
+		C18DEAEB21481DA700C823BE /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAEA21481DA700C823BE /* VideoToolbox.framework */; };
+		C18DEE10214E31FE00C823BE /* MyInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18DEE0E214E31FE00C823BE /* MyInputViewController.m */; };
+		C18DEE11214E31FE00C823BE /* MyInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18DEE0F214E31FE00C823BE /* MyInputViewController.xib */; };
 		C1932FD320FEC83300C8EE4E /* LiteADsPhoneListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FD220FEC83300C8EE4E /* LiteADsPhoneListViewController.m */; };
 		C1932FE620FED3F600C8EE4E /* LiteADsMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FE520FED3F600C8EE4E /* LiteADsMessageListViewController.m */; };
 		C1932FEB20FF170100C8EE4E /* LiteADsPhoneListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FEA20FF170100C8EE4E /* LiteADsPhoneListCell.m */; };
@@ -327,8 +333,6 @@
 		07215B7D1FD01CD3000E16DA /* BHNotificationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHNotificationModel.m; sourceTree = "<group>"; };
 		07215B801FD0302C000E16DA /* FSTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTools.h; sourceTree = "<group>"; };
 		07215B811FD0302C000E16DA /* FSTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTools.m; sourceTree = "<group>"; };
-		07215B871FD4EB72000E16DA /* BHSobotService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHSobotService.h; sourceTree = "<group>"; };
-		07215B881FD4EB72000E16DA /* BHSobotService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHSobotService.m; sourceTree = "<group>"; };
 		072449452006215E0055B754 /* BHDataReportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHDataReportManager.h; sourceTree = "<group>"; };
 		072449462006215E0055B754 /* BHDataReportManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHDataReportManager.m; sourceTree = "<group>"; };
 		072449482006325F0055B754 /* BHDataReportHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHDataReportHeader.h; sourceTree = "<group>"; };
@@ -404,8 +408,6 @@
 		0766880E1EE50BD3007FE539 /* FSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseNavigationController.m; sourceTree = "<group>"; };
 		076688111EE50BD3007FE539 /* FSBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseTabBarController.h; sourceTree = "<group>"; };
 		076688121EE50BD3007FE539 /* FSBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseTabBarController.m; sourceTree = "<group>"; };
-		076688141EE50BD3007FE539 /* FSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebViewController.h; sourceTree = "<group>"; };
-		076688151EE50BD3007FE539 /* FSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebViewController.m; sourceTree = "<group>"; };
 		0768E8701F31CF1D00AB1D15 /* BHPreAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHPreAddressModel.h; sourceTree = "<group>"; };
 		0768E8711F31CF1D00AB1D15 /* BHPreAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHPreAddressModel.m; sourceTree = "<group>"; };
 		0768E8731F31CF1D00AB1D15 /* BHStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHStoreModel.h; sourceTree = "<group>"; };
@@ -658,6 +660,17 @@
 		C18AD44120D4125000ED98C1 /* LiteAccountAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountAboutViewController.m; sourceTree = "<group>"; };
 		C18AD44520D8AD7300ED98C1 /* LiteAccountQualificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountQualificationCell.h; sourceTree = "<group>"; };
 		C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountQualificationCell.m; sourceTree = "<group>"; };
+		C18DEA712144E49A00C823BE /* TestPayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPayController.h; sourceTree = "<group>"; };
+		C18DEA722144E49A00C823BE /* TestPayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPayController.m; sourceTree = "<group>"; };
+		C18DEAE221481D6B00C823BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C18DEAE421481D7C00C823BE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C18DEAE621481D8B00C823BE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C18DEAE821481D9F00C823BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C18DEAEA21481DA700C823BE /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		C18DEE0C214E111600C823BE /* NTESGlobalMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESGlobalMacro.h; sourceTree = "<group>"; };
+		C18DEE0D214E31FE00C823BE /* MyInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInputViewController.h; sourceTree = "<group>"; };
+		C18DEE0E214E31FE00C823BE /* MyInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInputViewController.m; sourceTree = "<group>"; };
+		C18DEE0F214E31FE00C823BE /* MyInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInputViewController.xib; sourceTree = "<group>"; };
 		C1932FD120FEC83300C8EE4E /* LiteADsPhoneListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsPhoneListViewController.h; sourceTree = "<group>"; };
 		C1932FD220FEC83300C8EE4E /* LiteADsPhoneListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsPhoneListViewController.m; sourceTree = "<group>"; };
 		C1932FE420FED3F600C8EE4E /* LiteADsMessageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageListViewController.h; sourceTree = "<group>"; };
@@ -844,13 +857,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1F7A61920E5DBCF001D5A88 /* libsqlite3.0.tbd in Frameworks */,
+				0768E8E51F31D1AF00AB1D15 /* libc++.tbd in Frameworks */,
+				C18DEAEB21481DA700C823BE /* VideoToolbox.framework in Frameworks */,
+				C18DEAE921481D9F00C823BE /* AudioToolbox.framework in Frameworks */,
+				C18DEAE721481D8B00C823BE /* CoreMedia.framework in Frameworks */,
+				0768E8EB1F31D1CD00AB1D15 /* CoreTelephony.framework in Frameworks */,
+				C18DEAE521481D7C00C823BE /* AVFoundation.framework in Frameworks */,
+				0768E8E91F31D1C300AB1D15 /* SystemConfiguration.framework in Frameworks */,
+				C18DEAE321481D6B00C823BE /* MobileCoreServices.framework in Frameworks */,
 				C1AA5ED9213D5BB1001F12DE /* Photos.framework in Frameworks */,
 				C1AA5ED7213D5BA8001F12DE /* AssetsLibrary.framework in Frameworks */,
 				C1AA5ED5213D5B95001F12DE /* JavaScriptCore.framework in Frameworks */,
 				C1AA5ED3213D5B83001F12DE /* libstdc++.tbd in Frameworks */,
 				C1AA5ED1213D5B66001F12DE /* libicucore.tbd in Frameworks */,
 				C1F7A61B20E5DBE7001D5A88 /* libstdc++.6.0.9.tbd in Frameworks */,
-				C1F7A61920E5DBCF001D5A88 /* libsqlite3.0.tbd in Frameworks */,
 				C1F7A61720E5DBC0001D5A88 /* Security.framework in Frameworks */,
 				0768E8F11F31D1F300AB1D15 /* CoreGraphics.framework in Frameworks */,
 				C1F7A61520E5DB95001D5A88 /* OpenGLES.framework in Frameworks */,
@@ -867,12 +888,9 @@
 				0768E8EF1F31D1E300AB1D15 /* CoreText.framework in Frameworks */,
 				0768E8ED1F31D1D600AB1D15 /* QuartzCore.framework in Frameworks */,
 				C1F7A60C20E5DB18001D5A88 /* BaiduMapAPI_Map.framework in Frameworks */,
-				0768E8EB1F31D1CD00AB1D15 /* CoreTelephony.framework in Frameworks */,
 				C1F7A60E20E5DB18001D5A88 /* libssl.a in Frameworks */,
-				0768E8E91F31D1C300AB1D15 /* SystemConfiguration.framework in Frameworks */,
 				C1F7A61220E5DB18001D5A88 /* BaiduMapAPI_Radar.framework in Frameworks */,
 				0768E8E71F31D1BA00AB1D15 /* libz.tbd in Frameworks */,
-				0768E8E51F31D1AF00AB1D15 /* libc++.tbd in Frameworks */,
 				0768E8831F31CFC200AB1D15 /* AlipaySDK.framework in Frameworks */,
 				280B8CC05D8A7B7F190F9561 /* Pods_Waiting_iOS.framework in Frameworks */,
 			);
@@ -936,15 +954,6 @@
 			path = FSTools;
 			sourceTree = "<group>";
 		};
-		07215B861FD4EB4B000E16DA /* SobotService */ = {
-			isa = PBXGroup;
-			children = (
-				07215B871FD4EB72000E16DA /* BHSobotService.h */,
-				07215B881FD4EB72000E16DA /* BHSobotService.m */,
-			);
-			path = SobotService;
-			sourceTree = "<group>";
-		};
 		07244944200621200055B754 /* DataReport */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,6 +1009,7 @@
 				076687F01EE50BD3007FE539 /* DefineHeader */,
 				076687F51EE50BD3007FE539 /* Intercepter */,
 				0713778B2073143A00E205DC /* Supports */,
+				C18DEB16214E0BD600C823BE /* NIM - IM&音视频 */,
 				076687FD1EE50BD3007FE539 /* ViewControllers */,
 				076687F91EE50BD3007FE539 /* Models */,
 				076688161EE50BD3007FE539 /* Views */,
@@ -1140,7 +1150,6 @@
 				070F038A2058C26400B63CCA /* GuideView */,
 				076E14052056943400B3AD1B /* PopMessage */,
 				07244944200621200055B754 /* DataReport */,
-				07215B861FD4EB4B000E16DA /* SobotService */,
 				07215B7F1FD0302C000E16DA /* FSTools */,
 				077596141FC5AB720036CC1F /* PhotoBrowser */,
 				07500E7F1F9DF9C00065EA7F /* PushManager */,
@@ -1222,6 +1231,7 @@
 				076687F31EE50BD3007FE539 /* PrefixHeader.pch */,
 				0781DBF6205FC0C300AC888A /* NotificationHeader.h */,
 				0781DBFA205FC3F100AC888A /* EnumHeader.h */,
+				C18DEE0C214E111600C823BE /* NTESGlobalMacro.h */,
 			);
 			path = DefineHeader;
 			sourceTree = "<group>";
@@ -1344,8 +1354,6 @@
 			children = (
 				07C5632020634383009C1BD7 /* BHWebViewController.h */,
 				07C5632120634383009C1BD7 /* BHWebViewController.m */,
-				076688141EE50BD3007FE539 /* FSWebViewController.h */,
-				076688151EE50BD3007FE539 /* FSWebViewController.m */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -1648,9 +1656,14 @@
 				C150830A21226C4B00D18753 /* MyViewController.h */,
 				C150830B21226C4B00D18753 /* MyViewController.m */,
 				C150830C21226C4B00D18753 /* MyViewController.xib */,
+				C18DEA712144E49A00C823BE /* TestPayController.h */,
+				C18DEA722144E49A00C823BE /* TestPayController.m */,
 				C15C3A61213566C4008BBF38 /* MyEditInfoViewController.h */,
 				C15C3A62213566C4008BBF38 /* MyEditInfoViewController.m */,
 				C15C3A63213566C4008BBF38 /* MyEditInfoViewController.xib */,
+				C18DEE0D214E31FE00C823BE /* MyInputViewController.h */,
+				C18DEE0E214E31FE00C823BE /* MyInputViewController.m */,
+				C18DEE0F214E31FE00C823BE /* MyInputViewController.xib */,
 				C15C3A57213565E3008BBF38 /* MyRechargeViewController.h */,
 				C15C3A58213565E3008BBF38 /* MyRechargeViewController.m */,
 				C15C3A59213565E3008BBF38 /* MyRechargeViewController.xib */,
@@ -1926,6 +1939,53 @@
 				C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */,
 			);
 			path = LiteAccountQualificationCell;
+			sourceTree = "<group>";
+		};
+		C18DEB16214E0BD600C823BE /* NIM - IM&音视频 */ = {
+			isa = PBXGroup;
+			children = (
+				C18DEB1C214E105900C823BE /* Resource */,
+				C18DEB1B214E103B00C823BE /* Other */,
+				C18DEB19214E102500C823BE /* Voice */,
+				C18DEB18214E101D00C823BE /* Video */,
+				C18DEB17214E101400C823BE /* IM */,
+			);
+			path = "NIM - IM&音视频";
+			sourceTree = "<group>";
+		};
+		C18DEB17214E101400C823BE /* IM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IM;
+			sourceTree = "<group>";
+		};
+		C18DEB18214E101D00C823BE /* Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		C18DEB19214E102500C823BE /* Voice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Voice;
+			sourceTree = "<group>";
+		};
+		C18DEB1B214E103B00C823BE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		C18DEB1C214E105900C823BE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		C1932FCF20FEC7A600C8EE4E /* Phone - 电话营销 */ = {
@@ -2332,6 +2392,11 @@
 		E72630772BA985561E2B1047 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C18DEAEA21481DA700C823BE /* VideoToolbox.framework */,
+				C18DEAE821481D9F00C823BE /* AudioToolbox.framework */,
+				C18DEAE621481D8B00C823BE /* CoreMedia.framework */,
+				C18DEAE421481D7C00C823BE /* AVFoundation.framework */,
+				C18DEAE221481D6B00C823BE /* MobileCoreServices.framework */,
 				C1AA5ED8213D5BB1001F12DE /* Photos.framework */,
 				C1AA5ED6213D5BA8001F12DE /* AssetsLibrary.framework */,
 				C1AA5ED4213D5B95001F12DE /* JavaScriptCore.framework */,
@@ -2395,6 +2460,9 @@
 						DevelopmentTeam = D83AQ7D7VU;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
 							com.apple.HotspotConfiguration = {
 								enabled = 0;
 							};
@@ -2498,6 +2566,7 @@
 				C159031B210975F00027285A /* animation_9.png in Resources */,
 				C1F7A66120F721D9001D5A88 /* LiteDeviceLabelDetailViewController.xib in Resources */,
 				C1590352210975F00027285A /* animation_7.png in Resources */,
+				C18DEE11214E31FE00C823BE /* MyInputViewController.xib in Resources */,
 				C1590328210975F00027285A /* animation_56.png in Resources */,
 				C1FA399720DB2C070025E07F /* README.md in Resources */,
 				C124E40F21081D7600DAD4A2 /* LitePhoneMarkViewController.xib in Resources */,
@@ -2530,12 +2599,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS-resources.sh",
-				"${PODS_ROOT}/SobotKit/SobotKit.bundle",
+				"${PODS_ROOT}/NIMSDK/NIMAVChat/Resources/NMCVideoFilter.bundle",
 				"${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SobotKit.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NMCVideoFilter.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2552,36 +2621,48 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FSActionSheet/FSActionSheet.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/M80AttributedLabel/M80AttributedLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/NJKWebViewProgress/NJKWebViewProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/NIMKit/NIMKit.framework",
+				"${PODS_ROOT}/NIMSDK/NIMSDK/NIMSDK.framework",
+				"${PODS_ROOT}/NIMSDK/NIMAVChat/NIMAVChat.framework",
+				"${PODS_ROOT}/NIMSDK/NIMAVChat/NVS.framework",
 				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
-				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/YBPopupMenu/YBPopupMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSActionSheet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M80AttributedLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NJKWebViewProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMAVChat.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVS.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YBPopupMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2631,7 +2712,6 @@
 				C1FA39AC20DB2C080025E07F /* PGDatePicker+DateHour.m in Sources */,
 				C1F7A65520F4AB93001D5A88 /* LiteCycleProgressButton.m in Sources */,
 				C1FA399A20DB2C070025E07F /* PGPickerView.m in Sources */,
-				07215B891FD4EB72000E16DA /* BHSobotService.m in Sources */,
 				0766881D1EE50BD3007FE539 /* UIImageView+Action.m in Sources */,
 				076687AC1EE4FEB3007FE539 /* ViewController.m in Sources */,
 				077596441FC5AB720036CC1F /* ZLEditVideoController.m in Sources */,
@@ -2702,6 +2782,7 @@
 				C1FA390420DA71210025E07F /* LLSegmentBarVC.m in Sources */,
 				C1FA39EB20E32BD20025E07F /* LiteAccountTransactionModel.m in Sources */,
 				0768E87C1F31CF1D00AB1D15 /* BHStoreModel.m in Sources */,
+				C18DEE10214E31FE00C823BE /* MyInputViewController.m in Sources */,
 				077596491FC5AB720036CC1F /* ZLPhotoBrowser.m in Sources */,
 				C19330072105AF1700C8EE4E /* LitePhoneListCell.m in Sources */,
 				076688191EE50BD3007FE539 /* UIButton+countdown.m in Sources */,
@@ -2758,7 +2839,6 @@
 				0766882D1EE50BD3007FE539 /* BHRegisterViewController.m in Sources */,
 				076688261EE50BD3007FE539 /* UIView+SGFrame.m in Sources */,
 				C1FA38E920D917C50025E07F /* LiteAccountQualificationICPViewController.m in Sources */,
-				076688331EE50BD3007FE539 /* FSWebViewController.m in Sources */,
 				C1C1F45B2140FD8400592473 /* NoHighlightButton.m in Sources */,
 				C1FA39AB20DB2C080025E07F /* NSDate+PGCategory.m in Sources */,
 				C15C3A3F213295A7008BBF38 /* MatchCardCell.m in Sources */,
@@ -2770,6 +2850,7 @@
 				C15082F62121868800D18753 /* LitePhoneSelectLabelViewController.m in Sources */,
 				076688291EE50BD3007FE539 /* SliderMenuController.m in Sources */,
 				0766881C1EE50BD3007FE539 /* UIImage+compressIMG.m in Sources */,
+				C18DEA732144E49A00C823BE /* TestPayController.m in Sources */,
 				C124E4002107051E00DAD4A2 /* LitePhoneDetailCell.m in Sources */,
 				C1FA39A620DB2C070025E07F /* PGDatePicker+Logic.m in Sources */,
 				C1FA399820DB2C070025E07F /* PGPickerColumnCell.m in Sources */,
@@ -2924,6 +3005,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Waiting_iOS/Waiting_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2934,6 +3016,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/AlipaySDK",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/AlipaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/AlipaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DefineHeader/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2947,6 +3037,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI/thirdlibs",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/WXSDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/SPaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/WXSDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/SPaySDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.waitfy.waiting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2962,6 +3056,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Waiting_iOS/Waiting_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -2972,6 +3067,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/AlipaySDK",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/AlipaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/AlipaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DefineHeader/PrefixHeader.pch";
@@ -2986,6 +3089,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI/thirdlibs",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/WXSDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/SPaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/WXSDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/SPaySDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.waitfy.waiting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3057,6 +3164,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Waiting_iOS/Waiting_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -3067,6 +3175,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/AlipaySDK",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/AlipaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/AlipaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/RedPacket",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/DefineHeader/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -3080,6 +3196,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Components/BaiduMapAPI/thirdlibs",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/WXSDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/SPaySDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/WXSDK",
+					"$(PROJECT_DIR)/NIM\\ -\\ IM&音视频/Classes/Vendors/WXChatSDK/SPaySDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.waitfy.waiting;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -10,16 +10,22 @@
 
 @interface BHUserModel : NSObject
 
+@property (nonatomic, copy) NSString * userID;              //Id
 @property (nonatomic, copy) NSString * userName;            //用户名
 @property (nonatomic, copy) NSString * userHeadImageUrl;    //头像(主)
 @property (nonatomic, copy) NSString * age;                 //年龄
 @property (nonatomic, copy) NSString * gender;              //性别
+@property (nonatomic, copy) NSString * birthday;            //生日
 @property (nonatomic, copy) NSString * photoNum;            //照片数量
 @property (nonatomic, retain) NSArray * photoArray;         //照片数组
+@property (nonatomic, retain) NSArray * hobbyArray;         //兴趣爱好数组
+
+
+
+
 
 @property (nonatomic, copy) NSString * mobile;
 @property (nonatomic, copy) NSString * passwd;
-@property (nonatomic, copy) NSString * userID;              //accountId
 @property (nonatomic, copy) NSString * token;               // 自动登录标识
 @property (nonatomic, copy) NSString * deviceNum;           // 账号有过的设备数量
 @property (nonatomic, copy) NSString * userMobile;          //用户手机号(区别于登录手机号<暂时一样>)

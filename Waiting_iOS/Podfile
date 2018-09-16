@@ -6,25 +6,25 @@ target ‘Waiting_iOS’ do
   pod 'AFNetworking', '~> 3.1.0'
   pod 'Aspects', '~> 1.4.1'
   pod 'NullSafe', '~> 1.2.2'
-  pod 'NJKWebViewProgress', '~> 0.2.3'
   pod 'SAMKeychain', '~> 1.5.3'
   pod 'Masonry', '~> 1.1.0'
   pod 'MBProgressHUD', '~> 1.1.0'
-  pod 'SDWebImage', '~> 4.4.2'
+  pod 'SDWebImage', '4.2.2'
   pod 'MJRefresh', '~> 3.1.15.6'
-  pod 'YBPopupMenu', '~> 1.1.2'
   pod 'WechatOpenSDK'
   pod 'RSKImageCropper', '~> 2.1.0'
   pod 'JPush'
-  pod 'SobotKit', '~> 2.6.3'
   pod 'FSActionSheet', '~> 1.0.1'
   pod 'IQKeyboardManager', '~> 6.1.1'
-  pod 'SDCycleScrollView', '~> 1.75'
   pod 'UMCCommon', '~> 1.5.2'
   pod 'UMCAnalytics', '~> 5.5.0'
   pod 'BMKLocationKit', '~> 1.2.1'
   pod 'YYKit', '~> 1.0.9'
+  pod 'SVProgressHUD'
   
+  #日志框架
+  pod 'CocoaLumberjack', '~> 3.2.1'
+
   # shareSDK
   # 主模块(必须)
   pod 'mob_sharesdk', '~> 4.1.4'
@@ -34,4 +34,10 @@ target ‘Waiting_iOS’ do
   pod 'mob_sharesdk/ShareSDKPlatforms/Instagram'
   pod 'mob_sharesdk/ShareSDKPlatforms/Twitter'
 
+  #网易云信IM&音视频完整版
+  #pod 'NIMSDK', '~> 5.6.0'
+  #网易云信UI组件完整版本(包含NIMSDK)
+  #依赖库 SDWebImage、Toast、M80AttributedLabel、TZImagePickerController 缺少会自动下载
+  pod 'NIMKit/Full'
+  
 end

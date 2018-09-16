@@ -18,7 +18,10 @@
 @property (weak, nonatomic) IBOutlet UIView * cardBackView;  //卡片背景图
 @property (weak, nonatomic) IBOutlet UIView * bottomView;    //底部按键视图
 
-@property (strong, nonatomic) NSMutableArray * cardDataArr;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * bottomViewBottomContraint;//底部按键视图距下约束
+@property (strong, nonatomic) NSMutableArray    * cardDataArr;
+
+@property (strong, nonatomic) BHUserModel       * currentModel;
 
 @end
 
@@ -29,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
+    self.bottomViewBottomContraint.constant = SafeAreaBottomHeight;
     
     [self requestMatchCardList];
 }
@@ -58,7 +62,8 @@
 #pragma mark - ******* Common Delegate *******
 
 - (void)CardsViewCurrentItem:(NSInteger)index{
-    NSLog(@"index = %ld",index);
+    self.currentModel = self.cardDataArr[index];
+    NSLog(@"userid = %@",self.currentModel.userID);
 }
 
 #pragma mark - ******* Action *******
@@ -82,8 +87,8 @@
 {
     WEAKSELF
     [FSNetWorkManager requestWithType:HttpRequestTypeGet
-                        withUrlString:kApiGetUserInfo
-                        withParaments:nil
+                        withUrlString:kApiMainGetUserList
+                        withParaments:@{@"limit":@"50",@"p":@"1"}
                      withSuccessBlock:^(NSDictionary *object) {
                          
                          if (NetResponseCheckStaus)
@@ -92,29 +97,24 @@
                              NSDictionary *dataDic = object[@"data"];
                              
                              NSArray * array = dataDic[@"list"];
-                             if (array.count > 0 || 1)
+                             if (array.count > 0)
                              {
                                  NSMutableArray *tempArr = [[NSMutableArray alloc] init];
-//                                 for (NSDictionary * dict in array)
-//                                 {
-//                                     BHUserModel * model = [[BHUserModel alloc] init];
-//                                     model.userName = [dict stringValueForKey:@"id" default:@""];
-//                                     model.gender = [dict stringValueForKey:@"deviceName" default:@""];
-//                                     model.age = [dict stringValueForKey:@"mac" default:@""];
-//                                     model.photoNum = [dict stringValueForKey:@"netStatus" default:@""];
-//
-//                                     [tempArr addObject:model];
-//                                 }
-                                 for (int i = 0 ; i < 10; i++) {
+                                 for (NSDictionary * dict in array)
+                                 {
                                      BHUserModel * model = [[BHUserModel alloc] init];
-                                     model.userName = @"名字11111111111";
-                                     model.gender = i%2 == 0?@"男":@"女";
-                                     model.age = [NSString stringWithFormat:@"%d",2*i];
-                                     model.photoNum = [NSString stringWithFormat:@"%d",i];
+                                     model.userID = [dict stringValueForKey:@"id" default:@""];
+                                     model.userName = [dict stringValueForKey:@"nickname" default:@""];
+                                     model.gender = [dict stringValueForKey:@"gender" default:@""];
+                                     model.age = [dict stringValueForKey:@"age" default:@""];
+                                     model.photoArray = [dict objectForKey:@"pic"];
+                                     model.userHeadImageUrl = [dict objectForKey:@"photo"];
+
                                      [tempArr addObject:model];
                                  }
                                  
                                  weakSelf.cardDataArr = [tempArr copy];
+                                 weakSelf.currentModel = [tempArr firstObject];
                                  
                                  [weakSelf createCardView];
                                  

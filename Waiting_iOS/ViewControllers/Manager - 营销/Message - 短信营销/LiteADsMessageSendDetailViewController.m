@@ -11,7 +11,7 @@
 #import "FSNetWorkManager.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
-#import "BHSobotService.h"
+ 
 
 @interface LiteADsMessageSendDetailViewController ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 
@@ -270,7 +270,7 @@
 
 //联系客服
 - (void)contactServiceAction:(UIButton *)sender {
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 
 #pragma mark - ******* Scroll Delegate *******

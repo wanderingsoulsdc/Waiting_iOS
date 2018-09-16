@@ -15,7 +15,6 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 #import <AdSupport/AdSupport.h>
-#import <SobotKit/SobotKit.h>
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 #import "BHLoginViewController.h"
@@ -53,7 +52,8 @@
     
     //注册shareSDK
     [self registerShareSDK];
-    
+    //注册网易云信
+    [self registerNIMSDK];
     
     // 向JPush注册
 //    [self registerJpushWithOption:launchOptions];
@@ -125,6 +125,16 @@
                  break;
          }
      }];
+}
+
+#pragma mark - ******* 网易云信 *******
+
+- (void)registerNIMSDK{
+//    //推荐在程序启动的时候初始化 NIMSDK
+    NIMSDKOption *option    = [NIMSDKOption optionWithAppKey:kNIMAppKey];
+//    option.apnsCername      = @"your APNs cer name";
+//    option.pkCername        = @"your pushkit cer name";
+    [[NIMSDK sharedSDK] registerWithOption:option];
 }
 
 #pragma mark -

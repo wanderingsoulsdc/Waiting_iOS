@@ -74,4 +74,11 @@ typedef enum : NSUInteger {
     BHConnectNetTypeStoreManager,
 } BHConnectNetType;
 
+typedef NS_ENUM(NSUInteger, MyInputType) {
+    MyInputTypeTextField,     //一行输入框
+    MyInputTypeTextView,     //多行文本输入框
+    MyInputTypeGender,       //性别选择
+    MyInputTypeInterest,     //爱好选择
+};
+
 #endif /* EnumHeader_h */

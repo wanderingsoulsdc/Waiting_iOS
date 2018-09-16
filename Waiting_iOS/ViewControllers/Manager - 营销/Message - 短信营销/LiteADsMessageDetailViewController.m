@@ -9,7 +9,7 @@
 #import "LiteADsMessageDetailViewController.h"
 #import "FSNetWorkManager.h"
 #import "NSDictionary+YYAdd.h"
-#import "BHSobotService.h"
+ 
 #import "LiteADsMessageContentViewController.h"
 #import "LiteADsMessageSendDetailViewController.h"
 
@@ -154,7 +154,7 @@
 
 //联系在线客服
 - (IBAction)contactService:(UIButton *)sender {
-    [[BHSobotService sharedInstance] startSoBotCustomerServiceWithViewController:self];
+      
 }
 //催审
 - (IBAction)statusQuicklyButtonAction:(UIButton *)sender {

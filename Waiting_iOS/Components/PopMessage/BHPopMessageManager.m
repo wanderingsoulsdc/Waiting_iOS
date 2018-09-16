@@ -10,7 +10,6 @@
 #import "AFImageDownloader.h"
 #import "FSLaunchManager.h"
 #import "LiteMainViewController.h"
-#import "FSWebViewController.h"
 #import "FSDeviceManager.h"
 
 @interface BHPopMessageManager ()
@@ -166,18 +165,11 @@
         else
         {
             // 文档 或 消息中心详情页 或 其他
-            FSWebViewController * webViewController = [[FSWebViewController alloc] init];
-            webViewController.url = jumpString;
-            webViewController.hidesBottomBarWhenPushed = YES;
-            [_viewContoller.navigationController pushViewController:webViewController animated:YES];
         }
     }
     else
     {
-        FSWebViewController * webViewController = [[FSWebViewController alloc] init];
-        webViewController.url = jumpString;
-        webViewController.hidesBottomBarWhenPushed = YES;
-        [_viewContoller.navigationController pushViewController:webViewController animated:YES];
+        
     }
 }
 

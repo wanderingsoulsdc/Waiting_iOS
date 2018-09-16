@@ -9,6 +9,10 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 #import "ApiHeader.h"
 #import "WebHeader.h"
 #import "ToolsHeader.h"
@@ -28,8 +32,28 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>
 
+//网易云信
+#import <NIMSDK/NIMSDK.h>
+#import <NIMAVChat/NIMAVChat.h>
+#import "NTESGlobalMacro.h"
+#import "NIMKit.h"
+
+#import "CocoaLumberjack.h"
+
+#if     TARGET_MODE==2          // 测试环境（TEST_DEBUG）
+static DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#elif   TARGET_MODE==1          // 开发环境（DEBUG）
+static DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else                           // 正式环境（Release）
+static DDLogLevel ddLogLevel = DDLogLevelInfo;
+#endif
+
+#define NTES_USE_CLEAR_BAR - (BOOL)useClearBar{return YES;}
+#define NTES_FORBID_INTERACTIVE_POP - (BOOL)forbidInteractivePop{return YES;}
+
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 // Building Setting中搜索Prefix Header，修改为$(SRCROOT)/DefineHeader/PrefixHeader.pch
-
+#endif
 #endif /* PrefixHeader_pch */

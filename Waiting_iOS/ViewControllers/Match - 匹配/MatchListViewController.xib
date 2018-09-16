@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="backView" destination="SjE-qw-f6S" id="mXu-he-Wdu"/>
                 <outlet property="bottomView" destination="hly-dO-sJN" id="rHS-mx-ZhR"/>
+                <outlet property="bottomViewBottomContraint" destination="PT3-hr-UAb" id="Qlb-3W-VfC"/>
                 <outlet property="cardBackView" destination="EAx-0Q-kz3" id="ZR3-Rz-P5g"/>
                 <outlet property="noDataView" destination="3CX-sV-vBr" id="BKv-56-spC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
