@@ -213,7 +213,6 @@
 		C18AD43F20D3E9FC00ED98C1 /* LiteAccountSetupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD43E20D3E9FC00ED98C1 /* LiteAccountSetupCell.m */; };
 		C18AD44220D4125000ED98C1 /* LiteAccountAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD44120D4125000ED98C1 /* LiteAccountAboutViewController.m */; };
 		C18AD44720D8AD7300ED98C1 /* LiteAccountQualificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */; };
-		C18DEA732144E49A00C823BE /* TestPayController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18DEA722144E49A00C823BE /* TestPayController.m */; };
 		C18DEAE321481D6B00C823BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE221481D6B00C823BE /* MobileCoreServices.framework */; };
 		C18DEAE521481D7C00C823BE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE421481D7C00C823BE /* AVFoundation.framework */; };
 		C18DEAE721481D8B00C823BE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE621481D8B00C823BE /* CoreMedia.framework */; };
@@ -660,8 +659,6 @@
 		C18AD44120D4125000ED98C1 /* LiteAccountAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountAboutViewController.m; sourceTree = "<group>"; };
 		C18AD44520D8AD7300ED98C1 /* LiteAccountQualificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountQualificationCell.h; sourceTree = "<group>"; };
 		C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountQualificationCell.m; sourceTree = "<group>"; };
-		C18DEA712144E49A00C823BE /* TestPayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPayController.h; sourceTree = "<group>"; };
-		C18DEA722144E49A00C823BE /* TestPayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestPayController.m; sourceTree = "<group>"; };
 		C18DEAE221481D6B00C823BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C18DEAE421481D7C00C823BE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C18DEAE621481D8B00C823BE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -1656,8 +1653,6 @@
 				C150830A21226C4B00D18753 /* MyViewController.h */,
 				C150830B21226C4B00D18753 /* MyViewController.m */,
 				C150830C21226C4B00D18753 /* MyViewController.xib */,
-				C18DEA712144E49A00C823BE /* TestPayController.h */,
-				C18DEA722144E49A00C823BE /* TestPayController.m */,
 				C15C3A61213566C4008BBF38 /* MyEditInfoViewController.h */,
 				C15C3A62213566C4008BBF38 /* MyEditInfoViewController.m */,
 				C15C3A63213566C4008BBF38 /* MyEditInfoViewController.xib */,
@@ -2850,7 +2845,6 @@
 				C15082F62121868800D18753 /* LitePhoneSelectLabelViewController.m in Sources */,
 				076688291EE50BD3007FE539 /* SliderMenuController.m in Sources */,
 				0766881C1EE50BD3007FE539 /* UIImage+compressIMG.m in Sources */,
-				C18DEA732144E49A00C823BE /* TestPayController.m in Sources */,
 				C124E4002107051E00DAD4A2 /* LitePhoneDetailCell.m in Sources */,
 				C1FA39A620DB2C070025E07F /* PGDatePicker+Logic.m in Sources */,
 				C1FA399820DB2C070025E07F /* PGPickerColumnCell.m in Sources */,

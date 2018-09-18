@@ -74,25 +74,43 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-VX-aQ2" userLabel="nameView">
                     <rect key="frame" x="0.0" y="118" width="375" height="549"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HnT-Qt-NuA">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gV-7c-afU">
                             <rect key="frame" x="15" y="5" width="345" height="40"/>
-                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HnT-Qt-NuA">
+                                    <rect key="frame" x="5" y="0.0" width="335" height="40"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="roT-R8-fze"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="siD-PU-RIc"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="roT-R8-fze"/>
+                                <constraint firstItem="HnT-Qt-NuA" firstAttribute="leading" secondItem="3gV-7c-afU" secondAttribute="leading" constant="5" id="6Lx-v2-fFv"/>
+                                <constraint firstAttribute="bottom" secondItem="HnT-Qt-NuA" secondAttribute="bottom" id="SI6-kd-kdp"/>
+                                <constraint firstItem="HnT-Qt-NuA" firstAttribute="top" secondItem="3gV-7c-afU" secondAttribute="top" id="Vyj-VH-9iO"/>
+                                <constraint firstAttribute="trailing" secondItem="HnT-Qt-NuA" secondAttribute="trailing" constant="5" id="YTt-34-dRi"/>
+                                <constraint firstAttribute="height" constant="40" id="lrt-aB-Vx2"/>
                             </constraints>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="-1" id="siD-PU-RIc"/>
-                            </connections>
-                        </textField>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="HnT-Qt-NuA" firstAttribute="leading" secondItem="4iA-VX-aQ2" secondAttribute="leading" constant="15" id="DsQ-Vr-Ueh"/>
-                        <constraint firstAttribute="trailing" secondItem="HnT-Qt-NuA" secondAttribute="trailing" constant="15" id="Ioj-F7-vJc"/>
-                        <constraint firstItem="HnT-Qt-NuA" firstAttribute="top" secondItem="4iA-VX-aQ2" secondAttribute="top" constant="5" id="MzD-8u-iHR"/>
+                        <constraint firstAttribute="trailing" secondItem="3gV-7c-afU" secondAttribute="trailing" constant="15" id="0YJ-nV-EwC"/>
+                        <constraint firstItem="3gV-7c-afU" firstAttribute="leading" secondItem="4iA-VX-aQ2" secondAttribute="leading" constant="15" id="NeG-71-5mI"/>
+                        <constraint firstItem="3gV-7c-afU" firstAttribute="top" secondItem="4iA-VX-aQ2" secondAttribute="top" constant="5" id="ODw-yh-QQi"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="twf-T4-s2Z" userLabel="describeView">
@@ -100,7 +118,7 @@
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEk-kx-X6o">
                             <rect key="frame" x="15" y="5" width="345" height="128"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="SVP-gd-Vbg"/>
                             </constraints>
@@ -113,7 +131,7 @@
                             </connections>
                         </textView>
                     </subviews>
-                    <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="xEk-kx-X6o" secondAttribute="trailing" constant="15" id="iLa-zm-wxL"/>
                         <constraint firstItem="xEk-kx-X6o" firstAttribute="top" secondItem="twf-T4-s2Z" secondAttribute="top" constant="5" id="pZ8-PQ-sdS"/>

@@ -52,6 +52,9 @@
 #define kApiAccountUploadPicture        kApiVersionPort @"Index/uploadPic"  /* 资料上传照片 */
 #define kApiAccountGetUserInfo          kApiVersionPort @"ucenter/getUserInfo" /* 获取用户资料 */
 #define kApiAccountSaveUserInfo         kApiVersionPort @"ucenter/saveProfile" /* 保存用户资料 */
+#define kApiAccountGetChargeData        kApiVersionPort @"index/getChargeData" /* 获取充值数据 */
+#define kApiAccountGetAccountData       kApiVersionPort @"ucenter/getAccount"  /* 获取账户数据 */
+#define kApiAccountDoRecharge           kApiVersionPort @"ucenter/doRecharge"  /* 账户充值接口 */
 
 #pragma mark - *******  主页 *******
 

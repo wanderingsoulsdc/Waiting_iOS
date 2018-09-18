@@ -10,7 +10,6 @@
 #import "MyRechargeViewController.h"
 #import "MySetViewController.h"
 #import "MyEditInfoViewController.h"
-#import "TestPayController.h"
 
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView    * headImageView;
@@ -64,9 +63,7 @@
 }
 //点击账户余额
 - (IBAction)accountMoneyAction:(UIButton *)sender {
-//    MyRechargeViewController *vc = [[MyRechargeViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
-    TestPayController *vc = [[TestPayController alloc] init];
+    MyRechargeViewController *vc = [[MyRechargeViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 //点击设置

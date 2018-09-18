@@ -32,8 +32,9 @@ typedef enum : NSUInteger {
 @property (nonatomic , strong) UIButton                 * currentButton;//当前选的头像
 @property (nonatomic , strong) NSMutableArray           * picArr;       //照片数组
 @property (nonatomic , strong) NSString                 * headUrlStr;   //头像图片链接
-@property (nonatomic , strong) NSString                 * birthdayStr;   //生日
-@property (nonatomic , strong) NSString                 * userNameStr;   //用户名
+@property (nonatomic , strong) NSString                 * birthdayStr;  //生日
+@property (nonatomic , strong) NSString                 * userNameStr;  //用户名
+@property (nonatomic , strong) NSString                 * genderStr;    //性别
 
 @property (nonatomic , assign) UploadImageType          currentUploadType;   //当前上传类型
 
@@ -65,11 +66,14 @@ typedef enum : NSUInteger {
 
 - (void)reloadUserInfo{
     self.headUrlStr = [BHUserModel sharedInstance].userHeadImageUrl;
+    self.userNameStr = [BHUserModel sharedInstance].userName;
+    self.birthdayStr = [BHUserModel sharedInstance].birthday;
+    self.genderStr = [[BHUserModel sharedInstance].gender intValue] == 1 ? @"男":@"女";
     self.picArr = [[BHUserModel sharedInstance].photoArray mutableCopy];
 
-    [self.userNameButton setTitle:[BHUserModel sharedInstance].userName forState:UIControlStateNormal];
-    [self.birthdayButton setTitle:[BHUserModel sharedInstance].birthday forState:UIControlStateNormal];
-    [self.genderButton setTitle:[[BHUserModel sharedInstance].gender intValue] == 1?@"男":@"女" forState:UIControlStateNormal];
+    [self.userNameButton setTitle:self.userNameStr forState:UIControlStateNormal];
+    [self.birthdayButton setTitle:self.birthdayStr forState:UIControlStateNormal];
+    [self.genderButton setTitle:self.genderStr forState:UIControlStateNormal];
     [self.headButton sd_setImageWithURL:[NSURL URLWithString:self.headUrlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"my_info_add"]];
     
     [self sortDisplayOtherImage];
