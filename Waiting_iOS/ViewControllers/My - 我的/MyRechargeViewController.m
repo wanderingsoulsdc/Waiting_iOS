@@ -205,7 +205,7 @@
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error{
     NSLog(@"error:%@", error);
     [ShowHUDTool hideAlert];
-    [ShowHUDTool showBriefAlert:@"交易失败"];
+    [ShowHUDTool showBriefAlert:@"购买请求发送失败"];
 }
 
 //反馈请求的产品信息结束后

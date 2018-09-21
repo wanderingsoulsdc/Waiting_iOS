@@ -28,6 +28,8 @@
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
 
+#import "NTESNotificationCenter.h"
+
 @interface AppDelegate () <WXApiDelegate, JPUSHRegisterDelegate,BMKGeneralDelegate>
 {
     BMKMapManager* _mapManager;
@@ -48,13 +50,13 @@
     // 检查更新
     [self checkVersion];
     
-    [self launchWindows];
+//    [self launchWindows];
     
     //注册shareSDK
     [self registerShareSDK];
     //注册网易云信
     [self registerNIMSDK];
-    
+    [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
     // 向JPush注册
 //    [self registerJpushWithOption:launchOptions];
 //    [application setApplicationIconBadgeNumber:0];
@@ -130,11 +132,23 @@
 #pragma mark - ******* 网易云信 *******
 
 - (void)registerNIMSDK{
-//    //推荐在程序启动的时候初始化 NIMSDK
+    //推荐在程序启动的时候初始化 NIMSDK
     NIMSDKOption *option    = [NIMSDKOption optionWithAppKey:kNIMAppKey];
 //    option.apnsCername      = @"your APNs cer name";
 //    option.pkCername        = @"your pushkit cer name";
     [[NIMSDK sharedSDK] registerWithOption:option];
+    
+    //手动登录
+    [[[NIMSDK sharedSDK]loginManager]login:NIMCount1 token:NIMPassword1 completion:^(NSError * _Nullable error) {
+        if (!error) {
+            
+        }else{
+            NSLog(@"%@",error);
+        }
+    }];
+    
+    //注册通知,用来通知被叫响应
+    [[NTESNotificationCenter sharedCenter] start];
 }
 
 #pragma mark -
@@ -165,8 +179,6 @@
     }
     else
     {
-//        [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeLogin];
-//        return;
         [self checkToken:[BHUserModel sharedInstance].token];
     }
 }

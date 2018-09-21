@@ -34,11 +34,11 @@
 //网易云信的key (换成自己的key,具体去官网看注册app后会有)
 #define kNIMAppKey      @"059672f09b8c5e1f6b0e1583f67fce5f"
 //两个测试帐号
-#define NIMCount1       @"waitingbengcaca1002"
-#define NIMPassword1    @"waitingbengcaca1002"
+#define NIMCount1       @"waitingbengcaca1001"
+#define NIMPassword1    @"waitingbengcaca1001"
 
-#define NIMCount2       @"waitingbengcaca1001"
-#define NIMPassword2    @"waitingbengcaca1001"
+#define NIMCount2       @"waitingbengcaca1002"
+#define NIMPassword2    @"waitingbengcaca1002"
 
 
 #define kTokenLocalKey  @"tt0adc3949ba59abbe56e057f20f883f" //token本地私钥

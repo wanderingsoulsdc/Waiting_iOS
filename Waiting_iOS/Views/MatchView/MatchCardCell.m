@@ -103,9 +103,9 @@
     _model = model;
     [self layoutSubviewsUI];
     
-    self.photoNumLabel.text = [NSString stringWithFormat:@"%ld",[model.photoArray count]];
+    self.photoNumLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[model.photoArray count]];
     self.userNameLabel.text = model.userName;
-    self.ageAndGenderLabel.text = [NSString stringWithFormat:@"%@·%@岁",model.gender == 0 ? @"女":@"男",model.age];
+    self.ageAndGenderLabel.text = [NSString stringWithFormat:@"%@·%@岁",[model.gender intValue] == 0 ? @"女":@"男",model.age];
     [self.mainImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadImageUrl] placeholderImage:[UIImage imageNamed:@"login_register_success"]];
 }
 #pragma mark - action

@@ -29,13 +29,16 @@
 #define IS_IPhone6 (667 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
 #define IS_IPhone6plus (736 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
 #define IS_IPhoneX (812 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define IS_IPhoneXR (896 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define IS_IPhoneXsMax (896 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define IS_IPhoneXAndLater ([[UIScreen mainScreen] bounds].size.height >= 812 ? YES : NO)
 
 // 状态栏+导航栏高度
-#define kStatusBarAndNavigationBarHeight (IS_IPhoneX ? 88.f : 64.f)
+#define kStatusBarAndNavigationBarHeight (IS_IPhoneXAndLater ? 88.f : 64.f)
 // 状态栏高度
-#define kStatusBarHeight (IS_IPhoneX ? 44.f : 20.f)
+#define kStatusBarHeight (IS_IPhoneXAndLater ? 44.f : 20.f)
 
-#define SafeAreaBottomHeight (IS_IPhoneX ? 34 : 0)
+#define SafeAreaBottomHeight (IS_IPhoneXAndLater ? 34 : 0)
 
 #define kGetImageFromName(name) [UIImage imageNamed:name]
 

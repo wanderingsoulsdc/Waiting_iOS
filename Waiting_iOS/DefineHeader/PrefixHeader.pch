@@ -32,6 +32,11 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>
 
+#import "Masonry.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <YYKit/YYKit.h>
+#import "SVProgressHUD+Ext.h"
+
 //网易云信
 #import <NIMSDK/NIMSDK.h>
 #import <NIMAVChat/NIMAVChat.h>
@@ -39,6 +44,20 @@
 #import "NIMKit.h"
 
 #import "CocoaLumberjack.h"
+
+//屏幕尺寸
+
+#define ScreenBounds  [[UIScreen mainScreen] bounds]
+#define ScreenSize    [[UIscreen mainScreen] bounds].size
+#define ScreenWidh    [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+
+#define LEFT                         36 * WIDTH_SIZE
+#define WIDTH_SIZE                  [UIScreen mainScreen].bounds.size.width / 750
+#define HEIGHT_SIZE                 [UIScreen mainScreen].bounds.size.height / 1334
+#define NAV_Bar_Height 64
+#define TAB_Bar_Height 49
+
 
 #if     TARGET_MODE==2          // 测试环境（TEST_DEBUG）
 static DDLogLevel ddLogLevel = DDLogLevelVerbose;

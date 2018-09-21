@@ -10,6 +10,9 @@
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 #import "MatchCardView.h"
+#import "LSAudioController.h"
+#import "LSVideoController.h"
+#import "MatchVoiceViewController.h"
 
 @interface MatchListViewController ()<MatchCardDelegate>
 
@@ -67,17 +70,32 @@
 }
 
 #pragma mark - ******* Action *******
-//语音
-- (IBAction)voiceChatAction:(UIButton *)sender {
-    
-}
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {
-    
+    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:NIMCount2];
+    [self presentViewController:vc animated:YES completion:nil];
 }
+//语音
+- (IBAction)voiceChatAction:(UIButton *)sender {
+    //这个参数 自己修改成创建好的 云信账号
+    LSAudioController* vc =[[LSAudioController alloc]initWithCallee:NIMCount1];
+    //这两个参数是我用来传递姓名头像地址
+    vc.nickName = @"被叫宝宝";
+    vc.headURLStr = @"suibiansuibian";
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 //视频
 - (IBAction)videoChatAction:(UIButton *)sender {
+    //这个参数 自己修改成创建好的 云信账号
+    LSVideoController* vc =[[LSVideoController alloc]initWithCallee:NIMCount1];
+    //这两个参数是我用来传递姓名头像地址
+    vc.nickName = @"被叫宝宝";
+    vc.headURLStr = @"suibiansuibian";
     
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - ******* Request *******
