@@ -1,22 +1,27 @@
 //
-//  ChatListViewController.m
+//  ChatViewController.m
 //  Waiting_iOS
 //
 //  Created by wander on 2018/9/24.
 //  Copyright © 2018年 BEHE. All rights reserved.
 //
 
-#import "ChatListViewController.h"
+#import "ChatViewController.h"
 
-@interface ChatListViewController ()
+@interface ChatViewController ()
 
 @end
 
-@implementation ChatListViewController
+@implementation ChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 /*

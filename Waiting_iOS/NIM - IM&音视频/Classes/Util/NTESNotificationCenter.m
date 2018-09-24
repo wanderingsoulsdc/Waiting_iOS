@@ -25,8 +25,8 @@
 
 #import "NTESNetChatViewController.h"
 
-#import "LSVideoController.h"
 #import "MatchVoiceViewController.h"
+#import "MatchVideoViewController.h"
 #import "BHUserModel.h"
 #import "LSTempModel.h"
 
@@ -219,12 +219,12 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
         
     }else {
         //    UIViewController *vc;
-        LSVideoController* vc1;
+        MatchVideoViewController * vc1;
         MatchVoiceViewController * vc2;
         
         switch (type) {
             case NIMNetCallTypeVideo:{
-                vc1 = [[LSVideoController alloc] initWithCaller:caller callId:callID];
+                vc1 = [[MatchVideoViewController alloc] initWithCaller:caller callId:callID];
                 vc1.headURLStr = model.headImg;
                 vc1.nickName = model.nickName;
                 
@@ -289,7 +289,7 @@ NSString *NTESCustomNotificationCountChanged = @"NTESCustomNotificationCountChan
 {
 
     //当前顶层页面是否为 通话页面
-    return [[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController isKindOfClass:[LSVideoController class]]||[[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController isKindOfClass:[MatchVoiceViewController class]];
+    return [[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController isKindOfClass:[MatchVideoViewController class]]||[[UIApplication sharedApplication].keyWindow.rootViewController.presentedViewController isKindOfClass:[MatchVoiceViewController class]];
     
 }
 

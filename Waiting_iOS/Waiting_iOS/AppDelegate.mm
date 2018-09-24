@@ -139,7 +139,7 @@
     [[NIMSDK sharedSDK] registerWithOption:option];
     
     //手动登录
-    [[[NIMSDK sharedSDK]loginManager]login:NIMCount1 token:NIMPassword1 completion:^(NSError * _Nullable error) {
+    [[[NIMSDK sharedSDK]loginManager]login:NIMCount2 token:NIMPassword2 completion:^(NSError * _Nullable error) {
         if (!error) {
             
         }else{

@@ -87,7 +87,8 @@
     [self.scrollView addSubview:matchListVC.view];    //2
     [matchListVC didMoveToParentViewController:self]; //3
     
-    ChatListViewController *chatListVC = [[ChatListViewController alloc] init];
+//    ChatListViewController *chatListVC = [[ChatListViewController alloc] init];
+    NIMSessionListViewController *chatListVC = [[NIMSessionListViewController alloc] init];
     [self addChildViewController:chatListVC];        //1
     chatListVC.view.frame = CGRectMake(kScreenWidth * 2, 0, kScreenWidth, self.scrollView.height);
     [self.scrollView addSubview:chatListVC.view];    //2

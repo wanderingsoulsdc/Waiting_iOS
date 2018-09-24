@@ -77,6 +77,9 @@
     self.refuseButtonBottomConstraint.constant = 64 + SafeAreaBottomHeight;
     self.acceptButtonBottomConstraint.constant = 64 + SafeAreaBottomHeight;
     self.cancelButtonBottomConstraint.constant = 64 + SafeAreaBottomHeight;
+    self.muteButtonBottomConstraint.constant = 15 + SafeAreaBottomHeight;
+    self.speakerButtonBottomConstraint.constant = 15 + SafeAreaBottomHeight;
+    self.diamondViewBottomConstraint.constant = 25 + SafeAreaBottomHeight;
     
     self.headDarkBackView.layer.borderWidth = 1.0f;
     self.headDarkBackView.layer.borderColor = UIAlplaColorFromRGB(0xC10CFF, 0.15).CGColor;
@@ -130,6 +133,7 @@
     self.refuseButton.hidden = NO;
     self.statusLabel.text = @"邀请你语音通话";
     
+    self.timeLabel.hidden = YES;
     self.cancelButton.hidden = YES;
     self.closeButton.hidden = YES;
     self.diamondView.hidden = YES;
@@ -163,7 +167,7 @@
     
     self.statusLabel.text = @"已接听";
     
-    self.timeLabel.hidden = YES;
+    self.timeLabel.hidden = NO;
     self.acceptButton.hidden = YES;
     self.refuseButton.hidden = YES;
     self.cancelButton.hidden = YES;

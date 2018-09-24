@@ -258,7 +258,7 @@
                 <constraint firstItem="Uzp-CQ-ncl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zGr-sK-GLS"/>
                 <constraint firstItem="JTJ-Tl-5dE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zLj-qb-z1c"/>
             </constraints>
-            <point key="canvasLocation" x="-380" y="135.38230884557723"/>
+            <point key="canvasLocation" x="-186" y="128"/>
         </view>
     </objects>
     <resources>

@@ -102,6 +102,12 @@
 		C109E8C6210F2428007569DC /* LiteADsMessageContentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109E8C5210F2428007569DC /* LiteADsMessageContentInfoViewController.m */; };
 		C10B3E78215369650044AAEB /* MatchVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10B3E76215369650044AAEB /* MatchVoiceViewController.m */; };
 		C10B3E79215369650044AAEB /* MatchVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10B3E77215369650044AAEB /* MatchVoiceViewController.xib */; };
+		C1130E942157A875008A446E /* MatchVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1130E922157A875008A446E /* MatchVideoViewController.m */; };
+		C1130E952157A875008A446E /* MatchVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1130E932157A875008A446E /* MatchVideoViewController.xib */; };
+		C1130E9921586EE1008A446E /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1130E9721586EE1008A446E /* ChatListViewController.m */; };
+		C1130E9A21586EE1008A446E /* ChatListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1130E9821586EE1008A446E /* ChatListViewController.xib */; };
+		C1130E9E21586FEA008A446E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1130E9C21586FEA008A446E /* ChatViewController.m */; };
+		C1130E9F21586FEA008A446E /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1130E9D21586FEA008A446E /* ChatViewController.xib */; };
 		C113B2582110007C00C6BFAB /* LiteADsMessageHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C113B2562110007C00C6BFAB /* LiteADsMessageHistoryCell.m */; };
 		C113B2592110007C00C6BFAB /* LiteADsMessageHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C113B2572110007C00C6BFAB /* LiteADsMessageHistoryCell.xib */; };
 		C113B260211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C113B25F211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m */; };
@@ -122,8 +128,6 @@
 		C15082F62121868800D18753 /* LitePhoneSelectLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15082F52121868800D18753 /* LitePhoneSelectLabelViewController.m */; };
 		C150830D21226C4B00D18753 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150830B21226C4B00D18753 /* MyViewController.m */; };
 		C150830E21226C4B00D18753 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150830C21226C4B00D18753 /* MyViewController.xib */; };
-		C150831221226C5A00D18753 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831021226C5A00D18753 /* ChatListViewController.m */; };
-		C150831321226C5A00D18753 /* ChatListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150831121226C5A00D18753 /* ChatListViewController.xib */; };
 		C150831721226C6A00D18753 /* MatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831521226C6A00D18753 /* MatchListViewController.m */; };
 		C150831821226C6A00D18753 /* MatchListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150831621226C6A00D18753 /* MatchListViewController.xib */; };
 		C150831C21226FBF00D18753 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831B21226FBF00D18753 /* HomeViewController.m */; };
@@ -542,6 +546,15 @@
 		C10B3E75215369650044AAEB /* MatchVoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchVoiceViewController.h; sourceTree = "<group>"; };
 		C10B3E76215369650044AAEB /* MatchVoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchVoiceViewController.m; sourceTree = "<group>"; };
 		C10B3E77215369650044AAEB /* MatchVoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchVoiceViewController.xib; sourceTree = "<group>"; };
+		C1130E912157A875008A446E /* MatchVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchVideoViewController.h; sourceTree = "<group>"; };
+		C1130E922157A875008A446E /* MatchVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchVideoViewController.m; sourceTree = "<group>"; };
+		C1130E932157A875008A446E /* MatchVideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchVideoViewController.xib; sourceTree = "<group>"; };
+		C1130E9621586EE1008A446E /* ChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
+		C1130E9721586EE1008A446E /* ChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
+		C1130E9821586EE1008A446E /* ChatListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListViewController.xib; sourceTree = "<group>"; };
+		C1130E9B21586FEA008A446E /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		C1130E9C21586FEA008A446E /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		C1130E9D21586FEA008A446E /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		C113B2552110007C00C6BFAB /* LiteADsMessageHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageHistoryCell.h; sourceTree = "<group>"; };
 		C113B2562110007C00C6BFAB /* LiteADsMessageHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageHistoryCell.m; sourceTree = "<group>"; };
 		C113B2572110007C00C6BFAB /* LiteADsMessageHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiteADsMessageHistoryCell.xib; sourceTree = "<group>"; };
@@ -576,9 +589,6 @@
 		C150830A21226C4B00D18753 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		C150830B21226C4B00D18753 /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		C150830C21226C4B00D18753 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
-		C150830F21226C5A00D18753 /* ChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
-		C150831021226C5A00D18753 /* ChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
-		C150831121226C5A00D18753 /* ChatListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListViewController.xib; sourceTree = "<group>"; };
 		C150831421226C6A00D18753 /* MatchListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchListViewController.h; sourceTree = "<group>"; };
 		C150831521226C6A00D18753 /* MatchListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchListViewController.m; sourceTree = "<group>"; };
 		C150831621226C6A00D18753 /* MatchListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchListViewController.xib; sourceTree = "<group>"; };
@@ -1743,9 +1753,12 @@
 		C150830821226BD200D18753 /* Chat - 聊天 */ = {
 			isa = PBXGroup;
 			children = (
-				C150830F21226C5A00D18753 /* ChatListViewController.h */,
-				C150831021226C5A00D18753 /* ChatListViewController.m */,
-				C150831121226C5A00D18753 /* ChatListViewController.xib */,
+				C1130E9621586EE1008A446E /* ChatListViewController.h */,
+				C1130E9721586EE1008A446E /* ChatListViewController.m */,
+				C1130E9821586EE1008A446E /* ChatListViewController.xib */,
+				C1130E9B21586FEA008A446E /* ChatViewController.h */,
+				C1130E9C21586FEA008A446E /* ChatViewController.m */,
+				C1130E9D21586FEA008A446E /* ChatViewController.xib */,
 			);
 			path = "Chat - 聊天";
 			sourceTree = "<group>";
@@ -2062,6 +2075,11 @@
 		C18DEB18214E101D00C823BE /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				C1938F0D2152756200212FB3 /* LSVideoController.h */,
+				C1938F112152756200212FB3 /* LSVideoController.m */,
+				C1130E912157A875008A446E /* MatchVideoViewController.h */,
+				C1130E922157A875008A446E /* MatchVideoViewController.m */,
+				C1130E932157A875008A446E /* MatchVideoViewController.xib */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -2257,8 +2275,6 @@
 				C1938F412152756200212FB3 /* NTESVideoChatNetStatusView.m */,
 				C1938F422152756200212FB3 /* NTESNetChatViewController.h */,
 				C1938F0E2152756200212FB3 /* NTESNetChatViewController.m */,
-				C1938F0D2152756200212FB3 /* LSVideoController.h */,
-				C1938F112152756200212FB3 /* LSVideoController.m */,
 			);
 			path = videoChat;
 			sourceTree = "<group>";
@@ -2798,13 +2814,13 @@
 				C1590330210975F00027285A /* animation_27.png in Resources */,
 				C1590336210975F00027285A /* animation_30.png in Resources */,
 				C159032B210975F00027285A /* animation_55.png in Resources */,
-				C150831321226C5A00D18753 /* ChatListViewController.xib in Resources */,
 				C1590356210975F00027285A /* animation_4.png in Resources */,
 				C159032C210975F00027285A /* animation_41.png in Resources */,
 				C159032E210975F00027285A /* animation_32.png in Resources */,
 				C159034A210975F00027285A /* animation_17.png in Resources */,
 				C159033F210975F00027285A /* animation_13.png in Resources */,
 				C15C3A6021356661008BBF38 /* MySetViewController.xib in Resources */,
+				C1130E9F21586FEA008A446E /* ChatViewController.xib in Resources */,
 				C1590351210975F00027285A /* animation_6.png in Resources */,
 				C1590325210975F00027285A /* animation_57.png in Resources */,
 				C113B2592110007C00C6BFAB /* LiteADsMessageHistoryCell.xib in Resources */,
@@ -2815,12 +2831,14 @@
 				0781DBF5205FC06C00AC888A /* red_point.gif in Resources */,
 				C1590341210975F00027285A /* animation_10.png in Resources */,
 				C1590320210975F00027285A /* animation_8.png in Resources */,
+				C1130E9A21586EE1008A446E /* ChatListViewController.xib in Resources */,
 				C1590323210975F00027285A /* animation_47.png in Resources */,
 				C159031F210975F00027285A /* animation_44.png in Resources */,
 				C14CCD38210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.xib in Resources */,
 				C1938F4D2152756200212FB3 /* video_chat_tip_receiver.aac in Resources */,
 				C1590353210975F00027285A /* animation_5.png in Resources */,
 				C1590324210975F00027285A /* animation_53.png in Resources */,
+				C1130E952157A875008A446E /* MatchVideoViewController.xib in Resources */,
 				C159032A210975F00027285A /* animation_54.png in Resources */,
 				C19330122106C57D00C8EE4E /* LitePhoneDetailViewController.xib in Resources */,
 				C1590348210975F00027285A /* animation_28.png in Resources */,
@@ -3014,11 +3032,13 @@
 				C18AD42620D3E13000ED98C1 /* LiteAccountSetupViewController.m in Sources */,
 				076688321EE50BD3007FE539 /* FSBaseTabBarController.m in Sources */,
 				C1FA39D720DF802D0025E07F /* LiteAccountInvoiceModel.m in Sources */,
+				C1130E9E21586FEA008A446E /* ChatViewController.m in Sources */,
 				0775964D1FC5AB720036CC1F /* ZLProgressHUD.m in Sources */,
 				0775964F1FC5AB720036CC1F /* ZLThumbnailViewController.m in Sources */,
 				077596401FC5AB720036CC1F /* ToastUtils.m in Sources */,
 				C1938F482152756200212FB3 /* NTESTimerHolder.m in Sources */,
 				C1938F452152756200212FB3 /* NTESNotificationCenter.m in Sources */,
+				C1130E942157A875008A446E /* MatchVideoViewController.m in Sources */,
 				C150830D21226C4B00D18753 /* MyViewController.m in Sources */,
 				C1FA399C20DB2C070025E07F /* PGDatePicker+Date.m in Sources */,
 				C1938F512152756200212FB3 /* LSTempModel.m in Sources */,
@@ -3095,7 +3115,6 @@
 				077596411FC5AB720036CC1F /* UIButton+EnlargeTouchArea.m in Sources */,
 				C18AD43B20D3E66500ED98C1 /* LiteAccountRechargeViewController.m in Sources */,
 				C1FA39BB20DB83220025E07F /* LiteAccountInvoiceReportViewController.m in Sources */,
-				C150831221226C5A00D18753 /* ChatListViewController.m in Sources */,
 				C1FA39A820DB2C080025E07F /* PGDatePicker+MonthDayHourMinute.m in Sources */,
 				C1FA39AE20DB2C080025E07F /* PGDatePicker+TimeAndSecond.m in Sources */,
 				0775963C1FC5AB720036CC1F /* NSBundle+ZLPhotoBrowser.m in Sources */,
@@ -3171,6 +3190,7 @@
 				C14CCD37210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m in Sources */,
 				0775964C1FC5AB720036CC1F /* ZLPhotoModel.m in Sources */,
 				0730F8181EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m in Sources */,
+				C1130E9921586EE1008A446E /* ChatListViewController.m in Sources */,
 				C18AD43220D3E4C100ED98C1 /* LiteAccountTransactionViewController.m in Sources */,
 				076688171EE50BD3007FE539 /* NSString+Helper.m in Sources */,
 				C1938F4B2152756200212FB3 /* SVProgressHUD+Ext.m in Sources */,

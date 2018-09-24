@@ -1,5 +1,5 @@
 //
-//  ChatListViewController.h
+//  ChatViewController.h
 //  Waiting_iOS
 //
 //  Created by wander on 2018/9/24.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ChatListViewController : NIMSessionListViewController
+@interface ChatViewController : NIMSessionViewController
 
 @end
 

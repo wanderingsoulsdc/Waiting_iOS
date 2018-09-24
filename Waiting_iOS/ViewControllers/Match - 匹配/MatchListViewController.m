@@ -13,6 +13,8 @@
 #import "LSAudioController.h"
 #import "LSVideoController.h"
 #import "MatchVoiceViewController.h"
+#import "MatchVideoViewController.h"
+#import "ChatViewController.h"
 
 @interface MatchListViewController ()<MatchCardDelegate>
 
@@ -72,29 +74,32 @@
 #pragma mark - ******* Action *******
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {
-    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:NIMCount2];
-    [self presentViewController:vc animated:YES completion:nil];
+    NIMSession *session = [NIMSession session:NIMCount1 type:NIMSessionTypeP2P];
+    ChatViewController *vc = [[ChatViewController alloc] initWithSession:session];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 //语音
 - (IBAction)voiceChatAction:(UIButton *)sender {
-    //这个参数 自己修改成创建好的 云信账号
-    LSAudioController* vc =[[LSAudioController alloc]initWithCallee:NIMCount1];
-    //这两个参数是我用来传递姓名头像地址
-    vc.nickName = @"被叫宝宝";
-    vc.headURLStr = @"suibiansuibian";
-    
+//    //这个参数 自己修改成创建好的 云信账号
+//    LSAudioController* vc =[[LSAudioController alloc]initWithCallee:NIMCount1];
+//    //这两个参数是我用来传递姓名头像地址
+//    vc.nickName = @"被叫宝宝";
+//    vc.headURLStr = @"suibiansuibian";
+//
+//    [self presentViewController:vc animated:YES completion:nil];
+    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:NIMCount1];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 //视频
 - (IBAction)videoChatAction:(UIButton *)sender {
-    //这个参数 自己修改成创建好的 云信账号
-    LSVideoController* vc =[[LSVideoController alloc]initWithCallee:NIMCount1];
-    //这两个参数是我用来传递姓名头像地址
-    vc.nickName = @"被叫宝宝";
-    vc.headURLStr = @"suibiansuibian";
-    
-    
+//    //这个参数 自己修改成创建好的 云信账号
+//    LSVideoController* vc =[[LSVideoController alloc]initWithCallee:NIMCount1];
+//    //这两个参数是我用来传递姓名头像地址
+//    vc.nickName = @"被叫宝宝";
+//    vc.headURLStr = @"suibiansuibian";
+//    [self presentViewController:vc animated:YES completion:nil];
+    MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:NIMCount1];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
