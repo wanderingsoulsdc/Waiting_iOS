@@ -53,6 +53,7 @@
 {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 #pragma mark - ******* UI Methods *******
@@ -478,7 +479,8 @@
                          {
                              NSLog(@"请求成功");
                              NSDictionary *dic = object[@"data"][@"account"];
-                             weakSelf.diamondLabel.text = [dic stringValueForKey:@"usable" default:@"0"];
+                             [BHUserModel sharedInstance].diamond = [dic stringValueForKey:@"usable" default:@"0"];
+                             weakSelf.diamondLabel.text = [BHUserModel sharedInstance].diamond;
                          }
                          else
                          {

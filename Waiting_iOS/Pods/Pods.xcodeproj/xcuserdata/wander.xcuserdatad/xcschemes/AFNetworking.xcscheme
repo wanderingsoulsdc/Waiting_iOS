@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "1000"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8EEBB7FAC83B8FBCAECADC143E359B4"
-               BuildableName = "AFNetworking.framework"
+               BlueprintIdentifier = "E2B477D1477083407646968CB1474B9B"
+               BuildableName = "libAFNetworking.a"
                BlueprintName = "AFNetworking"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C8EEBB7FAC83B8FBCAECADC143E359B4"
-            BuildableName = "AFNetworking.framework"
+            BlueprintIdentifier = "E2B477D1477083407646968CB1474B9B"
+            BuildableName = "libAFNetworking.a"
             BlueprintName = "AFNetworking"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

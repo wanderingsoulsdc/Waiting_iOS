@@ -39,9 +39,11 @@
 			</array>
 		</dict>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb231041614282422</string>
+				<string>fb2193106177615371</string>
 			</array>
 		</dict>
 	</array>

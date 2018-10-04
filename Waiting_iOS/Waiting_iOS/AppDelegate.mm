@@ -47,16 +47,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    // 检查更新
-    [self checkVersion];
-    
-//    [self launchWindows];
-    
     //注册shareSDK
     [self registerShareSDK];
     //注册网易云信
     [self registerNIMSDK];
-    [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
+    
+    // 检查更新
+    [self checkVersion];
+    // 判断显示状态
+    [self launchWindows];
+    
     // 向JPush注册
 //    [self registerJpushWithOption:launchOptions];
 //    [application setApplicationIconBadgeNumber:0];
@@ -139,13 +139,20 @@
     [[NIMSDK sharedSDK] registerWithOption:option];
     
     //手动登录
-    [[[NIMSDK sharedSDK]loginManager]login:NIMCount2 token:NIMPassword2 completion:^(NSError * _Nullable error) {
-        if (!error) {
-            
-        }else{
-            NSLog(@"%@",error);
-        }
-    }];
+//    [[[NIMSDK sharedSDK]loginManager]login:NIMCount1 token:NIMPassword1 completion:^(NSError * _Nullable error) {
+//        if (!error) {
+//            NSLog(@"NIMCount1 登陆成功");
+//        }else{
+//            NSLog(@"%@",error);
+//        }
+//    }];
+    
+    NIMAutoLoginData * autoData = [[NIMAutoLoginData alloc] init];
+    autoData.account = NIMCount1;
+    autoData.token = NIMPassword1;
+    autoData.forcedMode = YES;
+    
+    [[[NIMSDK sharedSDK] loginManager] autoLogin:autoData];
     
     //注册通知,用来通知被叫响应
     [[NTESNotificationCenter sharedCenter] start];
@@ -171,7 +178,6 @@
 - (void)launchWindows
 {
     NSString *token = [BHUserModel sharedInstance].token;
-//    token = @"";
     if (!kStringNotNull(token))
     {
         // 用户未登录

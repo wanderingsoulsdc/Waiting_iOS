@@ -58,7 +58,7 @@
              NSDictionary * params = @{@"uid":user.uid,
                                        @"nickname":user.nickname,
                                        @"icon":user.icon,
-                                       @"gender":[NSString stringWithFormat:@"%ld",user.gender],
+                                       @"gender":[NSString stringWithFormat:@"%ld",(long)user.gender],
                                        @"email":email,
                                        @"type":@"twitter"
                                        };
@@ -74,6 +74,7 @@
 }
 //facebook
 - (IBAction)facebookAction:(UIButton *)sender {
+    WEAKSELF
     [ShareSDK getUserInfo:SSDKPlatformTypeFacebook
            onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
      {
@@ -83,6 +84,19 @@
              NSLog(@"%@",user.credential);
              NSLog(@"token=%@",user.credential.token);
              NSLog(@"nickname=%@",user.nickname);
+             
+             NSString *email = [user.rawData objectForKey:@"email"];
+             if (!kStringNotNull(email)) {
+                 email = @"";
+             }
+             NSDictionary * params = @{@"uid":user.uid,
+                                       @"nickname":user.nickname,
+                                       @"icon":user.icon,
+                                       @"gender":[NSString stringWithFormat:@"%ld",(long)user.gender],
+                                       @"email":email,
+                                       @"type":@"facebook"
+                                       };
+             [weakSelf requestLogin:params];
              
          }
          
@@ -95,6 +109,15 @@
 }
 //google
 - (IBAction)googleAction:(UIButton *)sender {
+    //假数据
+    NSDictionary * params = @{@"uid":@"112233445566",
+                              @"nickname":@"我是假数据",
+                              @"icon":@"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/359b033b5bb5c9ea86b6f4add739b6003af3b333.jpg",
+                              @"gender":@"1",
+                              @"email":@"",
+                              @"type":@"twitter"
+                              };
+    [self requestLogin:params];
 }
 
 #pragma mark - ******* Request *******

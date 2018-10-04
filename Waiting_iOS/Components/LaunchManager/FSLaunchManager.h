@@ -19,8 +19,7 @@
 typedef enum : NSUInteger {
     LaunchWindowTypeLogin,
     LaunchWindowTypeMain,
-    LaunchWindowTypeAddDevice,
-    LaunchWindowTypeSubAccount,
+    LaunchWindowTypeTest,
 } LaunchWindowType;
 
 

@@ -8,13 +8,14 @@
 
 #import "FSLaunchManager.h"
 #import "FSBaseNavigationController.h"
-#import "BHLoginViewController.h"
+
 #import "UIImage+category.h"
 #import "BHUserModel.h"
-#import "LiteDeviceAddViewController.h"
 //#import "UITabBar+Badge.h"
+
 #import "HomeViewController.h"
 #import "LoginViewController.h"
+#import "ChatListViewController.h"
 
 @interface FSLaunchManager () <UITabBarControllerDelegate>
 
@@ -58,9 +59,9 @@
             [self launchHomeView];
         }
             break;
-        case LaunchWindowTypeAddDevice:
+        case LaunchWindowTypeTest:
         {   //添加设备
-            [self launchAddDeviceView];
+            [self launchTest];
         }
             break;
         default:
@@ -148,10 +149,10 @@
 }
 
 //切换添加设备页面
-- (void)launchAddDeviceView
+- (void)launchTest
 {
-    LiteDeviceAddViewController * DeviceAddViewController = [[LiteDeviceAddViewController alloc] init];
-    FSBaseNavigationController * DeviceAddNavigationController = [[FSBaseNavigationController alloc] initWithRootViewController:DeviceAddViewController];
+    ChatListViewController * vc = [[ChatListViewController alloc] init];
+    FSBaseNavigationController * DeviceAddNavigationController = [[FSBaseNavigationController alloc] initWithRootViewController:vc];
     SharedApp.window.rootViewController = DeviceAddNavigationController;
 }
 

@@ -10,6 +10,8 @@
 #import "MyRechargeViewController.h"
 #import "MySetViewController.h"
 #import "MyEditInfoViewController.h"
+#import "FSNetWorkManager.h"
+#import "BHUserModel.h"
 
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView    * headImageView;
@@ -18,6 +20,14 @@
 @property (weak, nonatomic) IBOutlet UILabel        * sexAgeLabel;
 @property (weak, nonatomic) IBOutlet UIButton       * editInformationButton;
 @property (weak, nonatomic) IBOutlet UILabel        * AccountMoneyLabel;
+
+@property (nonatomic , strong) NSString                 * headUrlStr;   //头像图片链接
+@property (nonatomic , strong) NSString                 * idStr;        //uid
+@property (nonatomic , strong) NSString                 * userNameStr;  //用户名
+@property (nonatomic , strong) NSString                 * genderStr;    //性别
+@property (nonatomic , strong) NSString                 * ageStr;       //年龄
+
+@property (nonatomic , strong) NSString                 * diamond;       //钻石
 
 @end
 
@@ -30,6 +40,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self createUI];
+    [self requestUserInfo];
+    [self requestAccountData];
     
     // You should add subviews here
     // You should add notification here
@@ -40,6 +52,7 @@
 {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -51,9 +64,74 @@
 - (void)createUI{
     self.editInformationButton.layer.borderWidth = 1;
     self.editInformationButton.layer.borderColor = UIColorFromRGB(0x9014FC).CGColor;
-    
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:@"http://v.behe.com/dsp20/ad/2018/8/14/15342297730008214.jpg"] placeholderImage:[UIImage imageNamed:@"phone_default_head"]];
+    [self refreshData];
 }
+
+- (void)refreshData{
+    self.headUrlStr = [BHUserModel sharedInstance].userHeadImageUrl;
+    self.userNameStr = [BHUserModel sharedInstance].userName;
+    self.idStr = [BHUserModel sharedInstance].userID;
+    self.genderStr = [BHUserModel sharedInstance].gender_txt;
+    self.ageStr = [BHUserModel sharedInstance].age;
+    self.diamond = [BHUserModel sharedInstance].diamond;
+
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.headUrlStr] placeholderImage:[UIImage imageNamed:@"phone_default_head"]];
+
+    self.idLabel.text = self.idStr;
+    self.userNameLabel.text = self.userNameStr;
+    self.sexAgeLabel.text = [NSString stringWithFormat:@"%@ · %@",self.genderStr,self.ageStr];
+    self.AccountMoneyLabel.text = self.diamond;
+}
+
+#pragma mark - ******* Request *******
+//请求用户信息
+- (void)requestUserInfo{
+    WEAKSELF
+    NSDictionary * params = @{};
+    
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiAccountGetUserInfo
+                        withParaments:params withSuccessBlock:^(NSDictionary *object) {
+                            NSLog(@"请求成功");
+                            
+                            if (NetResponseCheckStaus){
+                                [[BHUserModel sharedInstance] analysisUserInfoWithDictionary:object];
+                                [weakSelf refreshData];
+                            }else{
+                                [ShowHUDTool showBriefAlert:NetResponseMessage];
+                            }
+                        } withFailureBlock:^(NSError *error) {
+                            
+                            [ShowHUDTool showBriefAlert:NetRequestFailed];
+                        }];
+}
+
+//请求账户数据获得钻石数量
+- (void)requestAccountData
+{
+    WEAKSELF
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiAccountGetAccountData
+                        withParaments:nil
+                     withSuccessBlock:^(NSDictionary *object) {
+                         
+                         if (NetResponseCheckStaus)
+                         {
+                             NSLog(@"请求成功");
+                             NSDictionary *dic = object[@"data"][@"account"];
+                             [BHUserModel sharedInstance].diamond = [dic stringValueForKey:@"usable" default:@"0"];
+                             [weakSelf refreshData];
+                         }
+                         else
+                         {
+                             [ShowHUDTool showBriefAlert:NetResponseMessage];
+                         }
+                     } withFailureBlock:^(NSError *error) {
+                         NSLog(@"error is:%@", error);
+                         [ShowHUDTool showBriefAlert:NetRequestFailed];
+                     }];
+}
+
 
 #pragma mark - ******* Action Methods *******
 //编辑资料

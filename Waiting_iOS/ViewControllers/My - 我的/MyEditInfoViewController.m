@@ -57,6 +57,13 @@ typedef enum : NSUInteger {
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
 #pragma mark - ******* UI Methods *******
 
 - (void)createUI{
@@ -176,7 +183,7 @@ typedef enum : NSUInteger {
                               @"hobby":@"[唱歌,跳舞]",
                               @"picArr":picArrStr,
                               };
-    
+
     [FSNetWorkManager requestWithType:HttpRequestTypePost
                         withUrlString:kApiAccountSaveUserInfo
                         withParaments:params withSuccessBlock:^(NSDictionary *object) {

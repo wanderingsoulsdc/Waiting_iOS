@@ -74,7 +74,7 @@
 #pragma mark - ******* Action *******
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {
-    NIMSession *session = [NIMSession session:NIMCount1 type:NIMSessionTypeP2P];
+    NIMSession *session = [NIMSession session:NIMCount2 type:NIMSessionTypeP2P];
     ChatViewController *vc = [[ChatViewController alloc] initWithSession:session];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -87,7 +87,7 @@
 //    vc.headURLStr = @"suibiansuibian";
 //
 //    [self presentViewController:vc animated:YES completion:nil];
-    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:NIMCount1];
+    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:NIMCount2];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
@@ -99,7 +99,7 @@
 //    vc.nickName = @"被叫宝宝";
 //    vc.headURLStr = @"suibiansuibian";
 //    [self presentViewController:vc animated:YES completion:nil];
-    MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:NIMCount1];
+    MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:NIMCount2];
     [self presentViewController:vc animated:YES completion:nil];
 }
 

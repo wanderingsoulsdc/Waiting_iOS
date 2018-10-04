@@ -1,5 +1,6 @@
 platform :ios, '8.0'
-use_frameworks!
+#use_frameworks!
+#纯oc项目中 通过pod导入纯oc项目, 一般都不使用frameworks https://www.jianshu.com/p/ac629a1cb8f5
 inhibit_all_warnings!
 #【inhibit_all_warnings!】可以去掉pods警告,加入需要重新pod install才能生效
 target ‘Waiting_iOS’ do

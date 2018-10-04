@@ -15,11 +15,13 @@
 @property (nonatomic, copy) NSString * userHeadImageUrl;    //头像(主)
 @property (nonatomic, copy) NSString * age;                 //年龄
 @property (nonatomic, copy) NSString * gender;              //性别
+@property (nonatomic, copy) NSString * gender_txt;          //性别描述文字
 @property (nonatomic, copy) NSString * birthday;            //生日
 @property (nonatomic, copy) NSString * photoNum;            //照片数量
 @property (nonatomic, retain) NSArray * photoArray;         //照片数组
 @property (nonatomic, retain) NSArray * hobbyArray;         //兴趣爱好数组
 
+@property (nonatomic, copy) NSString * diamond;             //钻石
 
 
 

@@ -95,7 +95,7 @@
 		07C5632220634383009C1BD7 /* BHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C5632120634383009C1BD7 /* BHWebViewController.m */; };
 		07CC430D1F5E747D005E2E0E /* NSObjectSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CC430C1F5E747D005E2E0E /* NSObjectSafe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07ECAAEC1FF0EA5500F8F95B /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ECAAEB1FF0EA5500F8F95B /* UITabBar+Badge.m */; };
-		280B8CC05D8A7B7F190F9561 /* Pods_Waiting_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0D55EB86B86949D7ED06C1 /* Pods_Waiting_iOS.framework */; };
+		95731A4BF3927B83A958B842 /* libPods-Waiting_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1633284571D1A0A811C599FE /* libPods-Waiting_iOS.a */; };
 		C109E8BF210F1B55007569DC /* LiteADsMessageSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109E8BD210F1B55007569DC /* LiteADsMessageSetupViewController.m */; };
 		C109E8C0210F1B55007569DC /* LiteADsMessageSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C109E8BE210F1B55007569DC /* LiteADsMessageSetupViewController.xib */; };
 		C109E8C3210F1BC2007569DC /* LiteADsMessageHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109E8C2210F1BC2007569DC /* LiteADsMessageHistoryViewController.m */; };
@@ -530,11 +530,11 @@
 		07CC430C1F5E747D005E2E0E /* NSObjectSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectSafe.m; sourceTree = "<group>"; };
 		07ECAAEA1FF0EA5500F8F95B /* UITabBar+Badge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
 		07ECAAEB1FF0EA5500F8F95B /* UITabBar+Badge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
+		1633284571D1A0A811C599FE /* libPods-Waiting_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Waiting_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1E19D940CEBBC945DAC544 /* Pods-Waiting_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waiting_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		519AA25F689C64BD11BAE540 /* Pods_Treasure_Lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treasure_Lite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		572DAB1176A412B0808EEAA1 /* Pods-Waiting_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waiting_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		86BF012264BD18BD1C14590E /* Pods-Waiting_iOS.test_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waiting_iOS.test_debug.xcconfig"; path = "Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS.test_debug.xcconfig"; sourceTree = "<group>"; };
-		AB0D55EB86B86949D7ED06C1 /* Pods_Waiting_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Waiting_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C107FAD920C92C9100FB0050 /* Waiting_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waiting_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C109E8BC210F1B55007569DC /* LiteADsMessageSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageSetupViewController.h; sourceTree = "<group>"; };
 		C109E8BD210F1B55007569DC /* LiteADsMessageSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageSetupViewController.m; sourceTree = "<group>"; };
@@ -1002,7 +1002,7 @@
 				C1F7A61220E5DB18001D5A88 /* BaiduMapAPI_Radar.framework in Frameworks */,
 				0768E8E71F31D1BA00AB1D15 /* libz.tbd in Frameworks */,
 				0768E8831F31CFC200AB1D15 /* AlipaySDK.framework in Frameworks */,
-				280B8CC05D8A7B7F190F9561 /* Pods_Waiting_iOS.framework in Frameworks */,
+				95731A4BF3927B83A958B842 /* libPods-Waiting_iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2697,7 +2697,7 @@
 				0768E8E61F31D1BA00AB1D15 /* libz.tbd */,
 				0768E8E41F31D1AF00AB1D15 /* libc++.tbd */,
 				519AA25F689C64BD11BAE540 /* Pods_Treasure_Lite.framework */,
-				AB0D55EB86B86949D7ED06C1 /* Pods_Waiting_iOS.framework */,
+				1633284571D1A0A811C599FE /* libPods-Waiting_iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2883,12 +2883,32 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS-resources.sh",
+				"${PODS_ROOT}/FSActionSheet/FSActionSheet/FSActionSheet/FSActionSheetResources/FSActionSheet_cancel@2x.png",
+				"${PODS_ROOT}/FSActionSheet/FSActionSheet/FSActionSheet/FSActionSheetResources/FSActionSheet_cancel@3x.png",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/NIMKit/NIMKit/Resources/NIMKitEmoticon.bundle",
+				"${PODS_ROOT}/NIMKit/NIMKit/Resources/NIMKitResource.bundle",
 				"${PODS_ROOT}/NIMSDK/NIMAVChat/Resources/NMCVideoFilter.bundle",
+				"${PODS_ROOT}/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 				"${PODS_ROOT}/mob_sharesdk/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FSActionSheet_cancel@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FSActionSheet_cancel@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NIMKitEmoticon.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NIMKitResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NMCVideoFilter.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RSKImageCropperStrings.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ShareSDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2903,51 +2923,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/FSActionSheet/FSActionSheet.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/M80AttributedLabel/M80AttributedLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/NIMKit/NIMKit.framework",
 				"${PODS_ROOT}/NIMSDK/NIMSDK/NIMSDK.framework",
 				"${PODS_ROOT}/NIMSDK/NIMAVChat/NIMAVChat.framework",
 				"${PODS_ROOT}/NIMSDK/NIMAVChat/NVS.framework",
-				"${BUILT_PRODUCTS_DIR}/NullSafe/NullSafe.framework",
-				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
-				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
-				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSActionSheet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M80AttributedLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NIMAVChat.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NullSafe.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

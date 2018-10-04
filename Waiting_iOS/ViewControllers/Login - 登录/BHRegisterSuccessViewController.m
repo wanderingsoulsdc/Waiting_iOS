@@ -155,11 +155,8 @@
                                 [[BHUserModel sharedInstance] analysisUserInfoWithDictionary:object Mobile:mobile Passwd:password Token:self.token];
                                 NSInteger deviceNum = [object[@"data"][@"deviceNum"] integerValue];
                                                             
-                                if (deviceNum < 1) {
-                                    [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeAddDevice];
-                                }else{
-                                    [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
-                                }
+                                [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
+                                
                             }
                             else
                             {
