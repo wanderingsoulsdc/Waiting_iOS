@@ -82,6 +82,7 @@ static id user;
     [BHUserModel sharedInstance].gender = [dataDic stringValueForKey:@"gender" default:@"0"];
     [BHUserModel sharedInstance].gender_txt = [dataDic stringValueForKey:@"gender_txt" default:@""];
     [BHUserModel sharedInstance].age = [dataDic stringValueForKey:@"age" default:@"0"];
+    [BHUserModel sharedInstance].remark = [dataDic stringValueForKey:@"remark" default:@""];
     [BHUserModel sharedInstance].userHeadImageUrl = [dataDic stringValueForKey:@"photo" default:@""];
     [BHUserModel sharedInstance].photoArray = [dataDic objectForKey:@"pic"];
     [BHUserModel sharedInstance].photoNum = [NSString stringWithFormat:@"%lu",(unsigned long)[[BHUserModel sharedInstance].photoArray count]];
@@ -98,28 +99,11 @@ static id user;
 
 - (void)analysisUserInfoWithDictionary:(NSDictionary *)dict Mobile:(NSString *)mobile Passwd:(NSString *)password Token:(NSString *)token
 {
-//    NSInteger treasureCount = [[dict objectForKey:@"shop"] integerValue];
     [BHUserModel sharedInstance].mobile = mobile;
     [BHUserModel sharedInstance].passwd = password;
     [BHUserModel sharedInstance].token  = token;
-//    [BHUserModel sharedInstance].treasureCount = treasureCount;
     [BHUserModel sharedInstance].userID = [[dict objectForKey:@"data"]
                                            objectForKey:@"accountId"];
-//    [BHUserModel sharedInstance].businessName = [[[dict objectForKey:@"data"]
-//                                                         objectForKey:@"account"]
-//                                                        objectForKey:@"businessName"];
-//    [BHUserModel sharedInstance].permissionAll = dict[@"data"][@"permission"][@"all"];
-//    [BHUserModel sharedInstance].permissionWechat = dict[@"data"][@"permission"][@"pyq"];
-//    [BHUserModel sharedInstance].permissionWcrd = dict[@"data"][@"permission"][@"wcrd"];
-//    [BHUserModel sharedInstance].permissionSMS = dict[@"data"][@"permission"][@"timingSms"];
-//    [BHUserModel sharedInstance].permissionWiFiAD = dict[@"data"][@"permission"][@"wifiAd"];
-//    [BHUserModel sharedInstance].isNoviceGuide = dict[@"data"][@"task"][@"task"];
-//    [BHUserModel sharedInstance].isFinishGuideStore = dict[@"data"][@"task"][@"shop"];
-//    [BHUserModel sharedInstance].isFinishGuideAD = dict[@"data"][@"task"][@"advertisement"];
-//    [BHUserModel sharedInstance].isFinishGuidePhone = dict[@"data"][@"task"][@"phone"];
-//    [BHUserModel sharedInstance].isFinishGuideMessage = dict[@"data"][@"task"][@"sms"];
-//    [BHUserModel sharedInstance].isSubAccount = dict[@"data"][@"isphoneson"];
-    
     [[BHUserModel sharedInstance] saveToDisk];
 }
 

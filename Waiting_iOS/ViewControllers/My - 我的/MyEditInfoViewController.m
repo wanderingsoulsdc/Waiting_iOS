@@ -34,7 +34,11 @@ typedef enum : NSUInteger {
 @property (nonatomic , strong) NSString                 * headUrlStr;   //头像图片链接
 @property (nonatomic , strong) NSString                 * birthdayStr;  //生日
 @property (nonatomic , strong) NSString                 * userNameStr;  //用户名
-@property (nonatomic , strong) NSString                 * genderStr;    //性别
+@property (nonatomic , strong) NSString                 * genderKey;    //性别(0 or 1)
+@property (nonatomic , strong) NSString                 * describeStr;  //个人简介
+@property (nonatomic , strong) NSMutableArray           * interestArr;  //兴趣爱好数组
+
+@property (nonatomic , strong) NSMutableArray           * allInterestArr;//所有的兴趣爱好数组
 
 @property (nonatomic , assign) UploadImageType          currentUploadType;   //当前上传类型
 
@@ -42,6 +46,7 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet UIButton           * userNameButton; //用户名按钮
 @property (weak, nonatomic) IBOutlet UIButton           * birthdayButton; //生日按钮
 @property (weak, nonatomic) IBOutlet UIButton           * genderButton; //性别按钮
+@property (weak, nonatomic) IBOutlet UILabel            * describeLabel; //个人简介
 
 
 @property (nonatomic , strong) PGDatePickManager        * datePickManager; //日期选择管理器
@@ -75,16 +80,19 @@ typedef enum : NSUInteger {
     self.headUrlStr = [BHUserModel sharedInstance].userHeadImageUrl;
     self.userNameStr = [BHUserModel sharedInstance].userName;
     self.birthdayStr = [BHUserModel sharedInstance].birthday;
-    self.genderStr = [[BHUserModel sharedInstance].gender intValue] == 1 ? @"男":@"女";
+    self.genderKey = [BHUserModel sharedInstance].gender;
     self.picArr = [[BHUserModel sharedInstance].photoArray mutableCopy];
+    self.interestArr = [[BHUserModel sharedInstance].hobbyArray mutableCopy];
+    self.describeStr = [BHUserModel sharedInstance].remark;
 
     [self.userNameButton setTitle:self.userNameStr forState:UIControlStateNormal];
     [self.birthdayButton setTitle:self.birthdayStr forState:UIControlStateNormal];
-    [self.genderButton setTitle:self.genderStr forState:UIControlStateNormal];
+    [self.genderButton setTitle:[BHUserModel sharedInstance].gender_txt forState:UIControlStateNormal];
     [self.headButton sd_setImageWithURL:[NSURL URLWithString:self.headUrlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"my_info_add"]];
+    self.describeLabel.text = self.describeStr;
+    
     
     [self sortDisplayOtherImage];
-    
 }
 
 #pragma mark - ******* Action *******
@@ -112,28 +120,48 @@ typedef enum : NSUInteger {
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 //点击生日
 - (IBAction)birthdayButtonAction:(UIButton *)sender {
     [self presentViewController:self.datePickManager animated:false completion:nil];
 }
 //点击性别
 - (IBAction)genderButtonAction:(UIButton *)sender {
-
+    MyInputViewController * vc = [[MyInputViewController alloc] init];
+    vc.inputType = MyInputTypeGender;
+    vc.titleStr = @"设置性别";
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+//点击个人描述
+- (IBAction)describeAction:(UIButton *)sender {
+    MyInputViewController * vc = [[MyInputViewController alloc] init];
+    vc.inputType = MyInputTypeTextView;
+    vc.titleStr = @"设置个人简介";
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 //右上角确认
 - (IBAction)uploadUserInfoButtonAction:(UIButton *)sender {
     [self uploadUserInfo];
 }
 #pragma mark - ******* Common Delegate *******
-
+//输入结果
 - (void)inputResultString:(NSString *)string inputType:(MyInputType)type{
     if (type == MyInputTypeTextField) {
         self.userNameStr = string;
         [self.userNameButton setTitle:string  forState:UIControlStateNormal];
     }else if(type == MyInputTypeTextView){
-        
+        self.describeStr = string;
+        self.describeLabel.text = self.describeStr;
     }
+}
+//年龄选择结果
+- (void)inputGenderSelectResult:(NSDictionary *)dic{
+    NSString * genderStr = [dic objectForKey:@"value"];
     
+    [self.genderButton setTitle:genderStr forState:UIControlStateNormal];
+    self.genderKey = [dic objectForKey:@"key"];
 }
 
 #pragma mark - ******* PGDatePicker Delegate *******
@@ -157,6 +185,8 @@ typedef enum : NSUInteger {
                             
                             if (NetResponseCheckStaus){
                                 [[BHUserModel sharedInstance] analysisUserInfoWithDictionary:object];
+                                NSDictionary *dataDic = object[@"data"][@"userInfo"];
+                                [BHUserModel sharedInstance].hobbyArray = [self dealInterestArr:[dataDic objectForKey:@"hobby"]];
                                 [weakSelf reloadUserInfo];
                             }else{
                                 [ShowHUDTool showBriefAlert:NetResponseMessage];
@@ -178,9 +208,9 @@ typedef enum : NSUInteger {
     NSDictionary * params = @{@"nickname":self.userNameStr,
                               @"birthday":self.birthdayStr,
                               @"photo":self.headUrlStr,
-                              @"gender":@"1",
-                              @"remark":@"备注",
-                              @"hobby":@"[唱歌,跳舞]",
+                              @"gender":self.genderKey,
+                              @"remark":self.describeStr,
+                              @"hobby":@"[1,2]",
                               @"picArr":picArrStr,
                               };
 
@@ -202,6 +232,19 @@ typedef enum : NSUInteger {
 
 
 #pragma mark - ******* Pravite *******
+//处理已有的兴趣爱好数组
+- (NSArray *)dealInterestArr:(NSArray *)interestArr{
+    NSMutableArray * array = [NSMutableArray new];
+    if (kArrayNotNull(interestArr)) {
+        for (NSDictionary * dic in interestArr) {
+            NSString  * str = [dic objectForKey:@"value"];
+            [array addObject:str];
+        }
+        return [array copy];
+    } else {
+        return [NSArray new];
+    }
+}
 
 //选择上传类型
 - (void)selectUploadImageStyle

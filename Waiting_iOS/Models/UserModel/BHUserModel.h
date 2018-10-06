@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString * age;                 //年龄
 @property (nonatomic, copy) NSString * gender;              //性别
 @property (nonatomic, copy) NSString * gender_txt;          //性别描述文字
+@property (nonatomic, copy) NSString * remark;              //个人简介
 @property (nonatomic, copy) NSString * birthday;            //生日
 @property (nonatomic, copy) NSString * photoNum;            //照片数量
 @property (nonatomic, retain) NSArray * photoArray;         //照片数组

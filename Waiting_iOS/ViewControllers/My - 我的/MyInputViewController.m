@@ -11,14 +11,23 @@
 @interface MyInputViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * topViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet UILabel * titleLabel; //页面标题
+@property (weak, nonatomic) IBOutlet UILabel    * titleLabel; //页面标题
 @property (weak, nonatomic) IBOutlet UITextField * textfield; //用户名
 @property (weak, nonatomic) IBOutlet UITextView * textView; //个人描述等
 
-@property (weak, nonatomic) IBOutlet UIView * nameView;  //名称等输入
-@property (weak, nonatomic) IBOutlet UIView * describeView; //描述等输入
-@property (weak, nonatomic) IBOutlet UIView * genderView;  //性别
-@property (weak, nonatomic) IBOutlet UIView * interestView; //爱好
+@property (weak, nonatomic) IBOutlet UIView     * nameView;  //名称等输入
+@property (weak, nonatomic) IBOutlet UIView     * describeView; //描述等输入
+@property (weak, nonatomic) IBOutlet UIView     * genderView;  //性别
+@property (weak, nonatomic) IBOutlet UIView     * interestView; //爱好
+
+//性别
+@property (weak, nonatomic) IBOutlet UILabel    * manLabel;
+@property (weak, nonatomic) IBOutlet UIButton   * manButton;
+@property (weak, nonatomic) IBOutlet UIButton   * selectManButton;
+
+@property (weak, nonatomic) IBOutlet UILabel    * wemanLabel;
+@property (weak, nonatomic) IBOutlet UIButton   * wemanButton;
+@property (weak, nonatomic) IBOutlet UIButton   * selectWemanButton;
 
 
 
@@ -49,6 +58,16 @@
         case MyInputTypeTextView:
             self.describeView.hidden = NO;
             break;
+        case MyInputTypeGender:
+        {
+            self.genderView.hidden = NO;
+            self.manLabel.text = @"男";
+            self.wemanLabel.text = @"女";
+        }
+            break;
+        case MyInputTypeInterest:
+            self.interestView.hidden = NO;
+            break;
         default:
             break;
     }
@@ -73,6 +92,19 @@
 }
 
 #pragma mark - ******* Action *******
+//选择性别
+- (IBAction)selectGender:(UIButton *)button{
+    
+    if (button == self.selectManButton || button == self.manButton) {
+        self.manButton.selected = YES;
+        self.wemanButton.selected = NO;
+        NSLog(@"选择男性");
+    }else{
+        self.manButton.selected = NO;
+        self.wemanButton.selected = YES;
+        NSLog(@"选择女性");
+    }
+}
 //返回
 - (IBAction)backButtonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -80,13 +112,37 @@
 
 //右上角确认
 - (IBAction)confirmButtonAction:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(inputResultString:inputType:)]) {
-        if (self.inputType == MyInputTypeTextField) {
+    
+    if (self.inputType == MyInputTypeTextField) {
+        if ([self.delegate respondsToSelector:@selector(inputResultString:inputType:)]) {
             [self.delegate inputResultString:self.textfield.text inputType:self.inputType];
-        }else if(self.inputType == MyInputTypeTextView){
+        }
+    }
+    
+    if(self.inputType == MyInputTypeTextView){
+        if ([self.delegate respondsToSelector:@selector(inputResultString:inputType:)]) {
             [self.delegate inputResultString:self.textView.text inputType:self.inputType];
         }
     }
+    
+    if (self.inputType == MyInputTypeGender) {
+        if ([self.delegate respondsToSelector:@selector(inputGenderSelectResult:)]) {
+            NSMutableDictionary * genderDic = [[NSMutableDictionary alloc] init];
+            if (self.manButton.selected) {
+                [genderDic setObject:@"男" forKey:@"value"];
+                [genderDic setObject:@"1" forKey:@"key"];
+            } else {
+                [genderDic setObject:@"女" forKey:@"value"];
+                [genderDic setObject:@"0" forKey:@"key"];
+            }
+            [self.delegate inputGenderSelectResult:genderDic];
+        }
+    }
+    
+    if (self.inputType == MyInputTypeInterest) {
+        
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

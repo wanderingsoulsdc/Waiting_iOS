@@ -12,8 +12,10 @@
 
 @optional
 - (void)inputResultString:(NSString *)string inputType:(MyInputType)type;
-
-- (void)inputSelectResult:(NSDictionary *)dic inputType:(MyInputType)type;
+//性别选择结果
+- (void)inputGenderSelectResult:(NSDictionary *)dic;
+//爱好选择结果
+- (void)inputHobbySelectResult:(NSDictionary *)dic;
 
 @end
 

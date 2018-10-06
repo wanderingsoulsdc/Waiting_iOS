@@ -53,7 +53,9 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self requestUserInfo];
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -77,7 +79,7 @@
 
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.headUrlStr] placeholderImage:[UIImage imageNamed:@"phone_default_head"]];
 
-    self.idLabel.text = self.idStr;
+    self.idLabel.text = [NSString stringWithFormat:@"ID : %@",self.idStr];
     self.userNameLabel.text = self.userNameStr;
     self.sexAgeLabel.text = [NSString stringWithFormat:@"%@ · %@",self.genderStr,self.ageStr];
     self.AccountMoneyLabel.text = self.diamond;
