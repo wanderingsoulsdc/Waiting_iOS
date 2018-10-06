@@ -13,6 +13,8 @@
             <connections>
                 <outlet property="describeView" destination="twf-T4-s2Z" id="heB-Pm-oLU"/>
                 <outlet property="genderView" destination="Wiu-jk-FHX" id="OYq-Kg-b8A"/>
+                <outlet property="interestTableView" destination="gaU-hJ-PXi" id="29w-n2-4zC"/>
+                <outlet property="interestTableViewBottomConstraint" destination="ElT-lE-Pjy" id="eO9-FK-mxL"/>
                 <outlet property="interestView" destination="KYc-RX-dbW" id="Bqm-E0-1y2"/>
                 <outlet property="manButton" destination="IGb-Xm-85m" id="v2y-8F-g2x"/>
                 <outlet property="manLabel" destination="igq-xf-wZP" id="26f-Ql-VgC"/>
@@ -266,7 +268,23 @@
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYc-RX-dbW" userLabel="interestView">
                     <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-hJ-PXi">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="knO-RU-ueh"/>
+                                <outlet property="delegate" destination="-1" id="i9H-Jg-x3x"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gaU-hJ-PXi" firstAttribute="top" secondItem="KYc-RX-dbW" secondAttribute="top" id="7Lc-e1-oko"/>
+                        <constraint firstAttribute="bottom" secondItem="gaU-hJ-PXi" secondAttribute="bottom" id="ElT-lE-Pjy"/>
+                        <constraint firstItem="gaU-hJ-PXi" firstAttribute="leading" secondItem="KYc-RX-dbW" secondAttribute="leading" id="boE-Ku-5G0"/>
+                        <constraint firstAttribute="trailing" secondItem="gaU-hJ-PXi" secondAttribute="trailing" id="dUP-e5-ufc"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -294,7 +312,7 @@
                 <constraint firstItem="4iA-VX-aQ2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sKN-Ju-ut9"/>
                 <constraint firstItem="mtS-Qq-rgO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="yHN-es-JL0"/>
             </constraints>
-            <point key="canvasLocation" x="77.599999999999994" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="364" y="-75"/>
         </view>
     </objects>
     <resources>

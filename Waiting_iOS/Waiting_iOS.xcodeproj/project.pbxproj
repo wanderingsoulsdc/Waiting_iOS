@@ -119,6 +119,8 @@
 		C124E40A2108198700DAD4A2 /* BHCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E4082108198700DAD4A2 /* BHCountDownView.m */; };
 		C124E40E21081D7600DAD4A2 /* LitePhoneMarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E40C21081D7600DAD4A2 /* LitePhoneMarkViewController.m */; };
 		C124E40F21081D7600DAD4A2 /* LitePhoneMarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124E40D21081D7600DAD4A2 /* LitePhoneMarkViewController.xib */; };
+		C1458BDD2168811C004CAD75 /* MyInterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1458BDB2168811C004CAD75 /* MyInterestCell.m */; };
+		C1458BDE2168811C004CAD75 /* MyInterestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1458BDC2168811C004CAD75 /* MyInterestCell.xib */; };
 		C14CCD302109D1C300D0AFD9 /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD2F2109D1C300D0AFD9 /* MyAnimatedAnnotationView.m */; };
 		C14CCD332109D2E200D0AFD9 /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD322109D2E200D0AFD9 /* MyAnnotationView.m */; };
 		C14CCD37210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD35210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m */; };
@@ -574,6 +576,9 @@
 		C124E40B21081D7600DAD4A2 /* LitePhoneMarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneMarkViewController.h; sourceTree = "<group>"; };
 		C124E40C21081D7600DAD4A2 /* LitePhoneMarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneMarkViewController.m; sourceTree = "<group>"; };
 		C124E40D21081D7600DAD4A2 /* LitePhoneMarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LitePhoneMarkViewController.xib; sourceTree = "<group>"; };
+		C1458BDA2168811C004CAD75 /* MyInterestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInterestCell.h; sourceTree = "<group>"; };
+		C1458BDB2168811C004CAD75 /* MyInterestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInterestCell.m; sourceTree = "<group>"; };
+		C1458BDC2168811C004CAD75 /* MyInterestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInterestCell.xib; sourceTree = "<group>"; };
 		C14CCD2E2109D1C300D0AFD9 /* MyAnimatedAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAnimatedAnnotationView.h; sourceTree = "<group>"; };
 		C14CCD2F2109D1C300D0AFD9 /* MyAnimatedAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAnimatedAnnotationView.m; sourceTree = "<group>"; };
 		C14CCD312109D2E200D0AFD9 /* MyAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
@@ -1471,6 +1476,7 @@
 		076688161EE50BD3007FE539 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C1458BD4216880BD004CAD75 /* MyView */,
 				C15C3A39213294D2008BBF38 /* MatchView */,
 				C15083282122F79100D18753 /* ChatListView */,
 				C1932FE720FF16CA00C8EE4E /* LiteADsView */,
@@ -1727,6 +1733,16 @@
 				C124E4082108198700DAD4A2 /* BHCountDownView.m */,
 			);
 			path = BHCountDownView;
+			sourceTree = "<group>";
+		};
+		C1458BD4216880BD004CAD75 /* MyView */ = {
+			isa = PBXGroup;
+			children = (
+				C1458BDA2168811C004CAD75 /* MyInterestCell.h */,
+				C1458BDB2168811C004CAD75 /* MyInterestCell.m */,
+				C1458BDC2168811C004CAD75 /* MyInterestCell.xib */,
+			);
+			path = MyView;
 			sourceTree = "<group>";
 		};
 		C14CCD2D2109D18800D0AFD9 /* MyAnnotationView */ = {
@@ -2862,6 +2878,7 @@
 				C1938F4C2152756200212FB3 /* video_chat_tip_sender.aac in Resources */,
 				C1590338210975F00027285A /* animation_20.png in Resources */,
 				C1590347210975F00027285A /* animation_14.png in Resources */,
+				C1458BDE2168811C004CAD75 /* MyInterestCell.xib in Resources */,
 				C159031C210975F00027285A /* animation_45.png in Resources */,
 				C150830E21226C4B00D18753 /* MyViewController.xib in Resources */,
 				C1590332210975F00027285A /* animation_25.png in Resources */,
@@ -3111,6 +3128,7 @@
 				0768E87E1F31CF1D00AB1D15 /* BHUserModel.m in Sources */,
 				C1FA39AF20DB2C080025E07F /* PGDatePicker+DateAndTime.m in Sources */,
 				C1FA39B420DB2C080025E07F /* PGDatePicker+DateHourMinuteSecond.m in Sources */,
+				C1458BDD2168811C004CAD75 /* MyInterestCell.m in Sources */,
 				C1938F5E2152756200212FB3 /* rgb.fsh.c in Sources */,
 				C109E8C3210F1BC2007569DC /* LiteADsMessageHistoryViewController.m in Sources */,
 				C1F7A5FD20E40862001D5A88 /* LiteAccountVersionInfoViewController.m in Sources */,

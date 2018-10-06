@@ -15,7 +15,7 @@
 //性别选择结果
 - (void)inputGenderSelectResult:(NSDictionary *)dic;
 //爱好选择结果
-- (void)inputHobbySelectResult:(NSDictionary *)dic;
+- (void)inputHobbySelectResult:(NSArray *)arr;
 
 @end
 
@@ -28,5 +28,6 @@
 
 @property (nonatomic , assign) id <MyInputViewControllerDelegate> delegate;
 
+@property (nonatomic , strong) NSArray * interestArr; //兴趣数组
 
 @end

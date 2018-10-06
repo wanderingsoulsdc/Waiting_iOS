@@ -18,6 +18,8 @@
 #import "NSArray+JSONString.h"
 #import "PGDatePickManager.h"
 #import "MyInputViewController.h"
+#import <TTGTagCollectionView/TTGTextTagCollectionView.h>
+
 
 typedef enum : NSUInteger {
     UploadImageTypeHead,
@@ -36,7 +38,11 @@ typedef enum : NSUInteger {
 @property (nonatomic , strong) NSString                 * userNameStr;  //用户名
 @property (nonatomic , strong) NSString                 * genderKey;    //性别(0 or 1)
 @property (nonatomic , strong) NSString                 * describeStr;  //个人简介
-@property (nonatomic , strong) NSMutableArray           * interestArr;  //兴趣爱好数组
+@property (nonatomic , strong) NSMutableArray           * interestArr;  //兴趣爱好数组(处理完的文字数组)
+@property (nonatomic , strong) NSMutableArray           * interestKeyArr;  //兴趣爱好key数组
+
+@property (nonatomic , strong) TTGTextTagCollectionView * tagView; //兴趣爱好标签视图
+@property (weak, nonatomic) IBOutlet UIView             * tagBackView;//兴趣爱好标签背景视图
 
 @property (nonatomic , strong) NSMutableArray           * allInterestArr;//所有的兴趣爱好数组
 
@@ -74,6 +80,45 @@ typedef enum : NSUInteger {
 - (void)createUI{
     self.topViewHeightConstraint.constant = kStatusBarAndNavigationBarHeight;
     self.scrollViewBottomConstraint.constant = SafeAreaBottomHeight;
+    [self createTagView];
+}
+
+- (void)createTagView{
+    _tagView = [TTGTextTagCollectionView new];
+    _tagView.enableTagSelection = NO;
+    _tagView.alignment = TTGTagCollectionAlignmentRight;
+    _tagView.translatesAutoresizingMaskIntoConstraints = NO;
+    _tagView.numberOfLines = 1;
+    //    _tagView.layer.borderColor = [UIColor grayColor].CGColor;
+    //    _tagView.layer.borderWidth = 1;
+    // Style1
+    TTGTextTagConfig *config = _tagView.defaultConfig;
+    
+    config.tagTextFont = [UIFont boldSystemFontOfSize:12.5f];
+    
+    config.tagTextColor = UIColorFromRGB(0x9014FC);
+    config.tagSelectedTextColor = [UIColor colorWithRed:83/255.0 green:148/255.0 blue:1 alpha:1.00];
+    
+    config.tagBackgroundColor = [UIColor clearColor];
+    config.tagSelectedBackgroundColor = [UIColor colorWithRed:0.97 green:0.64 blue:0.27 alpha:1.00];
+    
+    config.tagBorderColor = UIColorFromRGB(0x9014FC);
+    config.tagSelectedBorderColor = [UIColor colorWithRed:0.18 green:0.19 blue:0.22 alpha:1.00];
+    config.tagBorderWidth = 1;
+    config.tagSelectedBorderWidth = 0;
+    
+    config.tagShadowColor = [UIColor clearColor];
+    config.tagShadowOffset = CGSizeMake(0, 0.3);
+    config.tagShadowOpacity = 0;
+    config.tagShadowRadius = 0;
+    
+    config.tagCornerRadius = 4;
+    
+    [self.tagBackView addSubview:_tagView];
+    
+    [_tagView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.tagBackView);
+    }];
 }
 
 - (void)reloadUserInfo{
@@ -91,6 +136,13 @@ typedef enum : NSUInteger {
     [self.headButton sd_setImageWithURL:[NSURL URLWithString:self.headUrlStr] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"my_info_add"]];
     self.describeLabel.text = self.describeStr;
     
+    if (kArrayNotNull(self.interestArr)) {
+        [_tagView removeAllTags];
+        [_tagView addTags:self.interestArr];
+    }else{
+        [_tagView addTags:@[]];
+    }
+    [_tagView reload];
     
     [self sortDisplayOtherImage];
 }
@@ -133,6 +185,15 @@ typedef enum : NSUInteger {
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
+//点击兴趣爱好
+- (IBAction)interestButtonAction:(UIButton *)sender {
+    MyInputViewController * vc = [[MyInputViewController alloc] init];
+    vc.inputType = MyInputTypeInterest;
+    vc.titleStr = @"设置兴趣爱好";
+    vc.interestArr = self.allInterestArr;
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 //点击个人描述
 - (IBAction)describeAction:(UIButton *)sender {
     MyInputViewController * vc = [[MyInputViewController alloc] init];
@@ -164,6 +225,27 @@ typedef enum : NSUInteger {
     self.genderKey = [dic objectForKey:@"key"];
 }
 
+//爱好选择结果
+- (void)inputHobbySelectResult:(NSArray *)arr{
+    self.interestArr = [[self dealInterestArr:arr] mutableCopy];
+    if (kArrayNotNull(self.interestArr)) {
+        [_tagView removeAllTags];
+        [_tagView addTags:self.interestArr];
+    }else{
+        [_tagView addTags:@[]];
+    }
+    [_tagView reload];
+    
+    if (kArrayNotNull(arr)) {
+        for (NSDictionary * dic in arr) {
+            NSString  * keyStr = [dic objectForKey:@"key"];
+            [self.interestKeyArr addObject:keyStr];
+        }
+    } else {
+        self.interestKeyArr = [NSMutableArray new];
+    }
+}
+
 #pragma mark - ******* PGDatePicker Delegate *******
 
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
@@ -188,6 +270,8 @@ typedef enum : NSUInteger {
                                 NSDictionary *dataDic = object[@"data"][@"userInfo"];
                                 [BHUserModel sharedInstance].hobbyArray = [self dealInterestArr:[dataDic objectForKey:@"hobby"]];
                                 [weakSelf reloadUserInfo];
+                                
+                                weakSelf.allInterestArr = object[@"data"][@"userTags"];
                             }else{
                                 [ShowHUDTool showBriefAlert:NetResponseMessage];
                             }
@@ -205,12 +289,17 @@ typedef enum : NSUInteger {
         picArrStr = [self.picArr JsonString];
     }
     
+    NSString * interestKeyArrStr = @"";
+    if (kArrayNotNull(self.interestKeyArr)) {
+        interestKeyArrStr = [self.interestKeyArr JsonString];
+    }
+    
     NSDictionary * params = @{@"nickname":self.userNameStr,
                               @"birthday":self.birthdayStr,
                               @"photo":self.headUrlStr,
                               @"gender":self.genderKey,
                               @"remark":self.describeStr,
-                              @"hobby":@"[1,2]",
+                              @"hobby":interestKeyArrStr,
                               @"picArr":picArrStr,
                               };
 
@@ -546,6 +635,13 @@ typedef enum : NSUInteger {
         _picArr = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return _picArr;
+}
+
+- (NSMutableArray *)interestKeyArr{
+    if (!_interestKeyArr) {
+        _interestKeyArr = [[NSMutableArray alloc] initWithCapacity:0];
+    }
+    return _interestKeyArr;
 }
 
 - (PGDatePickManager *)datePickManager{

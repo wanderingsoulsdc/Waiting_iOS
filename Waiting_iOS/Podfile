@@ -23,6 +23,9 @@ target ‘Waiting_iOS’ do
   pod 'YYKit', '~> 1.0.9'
   pod 'SVProgressHUD'
   
+  #TTGTagCollectionView 标签视图
+  pod 'TTGTagCollectionView', '1.9.0'
+  
   #日志框架
   pod 'CocoaLumberjack', '~> 3.2.1'
 

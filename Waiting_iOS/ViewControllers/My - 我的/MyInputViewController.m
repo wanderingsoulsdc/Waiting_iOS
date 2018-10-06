@@ -7,6 +7,7 @@
 //
 
 #import "MyInputViewController.h"
+#import "MyInterestCell.h"
 
 @interface MyInputViewController ()
 
@@ -29,6 +30,10 @@
 @property (weak, nonatomic) IBOutlet UIButton   * wemanButton;
 @property (weak, nonatomic) IBOutlet UIButton   * selectWemanButton;
 
+//爱好
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * interestTableViewBottomConstraint; //爱好选择tableview距下约束
+@property (weak, nonatomic) IBOutlet UITableView * interestTableView;
+@property (nonatomic , strong) NSMutableArray   * interestSelectArr; //兴趣选择数组
 
 
 @end
@@ -46,6 +51,8 @@
 
 - (void)createUI{
     self.topViewHeightConstraint.constant = kStatusBarAndNavigationBarHeight;
+    self.interestTableViewBottomConstraint.constant = SafeAreaBottomHeight;
+    [self.interestTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MyInterestCell class]) bundle:nil] forCellReuseIdentifier:@"MyInterestCell"];
     
     if (kStringNotNull(self.titleStr)) {
         self.titleLabel.text = self.titleStr;
@@ -140,13 +147,80 @@
     }
     
     if (self.inputType == MyInputTypeInterest) {
-        
+        if ([self.delegate respondsToSelector:@selector(inputHobbySelectResult:)]) {
+            [self.delegate inputHobbySelectResult:self.interestSelectArr];
+        }
     }
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - textfieldDelegate
+#pragma mark - ******* UITableView Delegate *******
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.interestArr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"MyInterestCell";
+    MyInterestCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[NSBundle mainBundle] loadNibNamed:@"MyInterestCell" owner:nil options:nil].firstObject;
+        NSLog(@"cell create at row:%ld", (long)indexPath.row);//此处要使用loadnib方式！
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    NSDictionary * dic = self.interestArr[indexPath.row];
+    [cell configWithData:dic];
+    
+    if ([self.interestSelectArr containsObject:dic]) {
+        [cell cellBecomeSelected];
+    }else{ //选择该标签
+        [cell cellBecomeUnselected];
+    }
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60.0f;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0.01f;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.01f;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MyInterestCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSDictionary * dic = [self.interestArr objectAtIndex:indexPath.row];
+    
+    if ([self.interestSelectArr containsObject:dic]) { //删除选择
+        [cell cellBecomeUnselected];
+        //记录选择数组删除该标签
+        [self.interestSelectArr removeObject:dic];
+    }else{ //选择该标签
+        if (self.interestSelectArr.count < 3) {
+            [cell cellBecomeSelected];
+            [self.interestSelectArr addObject:dic];
+        }
+        //记录选择数组添加该标签
+    }
+    NSLog(@"点击了cell");
+}
+
+
+#pragma mark - ******* Textfield Delegate *******
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -186,6 +260,17 @@
         return NO;
     }
     return YES;
+}
+
+#pragma mark - ******* Getter *******
+
+- (NSMutableArray *)interestSelectArr
+{
+    if (!_interestSelectArr)
+    {
+        _interestSelectArr = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _interestSelectArr;
 }
 
 - (void)didReceiveMemoryWarning {

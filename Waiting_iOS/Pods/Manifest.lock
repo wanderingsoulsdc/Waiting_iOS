@@ -66,6 +66,7 @@ PODS:
   - SDWebImage/Core (4.2.2)
   - SVProgressHUD (2.2.5)
   - Toast (3.1.0)
+  - TTGTagCollectionView (1.9.0)
   - TZImagePickerController (1.9.8)
   - UMCAnalytics (5.5.1):
     - UMCCommon
@@ -97,6 +98,7 @@ DEPENDENCIES:
   - SAMKeychain (~> 1.5.3)
   - SDWebImage (= 4.2.2)
   - SVProgressHUD
+  - TTGTagCollectionView (= 1.9.0)
   - UMCAnalytics (~> 5.5.0)
   - UMCCommon (~> 1.5.2)
   - WechatOpenSDK
@@ -126,6 +128,7 @@ SPEC REPOS:
     - SDWebImage
     - SVProgressHUD
     - Toast
+    - TTGTagCollectionView
     - TZImagePickerController
     - UMCAnalytics
     - UMCCommon
@@ -155,12 +158,13 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+  TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
   TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
   UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
   WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f6f2a78cda491712c7c72b28cb7dd246ecbcea66
+PODFILE CHECKSUM: b514bcfa239b5734586be7f9f257f5749c2aa350
 
 COCOAPODS: 1.5.2
