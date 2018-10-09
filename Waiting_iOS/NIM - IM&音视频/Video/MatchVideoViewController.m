@@ -13,6 +13,9 @@
 #import "NTESBundleSetting.h"
 #import "NTESVideoChatNetStatusView.h"
 #import "LSLabel.h"
+#import "FSNetWorkManager.h"
+#import "BHUserModel.h"
+#import "MyRechargeViewController.h"
 
 #define NTESUseGLView
 
@@ -126,7 +129,8 @@
     self.headShallowBackView.layer.borderWidth = 1.0f;
     self.headShallowBackView.layer.borderColor = UIAlplaColorFromRGB(0xC10CFF, 0.99).CGColor;
     
-    self.headImageView.image = kGetImageFromName(@"login_bg");
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.userHeadImageUrl] placeholderImage:kGetImageFromName(@"phone_default_head")];
+    self.userNameLabel.text = self.userModel.userName;
     
     //网络状态
     [self.netStatusBackView addSubview:self.netStatusView];
@@ -266,7 +270,8 @@
     self.switchCameraButton.hidden = YES;
 
     //拿到发起者姓名
-    //    self.nameLabel.text = self.nickName;
+    self.userNameLabel.text = self.nickName;
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.headURLStr] placeholderImage:kGetImageFromName(@"phone_default_head")];
     
     //    NSString *nick = [NTESSessionUtil showNick:self.callInfo.caller inSession:nil];
     //    self.connectingLabel.text = [nick stringByAppendingString:@"的来电"];
@@ -469,6 +474,12 @@
     NSTimeInterval time = [NSDate date].timeIntervalSince1970;
     NSTimeInterval duration = time - self.callInfo.startTime;
     
+    if ([self.callInfo.callee isEqualToString:[BHUserModel sharedInstance].userID]) {
+        if ((int)duration%60 == 59) {
+            [self requestVideoFree];
+        }
+    }
+    
     return [NSString stringWithFormat:@"%02d:%02d",(int)duration/60,(int)duration%60];
 }
 
@@ -479,6 +490,47 @@
 //
 //    self.bigVideoView.image = [UIImage imageNamed:@"netcall_bkg"];
 //}
+
+#pragma mark - ******* Request *******
+//请求音视频通话预扣
+- (void)requestVideoFree{
+    WEAKSELF
+    NSDictionary * params = @{@"user1":self.callInfo.callee,/*主叫*/
+                              @"user2":self.callInfo.caller,/*被叫*/
+                              @"tvId":[NSString stringWithFormat:@"%llu",self.callInfo.callID],/*通话ID*/
+                              };
+    
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiGetVideoFree
+                        withParaments:params withSuccessBlock:^(NSDictionary *object) {
+                            NSLog(@"请求成功");
+                            
+                            if (NetResponseCheckStaus){
+                                NSArray *arr = object[@"data"][@"next"];
+                                if ([[arr firstObject] isEqualToString:@"0"]) {
+                                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[arr lastObject] preferredStyle:UIAlertControllerStyleAlert];
+                                    
+                                    UIAlertAction *button = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                                        
+                                    }];
+                                    [alert addAction:button];
+                                    
+                                    UIAlertAction *button2 = [UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                                        MyRechargeViewController *vc = [[MyRechargeViewController alloc] init];
+                                        [self.navigationController pushViewController:vc animated:YES];
+                                    }];
+                                    [alert addAction:button2];
+                                    
+                                    [weakSelf presentViewController:alert animated:YES completion:nil];
+                                }
+                            }else{
+                                [ShowHUDTool showBriefAlert:NetResponseMessage];
+                            }
+                        } withFailureBlock:^(NSError *error) {
+                            
+                            [ShowHUDTool showBriefAlert:NetRequestFailed];
+                        }];
+}
 
 #pragma mark - ******* Getter *******
 

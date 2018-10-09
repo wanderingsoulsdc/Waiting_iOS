@@ -2250,12 +2250,12 @@
 				C1938EF92152756100212FB3 /* NTESClientUtil.m */,
 				C1938EFA2152756100212FB3 /* NTESTimerHolder.h */,
 				C1938EFB2152756100212FB3 /* NTESBundleSetting.h */,
-				C1938EFC2152756100212FB3 /* NTESNotificationCenter.m */,
 				C1938EFD2152756100212FB3 /* NTESService.m */,
 				C1938EFE2152756100212FB3 /* NTESClientUtil.h */,
 				C1938EFF2152756100212FB3 /* NTESBundleSetting.m */,
 				C1938F002152756100212FB3 /* NTESTimerHolder.m */,
 				C1938F012152756100212FB3 /* NTESNotificationCenter.h */,
+				C1938EFC2152756100212FB3 /* NTESNotificationCenter.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";

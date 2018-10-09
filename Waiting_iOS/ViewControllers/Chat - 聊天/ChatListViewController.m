@@ -7,6 +7,7 @@
 //
 
 #import "ChatListViewController.h"
+#import "ChatViewController.h"
 
 @interface ChatListViewController ()
 
@@ -19,8 +20,13 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)refresh{
-    [super refresh];
+#pragma mark - Override
+- (void)onSelectedAvatar:(NSString *)userId
+             atIndexPath:(NSIndexPath *)indexPath{};
+
+- (void)onSelectedRecent:(NIMRecentSession *)recentSession atIndexPath:(NSIndexPath *)indexPath{
+    ChatViewController *vc = [[ChatViewController alloc] initWithSession:recentSession.session];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /*

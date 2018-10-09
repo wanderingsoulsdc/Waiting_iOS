@@ -17,6 +17,7 @@
 #import <Photos/Photos.h>
 #import "UIView+NTES.h"
 #import "YYKit.h"
+#import "BHUserModel.h"
 
 //十秒之后如果还是没有收到对方响应的control字段，则自己发起一个假的control，用来激活铃声并自己先进入房间
 #define DelaySelfStartControlTime 10
@@ -200,10 +201,17 @@ NTES_FORBID_INTERACTIVE_POP
     NIMNetCallOption *option = [[NIMNetCallOption alloc] init];
     
     //传昵称和头像(自己增加的扩展)
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    NSString* headStr= [defaults valueForKey:@"headImgUrl"];
-    NSString* nickName = [defaults valueForKey:@"nickName"];
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+//    NSString* headStr= [defaults valueForKey:@"headImgUrl"];
+//    NSString* nickName = [defaults valueForKey:@"nickName"];
+//    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+//    [dic setValue:headStr forKey:@"headImg"];
+//    [dic setValue:nickName forKey:@"nickName"];
+//    NSString* str = [dic modelToJSONString];
+
+    NSString * headStr= [BHUserModel sharedInstance].userHeadImageUrl;
+    NSString * nickName = [BHUserModel sharedInstance].userName;
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setValue:headStr forKey:@"headImg"];
     [dic setValue:nickName forKey:@"nickName"];
     NSString* str = [dic modelToJSONString];

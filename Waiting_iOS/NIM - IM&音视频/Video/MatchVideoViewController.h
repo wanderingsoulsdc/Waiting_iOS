@@ -7,12 +7,15 @@
 //
 
 #import "NTESNetChatViewController.h"
+#import "BHUserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class NetCallChatInfo;
 @class NTESVideoChatNetStatusView;
 
 @interface MatchVideoViewController : NTESNetChatViewController
+
+@property (nonatomic , strong) BHUserModel * userModel;
 
 @end
 

@@ -35,7 +35,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>litetreasure</string>
+				<string>Waiting</string>
 			</array>
 		</dict>
 		<dict>
@@ -43,7 +43,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb2193106177615371</string>
+				<string>fb720988484902863</string>
 			</array>
 		</dict>
 	</array>

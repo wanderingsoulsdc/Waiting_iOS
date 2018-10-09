@@ -7,6 +7,8 @@
 //
 
 #import "MySetViewController.h"
+#import "FSNetWorkManager.h"
+#import "BHUserModel.h"
 
 @interface MySetViewController ()
 
@@ -54,7 +56,10 @@
 }
 //退出登录
 - (IBAction)logoutAction:(UIButton *)sender {
-    
+    [FSNetWorkManager clearCookies];
+    [BHUserModel cleanupCache];
+    [[NIMSDK sharedSDK].loginManager logout:nil];
+    [[FSLaunchManager sharedInstance]launchWindowWithType:LaunchWindowTypeLogin];
 }
 - (IBAction)backAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];

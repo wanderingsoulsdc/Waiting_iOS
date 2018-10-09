@@ -60,6 +60,9 @@
 
 #define kApiMainGetUserList             kApiVersionPort @"index/getMemberList" /* 获取首页用户列表 */
 
+#pragma mark - ******* 音视频通话 *******
+
+#define kApiGetVideoFree                kApiVersionPort @"talk/videoFee"        /* 音视频通话预扣 */
 
 
 #pragma mark - 发票

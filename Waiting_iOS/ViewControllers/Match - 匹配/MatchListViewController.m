@@ -74,7 +74,7 @@
 #pragma mark - ******* Action *******
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {
-    NIMSession *session = [NIMSession session:NIMCount2 type:NIMSessionTypeP2P];
+    NIMSession *session = [NIMSession session:self.currentModel.userID type:NIMSessionTypeP2P];
     ChatViewController *vc = [[ChatViewController alloc] initWithSession:session];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -87,7 +87,8 @@
 //    vc.headURLStr = @"suibiansuibian";
 //
 //    [self presentViewController:vc animated:YES completion:nil];
-    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:NIMCount2];
+    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
+    vc.userModel = self.currentModel;
     [self presentViewController:vc animated:YES completion:nil];
 }
 
@@ -99,13 +100,14 @@
 //    vc.nickName = @"被叫宝宝";
 //    vc.headURLStr = @"suibiansuibian";
 //    [self presentViewController:vc animated:YES completion:nil];
-    MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:NIMCount2];
+    MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
+    vc.userModel = self.currentModel;
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - ******* Request *******
 
-//请求通话历史
+//请求首页数据
 - (void)requestMatchCardList
 {
     WEAKSELF
@@ -126,7 +128,7 @@
                                  for (NSDictionary * dict in array)
                                  {
                                      BHUserModel * model = [[BHUserModel alloc] init];
-                                     model.userID = [dict stringValueForKey:@"id" default:@""];
+                                     model.userID = [dict stringValueForKey:@"uid" default:@""];
                                      model.userName = [dict stringValueForKey:@"nickname" default:@""];
                                      model.gender = [dict stringValueForKey:@"gender" default:@""];
                                      model.age = [dict stringValueForKey:@"age" default:@""];

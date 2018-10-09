@@ -27,8 +27,6 @@ NSString * const kUserCacheKey = @"kUserCacheKey";
     [aCoder encodeObject:self.userID forKey:@"userID"];
     [aCoder encodeObject:self.token forKey:@"token"];
     [aCoder encodeObject:self.agreementUpdate forKey:@"agreementUpdate"];
-    [aCoder encodeInteger:self.treasureCount forKey:@"treasureCount"];
-    [aCoder encodeObject:self.isSubAccount forKey:@"isSubAccount"];
 }
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
@@ -39,8 +37,6 @@ NSString * const kUserCacheKey = @"kUserCacheKey";
         self.userID             = [aDecoder decodeObjectForKey:@"userID"];
         self.token              = [aDecoder decodeObjectForKey:@"token"];
         self.agreementUpdate    = [aDecoder decodeObjectForKey:@"agreementUpdate"];
-        self.treasureCount      = [aDecoder decodeIntegerForKey:@"treasureCount"];
-        self.isSubAccount       = [aDecoder decodeObjectForKey:@"isSubAccount"];
     }
     return self;
 }
@@ -92,8 +88,9 @@ static id user;
 
 }
 
-- (void)analysisUserInfoWithToken:(NSString *)token{
+- (void)analysisUserInfoWithToken:(NSString *)token Uid:(NSString *)uid{
     [BHUserModel sharedInstance].token  = token;
+    [BHUserModel sharedInstance].userID = uid;
     [[BHUserModel sharedInstance] saveToDisk];
 }
 

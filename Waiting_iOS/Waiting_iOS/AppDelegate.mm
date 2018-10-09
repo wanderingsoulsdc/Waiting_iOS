@@ -138,24 +138,19 @@
 //    option.pkCername        = @"your pushkit cer name";
     [[NIMSDK sharedSDK] registerWithOption:option];
     
-    //手动登录
-//    [[[NIMSDK sharedSDK]loginManager]login:NIMCount1 token:NIMPassword1 completion:^(NSError * _Nullable error) {
-//        if (!error) {
-//            NSLog(@"NIMCount1 登陆成功");
-//        }else{
-//            NSLog(@"%@",error);
-//        }
-//    }];
-    
-    NIMAutoLoginData * autoData = [[NIMAutoLoginData alloc] init];
-    autoData.account = NIMCount1;
-    autoData.token = NIMPassword1;
-    autoData.forcedMode = YES;
-    
-    [[[NIMSDK sharedSDK] loginManager] autoLogin:autoData];
+    //手动登录在登录接口
     
     //注册通知,用来通知被叫响应
     [[NTESNotificationCenter sharedCenter] start];
+}
+//自动登录NIM
+- (void)autoLoginNIM{
+    NIMAutoLoginData * autoData = [[NIMAutoLoginData alloc] init];
+    autoData.account = [BHUserModel sharedInstance].userID;
+    autoData.token = [BHUserModel sharedInstance].token;
+    autoData.forcedMode = YES;
+    
+    [[[NIMSDK sharedSDK] loginManager] autoLogin:autoData];
 }
 
 #pragma mark -
@@ -224,6 +219,7 @@
     {
         NSLog(@"自动登录成功");
         [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
+        [self autoLoginNIM];
     }
     else
     {
@@ -231,6 +227,7 @@
         // 清除登录数据
         [FSNetWorkManager clearCookies];
         [BHUserModel cleanupCache];
+        [[NIMSDK sharedSDK].loginManager logout:nil];
         [[FSLaunchManager sharedInstance]launchWindowWithType:LaunchWindowTypeLogin];
     }
 }

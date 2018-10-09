@@ -27,8 +27,8 @@
 #define kTwitterRedirectUri @"https://waitfy.net" //twitter的redirectUri
 
 //Facebook
-#define kFacebookApiKey       @"2193106177615371"   //Facebook的ApiKey
-#define kFacebookSecretKey    @"822214cbfe7b2de89195ebb4ba421b71"//Facebook的ApiSecretKey
+#define kFacebookApiKey       @"720988484902863"   //Facebook的ApiKey
+#define kFacebookSecretKey    @"b51df8bab9579b1772186723d60fa6a9"//Facebook的ApiSecretKey
 #define kFacebookDisplayName  @"Waiting" //Facebook的redirectUri
 
 //网易云信的key (换成自己的key,具体去官网看注册app后会有)

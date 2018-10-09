@@ -45,9 +45,9 @@
     [self addSubview:_backView];
     
     [self.backView addSubview:self.mainImageView];
+    [self.backView addSubview:self.overlayImageView];
     [self.backView addSubview:self.userNameLabel];
     [self.backView addSubview:self.ageAndGenderLabel];
-    [self.backView addSubview:self.overlayImageView];
 
     [self.backView addSubview:self.photoNumView];
     [self.photoNumView addSubview:self.photoNumImageView];

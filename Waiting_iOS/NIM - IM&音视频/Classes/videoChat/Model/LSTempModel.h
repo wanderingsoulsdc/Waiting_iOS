@@ -11,7 +11,7 @@
 @interface LSTempModel : NSObject
 
 //拨音视频传递信息模型
-@property(nonatomic,copy)NSString* headImg;
-@property(nonatomic,copy)NSString* nickName;
+@property(nonatomic,copy)NSString * headImg;
+@property(nonatomic,copy)NSString * nickName;
 
 @end
