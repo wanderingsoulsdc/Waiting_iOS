@@ -24,6 +24,8 @@
 @property(nonatomic, strong) UIImageView    * photoNumImageView;
 @property(nonatomic, strong) UILabel        * photoNumLabel;
 
+@property(nonatomic, strong) UIButton        * cardButton;
+
 @end
 
 @implementation MatchCardCell
@@ -53,6 +55,7 @@
     [self.photoNumView addSubview:self.photoNumImageView];
     [self.photoNumView addSubview:self.photoNumLabel];
     
+    [self.backView addSubview:self.cardButton];
 }
 
 - (void)layoutSubviewsUI
@@ -97,6 +100,10 @@
         make.left.equalTo(self.photoNumImageView.mas_right);
         make.top.bottom.right.equalTo(self.photoNumView);
     }];
+    
+    [self.cardButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.backView);
+    }];
 }
 
 - (void)configWithData:(BHUserModel *)model{
@@ -105,10 +112,16 @@
     
     self.photoNumLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[model.photoArray count]];
     self.userNameLabel.text = model.userName;
-    self.ageAndGenderLabel.text = [NSString stringWithFormat:@"%@·%@岁",[model.gender intValue] == 0 ? @"女":@"男",model.age];
+    self.ageAndGenderLabel.text = [NSString stringWithFormat:@"%@ · %@",model.gender_txt,model.age];
     [self.mainImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadImageUrl] placeholderImage:[UIImage imageNamed:@"login_register_success"]];
 }
 #pragma mark - action
+
+- (void)cardButtonAction:(UIButton *)button{
+    if ([self.delegate respondsToSelector:@selector(CardCellButtonActionWithModel:)]) {
+        [self.delegate CardCellButtonActionWithModel:_model];
+    }
+}
 
 #pragma mark - getter
 
@@ -178,5 +191,14 @@
         _ageAndGenderLabel.textColor = UIColorWhite;
     }
     return _ageAndGenderLabel;
+}
+
+- (UIButton *)cardButton{
+    if (!_cardButton) {
+        _cardButton = [[UIButton alloc] init];
+        _cardButton.backgroundColor = [UIColor clearColor];
+        [_cardButton addTarget:self action:@selector(cardButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _cardButton;
 }
 @end

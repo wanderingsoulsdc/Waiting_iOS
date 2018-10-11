@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BHUserModel.h"
 
 @protocol MatchCardDelegate <NSObject>
 
 @optional
 //当前展示的item是第几个
 - (void)CardsViewCurrentItem:(NSInteger)index;
+//点击事件传递
+- (void)CardsViewActionWithModel:(BHUserModel *)model;
 
 @end
 

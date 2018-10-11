@@ -113,6 +113,8 @@
 		C113B260211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C113B25F211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m */; };
 		C113B2642111609800C6BFAB /* LiteMessageSendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C113B2632111609800C6BFAB /* LiteMessageSendDetailCell.m */; };
 		C116F2E120E38C3F000E7A29 /* LiteDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C116F2E020E38C3F000E7A29 /* LiteDeviceModel.m */; };
+		C11E4890216D911D00E7A858 /* MatchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E488E216D911D00E7A858 /* MatchDetailViewController.m */; };
+		C11E4891216D911D00E7A858 /* MatchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C11E488F216D911D00E7A858 /* MatchDetailViewController.xib */; };
 		C124E4002107051E00DAD4A2 /* LitePhoneDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E3FE2107051E00DAD4A2 /* LitePhoneDetailCell.m */; };
 		C124E4012107051E00DAD4A2 /* LitePhoneDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124E3FF2107051E00DAD4A2 /* LitePhoneDetailCell.xib */; };
 		C124E404210721A700DAD4A2 /* BHPhoneUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E402210721A600DAD4A2 /* BHPhoneUserInfoViewController.m */; };
@@ -566,6 +568,9 @@
 		C113B2632111609800C6BFAB /* LiteMessageSendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteMessageSendDetailCell.m; sourceTree = "<group>"; };
 		C116F2DF20E38C3F000E7A29 /* LiteDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceModel.h; sourceTree = "<group>"; };
 		C116F2E020E38C3F000E7A29 /* LiteDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceModel.m; sourceTree = "<group>"; };
+		C11E488D216D911D00E7A858 /* MatchDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchDetailViewController.h; sourceTree = "<group>"; };
+		C11E488E216D911D00E7A858 /* MatchDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchDetailViewController.m; sourceTree = "<group>"; };
+		C11E488F216D911D00E7A858 /* MatchDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchDetailViewController.xib; sourceTree = "<group>"; };
 		C124E3FD2107051E00DAD4A2 /* LitePhoneDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneDetailCell.h; sourceTree = "<group>"; };
 		C124E3FE2107051E00DAD4A2 /* LitePhoneDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneDetailCell.m; sourceTree = "<group>"; };
 		C124E3FF2107051E00DAD4A2 /* LitePhoneDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LitePhoneDetailCell.xib; sourceTree = "<group>"; };
@@ -1762,6 +1767,9 @@
 				C150831421226C6A00D18753 /* MatchListViewController.h */,
 				C150831521226C6A00D18753 /* MatchListViewController.m */,
 				C150831621226C6A00D18753 /* MatchListViewController.xib */,
+				C11E488D216D911D00E7A858 /* MatchDetailViewController.h */,
+				C11E488E216D911D00E7A858 /* MatchDetailViewController.m */,
+				C11E488F216D911D00E7A858 /* MatchDetailViewController.xib */,
 			);
 			path = "Match - 匹配";
 			sourceTree = "<group>";
@@ -2813,6 +2821,7 @@
 				C1590339210975F00027285A /* animation_21.png in Resources */,
 				C1590326210975F00027285A /* animation_43.png in Resources */,
 				C159031E210975F00027285A /* animation_50.png in Resources */,
+				C11E4891216D911D00E7A858 /* MatchDetailViewController.xib in Resources */,
 				C1590354210975F00027285A /* animation_49.png in Resources */,
 				C159034B210975F00027285A /* animation_0.png in Resources */,
 				C159031D210975F00027285A /* animation_51.png in Resources */,
@@ -3042,6 +3051,7 @@
 				C1130E942157A875008A446E /* MatchVideoViewController.m in Sources */,
 				C150830D21226C4B00D18753 /* MyViewController.m in Sources */,
 				C1FA399C20DB2C070025E07F /* PGDatePicker+Date.m in Sources */,
+				C11E4890216D911D00E7A858 /* MatchDetailViewController.m in Sources */,
 				C1938F512152756200212FB3 /* LSTempModel.m in Sources */,
 				07215B841FD0302C000E16DA /* FSTools.m in Sources */,
 				076688201EE50BD3007FE539 /* UIViewController+NavigationItem.m in Sources */,

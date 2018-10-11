@@ -62,6 +62,7 @@
 
 #pragma mark - ******* 音视频通话 *******
 
+#define kApiGetVideoInit                kApiVersionPort @"talk/video"           /* 音视频通话建立会话判断 */
 #define kApiGetVideoFree                kApiVersionPort @"talk/videoFee"        /* 音视频通话预扣 */
 
 

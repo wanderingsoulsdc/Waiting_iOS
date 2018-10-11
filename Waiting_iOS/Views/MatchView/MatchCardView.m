@@ -15,7 +15,7 @@ CGFloat const MatchCardHorizontalMargin = 15.0;
 
 CGFloat const MatchCardItemMargin = 7.0;
 
-@interface MatchCardView ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MatchCardView ()<UICollectionViewDataSource, UICollectionViewDelegate,MatchCardCellDelegate>
 {
     NSInteger currentIndex;
 }
@@ -157,6 +157,12 @@ CGFloat const MatchCardItemMargin = 7.0;
 }
 #pragma mark - common delegate
 
+- (void)CardCellButtonActionWithModel:(BHUserModel *)model{
+    if ([self.delegate respondsToSelector:@selector(CardsViewActionWithModel:)]) {
+        [self.delegate CardsViewActionWithModel:model];
+    }
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -176,10 +182,10 @@ CGFloat const MatchCardItemMargin = 7.0;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     MatchCardCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:MatchCardCellIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
     BHUserModel *model = _dataArr[indexPath.item];
     [cell configWithData:model];
     return cell;
-    
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

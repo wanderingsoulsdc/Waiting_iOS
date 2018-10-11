@@ -209,7 +209,7 @@ NTES_FORBID_INTERACTIVE_POP
 //    [dic setValue:nickName forKey:@"nickName"];
 //    NSString* str = [dic modelToJSONString];
 
-    NSString * headStr= [BHUserModel sharedInstance].userHeadImageUrl;
+    NSString * headStr = [BHUserModel sharedInstance].userHeadImageUrl;
     NSString * nickName = [BHUserModel sharedInstance].userName;
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setValue:headStr forKey:@"headImg"];

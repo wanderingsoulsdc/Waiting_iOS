@@ -43,7 +43,7 @@
 
 - (void)createUI{
     self.topViewTopConstraint.constant = kStatusBarHeight;
-    self.logoutButtonBottomConstraint.constant = SafeAreaBottomHeight;
+    self.logoutButtonBottomConstraint.constant = SafeAreaBottomHeight + 60;
     
     self.logoutButton.layer.borderWidth = 1;
     self.logoutButton.layer.borderColor = UIColorFromRGB(0x9014FC).CGColor;

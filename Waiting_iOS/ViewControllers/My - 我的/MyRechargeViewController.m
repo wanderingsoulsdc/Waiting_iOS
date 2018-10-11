@@ -12,6 +12,11 @@
 #import <StoreKit/StoreKit.h>
 #import "BHUserModel.h"
 
+typedef enum : NSUInteger {
+    RechargeTypeSandbox, //沙盒
+    RechargeTypeRelease, //线上
+} RechargeType;
+
 @interface MyRechargeViewController ()<SKPaymentTransactionObserver,SKProductsRequestDelegate>
 
 @property (weak , nonatomic) IBOutlet NSLayoutConstraint * topViewTopConstraint; //顶部视图 距上约束
@@ -33,6 +38,7 @@
 
 @property (nonatomic , strong) NSArray  * chargeDataArr;
 
+@property (nonatomic , assign) RechargeType  rechargeType;
 
 @end
 
@@ -268,11 +274,11 @@
     NSLog(@"_____%@",sendString);
     NSURL *StoreURL=nil;
     if ([environment isEqualToString:@"environment=Sandbox"]) {
-        
+        self.rechargeType = RechargeTypeSandbox;
         StoreURL= [[NSURL alloc] initWithString: @"https://sandbox.itunes.apple.com/verifyReceipt"];
     }
     else{
-        
+        self.rechargeType = RechargeTypeRelease;
         StoreURL= [[NSURL alloc] initWithString: @"https://buy.itunes.apple.com/verifyReceipt"];
     }
     //这个二进制数据由服务器进行验证；zl
@@ -315,7 +321,7 @@
     //此方法为将这一次操作上传给我本地服务器,记得在上传成功过后一定要记得销毁本次操作。
     //调用[[SKPaymentQueue defaultQueue] finishTransaction: transaction];
     
-    [self getApplePayDataToServerRequsetWith:transaction];
+    [self getApplePayDataToServerRequsetWith:transaction RechargeType:self.rechargeType];
 }
 
 -(NSString * )environmentForReceipt:(NSString * )str
@@ -362,7 +368,7 @@
 }
 
 //与服务器做充值校验,成功刷新钻石
-- (void)getApplePayDataToServerRequsetWith:(SKPaymentTransaction *)transaction{
+- (void)getApplePayDataToServerRequsetWith:(SKPaymentTransaction *)transaction RechargeType:(RechargeType)rechargeType{
     
 //    //初始化为合法
 //    if (transaction.payment.productIdentifier !=nil) {
@@ -440,7 +446,8 @@
                               @"state":[NSString stringWithFormat:@"%ld",transaction.transactionState],
                               @"transaction":transaction.transactionIdentifier,
                               @"receipt":receiptStr,
-                              @"payment":@"apple"
+                              @"payment":@"apple",
+                              @"sandbox":rechargeType == RechargeTypeRelease ? @"0":@"1"
                               };
     [FSNetWorkManager requestWithType:HttpRequestTypePost
                         withUrlString:kApiAccountDoRecharge

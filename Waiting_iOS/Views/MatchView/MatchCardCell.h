@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "BHUserModel.h"
 
+@protocol MatchCardCellDelegate <NSObject>
+
+- (void)CardCellButtonActionWithModel:(BHUserModel *)model;
+
+@end
+
 @interface MatchCardCell : UICollectionViewCell
+
+@property(nonatomic , assign) id <MatchCardCellDelegate> delegate;
 
 - (void)configWithData:(BHUserModel *)model;
 

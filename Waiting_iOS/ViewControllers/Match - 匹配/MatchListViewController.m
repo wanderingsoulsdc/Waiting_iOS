@@ -15,8 +15,15 @@
 #import "MatchVoiceViewController.h"
 #import "MatchVideoViewController.h"
 #import "ChatViewController.h"
+#import "MatchDetailViewController.h"
+#import "MyRechargeViewController.h"
 
-@interface MatchListViewController ()<MatchCardDelegate>
+typedef enum : NSUInteger {
+    requestTypeVoice,
+    requestTypeVideo,
+} requestType;
+
+@interface MatchListViewController ()<MatchCardDelegate,CAAnimationDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView * noDataView;    //无数据页面
 @property (weak, nonatomic) IBOutlet UIView * backView;      //有数据背景视图
@@ -71,6 +78,22 @@
     NSLog(@"userid = %@",self.currentModel.userID);
 }
 
+- (void)CardsViewActionWithModel:(BHUserModel *)model{
+    MatchDetailViewController * vc = [[MatchDetailViewController alloc] init];
+    vc.userModel = model;
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.4f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromTop;
+    transition.delegate = self;
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:vc animated:NO];
+    
+    //push实现模态效果,注意：animated一定要设置为：NO
+}
+
 #pragma mark - ******* Action *******
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {
@@ -87,9 +110,8 @@
 //    vc.headURLStr = @"suibiansuibian";
 //
 //    [self presentViewController:vc animated:YES completion:nil];
-    MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
-    vc.userModel = self.currentModel;
-    [self presentViewController:vc animated:YES completion:nil];
+    
+    [self requestVideoInit:requestTypeVoice];
 }
 
 //视频
@@ -100,9 +122,7 @@
 //    vc.nickName = @"被叫宝宝";
 //    vc.headURLStr = @"suibiansuibian";
 //    [self presentViewController:vc animated:YES completion:nil];
-    MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
-    vc.userModel = self.currentModel;
-    [self presentViewController:vc animated:YES completion:nil];
+    [self requestVideoInit:requestTypeVideo];
 }
 
 #pragma mark - ******* Request *******
@@ -111,7 +131,7 @@
 - (void)requestMatchCardList
 {
     WEAKSELF
-    [FSNetWorkManager requestWithType:HttpRequestTypeGet
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
                         withUrlString:kApiMainGetUserList
                         withParaments:@{@"limit":@"50",@"p":@"1"}
                      withSuccessBlock:^(NSDictionary *object) {
@@ -131,10 +151,12 @@
                                      model.userID = [dict stringValueForKey:@"uid" default:@""];
                                      model.userName = [dict stringValueForKey:@"nickname" default:@""];
                                      model.gender = [dict stringValueForKey:@"gender" default:@""];
+                                     model.gender_txt = [dict stringValueForKey:@"gender_txt" default:@""];
                                      model.age = [dict stringValueForKey:@"age" default:@""];
                                      model.photoArray = [dict objectForKey:@"pic"];
                                      model.userHeadImageUrl = [dict objectForKey:@"photo"];
-
+                                     model.remark = [dict stringValueForKey:@"remark" default:@""];
+                                     model.hobbyArray = [dict objectForKey:@"hobby"];
                                      [tempArr addObject:model];
                                  }
                                  
@@ -159,6 +181,64 @@
                          [ShowHUDTool showBriefAlert:NetRequestFailed];
                          weakSelf.backView.hidden = YES;
                          weakSelf.noDataView.hidden = NO;
+                     }];
+}
+
+//音视频建立会话
+- (void)requestVideoInit:(requestType)type
+{
+    WEAKSELF
+    //会话类型，1音频，2视频
+    NSString *typeStr = @"";
+    if (type == requestTypeVoice) {
+        typeStr = @"1";
+    } else if (type == requestTypeVideo) {
+        typeStr = @"2";
+    }
+    NSDictionary *params = @{@"type":typeStr,
+                             @"user1":[BHUserModel sharedInstance].userID,   //主叫
+                             @"user2":self.currentModel.userID      //被叫
+                             };
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiGetVideoInit
+                        withParaments:params
+                     withSuccessBlock:^(NSDictionary *object) {
+                         
+                         if (NetResponseCheckStaus)
+                         {
+                             NSLog(@"请求成功");
+                             NSDictionary *dataDic = object[@"data"];
+                             
+                             NSString *isFee = [dataDic stringValueForKey:@"isFee" default:@""];
+                             
+                             if ([isFee isEqualToString:@"1"]) { //余额足够开启对话
+                                 if (type == requestTypeVoice) { //音频
+                                     MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
+                                     vc.userModel = self.currentModel;
+                                     [weakSelf presentViewController:vc animated:YES completion:nil];
+                                 } else if (type == requestTypeVideo){ //视频
+                                     MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
+                                     vc.userModel = self.currentModel;
+                                     [weakSelf presentViewController:vc animated:YES completion:nil];
+                                 }
+                             } else if ([isFee isEqualToString:@"0"]){ //余额不足以开启对话
+                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
+                                 [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 }]];
+                                 [alertController addAction:[UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
+                                     [self.navigationController pushViewController:chargeVC animated:YES];
+                                 }]];
+                                 [self presentViewController:alertController animated:YES completion:nil];
+                             }
+                         }
+                         else
+                         {
+                             [ShowHUDTool showBriefAlert:NetResponseMessage];
+                         }
+                     } withFailureBlock:^(NSError *error) {
+                         NSLog(@"error is:%@", error);
+                         [ShowHUDTool showBriefAlert:NetRequestFailed];
                      }];
 }
 

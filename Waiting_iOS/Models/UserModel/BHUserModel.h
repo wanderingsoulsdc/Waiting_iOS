@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString * userID;              //Id
 @property (nonatomic, copy) NSString * userName;            //用户名
 @property (nonatomic, copy) NSString * userHeadImageUrl;    //头像(主)
-@property (nonatomic, copy) NSString * age;                 //年龄
+@property (nonatomic, copy) NSString * age;                 //年龄 0女，1男
 @property (nonatomic, copy) NSString * gender;              //性别
 @property (nonatomic, copy) NSString * gender_txt;          //性别描述文字
 @property (nonatomic, copy) NSString * remark;              //个人简介
