@@ -209,19 +209,46 @@ typedef enum : NSUInteger {
                              NSLog(@"请求成功");
                              NSDictionary *dataDic = object[@"data"];
                              
-                             NSString *isFee = [dataDic stringValueForKey:@"isFee" default:@""];
-                             
-                             if ([isFee isEqualToString:@"1"]) { //余额足够开启对话
-                                 if (type == requestTypeVoice) { //音频
-                                     MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
-                                     vc.userModel = self.currentModel;
-                                     [weakSelf presentViewController:vc animated:YES completion:nil];
-                                 } else if (type == requestTypeVideo){ //视频
-                                     MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
-                                     vc.userModel = self.currentModel;
-                                     [weakSelf presentViewController:vc animated:YES completion:nil];
+                             NSString *status = [dataDic stringValueForKey:@"status" default:@""];
+                             NSString *tvId = [dataDic stringValueForKey:@"tvId" default:@""];
+
+                             if ([status isEqualToString:@"1"]) { //余额足够开启对话
+
+                                 NSDictionary *nextDic = dataDic[@"next"];
+                                 NSString *nextStatus = [nextDic stringValueForKey:@"status" default:@""];
+
+                                 if ([nextStatus isEqualToString:@"1"]) {//余额足够开启下一分钟对话
+                                     if (type == requestTypeVoice) { //音频
+                                         MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
+                                         vc.userModel = self.currentModel;
+                                         vc.tvId = tvId;
+                                         [weakSelf presentViewController:vc animated:YES completion:nil];
+                                     } else if (type == requestTypeVideo){ //视频
+                                         MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
+                                         vc.userModel = self.currentModel;
+                                         vc.tvId = tvId;
+                                         [weakSelf presentViewController:vc animated:YES completion:nil];
+                                     }
+                                 }else if ([nextStatus isEqualToString:@"0"]){//余额不足以开启下一分钟对话
+                                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"当前余额仅能通话1分钟,是否确定开启通话?" preferredStyle:UIAlertControllerStyleAlert];
+                                     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     }]];
+                                     [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                         if (type == requestTypeVoice) { //音频
+                                             MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
+                                             vc.userModel = self.currentModel;
+                                             vc.tvId = tvId;
+                                             [weakSelf presentViewController:vc animated:YES completion:nil];
+                                         } else if (type == requestTypeVideo){ //视频
+                                             MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
+                                             vc.userModel = self.currentModel;
+                                             vc.tvId = tvId;
+                                             [weakSelf presentViewController:vc animated:YES completion:nil];
+                                         }
+                                     }]];
+                                     [self presentViewController:alertController animated:YES completion:nil];
                                  }
-                             } else if ([isFee isEqualToString:@"0"]){ //余额不足以开启对话
+                             } else if ([status isEqualToString:@"0"]){ //余额不足以开启对话
                                  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
                                  [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                  }]];

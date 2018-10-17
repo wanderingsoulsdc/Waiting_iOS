@@ -207,6 +207,7 @@
 		C15C3A65213566C4008BBF38 /* MyEditInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15C3A63213566C4008BBF38 /* MyEditInfoViewController.xib */; };
 		C15C3A6921356B7F008BBF38 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15C3A6721356B7F008BBF38 /* LoginViewController.m */; };
 		C15C3A6A21356B7F008BBF38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15C3A6821356B7F008BBF38 /* LoginViewController.xib */; };
+		C1627DEE2176CD7D005C4BCD /* ChatSessionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C1627DED2176CD7D005C4BCD /* ChatSessionConfig.m */; };
 		C18AD40220D0B09600ED98C1 /* LiteBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40120D0B09600ED98C1 /* LiteBaseViewController.m */; };
 		C18AD40520D0B0C700ED98C1 /* LiteMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40420D0B0C700ED98C1 /* LiteMainViewController.m */; };
 		C18AD40820D0B23C00ED98C1 /* LiteADsManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40720D0B23C00ED98C1 /* LiteADsManagerViewController.m */; };
@@ -684,6 +685,8 @@
 		C15C3A6621356B7F008BBF38 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C15C3A6721356B7F008BBF38 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C15C3A6821356B7F008BBF38 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		C1627DEC2176CD7D005C4BCD /* ChatSessionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatSessionConfig.h; sourceTree = "<group>"; };
+		C1627DED2176CD7D005C4BCD /* ChatSessionConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatSessionConfig.m; sourceTree = "<group>"; };
 		C18AD40020D0B09600ED98C1 /* LiteBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteBaseViewController.h; sourceTree = "<group>"; };
 		C18AD40120D0B09600ED98C1 /* LiteBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteBaseViewController.m; sourceTree = "<group>"; };
 		C18AD40320D0B0C700ED98C1 /* LiteMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteMainViewController.h; sourceTree = "<group>"; };
@@ -1783,6 +1786,8 @@
 				C1130E9B21586FEA008A446E /* ChatViewController.h */,
 				C1130E9C21586FEA008A446E /* ChatViewController.m */,
 				C1130E9D21586FEA008A446E /* ChatViewController.xib */,
+				C1627DEC2176CD7D005C4BCD /* ChatSessionConfig.h */,
+				C1627DED2176CD7D005C4BCD /* ChatSessionConfig.m */,
 			);
 			path = "Chat - 聊天";
 			sourceTree = "<group>";
@@ -2307,8 +2312,8 @@
 			isa = PBXGroup;
 			children = (
 				C1938F132152756200212FB3 /* NetCallChatInfo.h */,
-				C1938F142152756200212FB3 /* LSTempModel.h */,
 				C1938F152152756200212FB3 /* NetCallChatInfo.m */,
+				C1938F142152756200212FB3 /* LSTempModel.h */,
 				C1938F162152756200212FB3 /* LSTempModel.m */,
 			);
 			path = Model;
@@ -3041,6 +3046,7 @@
 				C18AD40F20D0C70C00ED98C1 /* PlusAnimate.m in Sources */,
 				C18AD42620D3E13000ED98C1 /* LiteAccountSetupViewController.m in Sources */,
 				076688321EE50BD3007FE539 /* FSBaseTabBarController.m in Sources */,
+				C1627DEE2176CD7D005C4BCD /* ChatSessionConfig.m in Sources */,
 				C1FA39D720DF802D0025E07F /* LiteAccountInvoiceModel.m in Sources */,
 				C1130E9E21586FEA008A446E /* ChatViewController.m in Sources */,
 				0775964D1FC5AB720036CC1F /* ZLProgressHUD.m in Sources */,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="logoutButton" destination="Bwf-Uo-E6t" id="2Fb-PA-fuX"/>
                 <outlet property="logoutButtonBottomConstraint" destination="mTL-7h-nXu" id="9kB-PW-S5V"/>
+                <outlet property="privacyPolicyTitleLabel" destination="ckE-pT-YM7" id="WcR-uS-6Wp"/>
                 <outlet property="topViewTopConstraint" destination="0P1-cs-3ou" id="R4l-g3-EDE"/>
+                <outlet property="versionLabel" destination="JrO-Ut-u88" id="BMo-Pu-SJ9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,7 +59,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmJ-OX-Pe5">
                     <rect key="frame" x="0.0" y="128" width="375" height="60"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckE-pT-YM7">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐私政策" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckE-pT-YM7">
                             <rect key="frame" x="15" y="0.0" width="80" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="VKx-Uh-SeC"/>
@@ -76,7 +78,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh9-aS-qeM">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                             <connections>
-                                <action selector="FAQAction:" destination="-1" eventType="touchUpInside" id="Q5y-4z-uHh"/>
+                                <action selector="privacyPolicyAction:" destination="-1" eventType="touchUpInside" id="Yws-Du-SAh"/>
                             </connections>
                         </button>
                     </subviews>
@@ -112,10 +114,20 @@
                         <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="Zvw-dO-tqn"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrO-Ut-u88">
+                    <rect key="frame" x="0.0" y="624" width="375" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="ACA-ms-jwG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="X8m-TB-neH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="0P1-cs-3ou"/>
+                <constraint firstItem="JrO-Ut-u88" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1U2-nS-fB9"/>
                 <constraint firstItem="Bwf-Uo-E6t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="DTc-eW-xag"/>
                 <constraint firstItem="yn3-zS-ib6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="QOQ-aZ-dFI"/>
                 <constraint firstItem="yn3-zS-ib6" firstAttribute="top" secondItem="X8m-TB-neH" secondAttribute="bottom" constant="15" id="Qzq-Nq-UgP"/>
@@ -126,6 +138,8 @@
                 <constraint firstAttribute="bottom" secondItem="Bwf-Uo-E6t" secondAttribute="bottom" constant="60" id="mTL-7h-nXu"/>
                 <constraint firstAttribute="trailing" secondItem="zmJ-OX-Pe5" secondAttribute="trailing" id="ok4-Rj-hm3"/>
                 <constraint firstItem="X8m-TB-neH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="sDd-rh-fpg"/>
+                <constraint firstAttribute="trailing" secondItem="JrO-Ut-u88" secondAttribute="trailing" id="t8V-hn-cvf"/>
+                <constraint firstItem="JrO-Ut-u88" firstAttribute="top" secondItem="Bwf-Uo-E6t" secondAttribute="bottom" constant="17" id="wOg-Fe-f0T"/>
             </constraints>
         </view>
     </objects>

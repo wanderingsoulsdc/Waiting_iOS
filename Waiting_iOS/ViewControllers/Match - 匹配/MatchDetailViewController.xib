@@ -44,7 +44,7 @@
                                         <outlet property="delegate" destination="-1" id="8L5-ez-1Wc"/>
                                     </connections>
                                 </scrollView>
-                                <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yFA-yC-ezx">
+                                <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yFA-yC-ezx">
                                     <rect key="frame" x="0.0" y="320" width="375" height="0.0"/>
                                 </pageControl>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="起个名字真难" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="017-mF-PgB">
@@ -130,6 +130,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPf-I1-MfF">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="match_detail_top_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="bTc-Li-pQd">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKB-qR-e8Y">
                             <rect key="frame" x="15" y="24" width="36" height="36"/>
                             <constraints>
@@ -156,6 +159,10 @@
                         <constraint firstAttribute="bottom" secondItem="cKB-qR-e8Y" secondAttribute="bottom" constant="4" id="70V-Zy-0js"/>
                         <constraint firstAttribute="bottom" secondItem="iJJ-uF-Dok" secondAttribute="bottom" constant="4" id="B1a-gr-ybN"/>
                         <constraint firstItem="cKB-qR-e8Y" firstAttribute="leading" secondItem="QPf-I1-MfF" secondAttribute="leading" constant="15" id="F5o-Kr-V3Z"/>
+                        <constraint firstItem="bTc-Li-pQd" firstAttribute="leading" secondItem="QPf-I1-MfF" secondAttribute="leading" id="WfI-Xy-jUy"/>
+                        <constraint firstAttribute="bottom" secondItem="bTc-Li-pQd" secondAttribute="bottom" id="Xc8-Vu-4eV"/>
+                        <constraint firstAttribute="trailing" secondItem="bTc-Li-pQd" secondAttribute="trailing" id="dMy-kN-zoc"/>
+                        <constraint firstItem="bTc-Li-pQd" firstAttribute="top" secondItem="QPf-I1-MfF" secondAttribute="top" id="kip-hN-JBt"/>
                         <constraint firstAttribute="height" constant="64" id="oUl-gE-kAu"/>
                     </constraints>
                 </view>
@@ -221,12 +228,13 @@
                 <constraint firstAttribute="bottom" secondItem="mve-Zw-8R8" secondAttribute="bottom" id="uec-wP-J0Y"/>
                 <constraint firstItem="GZh-Ib-csg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xSc-mL-1aV"/>
             </constraints>
-            <point key="canvasLocation" x="-3942" y="-106"/>
+            <point key="canvasLocation" x="-3943.1999999999998" y="-106.59670164917542"/>
         </view>
     </objects>
     <resources>
         <image name="match_chat" width="60" height="60"/>
         <image name="match_close" width="36" height="36"/>
+        <image name="match_detail_top_overlay" width="375" height="80"/>
         <image name="match_video_chat" width="72" height="72"/>
         <image name="match_voice_chat" width="72" height="72"/>
         <image name="my_check" width="33" height="18"/>

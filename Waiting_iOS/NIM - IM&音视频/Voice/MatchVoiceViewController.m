@@ -89,9 +89,6 @@
     self.headShallowBackView.layer.borderWidth = 1.0f;
     self.headShallowBackView.layer.borderColor = UIAlplaColorFromRGB(0xC10CFF, 0.99).CGColor;
 
-    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.userHeadImageUrl] placeholderImage:kGetImageFromName(@"phone_default_head")];
-    self.userNameLabel.text = self.userModel.userName;
-    
 }
 
 #pragma mark - ******* Call Life *******
@@ -116,7 +113,7 @@
     [self connectingInterface];
 }
 #pragma mark - ******* Interface *******
-//正在接听中界面
+//主动拨打界面
 - (void)startInterface{
     
     self.cancelButton.hidden = NO;
@@ -129,6 +126,9 @@
     self.diamondView.hidden = YES;
     self.speakerButton.hidden = YES;
     self.muteButton.hidden = YES;
+    
+    [self.headImageView sd_setImageWithURL:[NSURL URLWithString:self.userModel.userHeadImageUrl] placeholderImage:kGetImageFromName(@"phone_default_head")];
+    self.userNameLabel.text = self.userModel.userName;
 }
 
 //选择是否接听界面
@@ -236,7 +236,7 @@
     WEAKSELF
     NSDictionary * params = @{@"user1":self.callInfo.callee,/*主叫*/
                               @"user2":self.callInfo.caller,/*被叫*/
-                              @"tvId":[NSString stringWithFormat:@"%llu",self.callInfo.callID],/*通话ID*/
+                              @"tvId":self.tvId,/*通话ID*/
                               };
     
     [FSNetWorkManager requestWithType:HttpRequestTypePost
@@ -245,23 +245,22 @@
                             NSLog(@"请求成功");
                             
                             if (NetResponseCheckStaus){
-                                NSArray *arr = object[@"data"][@"next"];
-                                if ([[arr firstObject] isEqualToString:@"0"]) {
-                                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[arr lastObject] preferredStyle:UIAlertControllerStyleAlert];
+                                NSDictionary *nextDic = object[@"data"][@"next"];
+                                NSString *status = [nextDic stringValueForKey:@"status" default:@""];
+                                if ([status isEqualToString:@"0"]) {
+                                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足以开启下一分钟,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
+                                    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    }]];
+                                    [alertController addAction:[UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                        MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
+                                        [weakSelf.navigationController pushViewController:chargeVC animated:YES];
+                                    }]];
                                     
-                                    UIAlertAction *button = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                                        
-                                    }];
-                                    [alert addAction:button];
-                                    
-                                    UIAlertAction *button2 = [UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                                        MyRechargeViewController *vc = [[MyRechargeViewController alloc] init];
-                                        [self.navigationController pushViewController:vc animated:YES];
-                                    }];
-                                    [alert addAction:button2];
-                                    
-                                    [weakSelf presentViewController:alert animated:YES completion:nil];
+                                    [weakSelf presentViewController:alertController animated:YES completion:nil];
                                 }
+                            }else if([[object objectForKey:@"status"] isEqualToString:@"0"]){
+                                //当前分钟扣费失败,结束对话
+                                [weakSelf hangup];
                             }else{
                                 [ShowHUDTool showBriefAlert:NetResponseMessage];
                             }

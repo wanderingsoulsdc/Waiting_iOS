@@ -9,11 +9,14 @@
 #import "MySetViewController.h"
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
+#import "FSDeviceManager.h"
 
 @interface MySetViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * topViewTopConstraint; //顶部视图 距上约束
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * logoutButtonBottomConstraint; //退出登录 距下约束
+@property (weak, nonatomic) IBOutlet UILabel * privacyPolicyTitleLabel; //隐私政策title
+@property (weak, nonatomic) IBOutlet UILabel * versionLabel; //版本
 
 
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
@@ -47,11 +50,14 @@
     
     self.logoutButton.layer.borderWidth = 1;
     self.logoutButton.layer.borderColor = UIColorFromRGB(0x9014FC).CGColor;
+    
+    self.privacyPolicyTitleLabel.text = @"隐私政策";
+    self.versionLabel.text = [NSString stringWithFormat:@"Version %@",[[FSDeviceManager sharedInstance] getAppVersion]];
 }
 
 #pragma mark - ******* Action Methods *******
-//FAQ
-- (IBAction)FAQAction:(UIButton *)sender {
+//隐私政策
+- (IBAction)privacyPolicyAction:(UIButton *)sender {
 
 }
 //退出登录

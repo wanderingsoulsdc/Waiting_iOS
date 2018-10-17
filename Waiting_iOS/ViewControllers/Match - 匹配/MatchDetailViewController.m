@@ -84,11 +84,11 @@ typedef enum : NSUInteger {
     }
     
     for (int i = 0 ; i < imageArr.count ; i++) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * self.imageScrollView.width, 0, self.imageScrollView.width, self.imageScrollView.height)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * kScreenWidth, 0, kScreenWidth, self.imageScrollView.height)];
         [imageView sd_setImageWithURL:[NSURL URLWithString:imageArr[i]] placeholderImage:kGetImageFromName(@"phone_default_head")];
         [self.imageScrollView addSubview:imageView];
     }
-    self.imageScrollView.contentSize = CGSizeMake(self.imageScrollView.width * imageArr.count, 0);
+    self.imageScrollView.contentSize = CGSizeMake(kScreenWidth * imageArr.count, 0);
 }
 
 - (void)createTagView{
@@ -163,9 +163,9 @@ typedef enum : NSUInteger {
         return;
     }
     //当下一页滑到>=0.5宽度时，此时就要改变pageControl
-    CGFloat page = scrollView.contentOffset.x / scrollView.frame.size.width;
+    CGFloat page = scrollView.contentOffset.x / kScreenWidth;
     NSUInteger currentPage = page; //向下取整
-    NSLog(@"%f === %ld",page,currentPage);
+    NSLog(@"%f === %lu",page,(unsigned long)currentPage);
     self.pageControl.currentPage = (page - currentPage) < 0.5 ? currentPage : currentPage +1;
 }
 

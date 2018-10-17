@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MatchVoiceViewController : NTESNetChatViewController
 
-@property (nonatomic , strong) BHUserModel * userModel;
+@property (nonatomic , strong) BHUserModel  * userModel;
+
+@property (nonatomic , strong) NSString     * tvId;
 
 @end
 

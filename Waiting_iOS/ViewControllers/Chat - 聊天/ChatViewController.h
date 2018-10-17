@@ -7,10 +7,13 @@
 //
 
 #import "NIMKit.h"
+#import "ChatSessionConfig.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChatViewController : NIMSessionViewController
+
+@property (nonatomic, strong) ChatSessionConfig * chatConfig;
 
 @property (nonatomic,assign) BOOL disableCommandTyping;  //需要在导航条上显示“正在输入”
 

@@ -370,66 +370,6 @@ typedef enum : NSUInteger {
 //与服务器做充值校验,成功刷新钻石
 - (void)getApplePayDataToServerRequsetWith:(SKPaymentTransaction *)transaction RechargeType:(RechargeType)rechargeType{
     
-//    //初始化为合法
-//    if (transaction.payment.productIdentifier !=nil) {
-//
-//        // 验证凭据，获取到苹果返回的交易凭据
-//        // appStoreReceiptURL iOS7.0增加的，购买交易完成后，会将凭据存放在该地址
-//        NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
-//        // 从沙盒中获取到购买凭据
-//        NSData *receiptData = [NSData dataWithContentsOfURL:receiptURL];
-//        /**
-//         20      BASE64 常用的编码方案，通常用于数据传输，以及加密算法的基础算法，传输过程中能够保证数据传输的稳定性
-//         21      BASE64是可以编码和解码的
-//         22      */
-//        NSString *receiptStr = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-//
-//
-//        //将数据http post请求发送到我的服务器
-//        NSURL* url = [NSURL URLWithString:kApiAccountDoRecharge];
-//        NSMutableURLRequest * theRequest = [NSMutableURLRequest requestWithURL:url];
-//        [theRequest setHTTPMethod:@"POST"];
-//        [theRequest addValue:[BHUserModel sharedInstance].token forHTTPHeaderField:@"token"];
-//
-//        NSString * sendString = [NSString stringWithFormat:@"gid=%@&state=%ld&transaction=%@&receipt=%@&payment=%@",transaction.payment.productIdentifier,(long)transaction.transactionState,transaction.transactionIdentifier,receiptStr,@"apple"];
-//        NSLog(@"+++sendString:%@+++",sendString);
-//
-//        [theRequest setHTTPBody:[NSData dataWithBytes:[sendString UTF8String] length:[sendString length]]];
-//
-//        //发送同步请求  因为你将使用自己的服务器返回的数据来判断是否成功
-//        NSURLResponse   * response = [[NSURLResponse alloc] init];
-//        NSError         * error =  [[NSError alloc] init];
-//        NSMutableData   * receiveData = (NSMutableData *)[NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
-//
-//        if (error)
-//        {   // 超时或无网络
-//            //验证失败
-//            return;
-//        }
-//
-//        // json解析
-//        NSDictionary *object = [NSJSONSerialization JSONObjectWithData:receiveData
-//                                                               options:NSJSONReadingAllowFragments
-//                                                                 error:nil];
-//        if (NetResponseCheckStaus){
-//            NSLog(@"验证成功");
-//            [ShowHUDTool showBriefAlert:NetResponseMessage];
-//            [self requestAccountData];
-//        }else{
-//            NSLog(@"服务状态验证未通过");
-//        }
-//    }
-//    else
-//    {
-//        NSLog(@"无效的商品ID");
-//    }
-
-    
-    
-    
-    
-    
-    
     // 验证凭据，获取到苹果返回的交易凭据
     // appStoreReceiptURL iOS7.0增加的，购买交易完成后，会将凭据存放在该地址
     NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
@@ -442,35 +382,51 @@ typedef enum : NSUInteger {
     NSString *receiptStr = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
 
     WEAKSELF
-    NSDictionary * params = @{@"gid":transaction.payment.productIdentifier,
-                              @"state":[NSString stringWithFormat:@"%ld",transaction.transactionState],
-                              @"transaction":transaction.transactionIdentifier,
-                              @"receipt":receiptStr,
-                              @"payment":@"apple",
-                              @"sandbox":rechargeType == RechargeTypeRelease ? @"0":@"1"
-                              };
-    [FSNetWorkManager requestWithType:HttpRequestTypePost
-                        withUrlString:kApiAccountDoRecharge
-                        withParaments:params
-                     withSuccessBlock:^(NSDictionary *object) {
+//    NSDictionary * params = @{@"gid":transaction.payment.productIdentifier,
+//                              @"state":[NSString stringWithFormat:@"%ld",(long)transaction.transactionState],
+//                              @"transaction":transaction.transactionIdentifier,
+//                              @"receipt":receiptStr,
+//                              @"payment":@"apple",
+//                              @"sandbox":rechargeType == RechargeTypeRelease ? @"0":@"1"
+//                              };
+   
+    //配置AF
+    AFHTTPSessionManager *manage = [AFHTTPSessionManager manager];
+    [manage.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Type"];
+    manage.requestSerializer = [AFHTTPRequestSerializer serializer];
+    manage.responseSerializer = [AFHTTPResponseSerializer serializer];
+    manage.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"multipart/form-data", @"application/json", @"text/html", @"image/jpeg", @"image/png", @"application/octet-stream", @"text/json", nil];
+    [manage.requestSerializer setValue:[BHUserModel sharedInstance].token forHTTPHeaderField:@"token"];
 
-                         if (NetResponseCheckStaus)
-                         {
-                             NSLog(@"请求成功");
-                             [ShowHUDTool hideAlert];
-                             [ShowHUDTool showBriefAlert:NetResponseMessage];
-                             [weakSelf requestAccountData];
-                         }
-                         else
-                         {
-                             [ShowHUDTool hideAlert];
-                             [ShowHUDTool showBriefAlert:NetResponseMessage];
-                         }
-                     } withFailureBlock:^(NSError *error) {
-                         NSLog(@"error is:%@", error);
-                         [ShowHUDTool hideAlert];
-                         [ShowHUDTool showBriefAlert:NetRequestFailed];
-                     }];
+    [manage POST:[NSString stringWithFormat:@"%@%@",kApiHostPort,kApiAccountDoRecharge] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        //当提交一张图片或一个文件的时候 name 可以随便设置，服务端直接能拿到，如果服务端需要根据name去取不同文件的时候，则appendPartWithFileData 方法中的 name 需要根据form的中的name一一对应
+        [formData appendPartWithFormData:[transaction.payment.productIdentifier dataUsingEncoding:NSUTF8StringEncoding] name:@"gid"];
+        [formData appendPartWithFormData:[[NSString stringWithFormat:@"%ld",(long)transaction.transactionState] dataUsingEncoding:NSUTF8StringEncoding] name:@"state"];
+        [formData appendPartWithFormData:[transaction.transactionIdentifier dataUsingEncoding:NSUTF8StringEncoding] name:@"transaction"];
+        [formData appendPartWithFormData:[receiptStr dataUsingEncoding:NSUTF8StringEncoding] name:@"receipt"];
+        [formData appendPartWithFormData:[@"apple" dataUsingEncoding:NSUTF8StringEncoding] name:@"payment"];
+        [formData appendPartWithFormData:[rechargeType == RechargeTypeRelease ? @"0":@"1" dataUsingEncoding:NSUTF8StringEncoding] name:@"sandbox"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *object = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        if (NetResponseCheckStaus)
+        {
+            NSLog(@"请求成功");
+            [ShowHUDTool hideAlert];
+            [ShowHUDTool showBriefAlert:NetResponseMessage];
+            [weakSelf requestAccountData];
+        }
+        else
+        {
+            [ShowHUDTool hideAlert];
+            [ShowHUDTool showBriefAlert:NetResponseMessage];
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error is:%@", error);
+        [ShowHUDTool hideAlert];
+        [ShowHUDTool showBriefAlert:NetRequestFailed];
+    }];
 }
 
 //请求账户数据获得钻石数量

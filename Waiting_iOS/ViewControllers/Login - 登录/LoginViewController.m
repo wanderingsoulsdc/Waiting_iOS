@@ -60,9 +60,10 @@
              }
              NSDictionary * params = @{@"tuid":user.uid,
                                        @"nickname":user.nickname,
-                                       @"icon":user.icon,
+                                       @"photo":user.icon,
                                        @"gender":[NSString stringWithFormat:@"%ld",(long)user.gender],
                                        @"email":email,
+                                       @"birthday":@"1990-09-01",
                                        @"type":@"twitter"
                                        };
              [weakSelf requestLogin:params];
@@ -94,9 +95,10 @@
              }
              NSDictionary * params = @{@"tuid":user.uid,
                                        @"nickname":user.nickname,
-                                       @"icon":user.icon,
+                                       @"photo":user.icon,
                                        @"gender":[NSString stringWithFormat:@"%ld",(long)user.gender],
                                        @"email":email,
+                                       @"birthday":@"1990-09-01",
                                        @"type":@"facebook"
                                        };
              [weakSelf requestLogin:params];
@@ -116,9 +118,10 @@
     return;
     NSDictionary * params = @{@"tuid":@"112233445566",
                               @"nickname":@"我是假数据",
-                              @"icon":@"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/359b033b5bb5c9ea86b6f4add739b6003af3b333.jpg",
+                              @"photo":@"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/359b033b5bb5c9ea86b6f4add739b6003af3b333.jpg",
                               @"gender":@"1",
                               @"email":@"",
+                              @"birthday":@"1990-09-01",
                               @"type":@"twitter"
                               };
     [self requestLogin:params];
@@ -147,9 +150,10 @@
     
     NSDictionary * params = @{@"tuid":self.textfield.text,
                               @"nickname":@"我是假数据",
-                              @"icon":@"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/359b033b5bb5c9ea86b6f4add739b6003af3b333.jpg",
+                              @"photo":@"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/359b033b5bb5c9ea86b6f4add739b6003af3b333.jpg",
                               @"gender":@"1",
                               @"email":@"",
+                              @"birthday":@"1990-09-01",
                               @"type":@"twitter"
                               };
     [self requestLogin:params];

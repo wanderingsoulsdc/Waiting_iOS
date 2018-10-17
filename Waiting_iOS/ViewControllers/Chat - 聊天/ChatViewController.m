@@ -24,6 +24,23 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
+#pragma mark - ******* NIMSessionConfig 配置项 *******
+
+- (id<NIMSessionConfig>)sessionConfig {
+    //返回 nil，则使用默认配置，若需要自定义则自己实现
+//    return nil;
+    //返回自定义的 config，则使用此自定义配置
+    return self.chatConfig;
+}
+
+#pragma mark - ******* Getter *******
+
+- (ChatSessionConfig *)chatConfig{
+    if (!_chatConfig) {
+        _chatConfig = [[ChatSessionConfig alloc] init];
+    }
+    return _chatConfig;
+}
 /*
 #pragma mark - Navigation
 
