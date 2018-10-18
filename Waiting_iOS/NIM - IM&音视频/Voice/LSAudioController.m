@@ -230,7 +230,7 @@
 //接听中界面(音频)
 - (void)audioCallingInterface{
     
-    //    NSString *peerUid = ([[NIMSDK sharedSDK].loginManager currentAccount] == self.callInfo.caller) ? self.callInfo.callee : self.callInfo.caller;
+    //    NSString *peerUid = ([[NIMSDK sharedSDK].loginManager currentAccount] == self.callInfo.caller) ? self.callInfo.caller : self.callInfo.callee;
     ////
     //    NIMNetCallNetStatus status = [[NIMAVChatSDK sharedSDK].netCallManager netStatus:peerUid];
     //    [self.netStatusView refreshWithNetState:status];

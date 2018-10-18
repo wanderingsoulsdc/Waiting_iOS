@@ -31,7 +31,7 @@
 #define FreeDiskSpaceWarningThreshold (10 * MB)
 
 
-@interface NTESNetChatViewController ()
+@interface NTESNetChatViewController ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) NTESTimerHolder *timer;
 
@@ -348,11 +348,22 @@ NTES_FORBID_INTERACTIVE_POP
 }
 
 - (void)dismiss:(void (^)(void))completion{
-
-   
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
+    if (self.navigationController.topViewController == self)
+    {
+        CATransition *transition = [CATransition animation];
+        transition.duration = 0.3f;
+        transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        transition.type = kCATransitionReveal;
+        transition.subtype = kCATransitionFromBottom;
+        transition.delegate = self;
+        [self.navigationController.view.layer addAnimation:transition forKey:nil];
+        [self.navigationController popViewControllerAnimated:NO];
+        //pop实现模态效果,注意：animated一定要设置为：NO
+    }
+    else
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)onCalling{

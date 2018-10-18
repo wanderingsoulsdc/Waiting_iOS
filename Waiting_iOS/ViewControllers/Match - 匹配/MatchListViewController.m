@@ -81,17 +81,7 @@ typedef enum : NSUInteger {
 - (void)CardsViewActionWithModel:(BHUserModel *)model{
     MatchDetailViewController * vc = [[MatchDetailViewController alloc] init];
     vc.userModel = model;
-    
-    CATransition *transition = [CATransition animation];
-    transition.duration = 0.4f;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionMoveIn;
-    transition.subtype = kCATransitionFromTop;
-    transition.delegate = self;
-    [self.navigationController.view.layer addAnimation:transition forKey:nil];
-    [self.navigationController pushViewController:vc animated:NO];
-    
-    //push实现模态效果,注意：animated一定要设置为：NO
+    [self pushViewControllerAsPresent:vc];
 }
 
 #pragma mark - ******* Action *******
@@ -103,27 +93,15 @@ typedef enum : NSUInteger {
 }
 //语音
 - (IBAction)voiceChatAction:(UIButton *)sender {
-//    //这个参数 自己修改成创建好的 云信账号
-//    LSAudioController* vc =[[LSAudioController alloc]initWithCallee:NIMCount1];
-//    //这两个参数是我用来传递姓名头像地址
-//    vc.nickName = @"被叫宝宝";
-//    vc.headURLStr = @"suibiansuibian";
-//
-//    [self presentViewController:vc animated:YES completion:nil];
-    
     [self requestVideoInit:requestTypeVoice];
 }
 
 //视频
 - (IBAction)videoChatAction:(UIButton *)sender {
-//    //这个参数 自己修改成创建好的 云信账号
-//    LSVideoController* vc =[[LSVideoController alloc]initWithCallee:NIMCount1];
-//    //这两个参数是我用来传递姓名头像地址
-//    vc.nickName = @"被叫宝宝";
-//    vc.headURLStr = @"suibiansuibian";
-//    [self presentViewController:vc animated:YES completion:nil];
     [self requestVideoInit:requestTypeVideo];
 }
+
+#pragma mark - ******* Private *******
 
 #pragma mark - ******* Request *******
 
@@ -222,12 +200,13 @@ typedef enum : NSUInteger {
                                          MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
                                          vc.userModel = self.currentModel;
                                          vc.tvId = tvId;
-                                         [weakSelf presentViewController:vc animated:YES completion:nil];
+                                         [weakSelf pushViewControllerAsPresent:vc];
+
                                      } else if (type == requestTypeVideo){ //视频
                                          MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
                                          vc.userModel = self.currentModel;
                                          vc.tvId = tvId;
-                                         [weakSelf presentViewController:vc animated:YES completion:nil];
+                                         [weakSelf pushViewControllerAsPresent:vc];
                                      }
                                  }else if ([nextStatus isEqualToString:@"0"]){//余额不足以开启下一分钟对话
                                      UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"当前余额仅能通话1分钟,是否确定开启通话?" preferredStyle:UIAlertControllerStyleAlert];
@@ -238,15 +217,16 @@ typedef enum : NSUInteger {
                                              MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
                                              vc.userModel = self.currentModel;
                                              vc.tvId = tvId;
-                                             [weakSelf presentViewController:vc animated:YES completion:nil];
+                                             [weakSelf pushViewControllerAsPresent:vc];
+
                                          } else if (type == requestTypeVideo){ //视频
                                              MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.currentModel.userID];
                                              vc.userModel = self.currentModel;
                                              vc.tvId = tvId;
-                                             [weakSelf presentViewController:vc animated:YES completion:nil];
+                                             [weakSelf pushViewControllerAsPresent:vc];
                                          }
                                      }]];
-                                     [self presentViewController:alertController animated:YES completion:nil];
+                                     [weakSelf presentViewController:alertController animated:YES completion:nil];
                                  }
                              } else if ([status isEqualToString:@"0"]){ //余额不足以开启对话
                                  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
@@ -254,9 +234,9 @@ typedef enum : NSUInteger {
                                  }]];
                                  [alertController addAction:[UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
-                                     [self.navigationController pushViewController:chargeVC animated:YES];
+                                     [weakSelf.navigationController pushViewController:chargeVC animated:YES];
                                  }]];
-                                 [self presentViewController:alertController animated:YES completion:nil];
+                                 [weakSelf presentViewController:alertController animated:YES completion:nil];
                              }
                          }
                          else

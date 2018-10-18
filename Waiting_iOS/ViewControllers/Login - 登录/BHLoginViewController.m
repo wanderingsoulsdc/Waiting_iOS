@@ -14,7 +14,6 @@
 #import "BHUserModel.h"
 #import "JPUSHService.h"
 #import "FSDeviceManager.h"
-#import "FSPushManager.h"
 #import "BHAgreementViewController.h"
 #import "NSString+Helper.h"
 #import "IQKeyboardManager/IQKeyboardManager.h"

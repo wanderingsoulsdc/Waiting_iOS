@@ -9,14 +9,11 @@
 /* Begin PBXBuildFile section */
 		070F038D2058C26400B63CCA /* GuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F038C2058C26400B63CCA /* GuideView.m */; };
 		071A23AF1F04FE450054FED1 /* NSArray+JSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 071A23AE1F04FE450054FED1 /* NSArray+JSONString.m */; };
-		07215B7E1FD01CD3000E16DA /* BHNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 07215B7D1FD01CD3000E16DA /* BHNotificationModel.m */; };
 		07215B841FD0302C000E16DA /* FSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 07215B811FD0302C000E16DA /* FSTools.m */; };
 		072449472006215E0055B754 /* BHDataReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072449462006215E0055B754 /* BHDataReportManager.m */; };
-		0724494D200792270055B754 /* BHQualificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0724494C200792270055B754 /* BHQualificationModel.m */; };
 		0730F8181EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0730F8171EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m */; };
 		0730F81C1EEAA99D00F2C8DC /* WLUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0730F81B1EEAA99D00F2C8DC /* WLUnitField.m */; };
 		073A95AC20206FF600C2B67A /* UIDevice+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A95AB20206FF600C2B67A /* UIDevice+Orientation.m */; };
-		07500E821F9DF9D60065EA7F /* FSPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07500E811F9DF9D60065EA7F /* FSPushManager.m */; };
 		0754BC711EEC294100E5431D /* BHRegisterSetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754BC701EEC294100E5431D /* BHRegisterSetPWViewController.m */; };
 		07551068207315FB00DA7BEA /* BHOrderTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 07551067207315FB00DA7BEA /* BHOrderTools.m */; };
 		076687A61EE4FEB3007FE539 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 076687A51EE4FEB3007FE539 /* main.m */; };
@@ -46,10 +43,6 @@
 		0766882D1EE50BD3007FE539 /* BHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688041EE50BD3007FE539 /* BHRegisterViewController.m */; };
 		0766882E1EE50BD3007FE539 /* BHRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688061EE50BD3007FE539 /* BHRegisterSuccessViewController.m */; };
 		076688311EE50BD3007FE539 /* FSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0766880E1EE50BD3007FE539 /* FSBaseNavigationController.m */; };
-		076688321EE50BD3007FE539 /* FSBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688121EE50BD3007FE539 /* FSBaseTabBarController.m */; };
-		0768E87B1F31CF1D00AB1D15 /* BHPreAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E8711F31CF1D00AB1D15 /* BHPreAddressModel.m */; };
-		0768E87C1F31CF1D00AB1D15 /* BHStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E8741F31CF1D00AB1D15 /* BHStoreModel.m */; };
-		0768E87D1F31CF1D00AB1D15 /* BHTreasureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E8771F31CF1D00AB1D15 /* BHTreasureModel.m */; };
 		0768E87E1F31CF1D00AB1D15 /* BHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E87A1F31CF1D00AB1D15 /* BHUserModel.m */; };
 		0768E8821F31CFC200AB1D15 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0768E8801F31CFC200AB1D15 /* AlipaySDK.bundle */; };
 		0768E8831F31CFC200AB1D15 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768E8811F31CFC200AB1D15 /* AlipaySDK.framework */; };
@@ -64,8 +57,6 @@
 		0768E8F51F31D20B00AB1D15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768E8F41F31D20B00AB1D15 /* Foundation.framework */; };
 		0768E8F71F31D21400AB1D15 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768E8F61F31D21400AB1D15 /* CFNetwork.framework */; };
 		0768E8F91F31D21C00AB1D15 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0768E8F81F31D21C00AB1D15 /* CoreMotion.framework */; };
-		0768F52A2017255300183087 /* BHQualificationListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768F5292017255300183087 /* BHQualificationListModel.m */; };
-		076E14042056819700B3AD1B /* BHNotificationCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 076E14032056819700B3AD1B /* BHNotificationCenterModel.m */; };
 		076E14082056945F00B3AD1B /* BHPopMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 076E14072056945F00B3AD1B /* BHPopMessageManager.m */; };
 		0775963C1FC5AB720036CC1F /* NSBundle+ZLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 077596161FC5AB720036CC1F /* NSBundle+ZLPhotoBrowser.m */; };
 		0775963D1FC5AB720036CC1F /* ZLPhotoActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077596181FC5AB720036CC1F /* ZLPhotoActionSheet.xib */; };
@@ -96,10 +87,6 @@
 		07CC430D1F5E747D005E2E0E /* NSObjectSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CC430C1F5E747D005E2E0E /* NSObjectSafe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07ECAAEC1FF0EA5500F8F95B /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ECAAEB1FF0EA5500F8F95B /* UITabBar+Badge.m */; };
 		95731A4BF3927B83A958B842 /* libPods-Waiting_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1633284571D1A0A811C599FE /* libPods-Waiting_iOS.a */; };
-		C109E8BF210F1B55007569DC /* LiteADsMessageSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109E8BD210F1B55007569DC /* LiteADsMessageSetupViewController.m */; };
-		C109E8C0210F1B55007569DC /* LiteADsMessageSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C109E8BE210F1B55007569DC /* LiteADsMessageSetupViewController.xib */; };
-		C109E8C3210F1BC2007569DC /* LiteADsMessageHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109E8C2210F1BC2007569DC /* LiteADsMessageHistoryViewController.m */; };
-		C109E8C6210F2428007569DC /* LiteADsMessageContentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109E8C5210F2428007569DC /* LiteADsMessageContentInfoViewController.m */; };
 		C10B3E78215369650044AAEB /* MatchVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10B3E76215369650044AAEB /* MatchVoiceViewController.m */; };
 		C10B3E79215369650044AAEB /* MatchVoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C10B3E77215369650044AAEB /* MatchVoiceViewController.xib */; };
 		C1130E942157A875008A446E /* MatchVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1130E922157A875008A446E /* MatchVideoViewController.m */; };
@@ -108,28 +95,10 @@
 		C1130E9A21586EE1008A446E /* ChatListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1130E9821586EE1008A446E /* ChatListViewController.xib */; };
 		C1130E9E21586FEA008A446E /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1130E9C21586FEA008A446E /* ChatViewController.m */; };
 		C1130E9F21586FEA008A446E /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1130E9D21586FEA008A446E /* ChatViewController.xib */; };
-		C113B2582110007C00C6BFAB /* LiteADsMessageHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C113B2562110007C00C6BFAB /* LiteADsMessageHistoryCell.m */; };
-		C113B2592110007C00C6BFAB /* LiteADsMessageHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C113B2572110007C00C6BFAB /* LiteADsMessageHistoryCell.xib */; };
-		C113B260211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C113B25F211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m */; };
-		C113B2642111609800C6BFAB /* LiteMessageSendDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C113B2632111609800C6BFAB /* LiteMessageSendDetailCell.m */; };
-		C116F2E120E38C3F000E7A29 /* LiteDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C116F2E020E38C3F000E7A29 /* LiteDeviceModel.m */; };
 		C11E4890216D911D00E7A858 /* MatchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E488E216D911D00E7A858 /* MatchDetailViewController.m */; };
 		C11E4891216D911D00E7A858 /* MatchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C11E488F216D911D00E7A858 /* MatchDetailViewController.xib */; };
-		C124E4002107051E00DAD4A2 /* LitePhoneDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E3FE2107051E00DAD4A2 /* LitePhoneDetailCell.m */; };
-		C124E4012107051E00DAD4A2 /* LitePhoneDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124E3FF2107051E00DAD4A2 /* LitePhoneDetailCell.xib */; };
-		C124E404210721A700DAD4A2 /* BHPhoneUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E402210721A600DAD4A2 /* BHPhoneUserInfoViewController.m */; };
-		C124E40A2108198700DAD4A2 /* BHCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E4082108198700DAD4A2 /* BHCountDownView.m */; };
-		C124E40E21081D7600DAD4A2 /* LitePhoneMarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C124E40C21081D7600DAD4A2 /* LitePhoneMarkViewController.m */; };
-		C124E40F21081D7600DAD4A2 /* LitePhoneMarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124E40D21081D7600DAD4A2 /* LitePhoneMarkViewController.xib */; };
 		C1458BDD2168811C004CAD75 /* MyInterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1458BDB2168811C004CAD75 /* MyInterestCell.m */; };
 		C1458BDE2168811C004CAD75 /* MyInterestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1458BDC2168811C004CAD75 /* MyInterestCell.xib */; };
-		C14CCD302109D1C300D0AFD9 /* MyAnimatedAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD2F2109D1C300D0AFD9 /* MyAnimatedAnnotationView.m */; };
-		C14CCD332109D2E200D0AFD9 /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD322109D2E200D0AFD9 /* MyAnnotationView.m */; };
-		C14CCD37210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD35210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m */; };
-		C14CCD38210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14CCD36210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.xib */; };
-		C14CCD49210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C14CCD47210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.m */; };
-		C14CCD4A210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C14CCD48210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib */; };
-		C15082F62121868800D18753 /* LitePhoneSelectLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C15082F52121868800D18753 /* LitePhoneSelectLabelViewController.m */; };
 		C150830D21226C4B00D18753 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150830B21226C4B00D18753 /* MyViewController.m */; };
 		C150830E21226C4B00D18753 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150830C21226C4B00D18753 /* MyViewController.xib */; };
 		C150831721226C6A00D18753 /* MatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831521226C6A00D18753 /* MatchListViewController.m */; };
@@ -209,21 +178,7 @@
 		C15C3A6A21356B7F008BBF38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15C3A6821356B7F008BBF38 /* LoginViewController.xib */; };
 		C1627DEE2176CD7D005C4BCD /* ChatSessionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C1627DED2176CD7D005C4BCD /* ChatSessionConfig.m */; };
 		C18AD40220D0B09600ED98C1 /* LiteBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40120D0B09600ED98C1 /* LiteBaseViewController.m */; };
-		C18AD40520D0B0C700ED98C1 /* LiteMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40420D0B0C700ED98C1 /* LiteMainViewController.m */; };
-		C18AD40820D0B23C00ED98C1 /* LiteADsManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40720D0B23C00ED98C1 /* LiteADsManagerViewController.m */; };
-		C18AD40B20D0B76900ED98C1 /* LiteAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40A20D0B76900ED98C1 /* LiteAccountViewController.m */; };
-		C18AD40F20D0C70C00ED98C1 /* PlusAnimate.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD40D20D0C70B00ED98C1 /* PlusAnimate.m */; };
 		C18AD41820D3679900ED98C1 /* BHLoadFailedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD41720D3679900ED98C1 /* BHLoadFailedView.m */; };
-		C18AD41C20D3A7A900ED98C1 /* LiteAccountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD41B20D3A7A800ED98C1 /* LiteAccountListCell.m */; };
-		C18AD42620D3E13000ED98C1 /* LiteAccountSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD42520D3E13000ED98C1 /* LiteAccountSetupViewController.m */; };
-		C18AD42C20D3E16900ED98C1 /* LiteAccountLabelWasteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD42B20D3E16900ED98C1 /* LiteAccountLabelWasteViewController.m */; };
-		C18AD43220D3E4C100ED98C1 /* LiteAccountTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD43120D3E4C100ED98C1 /* LiteAccountTransactionViewController.m */; };
-		C18AD43520D3E4E200ED98C1 /* LiteAccountInvoiceApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD43420D3E4E200ED98C1 /* LiteAccountInvoiceApplyViewController.m */; };
-		C18AD43820D3E63F00ED98C1 /* LiteAccountQualificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD43720D3E63F00ED98C1 /* LiteAccountQualificationViewController.m */; };
-		C18AD43B20D3E66500ED98C1 /* LiteAccountRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD43A20D3E66500ED98C1 /* LiteAccountRechargeViewController.m */; };
-		C18AD43F20D3E9FC00ED98C1 /* LiteAccountSetupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD43E20D3E9FC00ED98C1 /* LiteAccountSetupCell.m */; };
-		C18AD44220D4125000ED98C1 /* LiteAccountAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD44120D4125000ED98C1 /* LiteAccountAboutViewController.m */; };
-		C18AD44720D8AD7300ED98C1 /* LiteAccountQualificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */; };
 		C18DEAE321481D6B00C823BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE221481D6B00C823BE /* MobileCoreServices.framework */; };
 		C18DEAE521481D7C00C823BE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE421481D7C00C823BE /* AVFoundation.framework */; };
 		C18DEAE721481D8B00C823BE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAE621481D8B00C823BE /* CoreMedia.framework */; };
@@ -231,17 +186,6 @@
 		C18DEAEB21481DA700C823BE /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18DEAEA21481DA700C823BE /* VideoToolbox.framework */; };
 		C18DEE10214E31FE00C823BE /* MyInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18DEE0E214E31FE00C823BE /* MyInputViewController.m */; };
 		C18DEE11214E31FE00C823BE /* MyInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C18DEE0F214E31FE00C823BE /* MyInputViewController.xib */; };
-		C1932FD320FEC83300C8EE4E /* LiteADsPhoneListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FD220FEC83300C8EE4E /* LiteADsPhoneListViewController.m */; };
-		C1932FE620FED3F600C8EE4E /* LiteADsMessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FE520FED3F600C8EE4E /* LiteADsMessageListViewController.m */; };
-		C1932FEB20FF170100C8EE4E /* LiteADsPhoneListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FEA20FF170100C8EE4E /* LiteADsPhoneListCell.m */; };
-		C1932FEF20FF21D400C8EE4E /* LiteADsPhoneListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FEE20FF21D400C8EE4E /* LiteADsPhoneListModel.m */; };
-		C1932FF620FF3DED00C8EE4E /* LiteADsMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FF520FF3DED00C8EE4E /* LiteADsMessageListCell.m */; };
-		C1932FFA20FF3F0F00C8EE4E /* LiteADsMessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FF920FF3F0F00C8EE4E /* LiteADsMessageListModel.m */; };
-		C19330002100BFE700C8EE4E /* LiteADsSelectLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1932FFF2100BFE700C8EE4E /* LiteADsSelectLabelCell.m */; };
-		C19330032101E34E00C8EE4E /* LitePhoneSelectCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C19330022101E34E00C8EE4E /* LitePhoneSelectCustomViewController.m */; };
-		C19330072105AF1700C8EE4E /* LitePhoneListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C19330062105AF1600C8EE4E /* LitePhoneListCell.m */; };
-		C19330112106C57D00C8EE4E /* LitePhoneDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C193300F2106C57D00C8EE4E /* LitePhoneDetailViewController.m */; };
-		C19330122106C57D00C8EE4E /* LitePhoneDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19330102106C57D00C8EE4E /* LitePhoneDetailViewController.xib */; };
 		C1938F442152756200212FB3 /* NTESClientUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938EF92152756100212FB3 /* NTESClientUtil.m */; };
 		C1938F452152756200212FB3 /* NTESNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938EFC2152756100212FB3 /* NTESNotificationCenter.m */; };
 		C1938F462152756200212FB3 /* NTESService.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938EFD2152756100212FB3 /* NTESService.m */; };
@@ -280,8 +224,6 @@
 		C1AA5ED7213D5BA8001F12DE /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED6213D5BA8001F12DE /* AssetsLibrary.framework */; };
 		C1AA5ED9213D5BB1001F12DE /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED8213D5BB1001F12DE /* Photos.framework */; };
 		C1C1F45B2140FD8400592473 /* NoHighlightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1F45A2140FD8400592473 /* NoHighlightButton.m */; };
-		C1F7A5F420E3919D001D5A88 /* LiteLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A5F320E3919D001D5A88 /* LiteLabelModel.m */; };
-		C1F7A5FD20E40862001D5A88 /* LiteAccountVersionInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A5FC20E40862001D5A88 /* LiteAccountVersionInfoViewController.m */; };
 		C1F7A60B20E5DB18001D5A88 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F7A60120E5DB18001D5A88 /* BaiduMapAPI_Location.framework */; };
 		C1F7A60C20E5DB18001D5A88 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F7A60220E5DB18001D5A88 /* BaiduMapAPI_Map.framework */; };
 		C1F7A60D20E5DB18001D5A88 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F7A60420E5DB18001D5A88 /* libcrypto.a */; };
@@ -296,32 +238,13 @@
 		C1F7A61920E5DBCF001D5A88 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F7A61820E5DBCF001D5A88 /* libsqlite3.0.tbd */; };
 		C1F7A61B20E5DBE7001D5A88 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F7A61A20E5DBE7001D5A88 /* libstdc++.6.0.9.tbd */; };
 		C1F7A61D20E5DDE8001D5A88 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1F7A61C20E5DDE7001D5A88 /* mapapi.bundle */; };
-		C1F7A62120E60C5E001D5A88 /* LiteDeviceAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A62020E60C5E001D5A88 /* LiteDeviceAddViewController.m */; };
-		C1F7A62420E63B2E001D5A88 /* LiteDeviceScanQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A62320E63B2E001D5A88 /* LiteDeviceScanQRViewController.m */; };
-		C1F7A62820E63E47001D5A88 /* KSScanQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A62620E63E47001D5A88 /* KSScanQRCodeView.m */; };
-		C1F7A62B20E91135001D5A88 /* LiteDeviceEditNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A62A20E91135001D5A88 /* LiteDeviceEditNameViewController.m */; };
-		C1F7A63420EA0FE9001D5A88 /* LiteShowBorderCardsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A63320EA0FE9001D5A88 /* LiteShowBorderCardsView.m */; };
-		C1F7A63720EA107C001D5A88 /* LiteShowBorderCardsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A63620EA107C001D5A88 /* LiteShowBorderCardsCell.m */; };
-		C1F7A63A20EB66B8001D5A88 /* LiteDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A63920EB66B8001D5A88 /* LiteDeviceDetailViewController.m */; };
-		C1F7A64120EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A64020EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.m */; };
-		C1F7A64B20F30087001D5A88 /* LiteReadyStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A64A20F30087001D5A88 /* LiteReadyStartViewController.m */; };
-		C1F7A64E20F33902001D5A88 /* CircleSpreadTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A64D20F33902001D5A88 /* CircleSpreadTransition.m */; };
 		C1F7A65520F4AB93001D5A88 /* LiteCycleProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A65420F4AB93001D5A88 /* LiteCycleProgressButton.m */; };
-		C1F7A65820F5FF6E001D5A88 /* LiteDeviceLabelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A65720F5FF6E001D5A88 /* LiteDeviceLabelListViewController.m */; };
-		C1F7A65C20F5FFAC001D5A88 /* LiteDeviceLabelListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A65B20F5FFAC001D5A88 /* LiteDeviceLabelListCell.m */; };
-		C1F7A66020F721D9001D5A88 /* LiteDeviceLabelDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1F7A65E20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.m */; };
-		C1F7A66120F721D9001D5A88 /* LiteDeviceLabelDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1F7A65F20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.xib */; };
 		C1FA38E620D8F6830025E07F /* XZPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38E420D8F6830025E07F /* XZPickView.m */; };
-		C1FA38E920D917C50025E07F /* LiteAccountQualificationICPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38E820D917C50025E07F /* LiteAccountQualificationICPViewController.m */; };
-		C1FA38F020D919960025E07F /* LiteAccountQualificationICPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38EF20D919960025E07F /* LiteAccountQualificationICPCell.m */; };
 		C1FA38F420D9F09B0025E07F /* LiteAlertLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38F320D9F09B0025E07F /* LiteAlertLabel.m */; };
-		C1FA38F720D9F5F10025E07F /* LiteAccountChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38F620D9F5F10025E07F /* LiteAccountChangePasswordViewController.m */; };
 		C1FA390120DA71210025E07F /* UIView+LLSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38F920DA71210025E07F /* UIView+LLSegmentBar.m */; };
 		C1FA390220DA71210025E07F /* LLSegmentBarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38FD20DA71210025E07F /* LLSegmentBarConfig.m */; };
 		C1FA390320DA71210025E07F /* LLSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA38FF20DA71210025E07F /* LLSegmentBar.m */; };
 		C1FA390420DA71210025E07F /* LLSegmentBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA390020DA71210025E07F /* LLSegmentBarVC.m */; };
-		C1FA395420DA7A5D0025E07F /* LiteAccountExpenseReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA395320DA7A5D0025E07F /* LiteAccountExpenseReportViewController.m */; };
-		C1FA395720DA7A6F0025E07F /* LiteAccountRechargeReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA395620DA7A6F0025E07F /* LiteAccountRechargeReportViewController.m */; };
 		C1FA399720DB2C070025E07F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1FA395920DB2C070025E07F /* README.md */; };
 		C1FA399820DB2C070025E07F /* PGPickerColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA395B20DB2C070025E07F /* PGPickerColumnCell.m */; };
 		C1FA399920DB2C070025E07F /* PGPickerColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA395C20DB2C070025E07F /* PGPickerColumnView.m */; };
@@ -352,17 +275,6 @@
 		C1FA39B220DB2C080025E07F /* PGDatePickManagerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA399320DB2C070025E07F /* PGDatePickManagerHeaderView.m */; };
 		C1FA39B320DB2C080025E07F /* PGDatePicker+Year.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA399420DB2C070025E07F /* PGDatePicker+Year.m */; };
 		C1FA39B420DB2C080025E07F /* PGDatePicker+DateHourMinuteSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA399620DB2C070025E07F /* PGDatePicker+DateHourMinuteSecond.m */; };
-		C1FA39B820DB5B860025E07F /* LiteAccountTransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39B720DB5B860025E07F /* LiteAccountTransactionCell.m */; };
-		C1FA39BB20DB83220025E07F /* LiteAccountInvoiceReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39BA20DB83220025E07F /* LiteAccountInvoiceReportViewController.m */; };
-		C1FA39BF20DB850F0025E07F /* LiteAccountInvoiceReportCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39BE20DB850F0025E07F /* LiteAccountInvoiceReportCell.m */; };
-		C1FA39CF20DF326F0025E07F /* LiteAccountLabelWasteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39CE20DF326F0025E07F /* LiteAccountLabelWasteCell.m */; };
-		C1FA39D720DF802D0025E07F /* LiteAccountInvoiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39D620DF802D0025E07F /* LiteAccountInvoiceModel.m */; };
-		C1FA39DB20DFC5BF0025E07F /* LiteAccountInvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39DA20DFC5BF0025E07F /* LiteAccountInvoiceCell.m */; };
-		C1FA39DE20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39DD20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.m */; };
-		C1FA39E120DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39E020DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.m */; };
-		C1FA39E420DFF9320025E07F /* LiteAccountInvoiceApplySuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39E320DFF9320025E07F /* LiteAccountInvoiceApplySuccessViewController.m */; };
-		C1FA39E720E098170025E07F /* LiteAccountInvoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39E620E098170025E07F /* LiteAccountInvoiceView.m */; };
-		C1FA39EB20E32BD20025E07F /* LiteAccountTransactionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1FA39EA20E32BD20025E07F /* LiteAccountTransactionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -371,23 +283,17 @@
 		0717081F1F396E8200EDBF65 /* Waiting_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Waiting_iOS.entitlements; sourceTree = "<group>"; };
 		071A23AD1F04FE450054FED1 /* NSArray+JSONString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONString.h"; sourceTree = "<group>"; };
 		071A23AE1F04FE450054FED1 /* NSArray+JSONString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONString.m"; sourceTree = "<group>"; };
-		07215B7C1FD01CD3000E16DA /* BHNotificationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHNotificationModel.h; sourceTree = "<group>"; };
-		07215B7D1FD01CD3000E16DA /* BHNotificationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHNotificationModel.m; sourceTree = "<group>"; };
 		07215B801FD0302C000E16DA /* FSTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTools.h; sourceTree = "<group>"; };
 		07215B811FD0302C000E16DA /* FSTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTools.m; sourceTree = "<group>"; };
 		072449452006215E0055B754 /* BHDataReportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHDataReportManager.h; sourceTree = "<group>"; };
 		072449462006215E0055B754 /* BHDataReportManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHDataReportManager.m; sourceTree = "<group>"; };
 		072449482006325F0055B754 /* BHDataReportHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHDataReportHeader.h; sourceTree = "<group>"; };
-		0724494B200792270055B754 /* BHQualificationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHQualificationModel.h; sourceTree = "<group>"; };
-		0724494C200792270055B754 /* BHQualificationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHQualificationModel.m; sourceTree = "<group>"; };
 		0730F8161EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRegisterVerifyCodeViewController.h; sourceTree = "<group>"; };
 		0730F8171EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRegisterVerifyCodeViewController.m; sourceTree = "<group>"; };
 		0730F81A1EEAA99D00F2C8DC /* WLUnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLUnitField.h; sourceTree = "<group>"; };
 		0730F81B1EEAA99D00F2C8DC /* WLUnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLUnitField.m; sourceTree = "<group>"; };
 		073A95AA20206FF600C2B67A /* UIDevice+Orientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Orientation.h"; sourceTree = "<group>"; };
 		073A95AB20206FF600C2B67A /* UIDevice+Orientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Orientation.m"; sourceTree = "<group>"; };
-		07500E801F9DF9D60065EA7F /* FSPushManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSPushManager.h; sourceTree = "<group>"; };
-		07500E811F9DF9D60065EA7F /* FSPushManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSPushManager.m; sourceTree = "<group>"; };
 		0754BC6F1EEC294100E5431D /* BHRegisterSetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRegisterSetPWViewController.h; sourceTree = "<group>"; };
 		0754BC701EEC294100E5431D /* BHRegisterSetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRegisterSetPWViewController.m; sourceTree = "<group>"; };
 		07551066207315FB00DA7BEA /* BHOrderTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHOrderTools.h; sourceTree = "<group>"; };
@@ -448,14 +354,6 @@
 		076688061EE50BD3007FE539 /* BHRegisterSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRegisterSuccessViewController.m; sourceTree = "<group>"; };
 		0766880D1EE50BD3007FE539 /* FSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseNavigationController.h; sourceTree = "<group>"; };
 		0766880E1EE50BD3007FE539 /* FSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseNavigationController.m; sourceTree = "<group>"; };
-		076688111EE50BD3007FE539 /* FSBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseTabBarController.h; sourceTree = "<group>"; };
-		076688121EE50BD3007FE539 /* FSBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseTabBarController.m; sourceTree = "<group>"; };
-		0768E8701F31CF1D00AB1D15 /* BHPreAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHPreAddressModel.h; sourceTree = "<group>"; };
-		0768E8711F31CF1D00AB1D15 /* BHPreAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHPreAddressModel.m; sourceTree = "<group>"; };
-		0768E8731F31CF1D00AB1D15 /* BHStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHStoreModel.h; sourceTree = "<group>"; };
-		0768E8741F31CF1D00AB1D15 /* BHStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHStoreModel.m; sourceTree = "<group>"; };
-		0768E8761F31CF1D00AB1D15 /* BHTreasureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHTreasureModel.h; sourceTree = "<group>"; };
-		0768E8771F31CF1D00AB1D15 /* BHTreasureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHTreasureModel.m; sourceTree = "<group>"; };
 		0768E8791F31CF1D00AB1D15 /* BHUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHUserModel.h; sourceTree = "<group>"; };
 		0768E87A1F31CF1D00AB1D15 /* BHUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHUserModel.m; sourceTree = "<group>"; };
 		0768E8801F31CFC200AB1D15 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -471,10 +369,6 @@
 		0768E8F41F31D20B00AB1D15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0768E8F61F31D21400AB1D15 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0768E8F81F31D21C00AB1D15 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		0768F5282017255300183087 /* BHQualificationListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHQualificationListModel.h; sourceTree = "<group>"; };
-		0768F5292017255300183087 /* BHQualificationListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHQualificationListModel.m; sourceTree = "<group>"; };
-		076E14022056819700B3AD1B /* BHNotificationCenterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHNotificationCenterModel.h; sourceTree = "<group>"; };
-		076E14032056819700B3AD1B /* BHNotificationCenterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHNotificationCenterModel.m; sourceTree = "<group>"; };
 		076E14062056945F00B3AD1B /* BHPopMessageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHPopMessageManager.h; sourceTree = "<group>"; };
 		076E14072056945F00B3AD1B /* BHPopMessageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHPopMessageManager.m; sourceTree = "<group>"; };
 		077596151FC5AB720036CC1F /* NSBundle+ZLPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ZLPhotoBrowser.h"; sourceTree = "<group>"; };
@@ -541,13 +435,6 @@
 		572DAB1176A412B0808EEAA1 /* Pods-Waiting_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waiting_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		86BF012264BD18BD1C14590E /* Pods-Waiting_iOS.test_debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Waiting_iOS.test_debug.xcconfig"; path = "Pods/Target Support Files/Pods-Waiting_iOS/Pods-Waiting_iOS.test_debug.xcconfig"; sourceTree = "<group>"; };
 		C107FAD920C92C9100FB0050 /* Waiting_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waiting_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C109E8BC210F1B55007569DC /* LiteADsMessageSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageSetupViewController.h; sourceTree = "<group>"; };
-		C109E8BD210F1B55007569DC /* LiteADsMessageSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageSetupViewController.m; sourceTree = "<group>"; };
-		C109E8BE210F1B55007569DC /* LiteADsMessageSetupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiteADsMessageSetupViewController.xib; sourceTree = "<group>"; };
-		C109E8C1210F1BC2007569DC /* LiteADsMessageHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageHistoryViewController.h; sourceTree = "<group>"; };
-		C109E8C2210F1BC2007569DC /* LiteADsMessageHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageHistoryViewController.m; sourceTree = "<group>"; };
-		C109E8C4210F2428007569DC /* LiteADsMessageContentInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageContentInfoViewController.h; sourceTree = "<group>"; };
-		C109E8C5210F2428007569DC /* LiteADsMessageContentInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageContentInfoViewController.m; sourceTree = "<group>"; };
 		C10B3E75215369650044AAEB /* MatchVoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchVoiceViewController.h; sourceTree = "<group>"; };
 		C10B3E76215369650044AAEB /* MatchVoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchVoiceViewController.m; sourceTree = "<group>"; };
 		C10B3E77215369650044AAEB /* MatchVoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchVoiceViewController.xib; sourceTree = "<group>"; };
@@ -560,43 +447,12 @@
 		C1130E9B21586FEA008A446E /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		C1130E9C21586FEA008A446E /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		C1130E9D21586FEA008A446E /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
-		C113B2552110007C00C6BFAB /* LiteADsMessageHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageHistoryCell.h; sourceTree = "<group>"; };
-		C113B2562110007C00C6BFAB /* LiteADsMessageHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageHistoryCell.m; sourceTree = "<group>"; };
-		C113B2572110007C00C6BFAB /* LiteADsMessageHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiteADsMessageHistoryCell.xib; sourceTree = "<group>"; };
-		C113B25E211147E700C6BFAB /* LiteADsMessageSendDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageSendDetailViewController.h; sourceTree = "<group>"; };
-		C113B25F211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageSendDetailViewController.m; sourceTree = "<group>"; };
-		C113B2622111609800C6BFAB /* LiteMessageSendDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteMessageSendDetailCell.h; sourceTree = "<group>"; };
-		C113B2632111609800C6BFAB /* LiteMessageSendDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteMessageSendDetailCell.m; sourceTree = "<group>"; };
-		C116F2DF20E38C3F000E7A29 /* LiteDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceModel.h; sourceTree = "<group>"; };
-		C116F2E020E38C3F000E7A29 /* LiteDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceModel.m; sourceTree = "<group>"; };
 		C11E488D216D911D00E7A858 /* MatchDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchDetailViewController.h; sourceTree = "<group>"; };
 		C11E488E216D911D00E7A858 /* MatchDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchDetailViewController.m; sourceTree = "<group>"; };
 		C11E488F216D911D00E7A858 /* MatchDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchDetailViewController.xib; sourceTree = "<group>"; };
-		C124E3FD2107051E00DAD4A2 /* LitePhoneDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneDetailCell.h; sourceTree = "<group>"; };
-		C124E3FE2107051E00DAD4A2 /* LitePhoneDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneDetailCell.m; sourceTree = "<group>"; };
-		C124E3FF2107051E00DAD4A2 /* LitePhoneDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LitePhoneDetailCell.xib; sourceTree = "<group>"; };
-		C124E402210721A600DAD4A2 /* BHPhoneUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHPhoneUserInfoViewController.m; sourceTree = "<group>"; };
-		C124E403210721A700DAD4A2 /* BHPhoneUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHPhoneUserInfoViewController.h; sourceTree = "<group>"; };
-		C124E4082108198700DAD4A2 /* BHCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHCountDownView.m; sourceTree = "<group>"; };
-		C124E4092108198700DAD4A2 /* BHCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHCountDownView.h; sourceTree = "<group>"; };
-		C124E40B21081D7600DAD4A2 /* LitePhoneMarkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneMarkViewController.h; sourceTree = "<group>"; };
-		C124E40C21081D7600DAD4A2 /* LitePhoneMarkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneMarkViewController.m; sourceTree = "<group>"; };
-		C124E40D21081D7600DAD4A2 /* LitePhoneMarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LitePhoneMarkViewController.xib; sourceTree = "<group>"; };
 		C1458BDA2168811C004CAD75 /* MyInterestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInterestCell.h; sourceTree = "<group>"; };
 		C1458BDB2168811C004CAD75 /* MyInterestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInterestCell.m; sourceTree = "<group>"; };
 		C1458BDC2168811C004CAD75 /* MyInterestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInterestCell.xib; sourceTree = "<group>"; };
-		C14CCD2E2109D1C300D0AFD9 /* MyAnimatedAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAnimatedAnnotationView.h; sourceTree = "<group>"; };
-		C14CCD2F2109D1C300D0AFD9 /* MyAnimatedAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAnimatedAnnotationView.m; sourceTree = "<group>"; };
-		C14CCD312109D2E200D0AFD9 /* MyAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
-		C14CCD322109D2E200D0AFD9 /* MyAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
-		C14CCD34210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageContentViewController.h; sourceTree = "<group>"; };
-		C14CCD35210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageContentViewController.m; sourceTree = "<group>"; };
-		C14CCD36210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiteADsMessageContentViewController.xib; sourceTree = "<group>"; };
-		C14CCD46210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageDetailViewController.h; sourceTree = "<group>"; };
-		C14CCD47210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageDetailViewController.m; sourceTree = "<group>"; };
-		C14CCD48210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiteADsMessageDetailViewController.xib; sourceTree = "<group>"; };
-		C15082F42121868800D18753 /* LitePhoneSelectLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LitePhoneSelectLabelViewController.h; sourceTree = "<group>"; };
-		C15082F52121868800D18753 /* LitePhoneSelectLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LitePhoneSelectLabelViewController.m; sourceTree = "<group>"; };
 		C150830A21226C4B00D18753 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		C150830B21226C4B00D18753 /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		C150830C21226C4B00D18753 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
@@ -689,36 +545,8 @@
 		C1627DED2176CD7D005C4BCD /* ChatSessionConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatSessionConfig.m; sourceTree = "<group>"; };
 		C18AD40020D0B09600ED98C1 /* LiteBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteBaseViewController.h; sourceTree = "<group>"; };
 		C18AD40120D0B09600ED98C1 /* LiteBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteBaseViewController.m; sourceTree = "<group>"; };
-		C18AD40320D0B0C700ED98C1 /* LiteMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteMainViewController.h; sourceTree = "<group>"; };
-		C18AD40420D0B0C700ED98C1 /* LiteMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteMainViewController.m; sourceTree = "<group>"; };
-		C18AD40620D0B23C00ED98C1 /* LiteADsManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsManagerViewController.h; sourceTree = "<group>"; };
-		C18AD40720D0B23C00ED98C1 /* LiteADsManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsManagerViewController.m; sourceTree = "<group>"; };
-		C18AD40920D0B76900ED98C1 /* LiteAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountViewController.h; sourceTree = "<group>"; };
-		C18AD40A20D0B76900ED98C1 /* LiteAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountViewController.m; sourceTree = "<group>"; };
-		C18AD40D20D0C70B00ED98C1 /* PlusAnimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlusAnimate.m; sourceTree = "<group>"; };
-		C18AD40E20D0C70B00ED98C1 /* PlusAnimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusAnimate.h; sourceTree = "<group>"; };
 		C18AD41620D3679900ED98C1 /* BHLoadFailedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHLoadFailedView.h; sourceTree = "<group>"; };
 		C18AD41720D3679900ED98C1 /* BHLoadFailedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHLoadFailedView.m; sourceTree = "<group>"; };
-		C18AD41A20D3A7A800ED98C1 /* LiteAccountListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountListCell.h; sourceTree = "<group>"; };
-		C18AD41B20D3A7A800ED98C1 /* LiteAccountListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountListCell.m; sourceTree = "<group>"; };
-		C18AD42420D3E13000ED98C1 /* LiteAccountSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountSetupViewController.h; sourceTree = "<group>"; };
-		C18AD42520D3E13000ED98C1 /* LiteAccountSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountSetupViewController.m; sourceTree = "<group>"; };
-		C18AD42A20D3E16900ED98C1 /* LiteAccountLabelWasteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountLabelWasteViewController.h; sourceTree = "<group>"; };
-		C18AD42B20D3E16900ED98C1 /* LiteAccountLabelWasteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountLabelWasteViewController.m; sourceTree = "<group>"; };
-		C18AD43020D3E4C100ED98C1 /* LiteAccountTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountTransactionViewController.h; sourceTree = "<group>"; };
-		C18AD43120D3E4C100ED98C1 /* LiteAccountTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountTransactionViewController.m; sourceTree = "<group>"; };
-		C18AD43320D3E4E200ED98C1 /* LiteAccountInvoiceApplyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceApplyViewController.h; sourceTree = "<group>"; };
-		C18AD43420D3E4E200ED98C1 /* LiteAccountInvoiceApplyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceApplyViewController.m; sourceTree = "<group>"; };
-		C18AD43620D3E63F00ED98C1 /* LiteAccountQualificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountQualificationViewController.h; sourceTree = "<group>"; };
-		C18AD43720D3E63F00ED98C1 /* LiteAccountQualificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountQualificationViewController.m; sourceTree = "<group>"; };
-		C18AD43920D3E66500ED98C1 /* LiteAccountRechargeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountRechargeViewController.h; sourceTree = "<group>"; };
-		C18AD43A20D3E66500ED98C1 /* LiteAccountRechargeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountRechargeViewController.m; sourceTree = "<group>"; };
-		C18AD43D20D3E9FC00ED98C1 /* LiteAccountSetupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountSetupCell.h; sourceTree = "<group>"; };
-		C18AD43E20D3E9FC00ED98C1 /* LiteAccountSetupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountSetupCell.m; sourceTree = "<group>"; };
-		C18AD44020D4125000ED98C1 /* LiteAccountAboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountAboutViewController.h; sourceTree = "<group>"; };
-		C18AD44120D4125000ED98C1 /* LiteAccountAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountAboutViewController.m; sourceTree = "<group>"; };
-		C18AD44520D8AD7300ED98C1 /* LiteAccountQualificationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountQualificationCell.h; sourceTree = "<group>"; };
-		C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountQualificationCell.m; sourceTree = "<group>"; };
 		C18DEAE221481D6B00C823BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C18DEAE421481D7C00C823BE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C18DEAE621481D8B00C823BE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -728,27 +556,6 @@
 		C18DEE0D214E31FE00C823BE /* MyInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInputViewController.h; sourceTree = "<group>"; };
 		C18DEE0E214E31FE00C823BE /* MyInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInputViewController.m; sourceTree = "<group>"; };
 		C18DEE0F214E31FE00C823BE /* MyInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInputViewController.xib; sourceTree = "<group>"; };
-		C1932FD120FEC83300C8EE4E /* LiteADsPhoneListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsPhoneListViewController.h; sourceTree = "<group>"; };
-		C1932FD220FEC83300C8EE4E /* LiteADsPhoneListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsPhoneListViewController.m; sourceTree = "<group>"; };
-		C1932FE420FED3F600C8EE4E /* LiteADsMessageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageListViewController.h; sourceTree = "<group>"; };
-		C1932FE520FED3F600C8EE4E /* LiteADsMessageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageListViewController.m; sourceTree = "<group>"; };
-		C1932FE920FF170100C8EE4E /* LiteADsPhoneListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsPhoneListCell.h; sourceTree = "<group>"; };
-		C1932FEA20FF170100C8EE4E /* LiteADsPhoneListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsPhoneListCell.m; sourceTree = "<group>"; };
-		C1932FED20FF21D400C8EE4E /* LiteADsPhoneListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsPhoneListModel.h; sourceTree = "<group>"; };
-		C1932FEE20FF21D400C8EE4E /* LiteADsPhoneListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsPhoneListModel.m; sourceTree = "<group>"; };
-		C1932FF420FF3DED00C8EE4E /* LiteADsMessageListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageListCell.h; sourceTree = "<group>"; };
-		C1932FF520FF3DED00C8EE4E /* LiteADsMessageListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageListCell.m; sourceTree = "<group>"; };
-		C1932FF820FF3F0F00C8EE4E /* LiteADsMessageListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsMessageListModel.h; sourceTree = "<group>"; };
-		C1932FF920FF3F0F00C8EE4E /* LiteADsMessageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsMessageListModel.m; sourceTree = "<group>"; };
-		C1932FFE2100BFE700C8EE4E /* LiteADsSelectLabelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteADsSelectLabelCell.h; sourceTree = "<group>"; };
-		C1932FFF2100BFE700C8EE4E /* LiteADsSelectLabelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteADsSelectLabelCell.m; sourceTree = "<group>"; };
-		C19330012101E34E00C8EE4E /* LitePhoneSelectCustomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneSelectCustomViewController.h; sourceTree = "<group>"; };
-		C19330022101E34E00C8EE4E /* LitePhoneSelectCustomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneSelectCustomViewController.m; sourceTree = "<group>"; };
-		C19330052105AF1600C8EE4E /* LitePhoneListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneListCell.h; sourceTree = "<group>"; };
-		C19330062105AF1600C8EE4E /* LitePhoneListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneListCell.m; sourceTree = "<group>"; };
-		C193300E2106C57D00C8EE4E /* LitePhoneDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LitePhoneDetailViewController.h; sourceTree = "<group>"; };
-		C193300F2106C57D00C8EE4E /* LitePhoneDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LitePhoneDetailViewController.m; sourceTree = "<group>"; };
-		C19330102106C57D00C8EE4E /* LitePhoneDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LitePhoneDetailViewController.xib; sourceTree = "<group>"; };
 		C1938EF82152756100212FB3 /* NTESService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESService.h; sourceTree = "<group>"; };
 		C1938EF92152756100212FB3 /* NTESClientUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESClientUtil.m; sourceTree = "<group>"; };
 		C1938EFA2152756100212FB3 /* NTESTimerHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESTimerHolder.h; sourceTree = "<group>"; };
@@ -822,10 +629,6 @@
 		C1AA5ED8213D5BB1001F12DE /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		C1C1F4592140FD8400592473 /* NoHighlightButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoHighlightButton.h; sourceTree = "<group>"; };
 		C1C1F45A2140FD8400592473 /* NoHighlightButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoHighlightButton.m; sourceTree = "<group>"; };
-		C1F7A5F220E3919D001D5A88 /* LiteLabelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteLabelModel.h; sourceTree = "<group>"; };
-		C1F7A5F320E3919D001D5A88 /* LiteLabelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteLabelModel.m; sourceTree = "<group>"; };
-		C1F7A5FB20E40862001D5A88 /* LiteAccountVersionInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountVersionInfoViewController.h; sourceTree = "<group>"; };
-		C1F7A5FC20E40862001D5A88 /* LiteAccountVersionInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountVersionInfoViewController.m; sourceTree = "<group>"; };
 		C1F7A60120E5DB18001D5A88 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
 		C1F7A60220E5DB18001D5A88 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
 		C1F7A60420E5DB18001D5A88 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
@@ -840,45 +643,12 @@
 		C1F7A61820E5DBCF001D5A88 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		C1F7A61A20E5DBE7001D5A88 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		C1F7A61C20E5DDE7001D5A88 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
-		C1F7A61F20E60C5E001D5A88 /* LiteDeviceAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceAddViewController.h; sourceTree = "<group>"; };
-		C1F7A62020E60C5E001D5A88 /* LiteDeviceAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceAddViewController.m; sourceTree = "<group>"; };
-		C1F7A62220E63B2E001D5A88 /* LiteDeviceScanQRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceScanQRViewController.h; sourceTree = "<group>"; };
-		C1F7A62320E63B2E001D5A88 /* LiteDeviceScanQRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceScanQRViewController.m; sourceTree = "<group>"; };
-		C1F7A62620E63E47001D5A88 /* KSScanQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSScanQRCodeView.m; sourceTree = "<group>"; };
-		C1F7A62720E63E47001D5A88 /* KSScanQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSScanQRCodeView.h; sourceTree = "<group>"; };
-		C1F7A62920E91135001D5A88 /* LiteDeviceEditNameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceEditNameViewController.h; sourceTree = "<group>"; };
-		C1F7A62A20E91135001D5A88 /* LiteDeviceEditNameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceEditNameViewController.m; sourceTree = "<group>"; };
-		C1F7A63220EA0FE9001D5A88 /* LiteShowBorderCardsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteShowBorderCardsView.h; sourceTree = "<group>"; };
-		C1F7A63320EA0FE9001D5A88 /* LiteShowBorderCardsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteShowBorderCardsView.m; sourceTree = "<group>"; };
-		C1F7A63520EA107C001D5A88 /* LiteShowBorderCardsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteShowBorderCardsCell.h; sourceTree = "<group>"; };
-		C1F7A63620EA107C001D5A88 /* LiteShowBorderCardsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteShowBorderCardsCell.m; sourceTree = "<group>"; };
-		C1F7A63820EB66B8001D5A88 /* LiteDeviceDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceDetailViewController.h; sourceTree = "<group>"; };
-		C1F7A63920EB66B8001D5A88 /* LiteDeviceDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceDetailViewController.m; sourceTree = "<group>"; };
-		C1F7A63F20EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceWorkStatusViewController.h; sourceTree = "<group>"; };
-		C1F7A64020EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceWorkStatusViewController.m; sourceTree = "<group>"; };
-		C1F7A64920F30087001D5A88 /* LiteReadyStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteReadyStartViewController.h; sourceTree = "<group>"; };
-		C1F7A64A20F30087001D5A88 /* LiteReadyStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteReadyStartViewController.m; sourceTree = "<group>"; };
-		C1F7A64C20F33902001D5A88 /* CircleSpreadTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleSpreadTransition.h; sourceTree = "<group>"; };
-		C1F7A64D20F33902001D5A88 /* CircleSpreadTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleSpreadTransition.m; sourceTree = "<group>"; };
 		C1F7A65320F4AB93001D5A88 /* LiteCycleProgressButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteCycleProgressButton.h; sourceTree = "<group>"; };
 		C1F7A65420F4AB93001D5A88 /* LiteCycleProgressButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteCycleProgressButton.m; sourceTree = "<group>"; };
-		C1F7A65620F5FF6E001D5A88 /* LiteDeviceLabelListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceLabelListViewController.h; sourceTree = "<group>"; };
-		C1F7A65720F5FF6E001D5A88 /* LiteDeviceLabelListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceLabelListViewController.m; sourceTree = "<group>"; };
-		C1F7A65A20F5FFAC001D5A88 /* LiteDeviceLabelListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceLabelListCell.h; sourceTree = "<group>"; };
-		C1F7A65B20F5FFAC001D5A88 /* LiteDeviceLabelListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceLabelListCell.m; sourceTree = "<group>"; };
-		C1F7A65D20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteDeviceLabelDetailViewController.h; sourceTree = "<group>"; };
-		C1F7A65E20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteDeviceLabelDetailViewController.m; sourceTree = "<group>"; };
-		C1F7A65F20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiteDeviceLabelDetailViewController.xib; sourceTree = "<group>"; };
 		C1FA38E220D8F6830025E07F /* XZPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZPickView.h; sourceTree = "<group>"; };
 		C1FA38E420D8F6830025E07F /* XZPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZPickView.m; sourceTree = "<group>"; };
-		C1FA38E720D917C50025E07F /* LiteAccountQualificationICPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountQualificationICPViewController.h; sourceTree = "<group>"; };
-		C1FA38E820D917C50025E07F /* LiteAccountQualificationICPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountQualificationICPViewController.m; sourceTree = "<group>"; };
-		C1FA38EE20D919960025E07F /* LiteAccountQualificationICPCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountQualificationICPCell.h; sourceTree = "<group>"; };
-		C1FA38EF20D919960025E07F /* LiteAccountQualificationICPCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountQualificationICPCell.m; sourceTree = "<group>"; };
 		C1FA38F220D9F09B0025E07F /* LiteAlertLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAlertLabel.h; sourceTree = "<group>"; };
 		C1FA38F320D9F09B0025E07F /* LiteAlertLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAlertLabel.m; sourceTree = "<group>"; };
-		C1FA38F520D9F5F10025E07F /* LiteAccountChangePasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountChangePasswordViewController.h; sourceTree = "<group>"; };
-		C1FA38F620D9F5F10025E07F /* LiteAccountChangePasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountChangePasswordViewController.m; sourceTree = "<group>"; };
 		C1FA38F920DA71210025E07F /* UIView+LLSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LLSegmentBar.m"; sourceTree = "<group>"; };
 		C1FA38FA20DA71210025E07F /* LLSegmentBarConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSegmentBarConfig.h; sourceTree = "<group>"; };
 		C1FA38FB20DA71210025E07F /* LLSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSegmentBar.h; sourceTree = "<group>"; };
@@ -887,10 +657,6 @@
 		C1FA38FE20DA71210025E07F /* UIView+LLSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LLSegmentBar.h"; sourceTree = "<group>"; };
 		C1FA38FF20DA71210025E07F /* LLSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSegmentBar.m; sourceTree = "<group>"; };
 		C1FA390020DA71210025E07F /* LLSegmentBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSegmentBarVC.m; sourceTree = "<group>"; };
-		C1FA395220DA7A5D0025E07F /* LiteAccountExpenseReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountExpenseReportViewController.h; sourceTree = "<group>"; };
-		C1FA395320DA7A5D0025E07F /* LiteAccountExpenseReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountExpenseReportViewController.m; sourceTree = "<group>"; };
-		C1FA395520DA7A6F0025E07F /* LiteAccountRechargeReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountRechargeReportViewController.h; sourceTree = "<group>"; };
-		C1FA395620DA7A6F0025E07F /* LiteAccountRechargeReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountRechargeReportViewController.m; sourceTree = "<group>"; };
 		C1FA395920DB2C070025E07F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1FA395B20DB2C070025E07F /* PGPickerColumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGPickerColumnCell.m; sourceTree = "<group>"; };
 		C1FA395C20DB2C070025E07F /* PGPickerColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGPickerColumnView.m; sourceTree = "<group>"; };
@@ -951,28 +717,6 @@
 		C1FA399420DB2C070025E07F /* PGDatePicker+Year.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Year.m"; sourceTree = "<group>"; };
 		C1FA399520DB2C070025E07F /* PGDatePickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickManager.h; sourceTree = "<group>"; };
 		C1FA399620DB2C070025E07F /* PGDatePicker+DateHourMinuteSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateHourMinuteSecond.m"; sourceTree = "<group>"; };
-		C1FA39B620DB5B860025E07F /* LiteAccountTransactionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountTransactionCell.h; sourceTree = "<group>"; };
-		C1FA39B720DB5B860025E07F /* LiteAccountTransactionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountTransactionCell.m; sourceTree = "<group>"; };
-		C1FA39B920DB83220025E07F /* LiteAccountInvoiceReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceReportViewController.h; sourceTree = "<group>"; };
-		C1FA39BA20DB83220025E07F /* LiteAccountInvoiceReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceReportViewController.m; sourceTree = "<group>"; };
-		C1FA39BD20DB850F0025E07F /* LiteAccountInvoiceReportCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceReportCell.h; sourceTree = "<group>"; };
-		C1FA39BE20DB850F0025E07F /* LiteAccountInvoiceReportCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceReportCell.m; sourceTree = "<group>"; };
-		C1FA39CD20DF326F0025E07F /* LiteAccountLabelWasteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountLabelWasteCell.h; sourceTree = "<group>"; };
-		C1FA39CE20DF326F0025E07F /* LiteAccountLabelWasteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountLabelWasteCell.m; sourceTree = "<group>"; };
-		C1FA39D520DF802D0025E07F /* LiteAccountInvoiceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceModel.h; sourceTree = "<group>"; };
-		C1FA39D620DF802D0025E07F /* LiteAccountInvoiceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceModel.m; sourceTree = "<group>"; };
-		C1FA39D920DFC5BF0025E07F /* LiteAccountInvoiceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceCell.h; sourceTree = "<group>"; };
-		C1FA39DA20DFC5BF0025E07F /* LiteAccountInvoiceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceCell.m; sourceTree = "<group>"; };
-		C1FA39DC20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceReceiverViewController.h; sourceTree = "<group>"; };
-		C1FA39DD20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceReceiverViewController.m; sourceTree = "<group>"; };
-		C1FA39DF20DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceDetailViewController.h; sourceTree = "<group>"; };
-		C1FA39E020DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceDetailViewController.m; sourceTree = "<group>"; };
-		C1FA39E220DFF9320025E07F /* LiteAccountInvoiceApplySuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceApplySuccessViewController.h; sourceTree = "<group>"; };
-		C1FA39E320DFF9320025E07F /* LiteAccountInvoiceApplySuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceApplySuccessViewController.m; sourceTree = "<group>"; };
-		C1FA39E520E098170025E07F /* LiteAccountInvoiceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountInvoiceView.h; sourceTree = "<group>"; };
-		C1FA39E620E098170025E07F /* LiteAccountInvoiceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountInvoiceView.m; sourceTree = "<group>"; };
-		C1FA39E920E32BD20025E07F /* LiteAccountTransactionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiteAccountTransactionModel.h; sourceTree = "<group>"; };
-		C1FA39EA20E32BD20025E07F /* LiteAccountTransactionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiteAccountTransactionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1057,17 +801,6 @@
 			path = NSArray;
 			sourceTree = "<group>";
 		};
-		07215B7B1FD01CBC000E16DA /* NotificationModel */ = {
-			isa = PBXGroup;
-			children = (
-				076E14022056819700B3AD1B /* BHNotificationCenterModel.h */,
-				076E14032056819700B3AD1B /* BHNotificationCenterModel.m */,
-				07215B7C1FD01CD3000E16DA /* BHNotificationModel.h */,
-				07215B7D1FD01CD3000E16DA /* BHNotificationModel.m */,
-			);
-			path = NotificationModel;
-			sourceTree = "<group>";
-		};
 		07215B7F1FD0302C000E16DA /* FSTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -1087,15 +820,6 @@
 			path = DataReport;
 			sourceTree = "<group>";
 		};
-		0724494A200792120055B754 /* QualificationModel */ = {
-			isa = PBXGroup;
-			children = (
-				0724494B200792270055B754 /* BHQualificationModel.h */,
-				0724494C200792270055B754 /* BHQualificationModel.m */,
-			);
-			path = QualificationModel;
-			sourceTree = "<group>";
-		};
 		0730F8191EEAA99D00F2C8DC /* UnitField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1112,15 +836,6 @@
 				073A95AB20206FF600C2B67A /* UIDevice+Orientation.m */,
 			);
 			path = UIDevice;
-			sourceTree = "<group>";
-		};
-		07500E7F1F9DF9C00065EA7F /* PushManager */ = {
-			isa = PBXGroup;
-			children = (
-				07500E801F9DF9D60065EA7F /* FSPushManager.h */,
-				07500E811F9DF9D60065EA7F /* FSPushManager.m */,
-			);
-			path = PushManager;
 			sourceTree = "<group>";
 		};
 		076687981EE4FEB3007FE539 = {
@@ -1275,7 +990,6 @@
 				07244944200621200055B754 /* DataReport */,
 				07215B7F1FD0302C000E16DA /* FSTools */,
 				077596141FC5AB720036CC1F /* PhotoBrowser */,
-				07500E7F1F9DF9C00065EA7F /* PushManager */,
 				07BC7BFC1F694C7200D1A6F2 /* DeviceManager */,
 				07CC430A1F5E747D005E2E0E /* NSObjectSafe */,
 				0768E87F1F31CFC200AB1D15 /* AlipaySDK */,
@@ -1370,18 +1084,6 @@
 			isa = PBXGroup;
 			children = (
 				C15083232122EDF600D18753 /* ChatListModel */,
-				C1932FF720FF3EFC00C8EE4E /* LiteADsMessageListModel */,
-				C1932FEC20FF21B200C8EE4E /* LiteADsPhoneListModel */,
-				C1F7A5F120E39187001D5A88 /* LiteLabelModel */,
-				C116F2DE20E38C2B000E7A29 /* LiteDeviceModel */,
-				C1FA39E820E32BAF0025E07F /* LiteAccountTransactionModel */,
-				C1FA39D420DF7FDA0025E07F /* LiteAccountInvoiceModel */,
-				0768F5272017252F00183087 /* QualificationListModel */,
-				0724494A200792120055B754 /* QualificationModel */,
-				07215B7B1FD01CBC000E16DA /* NotificationModel */,
-				0768E86F1F31CF1D00AB1D15 /* AddressPreModel */,
-				0768E8721F31CF1D00AB1D15 /* StoreModel */,
-				0768E8751F31CF1D00AB1D15 /* TreasureModel */,
 				0768E8781F31CF1D00AB1D15 /* UserModel */,
 			);
 			path = Models;
@@ -1395,29 +1097,10 @@
 				C150830821226BD200D18753 /* Chat - 聊天 */,
 				C150830721226BCF00D18753 /* Match - 匹配 */,
 				C18AD3FE20D0B03800ED98C1 /* Base - 基础控制器 */,
-				07C3C25E1FB31E2E005A8EED /* Main - 首页 */,
-				0766880B1EE50BD3007FE539 /* Manager - 营销 */,
-				076687FE1EE50BD3007FE539 /* Account - 账户 */,
 				076688001EE50BD3007FE539 /* Login - 登录 */,
-				076688101EE50BD3007FE539 /* TabBar - 底部工具栏 */,
 				076688131EE50BD3007FE539 /* Web */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		076687FE1EE50BD3007FE539 /* Account - 账户 */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD41D20D3DF5600ED98C1 /* Recharge - 充值 */,
-				C18AD41E20D3DF7100ED98C1 /* Qualification - 资质信息 */,
-				C18AD41F20D3DF9C00ED98C1 /* Transaction - 交易记录 */,
-				C18AD42020D3DFBD00ED98C1 /* Invoice - 发票申请 */,
-				C18AD42120D3DFEC00ED98C1 /* LabelWaste - 标签垃圾桶 */,
-				C18AD42220D3E04100ED98C1 /* Setup - 设置 */,
-				C18AD40920D0B76900ED98C1 /* LiteAccountViewController.h */,
-				C18AD40A20D0B76900ED98C1 /* LiteAccountViewController.m */,
-			);
-			path = "Account - 账户";
 			sourceTree = "<group>";
 		};
 		076688001EE50BD3007FE539 /* Login - 登录 */ = {
@@ -1442,18 +1125,6 @@
 			path = "Login - 登录";
 			sourceTree = "<group>";
 		};
-		0766880B1EE50BD3007FE539 /* Manager - 营销 */ = {
-			isa = PBXGroup;
-			children = (
-				C1932FCF20FEC7A600C8EE4E /* Phone - 电话营销 */,
-				C1932FD020FEC7C500C8EE4E /* Message - 短信营销 */,
-				C18AD40C20D0C70B00ED98C1 /* PublishAnimate - 营销弹出视图 */,
-				C18AD40620D0B23C00ED98C1 /* LiteADsManagerViewController.h */,
-				C18AD40720D0B23C00ED98C1 /* LiteADsManagerViewController.m */,
-			);
-			path = "Manager - 营销";
-			sourceTree = "<group>";
-		};
 		0766880C1EE50BD3007FE539 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1461,15 +1132,6 @@
 				0766880E1EE50BD3007FE539 /* FSBaseNavigationController.m */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		076688101EE50BD3007FE539 /* TabBar - 底部工具栏 */ = {
-			isa = PBXGroup;
-			children = (
-				076688111EE50BD3007FE539 /* FSBaseTabBarController.h */,
-				076688121EE50BD3007FE539 /* FSBaseTabBarController.m */,
-			);
-			path = "TabBar - 底部工具栏";
 			sourceTree = "<group>";
 		};
 		076688131EE50BD3007FE539 /* Web */ = {
@@ -1487,40 +1149,9 @@
 				C1458BD4216880BD004CAD75 /* MyView */,
 				C15C3A39213294D2008BBF38 /* MatchView */,
 				C15083282122F79100D18753 /* ChatListView */,
-				C1932FE720FF16CA00C8EE4E /* LiteADsView */,
-				C1F7A63020EA0F6C001D5A88 /* LiteMainView */,
-				C18AD44320D8A66100ED98C1 /* LiteAccountView */,
 				C18AD41520D3679900ED98C1 /* BHLoadFailedView */,
-				C1F7A62520E63E47001D5A88 /* KSScanView */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		0768E86F1F31CF1D00AB1D15 /* AddressPreModel */ = {
-			isa = PBXGroup;
-			children = (
-				0768E8701F31CF1D00AB1D15 /* BHPreAddressModel.h */,
-				0768E8711F31CF1D00AB1D15 /* BHPreAddressModel.m */,
-			);
-			path = AddressPreModel;
-			sourceTree = "<group>";
-		};
-		0768E8721F31CF1D00AB1D15 /* StoreModel */ = {
-			isa = PBXGroup;
-			children = (
-				0768E8731F31CF1D00AB1D15 /* BHStoreModel.h */,
-				0768E8741F31CF1D00AB1D15 /* BHStoreModel.m */,
-			);
-			path = StoreModel;
-			sourceTree = "<group>";
-		};
-		0768E8751F31CF1D00AB1D15 /* TreasureModel */ = {
-			isa = PBXGroup;
-			children = (
-				0768E8761F31CF1D00AB1D15 /* BHTreasureModel.h */,
-				0768E8771F31CF1D00AB1D15 /* BHTreasureModel.m */,
-			);
-			path = TreasureModel;
 			sourceTree = "<group>";
 		};
 		0768E8781F31CF1D00AB1D15 /* UserModel */ = {
@@ -1539,15 +1170,6 @@
 				0768E8811F31CFC200AB1D15 /* AlipaySDK.framework */,
 			);
 			path = AlipaySDK;
-			sourceTree = "<group>";
-		};
-		0768F5272017252F00183087 /* QualificationListModel */ = {
-			isa = PBXGroup;
-			children = (
-				0768F5282017255300183087 /* BHQualificationListModel.h */,
-				0768F5292017255300183087 /* BHQualificationListModel.m */,
-			);
-			path = QualificationListModel;
 			sourceTree = "<group>";
 		};
 		076E14052056943400B3AD1B /* PopMessage */ = {
@@ -1647,17 +1269,6 @@
 			path = DeviceManager;
 			sourceTree = "<group>";
 		};
-		07C3C25E1FB31E2E005A8EED /* Main - 首页 */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7A61E20E60B86001D5A88 /* Devices - 设备 */,
-				C1F7A63E20EE3FA7001D5A88 /* Labels - 设备标签 */,
-				C18AD40320D0B0C700ED98C1 /* LiteMainViewController.h */,
-				C18AD40420D0B0C700ED98C1 /* LiteMainViewController.m */,
-			);
-			path = "Main - 首页";
-			sourceTree = "<group>";
-		};
 		07CC430A1F5E747D005E2E0E /* NSObjectSafe */ = {
 			isa = PBXGroup;
 			children = (
@@ -1696,53 +1307,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C113B25A2110008600C6BFAB /* LiteADsMessageHistoryCell */ = {
-			isa = PBXGroup;
-			children = (
-				C113B2552110007C00C6BFAB /* LiteADsMessageHistoryCell.h */,
-				C113B2562110007C00C6BFAB /* LiteADsMessageHistoryCell.m */,
-				C113B2572110007C00C6BFAB /* LiteADsMessageHistoryCell.xib */,
-			);
-			path = LiteADsMessageHistoryCell;
-			sourceTree = "<group>";
-		};
-		C113B2612111606D00C6BFAB /* LiteMessageSendDetailCell */ = {
-			isa = PBXGroup;
-			children = (
-				C113B2622111609800C6BFAB /* LiteMessageSendDetailCell.h */,
-				C113B2632111609800C6BFAB /* LiteMessageSendDetailCell.m */,
-			);
-			path = LiteMessageSendDetailCell;
-			sourceTree = "<group>";
-		};
-		C116F2DE20E38C2B000E7A29 /* LiteDeviceModel */ = {
-			isa = PBXGroup;
-			children = (
-				C116F2DF20E38C3F000E7A29 /* LiteDeviceModel.h */,
-				C116F2E020E38C3F000E7A29 /* LiteDeviceModel.m */,
-			);
-			path = LiteDeviceModel;
-			sourceTree = "<group>";
-		};
-		C124E3FC210704CC00DAD4A2 /* LitePhoneDetailCell */ = {
-			isa = PBXGroup;
-			children = (
-				C124E3FD2107051E00DAD4A2 /* LitePhoneDetailCell.h */,
-				C124E3FE2107051E00DAD4A2 /* LitePhoneDetailCell.m */,
-				C124E3FF2107051E00DAD4A2 /* LitePhoneDetailCell.xib */,
-			);
-			path = LitePhoneDetailCell;
-			sourceTree = "<group>";
-		};
-		C124E4072108198700DAD4A2 /* BHCountDownView */ = {
-			isa = PBXGroup;
-			children = (
-				C124E4092108198700DAD4A2 /* BHCountDownView.h */,
-				C124E4082108198700DAD4A2 /* BHCountDownView.m */,
-			);
-			path = BHCountDownView;
-			sourceTree = "<group>";
-		};
 		C1458BD4216880BD004CAD75 /* MyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1751,17 +1315,6 @@
 				C1458BDC2168811C004CAD75 /* MyInterestCell.xib */,
 			);
 			path = MyView;
-			sourceTree = "<group>";
-		};
-		C14CCD2D2109D18800D0AFD9 /* MyAnnotationView */ = {
-			isa = PBXGroup;
-			children = (
-				C14CCD2E2109D1C300D0AFD9 /* MyAnimatedAnnotationView.h */,
-				C14CCD2F2109D1C300D0AFD9 /* MyAnimatedAnnotationView.m */,
-				C14CCD312109D2E200D0AFD9 /* MyAnnotationView.h */,
-				C14CCD322109D2E200D0AFD9 /* MyAnnotationView.m */,
-			);
-			path = MyAnnotationView;
 			sourceTree = "<group>";
 		};
 		C150830721226BCF00D18753 /* Match - 匹配 */ = {
@@ -1947,15 +1500,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		C18AD40C20D0C70B00ED98C1 /* PublishAnimate - 营销弹出视图 */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD40E20D0C70B00ED98C1 /* PlusAnimate.h */,
-				C18AD40D20D0C70B00ED98C1 /* PlusAnimate.m */,
-			);
-			path = "PublishAnimate - 营销弹出视图";
-			sourceTree = "<group>";
-		};
 		C18AD41520D3679900ED98C1 /* BHLoadFailedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1963,122 +1507,6 @@
 				C18AD41720D3679900ED98C1 /* BHLoadFailedView.m */,
 			);
 			path = BHLoadFailedView;
-			sourceTree = "<group>";
-		};
-		C18AD41920D3A75300ED98C1 /* LiteAccountListCell */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD41A20D3A7A800ED98C1 /* LiteAccountListCell.h */,
-				C18AD41B20D3A7A800ED98C1 /* LiteAccountListCell.m */,
-			);
-			path = LiteAccountListCell;
-			sourceTree = "<group>";
-		};
-		C18AD41D20D3DF5600ED98C1 /* Recharge - 充值 */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD43920D3E66500ED98C1 /* LiteAccountRechargeViewController.h */,
-				C18AD43A20D3E66500ED98C1 /* LiteAccountRechargeViewController.m */,
-			);
-			path = "Recharge - 充值";
-			sourceTree = "<group>";
-		};
-		C18AD41E20D3DF7100ED98C1 /* Qualification - 资质信息 */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD43620D3E63F00ED98C1 /* LiteAccountQualificationViewController.h */,
-				C18AD43720D3E63F00ED98C1 /* LiteAccountQualificationViewController.m */,
-				C1FA38E720D917C50025E07F /* LiteAccountQualificationICPViewController.h */,
-				C1FA38E820D917C50025E07F /* LiteAccountQualificationICPViewController.m */,
-			);
-			path = "Qualification - 资质信息";
-			sourceTree = "<group>";
-		};
-		C18AD41F20D3DF9C00ED98C1 /* Transaction - 交易记录 */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD43020D3E4C100ED98C1 /* LiteAccountTransactionViewController.h */,
-				C18AD43120D3E4C100ED98C1 /* LiteAccountTransactionViewController.m */,
-				C1FA395220DA7A5D0025E07F /* LiteAccountExpenseReportViewController.h */,
-				C1FA395320DA7A5D0025E07F /* LiteAccountExpenseReportViewController.m */,
-				C1FA395520DA7A6F0025E07F /* LiteAccountRechargeReportViewController.h */,
-				C1FA395620DA7A6F0025E07F /* LiteAccountRechargeReportViewController.m */,
-			);
-			path = "Transaction - 交易记录";
-			sourceTree = "<group>";
-		};
-		C18AD42020D3DFBD00ED98C1 /* Invoice - 发票申请 */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39B920DB83220025E07F /* LiteAccountInvoiceReportViewController.h */,
-				C1FA39BA20DB83220025E07F /* LiteAccountInvoiceReportViewController.m */,
-				C1FA39DF20DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.h */,
-				C1FA39E020DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.m */,
-				C18AD43320D3E4E200ED98C1 /* LiteAccountInvoiceApplyViewController.h */,
-				C18AD43420D3E4E200ED98C1 /* LiteAccountInvoiceApplyViewController.m */,
-				C1FA39DC20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.h */,
-				C1FA39DD20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.m */,
-				C1FA39E220DFF9320025E07F /* LiteAccountInvoiceApplySuccessViewController.h */,
-				C1FA39E320DFF9320025E07F /* LiteAccountInvoiceApplySuccessViewController.m */,
-			);
-			path = "Invoice - 发票申请";
-			sourceTree = "<group>";
-		};
-		C18AD42120D3DFEC00ED98C1 /* LabelWaste - 标签垃圾桶 */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD42A20D3E16900ED98C1 /* LiteAccountLabelWasteViewController.h */,
-				C18AD42B20D3E16900ED98C1 /* LiteAccountLabelWasteViewController.m */,
-			);
-			path = "LabelWaste - 标签垃圾桶";
-			sourceTree = "<group>";
-		};
-		C18AD42220D3E04100ED98C1 /* Setup - 设置 */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD42420D3E13000ED98C1 /* LiteAccountSetupViewController.h */,
-				C18AD42520D3E13000ED98C1 /* LiteAccountSetupViewController.m */,
-				C1FA38F520D9F5F10025E07F /* LiteAccountChangePasswordViewController.h */,
-				C1FA38F620D9F5F10025E07F /* LiteAccountChangePasswordViewController.m */,
-				C18AD44020D4125000ED98C1 /* LiteAccountAboutViewController.h */,
-				C18AD44120D4125000ED98C1 /* LiteAccountAboutViewController.m */,
-				C1F7A5FB20E40862001D5A88 /* LiteAccountVersionInfoViewController.h */,
-				C1F7A5FC20E40862001D5A88 /* LiteAccountVersionInfoViewController.m */,
-			);
-			path = "Setup - 设置";
-			sourceTree = "<group>";
-		};
-		C18AD43C20D3E9D200ED98C1 /* LiteAccountSetupCell */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD43D20D3E9FC00ED98C1 /* LiteAccountSetupCell.h */,
-				C18AD43E20D3E9FC00ED98C1 /* LiteAccountSetupCell.m */,
-			);
-			path = LiteAccountSetupCell;
-			sourceTree = "<group>";
-		};
-		C18AD44320D8A66100ED98C1 /* LiteAccountView */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39D820DFC1380025E07F /* LiteAccountInvoiceCell */,
-				C1FA39CC20DF324E0025E07F /* LiteAccountLabelWasteCell */,
-				C1FA39BC20DB84E40025E07F /* LiteAccountInvoiceReportCell */,
-				C1FA39B520DB5B430025E07F /* LiteAccountTransactionCell */,
-				C1FA38EA20D919780025E07F /* LiteAccountQualificationICPCell */,
-				C18AD44420D8A67300ED98C1 /* LiteAccountQualificationCell */,
-				C18AD41920D3A75300ED98C1 /* LiteAccountListCell */,
-				C18AD43C20D3E9D200ED98C1 /* LiteAccountSetupCell */,
-			);
-			path = LiteAccountView;
-			sourceTree = "<group>";
-		};
-		C18AD44420D8A67300ED98C1 /* LiteAccountQualificationCell */ = {
-			isa = PBXGroup;
-			children = (
-				C18AD44520D8AD7300ED98C1 /* LiteAccountQualificationCell.h */,
-				C18AD44620D8AD7300ED98C1 /* LiteAccountQualificationCell.m */,
-			);
-			path = LiteAccountQualificationCell;
 			sourceTree = "<group>";
 		};
 		C18DEB16214E0BD600C823BE /* NIM - IM&音视频 */ = {
@@ -2137,112 +1565,6 @@
 			children = (
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		C1932FCF20FEC7A600C8EE4E /* Phone - 电话营销 */ = {
-			isa = PBXGroup;
-			children = (
-				C1932FD120FEC83300C8EE4E /* LiteADsPhoneListViewController.h */,
-				C1932FD220FEC83300C8EE4E /* LiteADsPhoneListViewController.m */,
-				C15082F42121868800D18753 /* LitePhoneSelectLabelViewController.h */,
-				C15082F52121868800D18753 /* LitePhoneSelectLabelViewController.m */,
-				C19330012101E34E00C8EE4E /* LitePhoneSelectCustomViewController.h */,
-				C19330022101E34E00C8EE4E /* LitePhoneSelectCustomViewController.m */,
-				C193300E2106C57D00C8EE4E /* LitePhoneDetailViewController.h */,
-				C193300F2106C57D00C8EE4E /* LitePhoneDetailViewController.m */,
-				C19330102106C57D00C8EE4E /* LitePhoneDetailViewController.xib */,
-				C124E40B21081D7600DAD4A2 /* LitePhoneMarkViewController.h */,
-				C124E40C21081D7600DAD4A2 /* LitePhoneMarkViewController.m */,
-				C124E40D21081D7600DAD4A2 /* LitePhoneMarkViewController.xib */,
-				C124E403210721A700DAD4A2 /* BHPhoneUserInfoViewController.h */,
-				C124E402210721A600DAD4A2 /* BHPhoneUserInfoViewController.m */,
-			);
-			path = "Phone - 电话营销";
-			sourceTree = "<group>";
-		};
-		C1932FD020FEC7C500C8EE4E /* Message - 短信营销 */ = {
-			isa = PBXGroup;
-			children = (
-				C1932FE420FED3F600C8EE4E /* LiteADsMessageListViewController.h */,
-				C1932FE520FED3F600C8EE4E /* LiteADsMessageListViewController.m */,
-				C14CCD34210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.h */,
-				C14CCD35210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m */,
-				C14CCD36210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.xib */,
-				C109E8BC210F1B55007569DC /* LiteADsMessageSetupViewController.h */,
-				C109E8BD210F1B55007569DC /* LiteADsMessageSetupViewController.m */,
-				C109E8BE210F1B55007569DC /* LiteADsMessageSetupViewController.xib */,
-				C109E8C1210F1BC2007569DC /* LiteADsMessageHistoryViewController.h */,
-				C109E8C2210F1BC2007569DC /* LiteADsMessageHistoryViewController.m */,
-				C14CCD46210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.h */,
-				C14CCD47210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.m */,
-				C14CCD48210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib */,
-				C113B25E211147E700C6BFAB /* LiteADsMessageSendDetailViewController.h */,
-				C113B25F211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m */,
-				C109E8C4210F2428007569DC /* LiteADsMessageContentInfoViewController.h */,
-				C109E8C5210F2428007569DC /* LiteADsMessageContentInfoViewController.m */,
-			);
-			path = "Message - 短信营销";
-			sourceTree = "<group>";
-		};
-		C1932FE720FF16CA00C8EE4E /* LiteADsView */ = {
-			isa = PBXGroup;
-			children = (
-				C113B2612111606D00C6BFAB /* LiteMessageSendDetailCell */,
-				C113B25A2110008600C6BFAB /* LiteADsMessageHistoryCell */,
-				C124E4072108198700DAD4A2 /* BHCountDownView */,
-				C124E3FC210704CC00DAD4A2 /* LitePhoneDetailCell */,
-				C1932FF020FF3DB700C8EE4E /* LiteADsMessageListCell */,
-				C1932FE820FF16DD00C8EE4E /* LiteADsPhoneListCell */,
-				C19330042105AEEF00C8EE4E /* LitePhoneListCell */,
-			);
-			path = LiteADsView;
-			sourceTree = "<group>";
-		};
-		C1932FE820FF16DD00C8EE4E /* LiteADsPhoneListCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1932FE920FF170100C8EE4E /* LiteADsPhoneListCell.h */,
-				C1932FEA20FF170100C8EE4E /* LiteADsPhoneListCell.m */,
-			);
-			path = LiteADsPhoneListCell;
-			sourceTree = "<group>";
-		};
-		C1932FEC20FF21B200C8EE4E /* LiteADsPhoneListModel */ = {
-			isa = PBXGroup;
-			children = (
-				C1932FED20FF21D400C8EE4E /* LiteADsPhoneListModel.h */,
-				C1932FEE20FF21D400C8EE4E /* LiteADsPhoneListModel.m */,
-			);
-			path = LiteADsPhoneListModel;
-			sourceTree = "<group>";
-		};
-		C1932FF020FF3DB700C8EE4E /* LiteADsMessageListCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1932FF420FF3DED00C8EE4E /* LiteADsMessageListCell.h */,
-				C1932FF520FF3DED00C8EE4E /* LiteADsMessageListCell.m */,
-				C1932FFE2100BFE700C8EE4E /* LiteADsSelectLabelCell.h */,
-				C1932FFF2100BFE700C8EE4E /* LiteADsSelectLabelCell.m */,
-			);
-			path = LiteADsMessageListCell;
-			sourceTree = "<group>";
-		};
-		C1932FF720FF3EFC00C8EE4E /* LiteADsMessageListModel */ = {
-			isa = PBXGroup;
-			children = (
-				C1932FF820FF3F0F00C8EE4E /* LiteADsMessageListModel.h */,
-				C1932FF920FF3F0F00C8EE4E /* LiteADsMessageListModel.m */,
-			);
-			path = LiteADsMessageListModel;
-			sourceTree = "<group>";
-		};
-		C19330042105AEEF00C8EE4E /* LitePhoneListCell */ = {
-			isa = PBXGroup;
-			children = (
-				C19330052105AF1600C8EE4E /* LitePhoneListCell.h */,
-				C19330062105AF1600C8EE4E /* LitePhoneListCell.m */,
-			);
-			path = LitePhoneListCell;
 			sourceTree = "<group>";
 		};
 		C1938C3D2152713900212FB3 /* Classes */ = {
@@ -2402,15 +1724,6 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
-		C1F7A5F120E39187001D5A88 /* LiteLabelModel */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7A5F220E3919D001D5A88 /* LiteLabelModel.h */,
-				C1F7A5F320E3919D001D5A88 /* LiteLabelModel.m */,
-			);
-			path = LiteLabelModel;
-			sourceTree = "<group>";
-		};
 		C1F7A60020E5DB18001D5A88 /* BaiduMapAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -2435,69 +1748,6 @@
 			path = thirdlibs;
 			sourceTree = "<group>";
 		};
-		C1F7A61E20E60B86001D5A88 /* Devices - 设备 */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7A61F20E60C5E001D5A88 /* LiteDeviceAddViewController.h */,
-				C1F7A62020E60C5E001D5A88 /* LiteDeviceAddViewController.m */,
-				C1F7A62220E63B2E001D5A88 /* LiteDeviceScanQRViewController.h */,
-				C1F7A62320E63B2E001D5A88 /* LiteDeviceScanQRViewController.m */,
-				C1F7A62920E91135001D5A88 /* LiteDeviceEditNameViewController.h */,
-				C1F7A62A20E91135001D5A88 /* LiteDeviceEditNameViewController.m */,
-				C1F7A63820EB66B8001D5A88 /* LiteDeviceDetailViewController.h */,
-				C1F7A63920EB66B8001D5A88 /* LiteDeviceDetailViewController.m */,
-				C1F7A63F20EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.h */,
-				C1F7A64020EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.m */,
-				C1F7A64920F30087001D5A88 /* LiteReadyStartViewController.h */,
-				C1F7A64A20F30087001D5A88 /* LiteReadyStartViewController.m */,
-				C1F7A64C20F33902001D5A88 /* CircleSpreadTransition.h */,
-				C1F7A64D20F33902001D5A88 /* CircleSpreadTransition.m */,
-			);
-			path = "Devices - 设备";
-			sourceTree = "<group>";
-		};
-		C1F7A62520E63E47001D5A88 /* KSScanView */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7A62720E63E47001D5A88 /* KSScanQRCodeView.h */,
-				C1F7A62620E63E47001D5A88 /* KSScanQRCodeView.m */,
-			);
-			path = KSScanView;
-			sourceTree = "<group>";
-		};
-		C1F7A63020EA0F6C001D5A88 /* LiteMainView */ = {
-			isa = PBXGroup;
-			children = (
-				C14CCD2D2109D18800D0AFD9 /* MyAnnotationView */,
-				C1F7A65920F5FF83001D5A88 /* LiteDeviceLabelListCell */,
-				C1F7A63120EA0F98001D5A88 /* LiteShowBorderCardsView */,
-			);
-			path = LiteMainView;
-			sourceTree = "<group>";
-		};
-		C1F7A63120EA0F98001D5A88 /* LiteShowBorderCardsView */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7A63220EA0FE9001D5A88 /* LiteShowBorderCardsView.h */,
-				C1F7A63320EA0FE9001D5A88 /* LiteShowBorderCardsView.m */,
-				C1F7A63520EA107C001D5A88 /* LiteShowBorderCardsCell.h */,
-				C1F7A63620EA107C001D5A88 /* LiteShowBorderCardsCell.m */,
-			);
-			path = LiteShowBorderCardsView;
-			sourceTree = "<group>";
-		};
-		C1F7A63E20EE3FA7001D5A88 /* Labels - 设备标签 */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7A65620F5FF6E001D5A88 /* LiteDeviceLabelListViewController.h */,
-				C1F7A65720F5FF6E001D5A88 /* LiteDeviceLabelListViewController.m */,
-				C1F7A65D20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.h */,
-				C1F7A65E20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.m */,
-				C1F7A65F20F721D9001D5A88 /* LiteDeviceLabelDetailViewController.xib */,
-			);
-			path = "Labels - 设备标签";
-			sourceTree = "<group>";
-		};
 		C1F7A65220F4AB44001D5A88 /* LiteCycleProgressButton - 带环形进度条按钮 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2507,15 +1757,6 @@
 			path = "LiteCycleProgressButton - 带环形进度条按钮";
 			sourceTree = "<group>";
 		};
-		C1F7A65920F5FF83001D5A88 /* LiteDeviceLabelListCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1F7A65A20F5FFAC001D5A88 /* LiteDeviceLabelListCell.h */,
-				C1F7A65B20F5FFAC001D5A88 /* LiteDeviceLabelListCell.m */,
-			);
-			path = LiteDeviceLabelListCell;
-			sourceTree = "<group>";
-		};
 		C1FA38E020D8F6830025E07F /* XZPickView - 自定义选择器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2523,15 +1764,6 @@
 				C1FA38E420D8F6830025E07F /* XZPickView.m */,
 			);
 			path = "XZPickView - 自定义选择器";
-			sourceTree = "<group>";
-		};
-		C1FA38EA20D919780025E07F /* LiteAccountQualificationICPCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA38EE20D919960025E07F /* LiteAccountQualificationICPCell.h */,
-				C1FA38EF20D919960025E07F /* LiteAccountQualificationICPCell.m */,
-			);
-			path = LiteAccountQualificationICPCell;
 			sourceTree = "<group>";
 		};
 		C1FA38F120D9F0760025E07F /* LiteAlertLabel - 橙色提示框 */ = {
@@ -2639,62 +1871,6 @@
 				C1FA399620DB2C070025E07F /* PGDatePicker+DateHourMinuteSecond.m */,
 			);
 			path = PGDatePicker;
-			sourceTree = "<group>";
-		};
-		C1FA39B520DB5B430025E07F /* LiteAccountTransactionCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39B620DB5B860025E07F /* LiteAccountTransactionCell.h */,
-				C1FA39B720DB5B860025E07F /* LiteAccountTransactionCell.m */,
-			);
-			path = LiteAccountTransactionCell;
-			sourceTree = "<group>";
-		};
-		C1FA39BC20DB84E40025E07F /* LiteAccountInvoiceReportCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39BD20DB850F0025E07F /* LiteAccountInvoiceReportCell.h */,
-				C1FA39BE20DB850F0025E07F /* LiteAccountInvoiceReportCell.m */,
-			);
-			path = LiteAccountInvoiceReportCell;
-			sourceTree = "<group>";
-		};
-		C1FA39CC20DF324E0025E07F /* LiteAccountLabelWasteCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39CD20DF326F0025E07F /* LiteAccountLabelWasteCell.h */,
-				C1FA39CE20DF326F0025E07F /* LiteAccountLabelWasteCell.m */,
-			);
-			path = LiteAccountLabelWasteCell;
-			sourceTree = "<group>";
-		};
-		C1FA39D420DF7FDA0025E07F /* LiteAccountInvoiceModel */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39D520DF802D0025E07F /* LiteAccountInvoiceModel.h */,
-				C1FA39D620DF802D0025E07F /* LiteAccountInvoiceModel.m */,
-			);
-			path = LiteAccountInvoiceModel;
-			sourceTree = "<group>";
-		};
-		C1FA39D820DFC1380025E07F /* LiteAccountInvoiceCell */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39D920DFC5BF0025E07F /* LiteAccountInvoiceCell.h */,
-				C1FA39DA20DFC5BF0025E07F /* LiteAccountInvoiceCell.m */,
-				C1FA39E520E098170025E07F /* LiteAccountInvoiceView.h */,
-				C1FA39E620E098170025E07F /* LiteAccountInvoiceView.m */,
-			);
-			path = LiteAccountInvoiceCell;
-			sourceTree = "<group>";
-		};
-		C1FA39E820E32BAF0025E07F /* LiteAccountTransactionModel */ = {
-			isa = PBXGroup;
-			children = (
-				C1FA39E920E32BD20025E07F /* LiteAccountTransactionModel.h */,
-				C1FA39EA20E32BD20025E07F /* LiteAccountTransactionModel.m */,
-			);
-			path = LiteAccountTransactionModel;
 			sourceTree = "<group>";
 		};
 		E72630772BA985561E2B1047 /* Frameworks */ = {
@@ -2830,7 +2006,6 @@
 				C1590354210975F00027285A /* animation_49.png in Resources */,
 				C159034B210975F00027285A /* animation_0.png in Resources */,
 				C159031D210975F00027285A /* animation_51.png in Resources */,
-				C109E8C0210F1B55007569DC /* LiteADsMessageSetupViewController.xib in Resources */,
 				0775963F1FC5AB720036CC1F /* ZLPhotoBrowserCell.xib in Resources */,
 				C1590321210975F00027285A /* animation_52.png in Resources */,
 				076688271EE50BD3007FE539 /* checkmarkHUD@2x.png in Resources */,
@@ -2853,8 +2028,6 @@
 				C1130E9F21586FEA008A446E /* ChatViewController.xib in Resources */,
 				C1590351210975F00027285A /* animation_6.png in Resources */,
 				C1590325210975F00027285A /* animation_57.png in Resources */,
-				C113B2592110007C00C6BFAB /* LiteADsMessageHistoryCell.xib in Resources */,
-				C14CCD4A210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.xib in Resources */,
 				C1590355210975F00027285A /* animation_48.png in Resources */,
 				C1590333210975F00027285A /* animation_19.png in Resources */,
 				C1590322210975F00027285A /* animation_46.png in Resources */,
@@ -2864,24 +2037,19 @@
 				C1130E9A21586EE1008A446E /* ChatListViewController.xib in Resources */,
 				C1590323210975F00027285A /* animation_47.png in Resources */,
 				C159031F210975F00027285A /* animation_44.png in Resources */,
-				C14CCD38210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.xib in Resources */,
 				C1938F4D2152756200212FB3 /* video_chat_tip_receiver.aac in Resources */,
 				C1590353210975F00027285A /* animation_5.png in Resources */,
 				C1590324210975F00027285A /* animation_53.png in Resources */,
 				C1130E952157A875008A446E /* MatchVideoViewController.xib in Resources */,
 				C159032A210975F00027285A /* animation_54.png in Resources */,
-				C19330122106C57D00C8EE4E /* LitePhoneDetailViewController.xib in Resources */,
 				C1590348210975F00027285A /* animation_28.png in Resources */,
-				C124E4012107051E00DAD4A2 /* LitePhoneDetailCell.xib in Resources */,
 				C1590327210975F00027285A /* animation_42.png in Resources */,
 				C1590340210975F00027285A /* animation_12.png in Resources */,
 				C159031B210975F00027285A /* animation_9.png in Resources */,
-				C1F7A66120F721D9001D5A88 /* LiteDeviceLabelDetailViewController.xib in Resources */,
 				C1590352210975F00027285A /* animation_7.png in Resources */,
 				C18DEE11214E31FE00C823BE /* MyInputViewController.xib in Resources */,
 				C1590328210975F00027285A /* animation_56.png in Resources */,
 				C1FA399720DB2C070025E07F /* README.md in Resources */,
-				C124E40F21081D7600DAD4A2 /* LitePhoneMarkViewController.xib in Resources */,
 				C159033E210975F00027285A /* animation_22.png in Resources */,
 				076687B11EE4FEB3007FE539 /* Assets.xcassets in Resources */,
 				C1590334210975F00027285A /* animation_18.png in Resources */,
@@ -2998,18 +2166,13 @@
 				076E14082056945F00B3AD1B /* BHPopMessageManager.m in Sources */,
 				C1938F492152756200212FB3 /* UIView+NTES.m in Sources */,
 				0766882E1EE50BD3007FE539 /* BHRegisterSuccessViewController.m in Sources */,
-				C124E404210721A700DAD4A2 /* BHPhoneUserInfoViewController.m in Sources */,
-				C1F7A62420E63B2E001D5A88 /* LiteDeviceScanQRViewController.m in Sources */,
 				C1938F612152756200212FB3 /* ijksdl_timer.c in Sources */,
 				C1FA38E620D8F6830025E07F /* XZPickView.m in Sources */,
 				076688251EE50BD3007FE539 /* SGPageTitleView.m in Sources */,
 				071A23AF1F04FE450054FED1 /* NSArray+JSONString.m in Sources */,
-				C113B2642111609800C6BFAB /* LiteMessageSendDetailCell.m in Sources */,
-				C18AD40520D0B0C700ED98C1 /* LiteMainViewController.m in Sources */,
 				C1FA39A020DB2C070025E07F /* PGDatePickerView.m in Sources */,
 				076688221EE50BD3007FE539 /* FSNetWorkError.m in Sources */,
 				077596471FC5AB720036CC1F /* ZLNoAuthorityViewController.m in Sources */,
-				C1FA39E420DFF9320025E07F /* LiteAccountInvoiceApplySuccessViewController.m in Sources */,
 				C1FA39AC20DB2C080025E07F /* PGDatePicker+DateHour.m in Sources */,
 				C1F7A65520F4AB93001D5A88 /* LiteCycleProgressButton.m in Sources */,
 				C1FA399A20DB2C070025E07F /* PGPickerView.m in Sources */,
@@ -3017,37 +2180,19 @@
 				076687AC1EE4FEB3007FE539 /* ViewController.m in Sources */,
 				077596441FC5AB720036CC1F /* ZLEditVideoController.m in Sources */,
 				076688281EE50BD3007FE539 /* ShowHUDTool.m in Sources */,
-				C1F7A66020F721D9001D5A88 /* LiteDeviceLabelDetailViewController.m in Sources */,
 				C15C3A3C21329506008BBF38 /* MatchCardView.m in Sources */,
 				0775964A1FC5AB720036CC1F /* ZLPhotoBrowserCell.m in Sources */,
-				C1FA39DE20DFF7320025E07F /* LiteAccountInvoiceReceiverViewController.m in Sources */,
 				C1938F442152756200212FB3 /* NTESClientUtil.m in Sources */,
-				C18AD43820D3E63F00ED98C1 /* LiteAccountQualificationViewController.m in Sources */,
-				C1F7A64120EE47F1001D5A88 /* LiteDeviceWorkStatusViewController.m in Sources */,
-				C18AD40B20D0B76900ED98C1 /* LiteAccountViewController.m in Sources */,
 				C1FA39A420DB2C070025E07F /* PGDatePicker+Time.m in Sources */,
 				C1938F5B2152756200212FB3 /* yuv444p10le.fsh.c in Sources */,
 				C150832B2122F7DC00D18753 /* ChatListCell.m in Sources */,
-				C113B260211147E700C6BFAB /* LiteADsMessageSendDetailViewController.m in Sources */,
-				C19330112106C57D00C8EE4E /* LitePhoneDetailViewController.m in Sources */,
 				C1FA39A120DB2C070025E07F /* PGDatePicker+MonthDayHour.m in Sources */,
 				C15C3A6921356B7F008BBF38 /* LoginViewController.m in Sources */,
 				077596461FC5AB720036CC1F /* ZLForceTouchPreviewController.m in Sources */,
 				076687A91EE4FEB3007FE539 /* AppDelegate.mm in Sources */,
-				C14CCD49210AEF4500D0AFD9 /* LiteADsMessageDetailViewController.m in Sources */,
 				C1FA39A520DB2C070025E07F /* PGDatePickManager.m in Sources */,
-				07500E821F9DF9D60065EA7F /* FSPushManager.m in Sources */,
-				C113B2582110007C00C6BFAB /* LiteADsMessageHistoryCell.m in Sources */,
-				C124E40A2108198700DAD4A2 /* BHCountDownView.m in Sources */,
-				C1932FEF20FF21D400C8EE4E /* LiteADsPhoneListModel.m in Sources */,
 				076688181EE50BD3007FE539 /* NSString+System.m in Sources */,
-				C1932FE620FED3F600C8EE4E /* LiteADsMessageListViewController.m in Sources */,
-				C14CCD302109D1C300D0AFD9 /* MyAnimatedAnnotationView.m in Sources */,
-				C18AD40F20D0C70C00ED98C1 /* PlusAnimate.m in Sources */,
-				C18AD42620D3E13000ED98C1 /* LiteAccountSetupViewController.m in Sources */,
-				076688321EE50BD3007FE539 /* FSBaseTabBarController.m in Sources */,
 				C1627DEE2176CD7D005C4BCD /* ChatSessionConfig.m in Sources */,
-				C1FA39D720DF802D0025E07F /* LiteAccountInvoiceModel.m in Sources */,
 				C1130E9E21586FEA008A446E /* ChatViewController.m in Sources */,
 				0775964D1FC5AB720036CC1F /* ZLProgressHUD.m in Sources */,
 				0775964F1FC5AB720036CC1F /* ZLThumbnailViewController.m in Sources */,
@@ -3064,152 +2209,98 @@
 				077596451FC5AB720036CC1F /* ZLEditViewController.m in Sources */,
 				07551068207315FB00DA7BEA /* BHOrderTools.m in Sources */,
 				0730F81C1EEAA99D00F2C8DC /* WLUnitField.m in Sources */,
-				C109E8BF210F1B55007569DC /* LiteADsMessageSetupViewController.m in Sources */,
 				076688241EE50BD3007FE539 /* SGPageContentView.m in Sources */,
 				07BC7BFF1F694CA800D1A6F2 /* FSDeviceManager.m in Sources */,
-				C18AD44720D8AD7300ED98C1 /* LiteAccountQualificationCell.m in Sources */,
-				C1F7A63A20EB66B8001D5A88 /* LiteDeviceDetailViewController.m in Sources */,
-				C1932FF620FF3DED00C8EE4E /* LiteADsMessageListCell.m in Sources */,
 				C1FA390320DA71210025E07F /* LLSegmentBar.m in Sources */,
 				079221CC2085F5BC009CB66C /* SandBoxManager.m in Sources */,
 				C1938F462152756200212FB3 /* NTESService.m in Sources */,
-				C1FA395420DA7A5D0025E07F /* LiteAccountExpenseReportViewController.m in Sources */,
 				076688211EE50BD3007FE539 /* FSLaunchManager.m in Sources */,
 				0775964B1FC5AB720036CC1F /* ZLPhotoManager.m in Sources */,
-				C124E40E21081D7600DAD4A2 /* LitePhoneMarkViewController.m in Sources */,
 				C1FA399D20DB2C070025E07F /* PGDatePicker+MinuteAndSecond.m in Sources */,
 				0766881E1EE50BD3007FE539 /* UITextView+Placeholder.m in Sources */,
 				C1FA39A220DB2C070025E07F /* PGDatePicker+YearAndMonth.m in Sources */,
 				C1938F552152756200212FB3 /* mvp.vsh.c in Sources */,
-				0768E87B1F31CF1D00AB1D15 /* BHPreAddressModel.m in Sources */,
-				07215B7E1FD01CD3000E16DA /* BHNotificationModel.m in Sources */,
-				C1932FFA20FF3F0F00C8EE4E /* LiteADsMessageListModel.m in Sources */,
 				077596481FC5AB720036CC1F /* ZLPhotoActionSheet.m in Sources */,
-				C1F7A5F420E3919D001D5A88 /* LiteLabelModel.m in Sources */,
 				C1938F562152756200212FB3 /* renderer_rgb.c in Sources */,
 				C1FA39B320DB2C080025E07F /* PGDatePicker+Year.m in Sources */,
 				07BF36891FD7CBDE00D77E8B /* BHAgreementViewController.m in Sources */,
-				C18AD43F20D3E9FC00ED98C1 /* LiteAccountSetupCell.m in Sources */,
-				C1F7A62B20E91135001D5A88 /* LiteDeviceEditNameViewController.m in Sources */,
 				C1FA39A920DB2C080025E07F /* PGDatePicker+MonthDayHourMinuteSecond.m in Sources */,
 				C1FA390420DA71210025E07F /* LLSegmentBarVC.m in Sources */,
-				C1FA39EB20E32BD20025E07F /* LiteAccountTransactionModel.m in Sources */,
-				0768E87C1F31CF1D00AB1D15 /* BHStoreModel.m in Sources */,
 				C18DEE10214E31FE00C823BE /* MyInputViewController.m in Sources */,
 				077596491FC5AB720036CC1F /* ZLPhotoBrowser.m in Sources */,
 				C1938F632152756200212FB3 /* LSAudioController.m in Sources */,
 				C1938F532152756200212FB3 /* renderer_yuv444p10le.c in Sources */,
 				C1938F5A2152756200212FB3 /* renderer.c in Sources */,
-				C19330072105AF1700C8EE4E /* LitePhoneListCell.m in Sources */,
 				076688191EE50BD3007FE539 /* UIButton+countdown.m in Sources */,
-				C109E8C6210F2428007569DC /* LiteADsMessageContentInfoViewController.m in Sources */,
-				C1F7A64E20F33902001D5A88 /* CircleSpreadTransition.m in Sources */,
 				0766881A1EE50BD3007FE539 /* UIControl+repeat.m in Sources */,
 				077596431FC5AB720036CC1F /* ZLCollectionCell.m in Sources */,
 				C18AD41820D3679900ED98C1 /* BHLoadFailedView.m in Sources */,
 				C1FA38F420D9F09B0025E07F /* LiteAlertLabel.m in Sources */,
-				C14CCD332109D2E200D0AFD9 /* MyAnnotationView.m in Sources */,
 				C10B3E78215369650044AAEB /* MatchVoiceViewController.m in Sources */,
 				077596421FC5AB720036CC1F /* ZLBigImageCell.m in Sources */,
 				C1FA39B020DB2C080025E07F /* PGDatePicker+Common.m in Sources */,
-				C1F7A65C20F5FFAC001D5A88 /* LiteDeviceLabelListCell.m in Sources */,
-				C1F7A63720EA107C001D5A88 /* LiteShowBorderCardsCell.m in Sources */,
 				C1FA39A320DB2C070025E07F /* NSCalendar+PGCurrent.m in Sources */,
 				076687A61EE4FEB3007FE539 /* main.m in Sources */,
 				C1FA390220DA71210025E07F /* LLSegmentBarConfig.m in Sources */,
-				0768E87D1F31CF1D00AB1D15 /* BHTreasureModel.m in Sources */,
 				C150831C21226FBF00D18753 /* HomeViewController.m in Sources */,
 				C1FA399920DB2C070025E07F /* PGPickerColumnView.m in Sources */,
-				C1FA39E120DFF8FB0025E07F /* LiteAccountInvoiceDetailViewController.m in Sources */,
 				C18AD40220D0B09600ED98C1 /* LiteBaseViewController.m in Sources */,
 				C1FA39A720DB2C080025E07F /* NSBundle+PGDatePicker.m in Sources */,
-				C1F7A64B20F30087001D5A88 /* LiteReadyStartViewController.m in Sources */,
-				C1F7A62820E63E47001D5A88 /* KSScanQRCodeView.m in Sources */,
 				C15C3A64213566C4008BBF38 /* MyEditInfoViewController.m in Sources */,
 				C1938F602152756200212FB3 /* IJKSDLGLView.m in Sources */,
-				076E14042056819700B3AD1B /* BHNotificationCenterModel.m in Sources */,
 				072449472006215E0055B754 /* BHDataReportManager.m in Sources */,
 				077596411FC5AB720036CC1F /* UIButton+EnlargeTouchArea.m in Sources */,
-				C18AD43B20D3E66500ED98C1 /* LiteAccountRechargeViewController.m in Sources */,
-				C1FA39BB20DB83220025E07F /* LiteAccountInvoiceReportViewController.m in Sources */,
 				C1FA39A820DB2C080025E07F /* PGDatePicker+MonthDayHourMinute.m in Sources */,
 				C1FA39AE20DB2C080025E07F /* PGDatePicker+TimeAndSecond.m in Sources */,
 				0775963C1FC5AB720036CC1F /* NSBundle+ZLPhotoBrowser.m in Sources */,
 				073A95AC20206FF600C2B67A /* UIDevice+Orientation.m in Sources */,
 				C1938F582152756200212FB3 /* renderer_yuv420sp.c in Sources */,
-				C116F2E120E38C3F000E7A29 /* LiteDeviceModel.m in Sources */,
-				0724494D200792270055B754 /* BHQualificationModel.m in Sources */,
-				C18AD42C20D3E16900ED98C1 /* LiteAccountLabelWasteViewController.m in Sources */,
 				C15C3A5A213565E3008BBF38 /* MyRechargeViewController.m in Sources */,
 				0768E87E1F31CF1D00AB1D15 /* BHUserModel.m in Sources */,
 				C1FA39AF20DB2C080025E07F /* PGDatePicker+DateAndTime.m in Sources */,
 				C1FA39B420DB2C080025E07F /* PGDatePicker+DateHourMinuteSecond.m in Sources */,
 				C1458BDD2168811C004CAD75 /* MyInterestCell.m in Sources */,
 				C1938F5E2152756200212FB3 /* rgb.fsh.c in Sources */,
-				C109E8C3210F1BC2007569DC /* LiteADsMessageHistoryViewController.m in Sources */,
-				C1F7A5FD20E40862001D5A88 /* LiteAccountVersionInfoViewController.m in Sources */,
 				07C5632220634383009C1BD7 /* BHWebViewController.m in Sources */,
 				076688231EE50BD3007FE539 /* FSNetWorkManager.m in Sources */,
 				0766881F1EE50BD3007FE539 /* UIView+Addition.m in Sources */,
 				C1FA39AA20DB2C080025E07F /* PGDatePicker+DateHourMinute.m in Sources */,
-				C19330032101E34E00C8EE4E /* LitePhoneSelectCustomViewController.m in Sources */,
 				C1938F592152756200212FB3 /* shader.c in Sources */,
 				C1938F5D2152756200212FB3 /* yuv420sp.fsh.c in Sources */,
 				07CC430D1F5E747D005E2E0E /* NSObjectSafe.m in Sources */,
 				C1938F522152756200212FB3 /* NTESGLView.m in Sources */,
-				C1FA39BF20DB850F0025E07F /* LiteAccountInvoiceReportCell.m in Sources */,
 				C1FA39B220DB2C080025E07F /* PGDatePickManagerHeaderView.m in Sources */,
 				0766882D1EE50BD3007FE539 /* BHRegisterViewController.m in Sources */,
 				076688261EE50BD3007FE539 /* UIView+SGFrame.m in Sources */,
 				C1938F5F2152756200212FB3 /* color.c in Sources */,
-				C1FA38E920D917C50025E07F /* LiteAccountQualificationICPViewController.m in Sources */,
 				C1C1F45B2140FD8400592473 /* NoHighlightButton.m in Sources */,
 				C1FA39AB20DB2C080025E07F /* NSDate+PGCategory.m in Sources */,
 				C15C3A3F213295A7008BBF38 /* MatchCardCell.m in Sources */,
 				C1938F4A2152756200212FB3 /* LSLabel.m in Sources */,
-				C19330002100BFE700C8EE4E /* LiteADsSelectLabelCell.m in Sources */,
-				0768F52A2017255300183087 /* BHQualificationListModel.m in Sources */,
 				C1938F622152756200212FB3 /* NTESVideoChatNetStatusView.m in Sources */,
 				0775964E1FC5AB720036CC1F /* ZLShowBigImgViewController.m in Sources */,
-				C1FA39B820DB5B860025E07F /* LiteAccountTransactionCell.m in Sources */,
 				C1FA399F20DB2C070025E07F /* UIColor+PGHex.m in Sources */,
-				C15082F62121868800D18753 /* LitePhoneSelectLabelViewController.m in Sources */,
 				076688291EE50BD3007FE539 /* SliderMenuController.m in Sources */,
 				C1938F4F2152756200212FB3 /* LSVideoController.m in Sources */,
 				0766881C1EE50BD3007FE539 /* UIImage+compressIMG.m in Sources */,
-				C124E4002107051E00DAD4A2 /* LitePhoneDetailCell.m in Sources */,
 				C1FA39A620DB2C070025E07F /* PGDatePicker+Logic.m in Sources */,
 				C1FA399820DB2C070025E07F /* PGPickerColumnCell.m in Sources */,
 				C1938F502152756200212FB3 /* NetCallChatInfo.m in Sources */,
-				C1FA38F020D919960025E07F /* LiteAccountQualificationICPCell.m in Sources */,
-				C1FA39DB20DFC5BF0025E07F /* LiteAccountInvoiceCell.m in Sources */,
-				C1F7A65820F5FF6E001D5A88 /* LiteDeviceLabelListViewController.m in Sources */,
 				C150831721226C6A00D18753 /* MatchListViewController.m in Sources */,
-				C1F7A63420EA0FE9001D5A88 /* LiteShowBorderCardsView.m in Sources */,
 				070F038D2058C26400B63CCA /* GuideView.m in Sources */,
 				C1FA39B120DB2C080025E07F /* PGDatePicker+MonthDay.m in Sources */,
 				C1938F472152756200212FB3 /* NTESBundleSetting.m in Sources */,
 				C1938F572152756200212FB3 /* renderer_yuv420p.c in Sources */,
-				C1FA38F720D9F5F10025E07F /* LiteAccountChangePasswordViewController.m in Sources */,
 				07ECAAEC1FF0EA5500F8F95B /* UITabBar+Badge.m in Sources */,
-				C18AD43520D3E4E200ED98C1 /* LiteAccountInvoiceApplyViewController.m in Sources */,
-				C18AD41C20D3A7A900ED98C1 /* LiteAccountListCell.m in Sources */,
-				C1FA39CF20DF326F0025E07F /* LiteAccountLabelWasteCell.m in Sources */,
 				0766882C1EE50BD3007FE539 /* BHLoginViewController.m in Sources */,
 				C15C3A5F21356661008BBF38 /* MySetViewController.m in Sources */,
 				C1FA399E20DB2C070025E07F /* PGDatePicker.m in Sources */,
-				C1932FEB20FF170100C8EE4E /* LiteADsPhoneListCell.m in Sources */,
-				C1FA395720DA7A6F0025E07F /* LiteAccountRechargeReportViewController.m in Sources */,
 				076688311EE50BD3007FE539 /* FSBaseNavigationController.m in Sources */,
-				C1932FD320FEC83300C8EE4E /* LiteADsPhoneListViewController.m in Sources */,
-				C1FA39E720E098170025E07F /* LiteAccountInvoiceView.m in Sources */,
 				C1938F4E2152756200212FB3 /* NTESNetChatViewController.m in Sources */,
 				C1FA390120DA71210025E07F /* UIView+LLSegmentBar.m in Sources */,
-				C14CCD37210AAF2A00D0AFD9 /* LiteADsMessageContentViewController.m in Sources */,
 				0775964C1FC5AB720036CC1F /* ZLPhotoModel.m in Sources */,
 				0730F8181EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m in Sources */,
 				C1130E9921586EE1008A446E /* ChatListViewController.m in Sources */,
-				C18AD43220D3E4C100ED98C1 /* LiteAccountTransactionViewController.m in Sources */,
 				076688171EE50BD3007FE539 /* NSString+Helper.m in Sources */,
 				C1938F4B2152756200212FB3 /* SVProgressHUD+Ext.m in Sources */,
 				C1FA399B20DB2C070025E07F /* PGPickerTableView.m in Sources */,
@@ -3217,9 +2308,6 @@
 				0766881B1EE50BD3007FE539 /* UIImage+category.m in Sources */,
 				C1938F5C2152756200212FB3 /* yuv420p.fsh.c in Sources */,
 				C1938F542152756200212FB3 /* common.c in Sources */,
-				C18AD40820D0B23C00ED98C1 /* LiteADsManagerViewController.m in Sources */,
-				C1F7A62120E60C5E001D5A88 /* LiteDeviceAddViewController.m in Sources */,
-				C18AD44220D4125000ED98C1 /* LiteAccountAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

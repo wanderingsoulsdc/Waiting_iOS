@@ -18,7 +18,6 @@
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 #import "BHLoginViewController.h"
-#import "FSPushManager.h"
 #import "FSDeviceManager.h"
 #import "IQKeyboardManager.h"
 #import <UMCommon/UMCommon.h>
@@ -422,7 +421,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     }
     else
     {
-        [[FSPushManager sharedInstance] handingPushNotificationDictionary:userInfo];
+//        [[FSPushManager sharedInstance] handingPushNotificationDictionary:userInfo];
     }
 }
 

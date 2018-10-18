@@ -9,7 +9,6 @@
 #import "MySetViewController.h"
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
-#import "FSDeviceManager.h"
 
 @interface MySetViewController ()
 
@@ -52,7 +51,7 @@
     self.logoutButton.layer.borderColor = UIColorFromRGB(0x9014FC).CGColor;
     
     self.privacyPolicyTitleLabel.text = @"隐私政策";
-    self.versionLabel.text = [NSString stringWithFormat:@"Version %@",[[FSDeviceManager sharedInstance] getAppVersion]];
+    self.versionLabel.text = [NSString stringWithFormat:@"Version %@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
 }
 
 #pragma mark - ******* Action Methods *******

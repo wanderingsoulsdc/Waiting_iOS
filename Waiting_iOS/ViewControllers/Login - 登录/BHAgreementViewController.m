@@ -14,7 +14,6 @@
 #import "BHUserModel.h"
 #import "JPUSHService.h"
 #import "FSDeviceManager.h"
-#import "FSPushManager.h"
 
 @interface BHAgreementViewController ()
 

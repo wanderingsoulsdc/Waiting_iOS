@@ -187,15 +187,7 @@ typedef enum : NSUInteger {
 #pragma mark - ******* Action *******
 //返回
 - (IBAction)backButtonAction:(UIButton *)sender {
-    CATransition *transition = [CATransition animation];
-    transition.duration = 0.3f;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionReveal;
-    transition.subtype = kCATransitionFromBottom;
-    transition.delegate = self;
-    [self.navigationController.view.layer addAnimation:transition forKey:nil];
-    [self.navigationController popViewControllerAnimated:NO];
-    //pop实现模态效果,注意：animated一定要设置为：NO
+    [self popViewControllerAsDismiss];
 }
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {

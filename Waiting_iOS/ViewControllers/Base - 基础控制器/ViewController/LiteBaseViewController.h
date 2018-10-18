@@ -10,4 +10,9 @@
 
 @interface LiteBaseViewController : UIViewController
 
+//push控制器(类似Presen从下往上)
+- (void)pushViewControllerAsPresent:(UIViewController *)viewController;
+//pop控制器(类似dismiss从上往下)
+- (void)popViewControllerAsDismiss;
+
 @end

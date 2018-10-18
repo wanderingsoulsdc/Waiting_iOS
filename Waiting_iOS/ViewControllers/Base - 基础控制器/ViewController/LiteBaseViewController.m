@@ -8,7 +8,7 @@
 
 #import "LiteBaseViewController.h"
 
-@interface LiteBaseViewController ()
+@interface LiteBaseViewController ()<CAAnimationDelegate>
 
 @end
 
@@ -18,6 +18,33 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColorWhite;
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - ******* Private *******
+//push控制器(类似Presen从下往上)
+- (void)pushViewControllerAsPresent:(UIViewController *)viewController{
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.4f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromTop;
+    transition.delegate = self;
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController pushViewController:viewController animated:NO];
+    //push实现模态效果,注意：animated一定要设置为：NO
+}
+
+//pop控制器(类似dismiss从上往下)
+- (void)popViewControllerAsDismiss{
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.3f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionReveal;
+    transition.subtype = kCATransitionFromBottom;
+    transition.delegate = self;
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
+    [self.navigationController popViewControllerAnimated:NO];
+    //pop实现模态效果,注意：animated一定要设置为：NO
 }
 
 - (void)didReceiveMemoryWarning {

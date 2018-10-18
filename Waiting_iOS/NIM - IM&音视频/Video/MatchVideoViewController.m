@@ -473,7 +473,7 @@
     NSTimeInterval time = [NSDate date].timeIntervalSince1970;
     NSTimeInterval duration = time - self.callInfo.startTime;
     
-    if ([self.callInfo.callee isEqualToString:[BHUserModel sharedInstance].userID]) {
+    if ([self.callInfo.caller isEqualToString:[BHUserModel sharedInstance].userID]) {
         if ((int)duration%60 == 59) {
             [self requestVideoFree];
         }
@@ -494,8 +494,9 @@
 //请求音视频通话预扣
 - (void)requestVideoFree{
     WEAKSELF
-    NSDictionary * params = @{@"user1":self.callInfo.callee,/*主叫*/
-                              @"user2":self.callInfo.caller,/*被叫*/
+    NSDictionary * params = @{@"type":@"2",//1音频，2视频
+                              @"user1":self.callInfo.caller,/*主叫*/
+                              @"user2":self.callInfo.callee,/*被叫*/
                               @"tvId":self.tvId,/*通话ID*/
                               };
     
@@ -518,7 +519,7 @@
                                     
                                     [weakSelf presentViewController:alertController animated:YES completion:nil];
                                 }
-                            }else if([[object objectForKey:@"status"] isEqualToString:@"0"]){
+                            }else if([[object stringValueForKey:@"status" default:@""] isEqualToString:@"0"]){
                                 //当前分钟扣费失败,结束对话
                                 [weakSelf hangup];
                             }else{

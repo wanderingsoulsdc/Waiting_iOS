@@ -10,9 +10,9 @@
 
 @interface NetCallChatInfo : NSObject
 
-@property(nonatomic,strong) NSString *caller;//接听通话
+@property(nonatomic,strong) NSString *caller;//发起通话
 
-@property(nonatomic,strong) NSString *callee;//发起通话
+@property(nonatomic,strong) NSString *callee;//接听通话
 
 @property(nonatomic,assign) UInt64 callID;//通话成功ID
 

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-#import "FSBaseTabBarController.h"
 #import "SliderMenuController.h"
 
 #define SharedApp ((AppDelegate*)[[UIApplication sharedApplication] delegate])
@@ -25,7 +24,6 @@ typedef enum : NSUInteger {
 
 @interface FSLaunchManager : NSObject
 
-@property (strong, nonatomic) FSBaseTabBarController * rootTabBarController;
 @property (strong, nonatomic) SliderMenuController * slider;
 
 /**

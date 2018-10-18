@@ -29,6 +29,9 @@
 
 @property (nonatomic , strong) NSString                 * diamond;       //钻石
 
+@property (nonatomic , assign) BOOL                 isRequestingUserInfo;   //是否正在请求用户信息
+@property (nonatomic , assign) BOOL                 isRequestingAccountData;//是否正在请求账户余额
+
 @end
 
 @implementation MyViewController
@@ -54,6 +57,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [self requestUserInfo];
+    [self requestAccountData];
 }
 
 
@@ -88,6 +92,8 @@
 #pragma mark - ******* Request *******
 //请求用户信息
 - (void)requestUserInfo{
+    if (self.isRequestingUserInfo) return;
+    self.isRequestingUserInfo = YES;
     WEAKSELF
     NSDictionary * params = @{};
     
@@ -95,7 +101,7 @@
                         withUrlString:kApiAccountGetUserInfo
                         withParaments:params withSuccessBlock:^(NSDictionary *object) {
                             NSLog(@"请求成功");
-                            
+                            weakSelf.isRequestingUserInfo = NO;
                             if (NetResponseCheckStaus){
                                 [[BHUserModel sharedInstance] analysisUserInfoWithDictionary:object];
                                 [weakSelf refreshData];
@@ -103,7 +109,7 @@
                                 [ShowHUDTool showBriefAlert:NetResponseMessage];
                             }
                         } withFailureBlock:^(NSError *error) {
-                            
+                            weakSelf.isRequestingUserInfo = NO;
                             [ShowHUDTool showBriefAlert:NetRequestFailed];
                         }];
 }
@@ -111,12 +117,14 @@
 //请求账户数据获得钻石数量
 - (void)requestAccountData
 {
+    if (self.isRequestingAccountData) return;
+    self.isRequestingAccountData = YES;
     WEAKSELF
     [FSNetWorkManager requestWithType:HttpRequestTypePost
                         withUrlString:kApiAccountGetAccountData
                         withParaments:nil
                      withSuccessBlock:^(NSDictionary *object) {
-                         
+                         weakSelf.isRequestingAccountData = NO;
                          if (NetResponseCheckStaus)
                          {
                              NSLog(@"请求成功");
@@ -130,6 +138,7 @@
                          }
                      } withFailureBlock:^(NSError *error) {
                          NSLog(@"error is:%@", error);
+                         weakSelf.isRequestingAccountData = NO;
                          [ShowHUDTool showBriefAlert:NetRequestFailed];
                      }];
 }

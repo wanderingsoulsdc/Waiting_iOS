@@ -9,7 +9,6 @@
 #import "BHPopMessageManager.h"
 #import "AFImageDownloader.h"
 #import "FSLaunchManager.h"
-#import "LiteMainViewController.h"
 #import "FSDeviceManager.h"
 
 @interface BHPopMessageManager ()

@@ -164,26 +164,7 @@
     SharedApp.window.rootViewController = homeNavigationController;
 }
 
-//tabbar切换代理方法
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    if ([viewController isEqual:tabBarController.viewControllers[1]]) {
-//        UITabBarItem *item = [self.rootTabBarController.tabBar.items objectAtIndex:1];
-//        item.title = @"";
-        [self.rootTabBarController showCenterItem];
-    } else {
-        [self.rootTabBarController hideCenterItem];
-    }
-}
-
 #pragma mark - Getters and Setters
 
-- (FSBaseTabBarController *)rootTabBarController
-{
-    if (!_rootTabBarController) {
-        _rootTabBarController = [[FSBaseTabBarController alloc] init];
-        _rootTabBarController.delegate = self;
-    }
-    return _rootTabBarController;
-}
 
 @end
