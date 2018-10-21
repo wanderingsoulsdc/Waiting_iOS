@@ -642,7 +642,7 @@ NTES_FORBID_INTERACTIVE_POP
             _userHangup = YES;
             //对方忙碌需要挂断当前通话, 通话id应该为0;
             [[NIMAVChatSDK sharedSDK].netCallManager hangup:0];
-            [SVProgressHUD showErrorSVP:@"对不起,当前主播正忙"];
+            [SVProgressHUD showErrorSVP:@"对不起,当前用户正忙"];
             __weak typeof(self) wself = self;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [wself dismiss:nil];

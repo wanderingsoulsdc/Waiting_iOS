@@ -137,6 +137,11 @@
 //    option.pkCername        = @"your pushkit cer name";
     [[NIMSDK sharedSDK] registerWithOption:option];
     
+    //云信是否开启 HTTPS 支持
+    NIMServerSetting *setting = [[NIMServerSetting alloc] init];
+    setting.httpsEnabled = NO;
+    [[NIMSDK sharedSDK] setServerSetting:setting];
+    
     //手动登录在登录接口
     
     //注册通知,用来通知被叫响应

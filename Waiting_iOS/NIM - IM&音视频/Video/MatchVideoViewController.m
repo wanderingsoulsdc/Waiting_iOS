@@ -172,6 +172,11 @@
 -(void)giftDidChick: (UIButton *)sender{
     
 }
+//去充值
+- (IBAction)gotoRechargeAction:(UIButton *)sender {
+    MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
+    [self.navigationController pushViewController:chargeVC animated:YES];
+}
 
 //小视图点击事件
 -(void)Actiondo: (id)sender{
@@ -186,7 +191,7 @@
         NSLog(@"隐藏");
         self.closeButton.hidden = YES;
         self.switchCameraButton.hidden = YES;
-        self.smallVideoView.hidden = YES;
+        self.smallVideoView.hidden = NO;
         self.netStatusBackView.hidden = YES;
         self.timeLabel.hidden = YES;
         _isTouch = YES;
@@ -432,6 +437,8 @@
 {
     if (self.callInfo.callID == callID) {
         [super onCallEstablished:callID];
+        //告诉接口 会话建立成功
+        [self requestCreatedConnection];
         
         self.timeLabel.hidden = NO;
         self.timeLabel.text = self.durationDesc;
@@ -491,6 +498,26 @@
 //}
 
 #pragma mark - ******* Request *******
+//对话连接建立成功
+- (void)requestCreatedConnection{
+    NSDictionary * params = @{@"type":@"2",//1音频，2视频
+                              @"user1":self.callInfo.caller,/*主叫*/
+                              @"user2":self.callInfo.callee,/*被叫*/
+                              @"status":@"1",//会话通信状态，1成功，2失败
+                              @"tvId":self.tvId,/*通话ID*/
+                              };
+    
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiGetVideo
+                        withParaments:params withSuccessBlock:^(NSDictionary *object) {
+                            NSLog(@"请求成功");
+                            if (NetResponseCheckStaus){
+                                
+                            }
+                        }withFailureBlock:^(NSError *error) {
+                            
+                        }];
+}
 //请求音视频通话预扣
 - (void)requestVideoFree{
     WEAKSELF

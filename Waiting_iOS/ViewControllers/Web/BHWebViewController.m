@@ -13,6 +13,8 @@
 
 @interface BHWebViewController () <UIWebViewDelegate>
 
+@property (nonatomic , strong) UIView       * statusView;
+
 @end
 
 @implementation BHWebViewController
@@ -23,6 +25,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xFFFFFF);
     // You should add subviews here, just add subviews
+    [self.view addSubview:self.statusView];
     [self.view addSubview:self.webView];
     [self.view addSubview:self.loadFailedView];
     
@@ -47,16 +50,40 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (self.isHideNavi) { //隐藏导航条
+        [self.navigationController setNavigationBarHidden:YES animated:animated];
+    }else{//默认不隐藏导航条
+        [self.navigationController setNavigationBarHidden:NO animated:animated];
+    }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 - (void)layoutSubviews {
     //You should set subviews constrainsts or frame here
     
-    [self.webView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view);
-        make.left.right.bottom.equalTo(self.view);
-    }];
+    if (self.isHideNavi) { //隐藏导航条
+        [self.statusView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view);
+            make.left.right.equalTo(self.view);
+            make.height.mas_equalTo(kStatusBarHeight);
+        }];
+        [self.webView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.statusView.mas_bottom);
+            make.left.right.equalTo(self.view);
+            make.bottom.equalTo(self.view).offset(0 - SafeAreaBottomHeight);
+        }];
+    } else { //默认不隐藏导航条
+        [self.statusView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view);
+            make.left.right.equalTo(self.view);
+            make.height.mas_equalTo(0);
+        }];
+        [self.webView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view);
+            make.left.right.equalTo(self.view);
+            make.bottom.equalTo(self.view).offset(0 - SafeAreaBottomHeight);
+        }];
+    }
 }
 
 #pragma mark - Public Method
@@ -190,6 +217,14 @@
         _loadFailedView.backgroundColor = [UIColor whiteColor];
     }
     return _loadFailedView;
+}
+
+- (UIView *)statusView{
+    if (!_statusView) {
+        _statusView = [[UIView alloc] init];
+        _statusView.backgroundColor = UIColorWhite;
+    }
+    return _statusView;
 }
 
 #pragma mark - MemoryWarning

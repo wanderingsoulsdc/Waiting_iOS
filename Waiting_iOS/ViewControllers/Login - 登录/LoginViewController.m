@@ -10,6 +10,7 @@
 #import <ShareSDK/ShareSDK.h>
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
+#import "BHWebViewController.h"
 
 @interface LoginViewController ()
 
@@ -38,6 +39,9 @@
 
 //注册协议
 - (IBAction)agreementAction:(UIButton *)sender {
+    BHWebViewController *vc = [[BHWebViewController alloc] init];
+    vc.url = @"http://app.waitfy.net/h5/about/?id=100001";
+    [self pushViewControllerAsPresent:vc];
 }
 //twitter
 - (IBAction)twitterAction:(UIButton *)sender {
@@ -150,7 +154,7 @@
     
     NSDictionary * params = @{@"tuid":self.textfield.text,
                               @"nickname":@"我是假数据",
-                              @"photo":@"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/359b033b5bb5c9ea86b6f4add739b6003af3b333.jpg",
+                              @"photo":@"http://t.touxiang888.com/t1/uploads/allimg/170520/149527001575885720.jpg",
                               @"gender":@"1",
                               @"email":@"",
                               @"birthday":@"1990-09-01",

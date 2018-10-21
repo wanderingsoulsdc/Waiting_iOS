@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Waiting_iOS
+
+  Created by wander on 2018/10/21.
+  Copyright © 2018 BEHE. All rights reserved.
+*/
+
+/* App在 阿拉伯语 环境下显示的文本 */
+
+"CFBundleDisplayName" = "Waiting";

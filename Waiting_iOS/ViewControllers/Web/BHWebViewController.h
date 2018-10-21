@@ -12,12 +12,13 @@
 
 @interface BHWebViewController : UIViewController
 
+@property (nonatomic , assign) BOOL             isHideNavi;
+
 @property (nonatomic, strong) NSString  * url;
 @property (nonatomic, strong) UIWebView * webView;
 @property (nonatomic, strong) BHLoadFailedView       * loadFailedView;
 
 - (void)loadWebView:(NSString *)url;
 - (BOOL)shouldStartLoadWithRequest:(NSURLRequest *)request;
-- (void)presentCalendarViewController:(NSString *)url;//调出日历页面，多处使用，放父类中相对好一些
 
 @end

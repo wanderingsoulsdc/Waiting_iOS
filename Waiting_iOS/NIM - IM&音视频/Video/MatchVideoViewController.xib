@@ -187,7 +187,7 @@
                     </connections>
                 </button>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kc5-mQ-tLw">
-                    <rect key="frame" x="15" y="610" width="64" height="32"/>
+                    <rect key="frame" x="15" y="610" width="44" height="32"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_diamond" translatesAutoresizingMaskIntoConstraints="NO" id="y89-D4-sB5">
                             <rect key="frame" x="12" y="6" width="20" height="20"/>
@@ -196,8 +196,8 @@
                                 <constraint firstAttribute="width" constant="20" id="iu5-uy-GY5"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygs-76-GhB">
-                            <rect key="frame" x="42" y="6" width="10" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygs-76-GhB">
+                            <rect key="frame" x="44" y="6" width="0.0" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="ktX-FY-xoV"/>
                             </constraints>
@@ -205,16 +205,26 @@
                             <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfg-Ed-dIf">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="32"/>
+                            <connections>
+                                <action selector="gotoRechargeAction:" destination="-1" eventType="touchUpInside" id="sMj-wd-qcJ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="FJE-sQ-6oz"/>
-                        <constraint firstAttribute="trailing" secondItem="ygs-76-GhB" secondAttribute="trailing" constant="12" id="FjZ-oT-Usd"/>
+                        <constraint firstItem="gfg-Ed-dIf" firstAttribute="leading" secondItem="Kc5-mQ-tLw" secondAttribute="leading" id="AxA-6w-p7f"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="FJE-sQ-6oz"/>
+                        <constraint firstAttribute="trailing" secondItem="ygs-76-GhB" secondAttribute="trailing" id="FjZ-oT-Usd"/>
                         <constraint firstItem="y89-D4-sB5" firstAttribute="centerY" secondItem="Kc5-mQ-tLw" secondAttribute="centerY" id="Iom-q7-YpQ"/>
                         <constraint firstItem="y89-D4-sB5" firstAttribute="leading" secondItem="Kc5-mQ-tLw" secondAttribute="leading" constant="12" id="PfG-kf-OeW"/>
-                        <constraint firstItem="ygs-76-GhB" firstAttribute="leading" secondItem="y89-D4-sB5" secondAttribute="trailing" constant="10" id="caO-pP-Bov"/>
+                        <constraint firstItem="ygs-76-GhB" firstAttribute="leading" secondItem="y89-D4-sB5" secondAttribute="trailing" constant="12" id="caO-pP-Bov"/>
                         <constraint firstAttribute="height" constant="32" id="h54-vd-Coj"/>
                         <constraint firstItem="ygs-76-GhB" firstAttribute="centerY" secondItem="Kc5-mQ-tLw" secondAttribute="centerY" id="iM7-po-ui0"/>
+                        <constraint firstAttribute="trailing" secondItem="gfg-Ed-dIf" secondAttribute="trailing" id="r4e-hV-bbT"/>
+                        <constraint firstAttribute="bottom" secondItem="gfg-Ed-dIf" secondAttribute="bottom" id="tS2-J6-G21"/>
+                        <constraint firstItem="gfg-Ed-dIf" firstAttribute="top" secondItem="Kc5-mQ-tLw" secondAttribute="top" id="wOK-p8-1rG"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -277,7 +287,7 @@
                 <constraint firstItem="Jfv-Bq-MYk" firstAttribute="top" secondItem="In5-bF-DmI" secondAttribute="top" id="w8U-rH-DDT"/>
                 <constraint firstItem="HF1-pM-OAK" firstAttribute="top" secondItem="kwy-Km-26c" secondAttribute="bottom" constant="8" id="ypC-id-lcJ"/>
             </constraints>
-            <point key="canvasLocation" x="-1088.8" y="83.208395802098963"/>
+            <point key="canvasLocation" x="-1484" y="159"/>
         </view>
     </objects>
     <resources>
