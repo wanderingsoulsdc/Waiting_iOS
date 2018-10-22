@@ -19,7 +19,7 @@
 #define NetResponseTokenInvalid     ([[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"code"]] isEqualToString:@"14"] || [[NSString stringWithFormat:@"%@",[responseObject objectForKey:@"code"]] isEqualToString:@"901030013"])
 
 /**定义请求失败的提示*/
-#define NetRequestFailed    @"请求失败，请检查网络重试"
+#define NetRequestFailed    NSLocalizedString(@"some error or timeout~", nil)
 
 /**定义请求类型的枚举*/
 

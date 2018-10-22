@@ -102,6 +102,12 @@
 		C148F20A217C325600D6C150 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C148F20C217C325600D6C150 /* Launch Screen.storyboard */; };
 		C148F210217C349C00D6C150 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C148F212217C349C00D6C150 /* InfoPlist.strings */; };
 		C148F216217C370600D6C150 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C148F218217C370600D6C150 /* Localizable.strings */; };
+		C148F220217D6CAC00D6C150 /* SQPrintJsonLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C148F21F217D6CAC00D6C150 /* SQPrintJsonLog.m */; };
+		C148F228217D71DC00D6C150 /* ZBLocalized.m in Sources */ = {isa = PBXBuildFile; fileRef = C148F227217D71DC00D6C150 /* ZBLocalized.m */; };
+		C148F22C217D7D1C00D6C150 /* WTWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C148F22A217D7D1C00D6C150 /* WTWebViewController.m */; };
+		C148F22D217D7D1C00D6C150 /* WTWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C148F22B217D7D1C00D6C150 /* WTWebViewController.xib */; };
+		C148F234217DE91F00D6C150 /* WTLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C148F232217DE91F00D6C150 /* WTLanguageViewController.m */; };
+		C148F235217DE91F00D6C150 /* WTLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C148F233217DE91F00D6C150 /* WTLanguageViewController.xib */; };
 		C150830D21226C4B00D18753 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150830B21226C4B00D18753 /* MyViewController.m */; };
 		C150830E21226C4B00D18753 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C150830C21226C4B00D18753 /* MyViewController.xib */; };
 		C150831721226C6A00D18753 /* MatchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C150831521226C6A00D18753 /* MatchListViewController.m */; };
@@ -465,6 +471,16 @@
 		C148F21A217C62FD00D6C150 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = "tr.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		C148F21B217C62FD00D6C150 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C148F21C217C62FE00D6C150 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C148F21E217D6CAC00D6C150 /* SQPrintJsonLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQPrintJsonLog.h; sourceTree = "<group>"; };
+		C148F21F217D6CAC00D6C150 /* SQPrintJsonLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQPrintJsonLog.m; sourceTree = "<group>"; };
+		C148F226217D71DC00D6C150 /* ZBLocalized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBLocalized.h; sourceTree = "<group>"; };
+		C148F227217D71DC00D6C150 /* ZBLocalized.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBLocalized.m; sourceTree = "<group>"; };
+		C148F229217D7D1C00D6C150 /* WTWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTWebViewController.h; sourceTree = "<group>"; };
+		C148F22A217D7D1C00D6C150 /* WTWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTWebViewController.m; sourceTree = "<group>"; };
+		C148F22B217D7D1C00D6C150 /* WTWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WTWebViewController.xib; sourceTree = "<group>"; };
+		C148F231217DE91F00D6C150 /* WTLanguageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTLanguageViewController.h; sourceTree = "<group>"; };
+		C148F232217DE91F00D6C150 /* WTLanguageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTLanguageViewController.m; sourceTree = "<group>"; };
+		C148F233217DE91F00D6C150 /* WTLanguageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WTLanguageViewController.xib; sourceTree = "<group>"; };
 		C150830A21226C4B00D18753 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		C150830B21226C4B00D18753 /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		C150830C21226C4B00D18753 /* MyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
@@ -993,11 +1009,13 @@
 		076687D81EE50BD3007FE539 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C148F225217D71DC00D6C150 /* ZBLocalized - 切换语言 */,
 				C1F7A60020E5DB18001D5A88 /* BaiduMapAPI */,
 				C1FA395820DB2C070025E07F /* PGDatePicker - 时间日期选择器 */,
 				C1FA38F820DA71210025E07F /* LLSegment - 选项卡控件 */,
 				C1F7A65220F4AB44001D5A88 /* LiteCycleProgressButton - 带环形进度条按钮 */,
 				C1FA38F120D9F0760025E07F /* LiteAlertLabel - 橙色提示框 */,
+				C148F21D217D6CAC00D6C150 /* PrintJsonLog - 控制台输出中文 */,
 				C1FA38E020D8F6830025E07F /* XZPickView - 自定义选择器 */,
 				079221C92085F5AE009CB66C /* SandBoxManager */,
 				070F038A2058C26400B63CCA /* GuideView */,
@@ -1154,6 +1172,9 @@
 			children = (
 				07C5632020634383009C1BD7 /* BHWebViewController.h */,
 				07C5632120634383009C1BD7 /* BHWebViewController.m */,
+				C148F229217D7D1C00D6C150 /* WTWebViewController.h */,
+				C148F22A217D7D1C00D6C150 /* WTWebViewController.m */,
+				C148F22B217D7D1C00D6C150 /* WTWebViewController.xib */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -1332,6 +1353,25 @@
 			path = MyView;
 			sourceTree = "<group>";
 		};
+		C148F21D217D6CAC00D6C150 /* PrintJsonLog - 控制台输出中文 */ = {
+			isa = PBXGroup;
+			children = (
+				C148F21E217D6CAC00D6C150 /* SQPrintJsonLog.h */,
+				C148F21F217D6CAC00D6C150 /* SQPrintJsonLog.m */,
+			);
+			name = "PrintJsonLog - 控制台输出中文";
+			path = "Components/PrintJsonLog - 控制台输出中文";
+			sourceTree = SOURCE_ROOT;
+		};
+		C148F225217D71DC00D6C150 /* ZBLocalized - 切换语言 */ = {
+			isa = PBXGroup;
+			children = (
+				C148F226217D71DC00D6C150 /* ZBLocalized.h */,
+				C148F227217D71DC00D6C150 /* ZBLocalized.m */,
+			);
+			path = "ZBLocalized - 切换语言";
+			sourceTree = "<group>";
+		};
 		C150830721226BCF00D18753 /* Match - 匹配 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1378,6 +1418,9 @@
 				C15C3A5C21356661008BBF38 /* MySetViewController.h */,
 				C15C3A5D21356661008BBF38 /* MySetViewController.m */,
 				C15C3A5E21356661008BBF38 /* MySetViewController.xib */,
+				C148F231217DE91F00D6C150 /* WTLanguageViewController.h */,
+				C148F232217DE91F00D6C150 /* WTLanguageViewController.m */,
+				C148F233217DE91F00D6C150 /* WTLanguageViewController.xib */,
 			);
 			path = "My - 我的";
 			sourceTree = "<group>";
@@ -2080,10 +2123,12 @@
 				C1938F4C2152756200212FB3 /* video_chat_tip_sender.aac in Resources */,
 				C1590338210975F00027285A /* animation_20.png in Resources */,
 				C1590347210975F00027285A /* animation_14.png in Resources */,
+				C148F235217DE91F00D6C150 /* WTLanguageViewController.xib in Resources */,
 				C1458BDE2168811C004CAD75 /* MyInterestCell.xib in Resources */,
 				C159031C210975F00027285A /* animation_45.png in Resources */,
 				C150830E21226C4B00D18753 /* MyViewController.xib in Resources */,
 				C1590332210975F00027285A /* animation_25.png in Resources */,
+				C148F22D217D7D1C00D6C150 /* WTWebViewController.xib in Resources */,
 				C159034F210975F00027285A /* animation_3.png in Resources */,
 				C1590335210975F00027285A /* animation_24.png in Resources */,
 				0775963E1FC5AB720036CC1F /* ZLPhotoBrowser.bundle in Resources */,
@@ -2241,6 +2286,7 @@
 				C1FA39A220DB2C070025E07F /* PGDatePicker+YearAndMonth.m in Sources */,
 				C1938F552152756200212FB3 /* mvp.vsh.c in Sources */,
 				077596481FC5AB720036CC1F /* ZLPhotoActionSheet.m in Sources */,
+				C148F228217D71DC00D6C150 /* ZBLocalized.m in Sources */,
 				C1938F562152756200212FB3 /* renderer_rgb.c in Sources */,
 				C1FA39B320DB2C080025E07F /* PGDatePicker+Year.m in Sources */,
 				07BF36891FD7CBDE00D77E8B /* BHAgreementViewController.m in Sources */,
@@ -2279,6 +2325,7 @@
 				0768E87E1F31CF1D00AB1D15 /* BHUserModel.m in Sources */,
 				C1FA39AF20DB2C080025E07F /* PGDatePicker+DateAndTime.m in Sources */,
 				C1FA39B420DB2C080025E07F /* PGDatePicker+DateHourMinuteSecond.m in Sources */,
+				C148F220217D6CAC00D6C150 /* SQPrintJsonLog.m in Sources */,
 				C1458BDD2168811C004CAD75 /* MyInterestCell.m in Sources */,
 				C1938F5E2152756200212FB3 /* rgb.fsh.c in Sources */,
 				07C5632220634383009C1BD7 /* BHWebViewController.m in Sources */,
@@ -2297,6 +2344,7 @@
 				C1FA39AB20DB2C080025E07F /* NSDate+PGCategory.m in Sources */,
 				C15C3A3F213295A7008BBF38 /* MatchCardCell.m in Sources */,
 				C1938F4A2152756200212FB3 /* LSLabel.m in Sources */,
+				C148F234217DE91F00D6C150 /* WTLanguageViewController.m in Sources */,
 				C1938F622152756200212FB3 /* NTESVideoChatNetStatusView.m in Sources */,
 				0775964E1FC5AB720036CC1F /* ZLShowBigImgViewController.m in Sources */,
 				C1FA399F20DB2C070025E07F /* UIColor+PGHex.m in Sources */,
@@ -2322,6 +2370,7 @@
 				0730F8181EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m in Sources */,
 				C1130E9921586EE1008A446E /* ChatListViewController.m in Sources */,
 				076688171EE50BD3007FE539 /* NSString+Helper.m in Sources */,
+				C148F22C217D7D1C00D6C150 /* WTWebViewController.m in Sources */,
 				C1938F4B2152756200212FB3 /* SVProgressHUD+Ext.m in Sources */,
 				C1FA399B20DB2C070025E07F /* PGPickerTableView.m in Sources */,
 				C15083262122EE2300D18753 /* ChatListModel.m in Sources */,

@@ -243,7 +243,7 @@
 - (void)startInterface{
     
     self.cancelButton.hidden = NO;
-    self.statusLabel.text = @"正在等待对方接受邀请...";
+    self.statusLabel.text = NSLocalizedString(@"正在等待对方接受邀请...", nil);
     
     self.refuseButton.hidden = YES;
     self.acceptButton.hidden = YES;
@@ -264,7 +264,7 @@
     
     self.acceptButton.hidden = NO;
     self.refuseButton.hidden = NO;
-    self.statusLabel.text = @"邀请你视频通话";
+    self.statusLabel.text = NSLocalizedString(@"邀请你视频通话", nil);
     
     self.cancelButton.hidden = YES;
     self.closeButton.hidden = YES;
@@ -285,7 +285,7 @@
 //连接对方界面
 - (void)connectingInterface{
     
-    self.statusLabel.text = @"正在连接对方...";
+    self.statusLabel.text = NSLocalizedString(@"正在连接对方...", nil);
     
     self.timeLabel.hidden = YES;
     self.acceptButton.hidden = YES;
@@ -419,11 +419,11 @@
         case NIMNetCallControlTypeCloseVideo:
             //            [self resetRemoteImage];
             self.oppositeCloseVideo = YES;
-            [SVProgressHUD showErrorSVP:@"对方关闭了摄像头"];
+            [SVProgressHUD showErrorSVP:NSLocalizedString(@"对方关闭了摄像头", nil)];
             break;
         case NIMNetCallControlTypeOpenVideo:
             self.oppositeCloseVideo = NO;
-            [SVProgressHUD showErrorSVP:@"对方开启了摄像头"];
+            [SVProgressHUD showErrorSVP:NSLocalizedString(@"对方开启了摄像头", nil)];
             break;
         default:
             break;
@@ -536,10 +536,10 @@
                                 NSDictionary *nextDic = object[@"data"][@"next"];
                                 NSString *status = [nextDic stringValueForKey:@"status" default:@""];
                                 if ([status isEqualToString:@"0"]) {
-                                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足以开启下一分钟,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
-                                    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"余额不足", nil) message:NSLocalizedString(@"当前余额不足以开启下一分钟,请充值后进行操作", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                     }]];
-                                    [alertController addAction:[UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"充值", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                         MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
                                         [weakSelf.navigationController pushViewController:chargeVC animated:YES];
                                     }]];

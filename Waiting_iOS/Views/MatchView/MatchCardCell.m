@@ -175,7 +175,7 @@
 - (UILabel *)userNameLabel{
     if (!_userNameLabel) {
         _userNameLabel = [[UILabel alloc] init];
-        _userNameLabel.text = @"取个名字真难";
+        _userNameLabel.text = @"";
         _userNameLabel.textAlignment = NSTextAlignmentLeft;
         _userNameLabel.font = [UIFont systemFontOfSize:22];
         _userNameLabel.textColor = UIColorWhite;
@@ -185,7 +185,7 @@
 - (UILabel *)ageAndGenderLabel{
     if (!_ageAndGenderLabel) {
         _ageAndGenderLabel = [[UILabel alloc] init];
-        _ageAndGenderLabel.text = @"女 · 25岁";
+        _ageAndGenderLabel.text = @"";
         _ageAndGenderLabel.textAlignment = NSTextAlignmentLeft;
         _ageAndGenderLabel.font = [UIFont systemFontOfSize:16];
         _ageAndGenderLabel.textColor = UIColorWhite;

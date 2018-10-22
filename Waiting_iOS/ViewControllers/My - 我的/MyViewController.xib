@@ -15,6 +15,8 @@
                 <outlet property="editInformationButton" destination="K2n-Hl-7NQ" id="oUs-26-6Iw"/>
                 <outlet property="headImageView" destination="ETU-Yq-SCj" id="Ee6-Ix-his"/>
                 <outlet property="idLabel" destination="OwF-KT-BLa" id="jjf-2n-pwM"/>
+                <outlet property="rechargeTitleLabel" destination="E2U-Df-X10" id="h9w-Vb-495"/>
+                <outlet property="setTitleLabel" destination="2m7-tG-O3v" id="csa-7e-X6c"/>
                 <outlet property="sexAgeLabel" destination="SWI-CF-LEZ" id="9ag-jL-Slt"/>
                 <outlet property="userNameLabel" destination="jVo-sk-NdU" id="Laz-XO-UdX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

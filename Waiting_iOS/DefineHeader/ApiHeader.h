@@ -47,6 +47,11 @@
 #define kApiCheckVersion                @"https://luckycatv1.behe.com/V1/login/versions"      /* 检查版本 */
 #define kApiCheckAgreement              @"account/updateAccountUserAgreement"   /* 检查是否有协议更新 */
 
+#pragma mark - ******* 权限 *******
+
+#define kApiCheckPermissions            kApiVersionPort @"index/checkVersion"      /* 检查权限(登录页是否显示用户名密码输入框等) */
+#define kApiSetLanguage                 kApiVersionPort @"ucenter/setting"         /* 切换语言 */
+
 #pragma mark - ******* 账户 *******
 
 #define kApiAccountUploadPicture        kApiVersionPort @"Index/uploadPic"  /* 资料上传照片 */

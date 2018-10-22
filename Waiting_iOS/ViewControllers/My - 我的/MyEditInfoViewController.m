@@ -30,6 +30,13 @@ typedef enum : NSUInteger {
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * topViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * scrollViewBottomConstraint;
 
+@property (weak, nonatomic) IBOutlet UILabel * titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel * userNameTitleLabel;//用户名title
+@property (weak, nonatomic) IBOutlet UILabel * birthdayTitleLabel;//生日title
+@property (weak, nonatomic) IBOutlet UILabel * genderTitleLabel;//性别title
+@property (weak, nonatomic) IBOutlet UILabel * hobbyTitleLabel;//爱好title
+@property (weak, nonatomic) IBOutlet UILabel * remarkTitleLabel;//简介title
+
 @property (nonatomic , strong) ZLPhotoActionSheet       * albumActionSheet; //相册
 @property (nonatomic , strong) UIButton                 * currentButton;//当前选的头像
 @property (nonatomic , strong) NSMutableArray           * picArr;       //照片数组
@@ -80,7 +87,18 @@ typedef enum : NSUInteger {
 - (void)createUI{
     self.topViewHeightConstraint.constant = kStatusBarAndNavigationBarHeight;
     self.scrollViewBottomConstraint.constant = SafeAreaBottomHeight;
+    [self createTextByLanguage];
     [self createTagView];
+}
+
+//根据语言切换文字
+- (void)createTextByLanguage{
+    self.titleLabel.text = ZBLocalized(@"Edit", nil);
+    self.userNameTitleLabel.text = ZBLocalized(@"Username", nil);
+    self.birthdayTitleLabel.text = ZBLocalized(@"Date of birth", nil);
+    self.genderTitleLabel.text = ZBLocalized(@"Gender", nil);
+    self.hobbyTitleLabel.text = ZBLocalized(@"Hobby", nil);
+    self.remarkTitleLabel.text = ZBLocalized(@"What's Up", nil);
 }
 
 - (void)createTagView{
@@ -168,7 +186,7 @@ typedef enum : NSUInteger {
 - (IBAction)userNameButtonAction:(UIButton *)sender {
     MyInputViewController * vc = [[MyInputViewController alloc] init];
     vc.inputType = MyInputTypeTextField;
-    vc.titleStr = @"设置用户名";
+    vc.titleStr = ZBLocalized(@"Username", nil);
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -181,7 +199,7 @@ typedef enum : NSUInteger {
 - (IBAction)genderButtonAction:(UIButton *)sender {
     MyInputViewController * vc = [[MyInputViewController alloc] init];
     vc.inputType = MyInputTypeGender;
-    vc.titleStr = @"设置性别";
+    vc.titleStr = ZBLocalized(@"Gender", nil);
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -189,7 +207,7 @@ typedef enum : NSUInteger {
 - (IBAction)interestButtonAction:(UIButton *)sender {
     MyInputViewController * vc = [[MyInputViewController alloc] init];
     vc.inputType = MyInputTypeInterest;
-    vc.titleStr = @"设置兴趣爱好";
+    vc.titleStr = ZBLocalized(@"Hobby", nil);
     vc.interestArr = self.allInterestArr;
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
@@ -198,7 +216,7 @@ typedef enum : NSUInteger {
 - (IBAction)describeAction:(UIButton *)sender {
     MyInputViewController * vc = [[MyInputViewController alloc] init];
     vc.inputType = MyInputTypeTextView;
-    vc.titleStr = @"设置个人简介";
+    vc.titleStr = ZBLocalized(@"What's Up", nil);
     vc.delegate = self;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -340,23 +358,23 @@ typedef enum : NSUInteger {
 {
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
     }];
     [actionSheet addAction:cancelButton];
     
-    UIAlertAction *cameraButton = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *cameraButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"拍照", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self checkPermissionWithType:1];
     }];
     [actionSheet addAction:cameraButton];
     
-    UIAlertAction *albumButton = [UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *albumButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"从相册选择", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self checkPermissionWithType:2];
     }];
     [actionSheet addAction:albumButton];
     
     if (self.currentUploadType == UploadImageTypeOther) {
         if (self.currentButton.tag - 100 < self.picArr.count) {
-            UIAlertAction *delegateButton = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            UIAlertAction *delegateButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"删除", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 [self.picArr removeObjectAtIndex:self.currentButton.tag - 100];
                 [self sortDisplayOtherImage];
             }];
@@ -395,11 +413,11 @@ typedef enum : NSUInteger {
             // 不允许弹出提示框
             if (authorizationStatus == AVAuthorizationStatusRestricted|| authorizationStatus == AVAuthorizationStatusDenied) {
                 //无相册访问权限
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请在iphone的\"设置-隐私-相机\"选项中,允许招财宝Lite访问您的相机" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"请在iphone的设置中,允许Waiting访问您的相机", nil) preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"知道了", nil) style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:action1];
                 
-                UIAlertAction *action = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"去设置", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     NSURL *applicationUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
                     if ([[UIApplication sharedApplication] canOpenURL:applicationUrl]) {
                         [[UIApplication sharedApplication] openURL:applicationUrl];
@@ -424,7 +442,7 @@ typedef enum : NSUInteger {
             }
         } else {
             // 硬件问题提示
-            [ShowHUDTool showBriefAlert:@"摄像头不可用,请检查手机摄像头设备"];
+            [ShowHUDTool showBriefAlert:NSLocalizedString(@"摄像头不可用,请检查手机摄像头设备", nil)];
         }
     }
     else if (type == 2)
@@ -433,11 +451,11 @@ typedef enum : NSUInteger {
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
         if (status == PHAuthorizationStatusRestricted ||
             status == PHAuthorizationStatusDenied) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请在iphone的\"设置-隐私-照片\"选项中,允许招财宝Lite访问您的照片" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"请在iphone的设置中,允许Waiting访问您的照片", nil) preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"知道了", nil) style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:action1];
             
-            UIAlertAction *action = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"去设置", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 NSURL *applicationUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
                 if ([[UIApplication sharedApplication] canOpenURL:applicationUrl]) {
                     [[UIApplication sharedApplication] openURL:applicationUrl];
@@ -571,7 +589,7 @@ typedef enum : NSUInteger {
 {
     
     RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:portraitImage cropMode:RSKImageCropModeCustom];
-    imageCropVC.moveAndScaleLabel.text = @"裁切平面图";
+    imageCropVC.moveAndScaleLabel.text = NSLocalizedString(@"调整裁切区域", nil);
     imageCropVC.delegate = self;
     imageCropVC.dataSource = self;
     imageCropVC.maskLayerStrokeColor = UIColorBlue;
@@ -582,7 +600,7 @@ typedef enum : NSUInteger {
 
 - (void)uploadImage:(UIImage *)portraitImg
 {
-    [ShowHUDTool showLoadingWithTitle:@"上传中" inView:[UIApplication sharedApplication].keyWindow];
+    [ShowHUDTool showLoadingWithTitle:NSLocalizedString(@"上传中", nil) inView:[UIApplication sharedApplication].keyWindow];
     WEAKSELF
     //此body是向后台传的参数, 因为是上传图片, 所以只给个图片名就够了, 这个和后台去问
     NSDictionary * body = @{@"pic":@"image"};

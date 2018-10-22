@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CX-sV-vBr">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没有数据啊啊啊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgj-c4-1Nh">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sorry,no datas." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgj-c4-1Nh">
                             <rect key="frame" x="0.0" y="323" width="375" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="PCQ-rH-oWK"/>
@@ -37,7 +37,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.45098039220000002" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="mgj-c4-1Nh" firstAttribute="centerY" secondItem="3CX-sV-vBr" secondAttribute="centerY" id="Ek2-Sz-HG9"/>
                         <constraint firstItem="mgj-c4-1Nh" firstAttribute="leading" secondItem="3CX-sV-vBr" secondAttribute="leading" id="XRc-gq-Mzl"/>
@@ -55,7 +55,7 @@
                             <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nud-aU-1uD">
-                                    <rect key="frame" x="157" y="20" width="60" height="60"/>
+                                    <rect key="frame" x="157.5" y="20" width="60" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="60" id="2iq-iO-e0E"/>
                                         <constraint firstAttribute="height" constant="60" id="CqC-Zz-4eD"/>
@@ -66,7 +66,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GNe-Ju-HuI">
-                                    <rect key="frame" x="55" y="14" width="72" height="72"/>
+                                    <rect key="frame" x="55.5" y="14" width="72" height="72"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="72" id="1i4-Dq-yqt"/>
                                         <constraint firstAttribute="height" constant="72" id="Jaa-Ij-Mqb"/>
@@ -77,7 +77,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeX-IF-GZc">
-                                    <rect key="frame" x="247" y="14" width="72" height="72"/>
+                                    <rect key="frame" x="247.5" y="14" width="72" height="72"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="72" id="Fxh-gc-bQc"/>
                                         <constraint firstAttribute="width" constant="72" id="QKz-fu-VC8"/>

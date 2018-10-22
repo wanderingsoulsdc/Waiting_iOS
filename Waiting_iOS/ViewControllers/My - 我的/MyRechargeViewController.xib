@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,6 +21,8 @@
                 <outlet property="MoneyThreeButton" destination="lsU-BU-ns7" id="jDB-fO-mjR"/>
                 <outlet property="MoneyTwoButton" destination="DS5-dn-Cic" id="HEN-7b-xDE"/>
                 <outlet property="diamondLabel" destination="LAp-PW-vq0" id="lkt-zq-cMh"/>
+                <outlet property="submitButton" destination="ijB-il-yav" id="sYC-Nt-leT"/>
+                <outlet property="titleLabel" destination="KjI-8Y-BGy" id="sis-oS-Qgq"/>
                 <outlet property="topViewTopConstraint" destination="MZ0-o0-RNl" id="c71-Az-ZuN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

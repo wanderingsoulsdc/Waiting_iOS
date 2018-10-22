@@ -68,8 +68,8 @@
         case MyInputTypeGender:
         {
             self.genderView.hidden = NO;
-            self.manLabel.text = @"男";
-            self.wemanLabel.text = @"女";
+            self.manLabel.text = ZBLocalized(@"Male", nil);
+            self.wemanLabel.text = ZBLocalized(@"Female", nil);
         }
             break;
         case MyInputTypeInterest:
@@ -136,10 +136,10 @@
         if ([self.delegate respondsToSelector:@selector(inputGenderSelectResult:)]) {
             NSMutableDictionary * genderDic = [[NSMutableDictionary alloc] init];
             if (self.manButton.selected) {
-                [genderDic setObject:@"男" forKey:@"value"];
+                [genderDic setObject:ZBLocalized(@"Male", nil) forKey:@"value"];
                 [genderDic setObject:@"1" forKey:@"key"];
             } else {
-                [genderDic setObject:@"女" forKey:@"value"];
+                [genderDic setObject:ZBLocalized(@"Female", nil) forKey:@"value"];
                 [genderDic setObject:@"0" forKey:@"key"];
             }
             [self.delegate inputGenderSelectResult:genderDic];

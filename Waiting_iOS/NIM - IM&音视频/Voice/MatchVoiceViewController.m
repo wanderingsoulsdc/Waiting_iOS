@@ -117,7 +117,7 @@
 - (void)startInterface{
     
     self.cancelButton.hidden = NO;
-    self.statusLabel.text = @"正在等待对方接受邀请...";
+    self.statusLabel.text = NSLocalizedString(@"正在等待对方接受邀请...", nil);
     
     self.timeLabel.hidden = YES;
     self.refuseButton.hidden = YES;
@@ -135,7 +135,7 @@
 - (void)waitToCallInterface{
     self.acceptButton.hidden = NO;
     self.refuseButton.hidden = NO;
-    self.statusLabel.text = @"邀请你语音通话";
+    self.statusLabel.text = NSLocalizedString(@"邀请你语音通话", nil);
     
     self.timeLabel.hidden = YES;
     self.cancelButton.hidden = YES;
@@ -150,7 +150,7 @@
 
 //连接对方界面
 - (void)connectingInterface{
-    self.statusLabel.text = @"正在连接对方...";
+    self.statusLabel.text = NSLocalizedString(@"正在连接对方...", nil);
     
     self.timeLabel.hidden = YES;
     self.acceptButton.hidden = YES;
@@ -171,7 +171,7 @@
     //    NIMNetCallNetStatus status = [[NIMAVChatSDK sharedSDK].netCallManager netStatus:peerUid];
     //    [self.netStatusView refreshWithNetState:status];
     
-    self.statusLabel.text = @"已接听";
+    self.statusLabel.text = NSLocalizedString(@"已接听", nil);
     
     self.timeLabel.hidden = NO;
     self.acceptButton.hidden = YES;
@@ -239,6 +239,7 @@
                               @"user1":self.callInfo.caller,/*主叫*/
                               @"user2":self.callInfo.callee,/*被叫*/
                               @"status":@"1",//会话通信状态，1成功，2失败
+                              @"tvId":self.tvId,/*通话ID*/
                               };
     
     [FSNetWorkManager requestWithType:HttpRequestTypePost
@@ -270,10 +271,10 @@
                                 NSDictionary *nextDic = object[@"data"][@"next"];
                                 NSString *status = [nextDic stringValueForKey:@"status" default:@""];
                                 if ([status isEqualToString:@"0"]) {
-                                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足以开启下一分钟,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
-                                    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"余额不足", nil) message:NSLocalizedString(@"当前余额不足以开启下一分钟,请充值后进行操作", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                     }]];
-                                    [alertController addAction:[UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"充值", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                         MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
                                         [weakSelf.navigationController pushViewController:chargeVC animated:YES];
                                     }]];

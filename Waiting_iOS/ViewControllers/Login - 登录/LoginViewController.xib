@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="bottomViewHeightConstraint" destination="U73-gS-IQo" id="jq3-Jz-fWA"/>
+                <outlet property="loginTitleLabel" destination="Hka-4H-rix" id="3JH-36-Fp2"/>
+                <outlet property="registerAgreementButton" destination="5Gv-wS-bMX" id="VNc-Fu-YWw"/>
                 <outlet property="textfield" destination="cSH-6a-bni" id="M3o-s7-GQb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,7 +42,7 @@
                                 <constraint firstAttribute="height" constant="160" id="0u5-je-VLE"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hka-4H-rix">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hka-4H-rix">
                             <rect key="frame" x="0.0" y="15" width="375" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="8a4-rW-b0L"/>
@@ -75,13 +77,13 @@
                                 <action selector="twitterAction:" destination="-1" eventType="touchUpInside" id="1qo-ET-2WI"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gv-wS-bMX">
-                            <rect key="frame" x="0.0" y="136" width="375" height="12"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5Gv-wS-bMX">
+                            <rect key="frame" x="0.0" y="118" width="375" height="35"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="12" id="7HH-D5-ZUQ"/>
+                                <constraint firstAttribute="height" constant="35" id="7HH-D5-ZUQ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <state key="normal" title="注册即代表同意用户注册协议">
+                            <state key="normal">
                                 <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -104,7 +106,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="5Gv-wS-bMX" firstAttribute="top" secondItem="FeZ-S4-X66" secondAttribute="bottom" constant="33" id="1qq-wy-tHV"/>
+                        <constraint firstItem="5Gv-wS-bMX" firstAttribute="top" secondItem="FeZ-S4-X66" secondAttribute="bottom" constant="15" id="1qq-wy-tHV"/>
                         <constraint firstAttribute="bottom" secondItem="uX5-Rh-fla" secondAttribute="bottom" id="3by-Wz-Ckv"/>
                         <constraint firstItem="uX5-Rh-fla" firstAttribute="top" secondItem="5Rn-Ys-y5B" secondAttribute="top" id="59r-PF-ULl"/>
                         <constraint firstItem="FeZ-S4-X66" firstAttribute="centerX" secondItem="5Rn-Ys-y5B" secondAttribute="centerX" id="912-B3-7ro"/>

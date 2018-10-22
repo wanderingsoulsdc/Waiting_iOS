@@ -1,45 +1,31 @@
 //
-//  BHWebViewController.m
+//  WTWebViewController.m
 //  Waiting_iOS
 //
-//  Created by QiuLiang Chen QQ：1123548362 on 2018/3/22.
-//  Copyright © 2018年 BEHE. All rights reserved.
+//  Created by wander on 2018/10/22.
+//  Copyright © 2018 BEHE. All rights reserved.
 //
-//  If the hero never comes to you
-//  Keep calm and be a man
 
-#import "BHWebViewController.h"
-#import <Masonry/Masonry.h>
+#import "WTWebViewController.h"
 
-@interface BHWebViewController () <UIWebViewDelegate>
+@interface WTWebViewController ()<UIWebViewDelegate>
 
-@property (nonatomic , strong) UIView       * statusView;
-@property (nonatomic , strong) UIView       * naviView;
-@property (nonatomic , strong) UIButton     * backButton;
-@property (nonatomic , strong) UILabel      * titleLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * statusViewHeightConstraint; //状态栏高度约束
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * naviViewHeightConstraint; //自定义导航栏高度约束
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * webViewBackViewBottomConstraint; //webview背景图距下约束
+@property (weak, nonatomic) IBOutlet UIView * webViewBackView; //webview背景图
 
 @end
 
-@implementation BHWebViewController
-
-#pragma mark - Life circle
+@implementation WTWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColorFromRGB(0xFFFFFF);
-    // You should add subviews here, just add subviews
-    [self.view addSubview:self.statusView];
-    [self.view addSubview:self.webView];
-    [self.view addSubview:self.loadFailedView];
+    
+    [self createUI];
     
     [self loadWebView:self.url];
-    
-    // You should add notification here
-    
-    
-    // layout subviews
-    [self layoutSubviews];
-    
+
     if (@available(iOS 11.0, *))
     {
         self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -55,40 +41,33 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-
+    
     if (self.isHideNavi) { //隐藏自定义导航条
-        
+        self.naviViewHeightConstraint.constant = 0;
     }else{//默认不隐藏自定义导航条
-        
+        self.naviViewHeightConstraint.constant = 44;
     }
 }
 
-- (void)layoutSubviews {
-    //You should set subviews constrainsts or frame here
+#pragma mark - ******* UI *******
+- (void)createUI{
+    _webView.delegate = self;
+    _webView.scalesPageToFit = YES;
+    _webView.scrollView.bounces = NO;
+    _webView.dataDetectorTypes = UIDataDetectorTypeNone;    // 禁止自动检测手机号
+    _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    if (self.isHideNavi) { //隐藏导航条
-        [self.statusView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view);
-            make.left.right.equalTo(self.view);
-            make.height.mas_equalTo(kStatusBarHeight);
-        }];
-        [self.webView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.statusView.mas_bottom);
-            make.left.right.equalTo(self.view);
-            make.bottom.equalTo(self.view).offset(0 - SafeAreaBottomHeight);
-        }];
-    } else { //默认不隐藏导航条
-        [self.statusView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view);
-            make.left.right.equalTo(self.view);
-            make.height.mas_equalTo(0);
-        }];
-        [self.webView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view);
-            make.left.right.equalTo(self.view);
-            make.bottom.equalTo(self.view).offset(0 - SafeAreaBottomHeight);
-        }];
-    }
+    [self.view addSubview:self.loadFailedView];
+    
+    self.statusViewHeightConstraint.constant = kStatusBarHeight;
+    self.webViewBackViewBottomConstraint.constant = SafeAreaBottomHeight;
+    
+    
+}
+#pragma mark - ******* Action Methods *******
+//返回
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Public Method
@@ -103,7 +82,7 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:NO];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.webViewBackView animated:NO];
     hud.removeFromSuperViewOnHide = YES;
     hud.animationType = MBProgressHUDAnimationZoom;
     hud.label.text = @"正在加载...";
@@ -127,6 +106,8 @@
     [hud hideAnimated:NO];
     self.loadFailedView.hidden = YES;
     NSLog(@"webView完成加载");
+    //获取当前页面的title
+    self.titleLabel.text = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -135,12 +116,6 @@
     [hud hideAnimated:YES];
     self.loadFailedView.hidden = NO;
     NSLog(@"webView开始加载数据时失败");
-}
-
-#pragma mark - CustomDelegate
-
-- (UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - Event response
@@ -181,20 +156,6 @@
 #pragma mark - Getters and Setters
 // initialize views here, etc
 
-- (UIWebView *)webView
-{
-    if (_webView == nil)
-    {
-        _webView = [[UIWebView alloc] init];
-        _webView.delegate = self;
-        _webView.scalesPageToFit = YES;
-        _webView.scrollView.bounces = NO;
-        _webView.dataDetectorTypes = UIDataDetectorTypeNone;    // 禁止自动检测手机号
-        _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
-    return _webView;
-}
-
 - (BHLoadFailedView *)loadFailedView
 {
     if (!_loadFailedView)
@@ -211,28 +172,6 @@
     return _loadFailedView;
 }
 
-- (UIView *)statusView{
-    if (!_statusView) {
-        _statusView = [[UIView alloc] init];
-        _statusView.backgroundColor = UIColorWhite;
-    }
-    return _statusView;
-}
-
-- (UIView *)naviView{
-    if (!_naviView) {
-        _naviView = [[UIView alloc] init];
-        _naviView.backgroundColor = UIColorWhite;
-    }
-    return _naviView;
-}
-
-#pragma mark - MemoryWarning
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 /*
 #pragma mark - Navigation

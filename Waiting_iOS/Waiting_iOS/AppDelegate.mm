@@ -42,6 +42,7 @@
     // Override point for customization after application launch.
     //Target中设置隐藏状态栏（启动图无状态栏效果），需要在程序启动后取消隐藏。
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    [[ZBLocalized sharedInstance] initLanguage];//放在tabbar前初始化
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

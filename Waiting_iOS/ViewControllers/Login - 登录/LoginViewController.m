@@ -10,11 +10,14 @@
 #import <ShareSDK/ShareSDK.h>
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
-#import "BHWebViewController.h"
+#import "WTWebViewController.h"
+#import "FSDeviceManager.h"
 
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * bottomViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel * loginTitleLabel; //登录提示文字
+@property (weak, nonatomic) IBOutlet UIButton * registerAgreementButton; //注册协议按钮
 
 
 @property (weak, nonatomic) IBOutlet UITextField *textfield;
@@ -25,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.bottomViewHeightConstraint.constant = SafeAreaBottomHeight;
+    [self createUI];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,14 +37,20 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
+#pragma mark - ******* UI *******
+- (void)createUI{
+    self.bottomViewHeightConstraint.constant = SafeAreaBottomHeight;
+    self.loginTitleLabel.text = ZBLocalized(@"Join us with", nil);
+    [self.registerAgreementButton setTitle:ZBLocalized(@"By continuing you agree to the Terms of Service", nil) forState:UIControlStateNormal];
+}
 
 #pragma mark - ******* Action *******
 
 //注册协议
 - (IBAction)agreementAction:(UIButton *)sender {
-    BHWebViewController *vc = [[BHWebViewController alloc] init];
+    WTWebViewController *vc = [[WTWebViewController alloc] init];
     vc.url = @"http://app.waitfy.net/h5/about/?id=100001";
-    [self pushViewControllerAsPresent:vc];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 //twitter
 - (IBAction)twitterAction:(UIButton *)sender {
@@ -163,6 +172,37 @@
     [self requestLogin:params];
 }
 #pragma mark - ******* Request *******
+//检查权限
+- (void)requestCheckPermission{
+    NSDictionary *params = @{@"v":[[FSDeviceManager sharedInstance] getAppVersion]};
+    WEAKSELF
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiCheckPermissions
+                        withParaments:params
+                     withSuccessBlock:^(NSDictionary *object) {
+                         NSLog(@"请求成功");
+                         
+                         [ShowHUDTool hideAlert];
+                         
+                         if (NetResponseCheckStaus)
+                         {
+                             NSDictionary *dataDic = object[@"data"];
+                             NSString *audit = [dataDic stringValueForKey:@"audit" default:@""];
+                             if (kStringNotNull(audit)) {
+                                 if ([audit intValue] == 1) { //开启审核  显示用户名密码 登陆
+                                     
+                                 }
+                             }
+                             
+                             
+                         }
+                         else
+                         {
+                             [ShowHUDTool showBriefAlert:NetResponseMessage];
+                         }
+                     } withFailureBlock:^(NSError *error) {
+                     }];
+}
 
 - (void)requestLogin:(NSDictionary *)params{
     WEAKSELF

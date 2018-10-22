@@ -12,13 +12,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyEditInfoViewController">
             <connections>
                 <outlet property="birthdayButton" destination="3Ot-cB-lbf" id="GVk-6W-ZEE"/>
+                <outlet property="birthdayTitleLabel" destination="els-VD-oP2" id="Orw-7X-9dW"/>
                 <outlet property="describeLabel" destination="7eu-OA-Tsg" id="FYy-kd-h34"/>
                 <outlet property="genderButton" destination="dpi-ae-c97" id="PnI-iA-pi7"/>
+                <outlet property="genderTitleLabel" destination="uFZ-As-idg" id="wKf-TN-JBM"/>
                 <outlet property="headButton" destination="ksg-nv-AV6" id="u7s-bu-3AL"/>
+                <outlet property="hobbyTitleLabel" destination="Y9m-qi-SEm" id="8rM-5A-0yH"/>
+                <outlet property="remarkTitleLabel" destination="Irp-RA-YV6" id="EjA-c2-zFn"/>
                 <outlet property="scrollViewBottomConstraint" destination="4rW-UR-zUF" id="9AR-YU-eJV"/>
                 <outlet property="tagBackView" destination="T8e-I7-b2V" id="Xzh-PJ-aF7"/>
+                <outlet property="titleLabel" destination="fTv-6P-298" id="E3r-VB-44p"/>
                 <outlet property="topViewHeightConstraint" destination="nVZ-Ap-eDr" id="kOJ-GA-DSW"/>
                 <outlet property="userNameButton" destination="KMC-Dv-XBH" id="1gT-Hv-Pe3"/>
+                <outlet property="userNameTitleLabel" destination="ntQ-JU-vYy" id="AOX-uK-F5F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -279,10 +285,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ot-cB-lbf">
-                                            <rect key="frame" x="216" y="0.0" width="150" height="59.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="kvv-DL-Y4Y"/>
-                                            </constraints>
+                                            <rect key="frame" x="58" y="0.0" width="308" height="59.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal" title="2018-09-09">
                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -299,6 +302,7 @@
                                         <constraint firstItem="ZNs-je-BHF" firstAttribute="leading" secondItem="3Ot-cB-lbf" secondAttribute="trailing" constant="10" id="BK6-Nu-J2m"/>
                                         <constraint firstAttribute="trailing" secondItem="ZNs-je-BHF" secondAttribute="trailing" constant="15" id="J5T-8S-Jvg"/>
                                         <constraint firstItem="3Ot-cB-lbf" firstAttribute="top" secondItem="Kho-oG-1gC" secondAttribute="top" id="N6C-Km-jdJ"/>
+                                        <constraint firstItem="3Ot-cB-lbf" firstAttribute="leading" secondItem="els-VD-oP2" secondAttribute="trailing" constant="10" id="Oxb-lX-xnk"/>
                                         <constraint firstItem="SDi-yb-hrD" firstAttribute="leading" secondItem="Kho-oG-1gC" secondAttribute="leading" constant="15" id="Rnv-pw-L6c"/>
                                         <constraint firstAttribute="height" constant="60" id="g02-iL-eV3"/>
                                         <constraint firstItem="els-VD-oP2" firstAttribute="top" secondItem="Kho-oG-1gC" secondAttribute="top" id="kLd-xU-BKl"/>
@@ -338,10 +342,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpi-ae-c97">
-                                            <rect key="frame" x="216" y="0.0" width="150" height="59.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="aBb-X6-Anp"/>
-                                            </constraints>
+                                            <rect key="frame" x="58" y="0.0" width="308" height="59.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <state key="normal">
                                                 <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -354,6 +355,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="uFZ-As-idg" firstAttribute="top" secondItem="CZy-cn-2PL" secondAttribute="top" id="HmX-AK-jGB"/>
+                                        <constraint firstItem="dpi-ae-c97" firstAttribute="leading" secondItem="uFZ-As-idg" secondAttribute="trailing" constant="10" id="NIR-dv-ocx"/>
                                         <constraint firstItem="0P8-0W-CUl" firstAttribute="leading" secondItem="dpi-ae-c97" secondAttribute="trailing" constant="10" id="P5y-3X-pha"/>
                                         <constraint firstAttribute="bottom" secondItem="uFZ-As-idg" secondAttribute="bottom" id="PQh-UD-fJM"/>
                                         <constraint firstAttribute="height" constant="60" id="R52-M0-bW6"/>
@@ -583,7 +585,7 @@
                 <constraint firstAttribute="trailing" secondItem="Rg8-vP-wg3" secondAttribute="trailing" id="nJ7-dJ-ufH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1764" y="0.44977511244377816"/>
+            <point key="canvasLocation" x="-1908" y="-42"/>
         </view>
     </objects>
     <resources>

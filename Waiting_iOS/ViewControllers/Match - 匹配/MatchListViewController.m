@@ -209,10 +209,10 @@ typedef enum : NSUInteger {
                                          [weakSelf pushViewControllerAsPresent:vc];
                                      }
                                  }else if ([nextStatus isEqualToString:@"0"]){//余额不足以开启下一分钟对话
-                                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"当前余额仅能通话1分钟,是否确定开启通话?" preferredStyle:UIAlertControllerStyleAlert];
-                                     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"当前余额仅能通话1分钟,是否确定开启通话?", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      }]];
-                                     [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                          if (type == requestTypeVoice) { //音频
                                              MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
                                              vc.userModel = self.currentModel;
@@ -229,10 +229,10 @@ typedef enum : NSUInteger {
                                      [weakSelf presentViewController:alertController animated:YES completion:nil];
                                  }
                              } else if ([status isEqualToString:@"0"]){ //余额不足以开启对话
-                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"余额不足", nil) message:NSLocalizedString(@"当前余额不足,请充值后进行操作", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                  }]];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"充值", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
                                      [weakSelf.navigationController pushViewController:chargeVC animated:YES];
                                  }]];

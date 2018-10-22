@@ -44,7 +44,8 @@
 #import "NIMKit.h"
 
 #import "CocoaLumberjack.h"
-
+//语言
+#import "ZBLocalized.h"
 //屏幕尺寸
 
 #define ScreenBounds  [[UIScreen mainScreen] bounds]

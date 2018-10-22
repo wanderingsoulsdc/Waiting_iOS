@@ -167,7 +167,7 @@
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 if (NetResponseTokenInvalid) {
-                    [ShowHUDTool showBriefAlert:@"登录信息已失效，请重新登录"];
+                    [ShowHUDTool showBriefAlert:NSLocalizedString(@"登录信息已失效，请重新登录", nil)];
                     [FSNetWorkManager clearCookies];
                     [BHUserModel cleanupCache];
                     [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeLogin];
@@ -197,7 +197,7 @@
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 if (NetResponseTokenInvalid) {
-                    [ShowHUDTool showBriefAlert:@"登录信息已失效，请重新登录"];
+                    [ShowHUDTool showBriefAlert:NSLocalizedString(@"登录信息已失效，请重新登录", nil)];
                     [FSNetWorkManager clearCookies];
                     [BHUserModel cleanupCache];
                     [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeLogin];

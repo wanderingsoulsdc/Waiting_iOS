@@ -19,6 +19,7 @@ typedef enum : NSUInteger {
 
 @interface MyRechargeViewController ()<SKPaymentTransactionObserver,SKProductsRequestDelegate>
 
+@property (weak , nonatomic) IBOutlet UILabel * titleLabel;
 @property (weak , nonatomic) IBOutlet NSLayoutConstraint * topViewTopConstraint; //顶部视图 距上约束
 @property (weak , nonatomic) IBOutlet UILabel    * diamondLabel;     //钻石
 @property (weak , nonatomic) IBOutlet UIButton   * MoneyOneButton;
@@ -39,6 +40,7 @@ typedef enum : NSUInteger {
 @property (nonatomic , strong) NSArray  * chargeDataArr;
 
 @property (nonatomic , assign) RechargeType  rechargeType;
+@property (weak , nonatomic) IBOutlet UIButton * submitButton; //确认充值
 
 @end
 
@@ -66,6 +68,8 @@ typedef enum : NSUInteger {
 
 - (void)createUI{
     self.topViewTopConstraint.constant = kStatusBarHeight;
+    self.titleLabel.text = ZBLocalized(@"Recharge", nil);
+    [self.submitButton setTitle:ZBLocalized(@"Submit", nil) forState:UIControlStateNormal];
 }
 
 #pragma mark - ******* Action Methods *******
@@ -181,8 +185,7 @@ typedef enum : NSUInteger {
     
     //如果服务器没有产品
     if([product count] == 0){
-        NSLog(@"nothing");
-        [ShowHUDTool showBriefAlert:@"拉取支付信息失败"];
+        NSLog(@"拉取支付信息失败");
         return;
     }
     
@@ -212,7 +215,7 @@ typedef enum : NSUInteger {
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error{
     NSLog(@"error:%@", error);
     [ShowHUDTool hideAlert];
-    [ShowHUDTool showBriefAlert:@"购买请求发送失败"];
+    NSLog(@"购买请求发送失败");
 }
 
 //反馈请求的产品信息结束后
@@ -242,7 +245,6 @@ typedef enum : NSUInteger {
                 NSLog(@"交易失败");
                 [[SKPaymentQueue defaultQueue] finishTransaction:tran];
                 [ShowHUDTool hideAlert];
-                [ShowHUDTool showBriefAlert:@"交易失败"];
                 break;
             default:
                 break;

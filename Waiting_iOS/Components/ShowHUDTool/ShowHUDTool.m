@@ -56,7 +56,7 @@
 + (void)showLoadingWithTitle:(NSString *)title inView:(UIView *)view
 {
     view = view ?: [UIApplication sharedApplication].keyWindow;
-    title = title ?: @"加载中";
+    title = title ?: NSLocalizedString(@"Loading", nil);
     
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view];
     hud.removeFromSuperViewOnHide = YES;

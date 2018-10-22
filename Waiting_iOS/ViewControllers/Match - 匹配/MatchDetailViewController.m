@@ -65,7 +65,7 @@ typedef enum : NSUInteger {
     
     self.nameLabel.text = self.userModel.userName; //用户名
     self.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@ · %@",self.userModel.gender_txt,self.userModel.age];;
-    self.remarkLabel.text = kStringNotNull(self.userModel.remark)? self.userModel.remark : @"Ta还没有个性的自我介绍~"; //个人
+    self.remarkLabel.text = kStringNotNull(self.userModel.remark)? self.userModel.remark : NSLocalizedString(@"Ta还没有个性的自我介绍~", nil); //个人
     [self createImageScrollView];
     [self createTagView];
 }
@@ -95,7 +95,7 @@ typedef enum : NSUInteger {
     
     if (!kArrayNotNull(self.userModel.hobbyArray)) {
         _tagsNoDataLabel.hidden = NO;
-        _tagsNoDataLabel.text = @"Ta没什么爱好";
+        _tagsNoDataLabel.text = NSLocalizedString(@"Ta没什么爱好", nil);
         return;
     }
     
@@ -253,10 +253,10 @@ typedef enum : NSUInteger {
                                      [weakSelf presentViewController:vc animated:YES completion:nil];
                                  }
                              } else if ([isFee isEqualToString:@"0"]){ //余额不足以开启对话
-                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"余额不足" message:@"当前余额不足,请充值后进行操作" preferredStyle:UIAlertControllerStyleAlert];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"余额不足", nil) message:NSLocalizedString(@"当前余额不足,请充值后进行操作", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                  }]];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:@"充值" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"充值", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
                                      [self.navigationController pushViewController:chargeVC animated:YES];
                                  }]];

@@ -28,6 +28,8 @@
 @property (nonatomic , strong) NSString                 * ageStr;       //年龄
 
 @property (nonatomic , strong) NSString                 * diamond;       //钻石
+@property (weak, nonatomic) IBOutlet UILabel * rechargeTitleLabel; //充值title
+@property (weak, nonatomic) IBOutlet UILabel * setTitleLabel;//设置title
 
 @property (nonatomic , assign) BOOL                 isRequestingUserInfo;   //是否正在请求用户信息
 @property (nonatomic , assign) BOOL                 isRequestingAccountData;//是否正在请求账户余额
@@ -70,6 +72,9 @@
 - (void)createUI{
     self.editInformationButton.layer.borderWidth = 1;
     self.editInformationButton.layer.borderColor = UIColorFromRGB(0x9014FC).CGColor;
+    [self.editInformationButton setTitle:ZBLocalized(@"Edit", nil) forState:UIControlStateNormal];
+    self.rechargeTitleLabel.text = ZBLocalized(@"Recharge", nil);
+    self.setTitleLabel.text = ZBLocalized(@"Setting", nil);
     [self refreshData];
 }
 
