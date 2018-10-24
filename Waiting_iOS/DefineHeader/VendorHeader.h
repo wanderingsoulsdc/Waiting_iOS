@@ -14,7 +14,7 @@
 #define kAppScheme      @"litetreasure"           // 在Info.plist中定义的自己的URL types
 #define kJPushAppKey    @"79d75bda18b0aee8aa3e258c"     // 极光推送的APP KEY
 #define kSoBotAppKey    @"fe0d6fc71bef4996a7a1004dbf9d449c" // 智齿客服的App Key
-#define UMengAppKey     @"5abc4915f43e481b11000060"     // 友盟的App Key
+#define UMengAppKey     @"5b87857af29d98045d00030e"     // 友盟的App Key
 #define kAPPID          @"1271359380"       // App ID
 #define kBaiduMapKey    @"nBDGIICGOr9kdMd047eSIP8YBduqcjAH"   //百度地图key
 

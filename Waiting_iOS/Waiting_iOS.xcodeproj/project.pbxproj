@@ -206,7 +206,6 @@
 		C1938F4C2152756200212FB3 /* video_chat_tip_sender.aac in Resources */ = {isa = PBXBuildFile; fileRef = C1938F0A2152756200212FB3 /* video_chat_tip_sender.aac */; };
 		C1938F4D2152756200212FB3 /* video_chat_tip_receiver.aac in Resources */ = {isa = PBXBuildFile; fileRef = C1938F0B2152756200212FB3 /* video_chat_tip_receiver.aac */; };
 		C1938F4E2152756200212FB3 /* NTESNetChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F0E2152756200212FB3 /* NTESNetChatViewController.m */; };
-		C1938F4F2152756200212FB3 /* LSVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F112152756200212FB3 /* LSVideoController.m */; };
 		C1938F502152756200212FB3 /* NetCallChatInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F152152756200212FB3 /* NetCallChatInfo.m */; };
 		C1938F512152756200212FB3 /* LSTempModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F162152756200212FB3 /* LSTempModel.m */; };
 		C1938F522152756200212FB3 /* NTESGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F192152756200212FB3 /* NTESGLView.m */; };
@@ -226,7 +225,6 @@
 		C1938F602152756200212FB3 /* IJKSDLGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F382152756200212FB3 /* IJKSDLGLView.m */; };
 		C1938F612152756200212FB3 /* ijksdl_timer.c in Sources */ = {isa = PBXBuildFile; fileRef = C1938F402152756200212FB3 /* ijksdl_timer.c */; };
 		C1938F622152756200212FB3 /* NTESVideoChatNetStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F412152756200212FB3 /* NTESVideoChatNetStatusView.m */; };
-		C1938F632152756200212FB3 /* LSAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1938F432152756200212FB3 /* LSAudioController.m */; };
 		C1AA5ED1213D5B66001F12DE /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED0213D5B66001F12DE /* libicucore.tbd */; };
 		C1AA5ED3213D5B83001F12DE /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED2213D5B83001F12DE /* libstdc++.tbd */; };
 		C1AA5ED5213D5B95001F12DE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1AA5ED4213D5B95001F12DE /* JavaScriptCore.framework */; };
@@ -602,11 +600,8 @@
 		C1938F082152756100212FB3 /* LSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLabel.h; sourceTree = "<group>"; };
 		C1938F0A2152756200212FB3 /* video_chat_tip_sender.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_chat_tip_sender.aac; sourceTree = "<group>"; };
 		C1938F0B2152756200212FB3 /* video_chat_tip_receiver.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_chat_tip_receiver.aac; sourceTree = "<group>"; };
-		C1938F0D2152756200212FB3 /* LSVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSVideoController.h; sourceTree = "<group>"; };
 		C1938F0E2152756200212FB3 /* NTESNetChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESNetChatViewController.m; sourceTree = "<group>"; };
 		C1938F0F2152756200212FB3 /* NTESVideoChatNetStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESVideoChatNetStatusView.h; sourceTree = "<group>"; };
-		C1938F102152756200212FB3 /* LSAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAudioController.h; sourceTree = "<group>"; };
-		C1938F112152756200212FB3 /* LSVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSVideoController.m; sourceTree = "<group>"; };
 		C1938F132152756200212FB3 /* NetCallChatInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetCallChatInfo.h; sourceTree = "<group>"; };
 		C1938F142152756200212FB3 /* LSTempModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTempModel.h; sourceTree = "<group>"; };
 		C1938F152152756200212FB3 /* NetCallChatInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetCallChatInfo.m; sourceTree = "<group>"; };
@@ -649,7 +644,6 @@
 		C1938F402152756200212FB3 /* ijksdl_timer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ijksdl_timer.c; sourceTree = "<group>"; };
 		C1938F412152756200212FB3 /* NTESVideoChatNetStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESVideoChatNetStatusView.m; sourceTree = "<group>"; };
 		C1938F422152756200212FB3 /* NTESNetChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESNetChatViewController.h; sourceTree = "<group>"; };
-		C1938F432152756200212FB3 /* LSAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAudioController.m; sourceTree = "<group>"; };
 		C1AA5ED0213D5B66001F12DE /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		C1AA5ED2213D5B83001F12DE /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		C1AA5ED4213D5B95001F12DE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -1590,8 +1584,6 @@
 		C18DEB18214E101D00C823BE /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				C1938F0D2152756200212FB3 /* LSVideoController.h */,
-				C1938F112152756200212FB3 /* LSVideoController.m */,
 				C1130E912157A875008A446E /* MatchVideoViewController.h */,
 				C1130E922157A875008A446E /* MatchVideoViewController.m */,
 				C1130E932157A875008A446E /* MatchVideoViewController.xib */,
@@ -1602,8 +1594,6 @@
 		C18DEB19214E102500C823BE /* Voice */ = {
 			isa = PBXGroup;
 			children = (
-				C1938F102152756200212FB3 /* LSAudioController.h */,
-				C1938F432152756200212FB3 /* LSAudioController.m */,
 				C10B3E75215369650044AAEB /* MatchVoiceViewController.h */,
 				C10B3E76215369650044AAEB /* MatchVoiceViewController.m */,
 				C10B3E77215369650044AAEB /* MatchVoiceViewController.xib */,
@@ -2294,7 +2284,6 @@
 				C1FA390420DA71210025E07F /* LLSegmentBarVC.m in Sources */,
 				C18DEE10214E31FE00C823BE /* MyInputViewController.m in Sources */,
 				077596491FC5AB720036CC1F /* ZLPhotoBrowser.m in Sources */,
-				C1938F632152756200212FB3 /* LSAudioController.m in Sources */,
 				C1938F532152756200212FB3 /* renderer_yuv444p10le.c in Sources */,
 				C1938F5A2152756200212FB3 /* renderer.c in Sources */,
 				076688191EE50BD3007FE539 /* UIButton+countdown.m in Sources */,
@@ -2349,7 +2338,6 @@
 				0775964E1FC5AB720036CC1F /* ZLShowBigImgViewController.m in Sources */,
 				C1FA399F20DB2C070025E07F /* UIColor+PGHex.m in Sources */,
 				076688291EE50BD3007FE539 /* SliderMenuController.m in Sources */,
-				C1938F4F2152756200212FB3 /* LSVideoController.m in Sources */,
 				0766881C1EE50BD3007FE539 /* UIImage+compressIMG.m in Sources */,
 				C1FA39A620DB2C070025E07F /* PGDatePicker+Logic.m in Sources */,
 				C1FA399820DB2C070025E07F /* PGPickerColumnCell.m in Sources */,

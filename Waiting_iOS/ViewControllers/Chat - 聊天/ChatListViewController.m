@@ -11,12 +11,15 @@
 
 @interface ChatListViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel * noSessionLabel;//没有会话
+
 @end
 
 @implementation ChatListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.noSessionLabel.text = ZBLocalized(@"No session", nil);
     // Do any additional setup after loading the view from its nib.
 }
 

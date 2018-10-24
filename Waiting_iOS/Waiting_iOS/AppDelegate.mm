@@ -18,21 +18,18 @@
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 #import "BHLoginViewController.h"
-#import "FSDeviceManager.h"
+//#import "FSDeviceManager.h"
 #import "IQKeyboardManager.h"
 #import <UMCommon/UMCommon.h>
 #import <UMAnalytics/MobClick.h>
-#import <BaiduMapAPI_Base/BMKBaseComponent.h>
 
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
 
 #import "NTESNotificationCenter.h"
 
-@interface AppDelegate () <WXApiDelegate, JPUSHRegisterDelegate,BMKGeneralDelegate>
-{
-    BMKMapManager* _mapManager;
-}
+@interface AppDelegate () <WXApiDelegate, JPUSHRegisterDelegate>
+
 @end
 
 @implementation AppDelegate
@@ -43,7 +40,8 @@
     //Target中设置隐藏状态栏（启动图无状态栏效果），需要在程序启动后取消隐藏。
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [[ZBLocalized sharedInstance] initLanguage];//放在tabbar前初始化
-
+    sleep(1);
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -63,11 +61,11 @@
 //    [JPUSHService setBadge:0];
     
     // 友盟监测
-//    [UMConfigure setEncryptEnabled:YES];
-//    [UMConfigure initWithAppkey:UMengAppKey channel:@"App Store"];
-//    [MobClick setScenarioType:E_UM_NORMAL];
+    [UMConfigure setEncryptEnabled:YES];
+    [UMConfigure initWithAppkey:UMengAppKey channel:@"App Store"];
+    [MobClick setScenarioType:E_UM_NORMAL];
     
-#ifdef RELEASE
+#if  TARGET_MODE==0 //正式环境
     
 #else
     [UMConfigure setLogEnabled:YES];

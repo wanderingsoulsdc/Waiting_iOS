@@ -248,7 +248,7 @@ NTES_FORBID_INTERACTIVE_POP
         }else{
             if (error) {
                 NSLog(@" 连接失败： %@",error);
-                [SVProgressHUD showErrorSVP:NSLocalizedString(@"连接失败", nil)];
+                [SVProgressHUD showErrorSVP:ZBLocalized(@"Connection failed", nil)];
 //                [wself.navigationController.view makeToast:@"连接失败"
 //                                                  duration:2
 //                                                  position:CSToastPositionCenter];
@@ -323,7 +323,7 @@ NTES_FORBID_INTERACTIVE_POP
                 NSTimeInterval delay = 10.f; //10秒后判断下房间
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     if (wself.chatRoom.count == 1) {
-                        [SVProgressHUD showErrorSVP:NSLocalizedString(@"通话失败", nil)];
+                        [SVProgressHUD showErrorSVP:ZBLocalized(@"Call failed", nil)];
 //                        [wself.navigationController.view makeToast:@"通话失败"
 //                                                          duration:2
 //                                                          position:CSToastPositionCenter];
@@ -332,7 +332,7 @@ NTES_FORBID_INTERACTIVE_POP
                 });
         }else{
             wself.chatRoom = nil;
-            [SVProgressHUD showErrorSVP:NSLocalizedString(@"连接失败", nil)];
+            [SVProgressHUD showErrorSVP:ZBLocalized(@"Connection failed", nil)];
 //            [wself.navigationController.view makeToast:@"连接失败"
 //                                              duration:2
 //                                              position:CSToastPositionCenter];
@@ -626,7 +626,7 @@ NTES_FORBID_INTERACTIVE_POP
                         [[NIMAVChatSDK sharedSDK].netCallManager hangup:callId];
                         wself.chatRoom = nil;
                         [wself playTimeoutRing];
-                        [SVProgressHUD showErrorSVP:NSLocalizedString(@"暂时无人接听", nil)];
+                        [SVProgressHUD showErrorSVP:ZBLocalized(@"Temporarily unanswered", nil)];
 //                        [wself.navigationController.view makeToast:@"无人接听"
 //                                                          duration:2
 //                                                          position:CSToastPositionCenter];
@@ -642,7 +642,7 @@ NTES_FORBID_INTERACTIVE_POP
             _userHangup = YES;
             //对方忙碌需要挂断当前通话, 通话id应该为0;
             [[NIMAVChatSDK sharedSDK].netCallManager hangup:0];
-            [SVProgressHUD showErrorSVP:NSLocalizedString(@"对不起,当前用户正忙", nil)];
+            [SVProgressHUD showErrorSVP:ZBLocalized(@"Sorry, the current user is busy", nil)];
             __weak typeof(self) wself = self;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [wself dismiss:nil];
@@ -668,7 +668,7 @@ NTES_FORBID_INTERACTIVE_POP
     if (self.callInfo.callID == callID) {
         if (!accepted) {
             self.chatRoom = nil;
-            [SVProgressHUD showErrorSVP:NSLocalizedString(@"对方拒绝接听", nil)];
+            [SVProgressHUD showErrorSVP:ZBLocalized(@"The other party refuses to call", nil)];
 //            [self.navigationController.view makeToast:@"对方拒绝接听"
 //                                             duration:2
 //                                             position:CSToastPositionCenter];
@@ -710,7 +710,7 @@ NTES_FORBID_INTERACTIVE_POP
 
 - (void)onResponsedByOther:(UInt64)callID
                   accepted:(BOOL)accepted{
-    [SVProgressHUD showWithSVP:NSLocalizedString(@"已在其他端处理", nil)];
+    [SVProgressHUD showWithSVP:ZBLocalized(@"Already processed at the other end", nil)];
 //    [self.view.window makeToast:@"已在其他端处理"
 //                       duration:2
 //                       position:CSToastPositionCenter];
@@ -731,7 +731,7 @@ NTES_FORBID_INTERACTIVE_POP
             });
         }
         else {
-            [SVProgressHUD showWithSVP:NSLocalizedString(@"当前通话结束", nil)];
+            [SVProgressHUD showWithSVP:ZBLocalized(@"End of current call", nil)];
             [self dismiss:nil];
             
         }
@@ -809,7 +809,7 @@ NTES_FORBID_INTERACTIVE_POP
     }
     else if(holder == self.calleeResponseTimer) {
         if (!_calleeResponsed) {
-            [SVProgressHUD showErrorSVP:NSLocalizedString(@"接听超时", nil)];
+            [SVProgressHUD showErrorSVP:ZBLocalized(@"Connection timed out", nil)];
 //            [self.navigationController.view makeToast:@"接听超时"
 //                                              duration:2
 //                                              position:CSToastPositionCenter];

@@ -243,7 +243,7 @@
 - (void)startInterface{
     
     self.cancelButton.hidden = NO;
-    self.statusLabel.text = NSLocalizedString(@"正在等待对方接受邀请...", nil);
+    self.statusLabel.text = ZBLocalized(@"Waiting for the other party to accept the invitation", nil);
     
     self.refuseButton.hidden = YES;
     self.acceptButton.hidden = YES;
@@ -264,7 +264,7 @@
     
     self.acceptButton.hidden = NO;
     self.refuseButton.hidden = NO;
-    self.statusLabel.text = NSLocalizedString(@"邀请你视频通话", nil);
+    self.statusLabel.text = ZBLocalized(@"Invite you to a video call", nil);
     
     self.cancelButton.hidden = YES;
     self.closeButton.hidden = YES;
@@ -285,7 +285,7 @@
 //连接对方界面
 - (void)connectingInterface{
     
-    self.statusLabel.text = NSLocalizedString(@"正在连接对方...", nil);
+    self.statusLabel.text = ZBLocalized(@"Connecting", nil);
     
     self.timeLabel.hidden = YES;
     self.acceptButton.hidden = YES;
@@ -536,10 +536,10 @@
                                 NSDictionary *nextDic = object[@"data"][@"next"];
                                 NSString *status = [nextDic stringValueForKey:@"status" default:@""];
                                 if ([status isEqualToString:@"0"]) {
-                                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"余额不足", nil) message:NSLocalizedString(@"当前余额不足以开启下一分钟,请充值后进行操作", nil) preferredStyle:UIAlertControllerStyleAlert];
-                                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ZBLocalized(@"Insufficient balance", nil) message:ZBLocalized(@"The current balance is not enough to continue, please recharge", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                    [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                     }]];
-                                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"充值", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Recharge", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                         MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
                                         [weakSelf.navigationController pushViewController:chargeVC animated:YES];
                                     }]];

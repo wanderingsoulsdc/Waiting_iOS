@@ -65,7 +65,7 @@ typedef enum : NSUInteger {
     
     self.nameLabel.text = self.userModel.userName; //用户名
     self.genderAndAgeLabel.text = [NSString stringWithFormat:@"%@ · %@",self.userModel.gender_txt,self.userModel.age];;
-    self.remarkLabel.text = kStringNotNull(self.userModel.remark)? self.userModel.remark : NSLocalizedString(@"Ta还没有个性的自我介绍~", nil); //个人
+    self.remarkLabel.text = kStringNotNull(self.userModel.remark)? self.userModel.remark : @""; //个人
     [self createImageScrollView];
     [self createTagView];
 }
@@ -95,7 +95,7 @@ typedef enum : NSUInteger {
     
     if (!kArrayNotNull(self.userModel.hobbyArray)) {
         _tagsNoDataLabel.hidden = NO;
-        _tagsNoDataLabel.text = NSLocalizedString(@"Ta没什么爱好", nil);
+        _tagsNoDataLabel.text = @"";
         return;
     }
     
@@ -189,6 +189,22 @@ typedef enum : NSUInteger {
 - (IBAction)backButtonAction:(UIButton *)sender {
     [self popViewControllerAsDismiss];
 }
+//更多
+- (IBAction)moreAction:(UIButton *)sender {
+
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }];
+    [actionSheet addAction:cancelButton];
+    
+    UIAlertAction *reportButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Report", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [ShowHUDTool showBriefAlert:ZBLocalized(@"Report success", nil)];
+    }];
+    [actionSheet addAction:reportButton];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {
     NIMSession *session = [NIMSession session:self.userModel.userID type:NIMSessionTypeP2P];
@@ -240,27 +256,56 @@ typedef enum : NSUInteger {
                              NSLog(@"请求成功");
                              NSDictionary *dataDic = object[@"data"];
                              
-                             NSString *isFee = [dataDic stringValueForKey:@"isFee" default:@""];
+                             NSString *status = [dataDic stringValueForKey:@"status" default:@""];
+                             NSString *tvId = [dataDic stringValueForKey:@"tvId" default:@""];
                              
-                             if ([isFee isEqualToString:@"1"]) { //余额足够开启对话
-                                 if (type == requestTypeVoice) { //音频
-                                     MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.userModel.userID];
-                                     vc.userModel = self.userModel;
-                                     [weakSelf presentViewController:vc animated:YES completion:nil];
-                                 } else if (type == requestTypeVideo){ //视频
-                                     MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.userModel.userID];
-                                     vc.userModel = self.userModel;
-                                     [weakSelf presentViewController:vc animated:YES completion:nil];
+                             if ([status isEqualToString:@"1"]) { //余额足够开启对话
+                                 
+                                 NSDictionary *nextDic = dataDic[@"next"];
+                                 NSString *nextStatus = [nextDic stringValueForKey:@"status" default:@""];
+                                 
+                                 if ([nextStatus isEqualToString:@"1"]) {//余额足够开启下一分钟对话
+                                     if (type == requestTypeVoice) { //音频
+                                         MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.userModel.userID];
+                                         vc.userModel = self.userModel;
+                                         vc.tvId = tvId;
+                                         [weakSelf pushViewControllerAsPresent:vc];
+                                         
+                                     } else if (type == requestTypeVideo){ //视频
+                                         MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.userModel.userID];
+                                         vc.userModel = self.userModel;
+                                         vc.tvId = tvId;
+                                         [weakSelf pushViewControllerAsPresent:vc];
+                                     }
+                                 }else if ([nextStatus isEqualToString:@"0"]){//余额不足以开启下一分钟对话
+                                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:ZBLocalized(@"The current balance can only be called for 1 minute. Is it OK to initiate a call?", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                     [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     }]];
+                                     [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Confirm", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                         if (type == requestTypeVoice) { //音频
+                                             MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.userModel.userID];
+                                             vc.userModel = self.userModel;
+                                             vc.tvId = tvId;
+                                             [weakSelf pushViewControllerAsPresent:vc];
+                                             
+                                         } else if (type == requestTypeVideo){ //视频
+                                             MatchVideoViewController * vc = [[MatchVideoViewController alloc] initWithCallee:self.userModel.userID];
+                                             vc.userModel = self.userModel;
+                                             vc.tvId = tvId;
+                                             [weakSelf pushViewControllerAsPresent:vc];
+                                         }
+                                     }]];
+                                     [weakSelf presentViewController:alertController animated:YES completion:nil];
                                  }
-                             } else if ([isFee isEqualToString:@"0"]){ //余额不足以开启对话
-                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"余额不足", nil) message:NSLocalizedString(@"当前余额不足,请充值后进行操作", nil) preferredStyle:UIAlertControllerStyleAlert];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                             } else if ([status isEqualToString:@"0"]){ //余额不足以开启对话
+                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ZBLocalized(@"Insufficient balance", nil) message:ZBLocalized(@"The current balance is not enough to continue, please recharge", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                 [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                  }]];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"充值", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Recharge", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
-                                     [self.navigationController pushViewController:chargeVC animated:YES];
+                                     [weakSelf.navigationController pushViewController:chargeVC animated:YES];
                                  }]];
-                                 [self presentViewController:alertController animated:YES completion:nil];
+                                 [weakSelf presentViewController:alertController animated:YES completion:nil];
                              }
                          }
                          else

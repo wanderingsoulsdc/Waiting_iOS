@@ -358,23 +358,23 @@ typedef enum : NSUInteger {
 {
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
     }];
     [actionSheet addAction:cancelButton];
     
-    UIAlertAction *cameraButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"拍照", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *cameraButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Take a photo", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self checkPermissionWithType:1];
     }];
     [actionSheet addAction:cameraButton];
     
-    UIAlertAction *albumButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"从相册选择", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertAction *albumButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Choose from an album", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self checkPermissionWithType:2];
     }];
     [actionSheet addAction:albumButton];
     
     if (self.currentUploadType == UploadImageTypeOther) {
         if (self.currentButton.tag - 100 < self.picArr.count) {
-            UIAlertAction *delegateButton = [UIAlertAction actionWithTitle:NSLocalizedString(@"删除", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            UIAlertAction *delegateButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Delete", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 [self.picArr removeObjectAtIndex:self.currentButton.tag - 100];
                 [self sortDisplayOtherImage];
             }];
@@ -413,11 +413,11 @@ typedef enum : NSUInteger {
             // 不允许弹出提示框
             if (authorizationStatus == AVAuthorizationStatusRestricted|| authorizationStatus == AVAuthorizationStatusDenied) {
                 //无相册访问权限
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"请在iphone的设置中,允许Waiting访问您的相机", nil) preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *action1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"知道了", nil) style:UIAlertActionStyleDefault handler:nil];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:ZBLocalized(@"Please allow Waiting to access your camera in the iphone settings", nil) preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action1 = [UIAlertAction actionWithTitle:ZBLocalized(@"Got it", nil) style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:action1];
                 
-                UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"去设置", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UIAlertAction *action = [UIAlertAction actionWithTitle:ZBLocalized(@"Setting", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     NSURL *applicationUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
                     if ([[UIApplication sharedApplication] canOpenURL:applicationUrl]) {
                         [[UIApplication sharedApplication] openURL:applicationUrl];
@@ -442,7 +442,7 @@ typedef enum : NSUInteger {
             }
         } else {
             // 硬件问题提示
-            [ShowHUDTool showBriefAlert:NSLocalizedString(@"摄像头不可用,请检查手机摄像头设备", nil)];
+            [ShowHUDTool showBriefAlert:ZBLocalized(@"Camera is not available, please check your phone camera device", nil)];
         }
     }
     else if (type == 2)
@@ -451,11 +451,11 @@ typedef enum : NSUInteger {
         PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
         if (status == PHAuthorizationStatusRestricted ||
             status == PHAuthorizationStatusDenied) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:NSLocalizedString(@"请在iphone的设置中,允许Waiting访问您的照片", nil) preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *action1 = [UIAlertAction actionWithTitle:NSLocalizedString(@"知道了", nil) style:UIAlertActionStyleDefault handler:nil];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:ZBLocalized(@"Please allow Waiting to access your photos in the iPhone settings.", nil) preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action1 = [UIAlertAction actionWithTitle:ZBLocalized(@"Got it", nil) style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:action1];
             
-            UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"去设置", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertAction *action = [UIAlertAction actionWithTitle:ZBLocalized(@"Setting", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 NSURL *applicationUrl = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
                 if ([[UIApplication sharedApplication] canOpenURL:applicationUrl]) {
                     [[UIApplication sharedApplication] openURL:applicationUrl];
@@ -589,7 +589,7 @@ typedef enum : NSUInteger {
 {
     
     RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:portraitImage cropMode:RSKImageCropModeCustom];
-    imageCropVC.moveAndScaleLabel.text = NSLocalizedString(@"调整裁切区域", nil);
+    imageCropVC.moveAndScaleLabel.text = ZBLocalized(@"Set the crop area", nil);
     imageCropVC.delegate = self;
     imageCropVC.dataSource = self;
     imageCropVC.maskLayerStrokeColor = UIColorBlue;
@@ -600,7 +600,7 @@ typedef enum : NSUInteger {
 
 - (void)uploadImage:(UIImage *)portraitImg
 {
-    [ShowHUDTool showLoadingWithTitle:NSLocalizedString(@"上传中", nil) inView:[UIApplication sharedApplication].keyWindow];
+    [ShowHUDTool showLoadingWithTitle:ZBLocalized(@"Uploading", nil) inView:[UIApplication sharedApplication].keyWindow];
     WEAKSELF
     //此body是向后台传的参数, 因为是上传图片, 所以只给个图片名就够了, 这个和后台去问
     NSDictionary * body = @{@"pic":@"image"};

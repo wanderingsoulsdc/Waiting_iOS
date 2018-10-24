@@ -86,7 +86,7 @@ typedef enum : NSUInteger {
     NSDictionary *dataDic = self.chargeDataArr[sender.tag - 100];
     
     self.currentSelectDiamond = dataDic[@"name"];
-    self.currentSelectMoney = dataDic[@"HKD"];
+    self.currentSelectMoney = dataDic[@"value"];
     self.currentProductID = dataDic[@"gid"];
     
     
@@ -152,7 +152,7 @@ typedef enum : NSUInteger {
         UIButton *button = [self.view viewWithTag:100+i];
         button.hidden = NO;
         //设置金额
-        [self setDiamond:dataDic[@"coin"] Money:dataDic[@"HKD"] ForButton:button];
+        [self setDiamond:dataDic[@"coin"] Money:dataDic[@"value"] ForButton:button];
     }
 }
 

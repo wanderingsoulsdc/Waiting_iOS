@@ -16,11 +16,11 @@
 
 // APP
 #if     TARGET_MODE==2          // 测试环境（TEST_DEBUG）
-#define kApiHostPort @"https://tcatapi.behe.com/"
+#define kApiHostPort @"http://app.waitfy.net/"
 #elif   TARGET_MODE==1          // 开发环境（DEBUG）
 #define kApiHostPort @"http://app.waitfy.net/"
 #else                           // 正式环境（Release）
-#define kApiHostPort @"https://catapi.behe.com/"
+#define kApiHostPort @"http://app.waitfy.net/"
 #endif
 
 
@@ -42,6 +42,7 @@
 #define kApiLoginGetVerCode             @"User/sendSms"             /* 获取验证码 */
 #define kApiLoginCheckVerCode           @"User/checkSmsCode"        /* 检测验证码 */
 #define kApiLogin                       kApiVersionPort @"passport/snslogin"  /* 登录 */
+#define kApiPasswordLogin               kApiVersionPort @"Passport/login"  /* 账号密码登录 */
 #define kApiLogout                      @"User/logout"              /* 退出登录 */
 
 #define kApiCheckVersion                @"https://luckycatv1.behe.com/V1/login/versions"      /* 检查版本 */

@@ -42,3 +42,71 @@
 "What's Up" = "What's Up";
 //语言
 "Language" = "Language";
+//用户名
+"UserName" = "UserName";
+//密码
+"Password" = "Password";
+//登录按钮
+"Log in" = "Log in";
+//通话失败
+"Call failed" = "Call failed";
+//连接失败
+"Connection failed" = "Connection failed";
+//暂时无人接听
+"Temporarily unanswered" = "Temporarily unanswered";
+//对不起,当前用户正忙
+"Sorry, the current user is busy" = "Sorry, the current user is busy";
+//对方拒绝接听
+"The other party refuses to call" = "The other party refuses to call";
+//已在其他端处理
+"Already processed at the other end" = "Already processed at the other end";
+//当前通话结束
+"End of current call" = "End of current call";
+//接听超时
+"Connection timed out" = "Connection timed out";
+//正在等待对方接受邀请
+"Waiting for the other party to accept the invitation" = "Waiting for the other party to accept the invitation";
+//邀请你语音通话
+"Invite you to make a voice call" = "Invite you to make a voice call";
+//正在连接对方
+"Connecting" = "Connecting";
+//已接听
+"Connected" = "Connected";
+//邀请你视频通话
+"Invite you to a video call" = "Invite you to a video call";
+//余额不足
+"Insufficient balance" = "Insufficient balance";
+//当前余额不足以开启下一分钟，请充值后进行操作
+"The current balance is not enough to continue, please recharge" = "The current balance is not enough to continue, please recharge";
+//取消
+"Cancel" = "Cancel";
+//拍照
+"Take a photo" = "Take a photo";
+//从相册选择
+"Choose from an album" = "Choose from an album";
+//删除
+"Delete" = "Delete";
+//请在iphone的设置中，允许Waiting访问您的相机
+"Please allow Waiting to access your camera in the iphone settings" = "Please allow Waiting to access your camera in the iphone settings";
+//请在iPhone的设置中，允许Waiting访问您的照片
+"Please allow Waiting to access your photos in the iPhone settings." = "Please allow Waiting to access your photos in the iPhone settings.";
+//知道了
+"Got it" = "Got it";
+//摄像头不可用，请检查手机摄像头设备
+"Camera is not available, please check your phone camera device" = "Camera is not available, please check your phone camera device";
+//调整裁切区域
+"Set the crop area" = "Set the crop area";
+//上传中
+"Uploading" = "Uploading";
+//当前余额仅能通话1分钟，是否确定开启通话
+"The current balance can only be called for 1 minute. Is it OK to initiate a call?" = "The current balance can only be called for 1 minute. Is it OK to initiate a call?";
+//当前余额不足，请充值后进行操作
+"The current balance is not enough to continue, please recharge" = "The current balance is not enough to continue, please recharge";
+//确认
+"Confirm" = "Confirm";
+//举报
+"Report" = "Report";
+//举报成功
+"Report success" = "Report success";
+//没有会话
+"No session" = "No session";

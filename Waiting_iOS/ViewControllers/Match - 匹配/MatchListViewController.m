@@ -10,8 +10,6 @@
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 #import "MatchCardView.h"
-#import "LSAudioController.h"
-#import "LSVideoController.h"
 #import "MatchVoiceViewController.h"
 #import "MatchVideoViewController.h"
 #import "ChatViewController.h"
@@ -116,7 +114,7 @@ typedef enum : NSUInteger {
                          
                          if (NetResponseCheckStaus)
                          {
-                             NSLog(@"请求成功");
+                              NSLog(@"请求成功");
                              NSDictionary *dataDic = object[@"data"];
                              
                              NSArray * array = dataDic[@"list"];
@@ -209,10 +207,10 @@ typedef enum : NSUInteger {
                                          [weakSelf pushViewControllerAsPresent:vc];
                                      }
                                  }else if ([nextStatus isEqualToString:@"0"]){//余额不足以开启下一分钟对话
-                                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"当前余额仅能通话1分钟,是否确定开启通话?", nil) preferredStyle:UIAlertControllerStyleAlert];
-                                     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:ZBLocalized(@"The current balance can only be called for 1 minute. Is it OK to initiate a call?", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                     [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      }]];
-                                     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                     [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Confirm", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                          if (type == requestTypeVoice) { //音频
                                              MatchVoiceViewController * vc = [[MatchVoiceViewController alloc] initWithCallee:self.currentModel.userID];
                                              vc.userModel = self.currentModel;
@@ -229,10 +227,10 @@ typedef enum : NSUInteger {
                                      [weakSelf presentViewController:alertController animated:YES completion:nil];
                                  }
                              } else if ([status isEqualToString:@"0"]){ //余额不足以开启对话
-                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"余额不足", nil) message:NSLocalizedString(@"当前余额不足,请充值后进行操作", nil) preferredStyle:UIAlertControllerStyleAlert];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"取消", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:ZBLocalized(@"Insufficient balance", nil) message:ZBLocalized(@"The current balance is not enough to continue, please recharge", nil) preferredStyle:UIAlertControllerStyleAlert];
+                                 [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                  }]];
-                                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"充值", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                 [alertController addAction:[UIAlertAction actionWithTitle:ZBLocalized(@"Recharge", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                      MyRechargeViewController *chargeVC = [[MyRechargeViewController alloc] init];
                                      [weakSelf.navigationController pushViewController:chargeVC animated:YES];
                                  }]];

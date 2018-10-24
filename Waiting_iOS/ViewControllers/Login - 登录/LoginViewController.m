@@ -11,16 +11,18 @@
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 #import "WTWebViewController.h"
-#import "FSDeviceManager.h"
 
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * bottomViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet UILabel * loginTitleLabel; //登录提示文字
-@property (weak, nonatomic) IBOutlet UIButton * registerAgreementButton; //注册协议按钮
+@property (weak, nonatomic) IBOutlet UILabel    * loginTitleLabel; //登录提示文字
+@property (weak, nonatomic) IBOutlet UIButton   * registerAgreementButton; //注册协议按钮
 
 
-@property (weak, nonatomic) IBOutlet UITextField *textfield;
+@property (weak, nonatomic) IBOutlet UITextField * userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField * passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton    * loginButton;
+
 
 @end
 
@@ -28,8 +30,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self createUI];
     // Do any additional setup after loading the view from its nib.
+    [self requestCheckPermission];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -42,6 +46,15 @@
     self.bottomViewHeightConstraint.constant = SafeAreaBottomHeight;
     self.loginTitleLabel.text = ZBLocalized(@"Join us with", nil);
     [self.registerAgreementButton setTitle:ZBLocalized(@"By continuing you agree to the Terms of Service", nil) forState:UIControlStateNormal];
+}
+
+- (void)showUserLogin{
+    self.userNameTextField.hidden = NO;
+    self.passwordTextField.hidden = NO;
+    self.loginButton.hidden = NO;
+    self.userNameTextField.placeholder = ZBLocalized(@"UserName", nil);
+    self.passwordTextField.placeholder = ZBLocalized(@"Password", nil);
+    [self.loginButton setTitle:ZBLocalized(@"Log in", nil) forState:UIControlStateNormal];
 }
 
 #pragma mark - ******* Action *******
@@ -127,54 +140,59 @@
 }
 //google
 - (IBAction)googleAction:(UIButton *)sender {
-    //假数据
     return;
-    NSDictionary * params = @{@"tuid":@"112233445566",
-                              @"nickname":@"我是假数据",
-                              @"photo":@"https://gss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/359b033b5bb5c9ea86b6f4add739b6003af3b333.jpg",
-                              @"gender":@"1",
-                              @"email":@"",
-                              @"birthday":@"1990-09-01",
-                              @"type":@"twitter"
-                              };
-    [self requestLogin:params];
 }
 //测试登录
 - (IBAction)textlogin:(id)sender {
     
-    //匹配数字,字母和中文
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"^[0-9]+$"];
+    //如果用户名或密码不对 就不让进
+    //账号：apple
+    //密码：apple1234567
+   
+    NSDictionary * params = @{@"uname":self.userNameTextField.text,
+                              @"passwd":self.passwordTextField.text};
+    WEAKSELF
+    [FSNetWorkManager requestWithType:HttpRequestTypePost
+                        withUrlString:kApiPasswordLogin
+                        withParaments:params
+                     withSuccessBlock:^(NSDictionary *object) {
+                         NSLog(@"请求成功");
+                         
+                         if (NetResponseCheckStaus)
+                         {
+                             NSString *token = object[@"data"][@"token"];
+                             NSString *uid = object[@"data"][@"uid"];
+                             [[BHUserModel sharedInstance] analysisUserInfoWithToken:token Uid:uid];
+                             
+                             [weakSelf loginNIM];
+                             [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
+                         }
+                         else
+                         {
+                             [ShowHUDTool showBriefAlert:NetResponseMessage];
+                         }
+                     } withFailureBlock:^(NSError *error) {
+                         NSLog(@"error is %@", error);
+                         [ShowHUDTool showBriefAlert:NetRequestFailed];
+                     }];
     
-    if (!kStringNotNull(self.textfield.text)) {
-        [ShowHUDTool showBriefAlert:@"uid为空"];
-        return;
-    }else{
-        
-        if (![predicate evaluateWithObject:self.textfield.text]) {
-            [ShowHUDTool showBriefAlert:@"填纯数字uid"];
-            return;
-        }
-        
-        if (self.textfield.text.length <8) {
-            [ShowHUDTool showBriefAlert:@"8位以上uid"];
-            return;
-        }
-    }
-    
-    NSDictionary * params = @{@"tuid":self.textfield.text,
-                              @"nickname":@"我是假数据",
-                              @"photo":@"http://t.touxiang888.com/t1/uploads/allimg/170520/149527001575885720.jpg",
-                              @"gender":@"1",
-                              @"email":@"",
-                              @"birthday":@"1990-09-01",
-                              @"type":@"twitter"
-                              };
-    [self requestLogin:params];
+//    return;
+//
+//    NSDictionary * params = @{@"tuid":self.userNameTextField.text,
+//                              @"nickname":@"Jonesy",
+//                              @"photo":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540886524&di=ff83a8b65cbf9fb3a326086b78df0ce2&imgtype=jpg&er=1&src=http%3A%2F%2Fphoto.16pic.com%2F00%2F36%2F76%2F16pic_3676384_b.jpg",
+//                              @"gender":@"1",
+//                              @"email":@"",
+//                              @"birthday":@"1990-09-01",
+//                              @"type":@"twitter"
+//                              };
+//    [self requestLogin:params];
 }
 #pragma mark - ******* Request *******
 //检查权限
 - (void)requestCheckPermission{
-    NSDictionary *params = @{@"v":[[FSDeviceManager sharedInstance] getAppVersion]};
+    NSString * appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSDictionary *params = @{@"v":appVersion};
     WEAKSELF
     [FSNetWorkManager requestWithType:HttpRequestTypePost
                         withUrlString:kApiCheckPermissions
@@ -190,11 +208,9 @@
                              NSString *audit = [dataDic stringValueForKey:@"audit" default:@""];
                              if (kStringNotNull(audit)) {
                                  if ([audit intValue] == 1) { //开启审核  显示用户名密码 登陆
-                                     
+                                     [weakSelf showUserLogin];
                                  }
                              }
-                             
-                             
                          }
                          else
                          {

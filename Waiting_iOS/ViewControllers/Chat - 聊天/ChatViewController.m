@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"头像 == %@ \n 昵称 == %@",[[NIMKit sharedKit] infoByUser:@"1000117" option:nil].avatarUrlString,[[NIMKit sharedKit] infoByUser:@"1000117" option:nil].showName);
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -42,3 +42,71 @@
 "What's Up" = "Kişisel Mesaj";
 //语言
 "Language" = "Dil";
+//用户名
+"UserName" = "Kullanıcı adı";
+//密码
+"Password" = "şifre";
+//登录按钮
+"Log in" = "Oturum";
+//通话失败
+"Call failed" = "Çağrı başarısız";
+//连接失败
+"Connection failed" = "Bağlantı başarısız";
+//暂时无人接听
+"Temporarily unanswered" = "Geçici olarak özledim";
+//对不起,当前用户正忙
+"Sorry, the current user is busy" = "Üzgünüz, şu anki kullanıcı meşgul";
+//对方拒绝接听
+"The other party refuses to call" = "Diğer taraf aramayı reddetti";
+//已在其他端处理
+"Already processed at the other end" = "Zaten diğer ucunda işlendi";
+//当前通话结束
+"End of current call" = "Mevcut çağrının sonu";
+//接听超时
+"Connection timed out" = "Bağlantı zaman aşımı";
+//正在等待对方接受邀请
+"Waiting for the other party to accept the invitation" = "Kabul bekliyorum";
+//邀请你语音通话
+"Invite you to make a voice call" = "Sizi sesli iletişime davet etmek";
+//正在连接对方
+"Connecting" = "Bağlantı kuruldu";
+//已接听
+"Connected" = "Zaten bağlı";
+//邀请你视频通话
+"Invite you to a video call" = "Sizi görüntülü sohbete davet et";
+//余额不足
+"Insufficient balance" = "Yetersiz denge";
+//当前余额不足以开启下一分钟，请充值后进行操作
+"The current balance is not enough to continue, please recharge" = "Yetersiz bakiye, lütfen kredinizi yeniden şarj edin";
+//取消
+"Cancel" = "iptal edildi";
+//拍照
+"Take a photo" = "Fotoğraf çek";
+//从相册选择
+"Choose from an album" = "Bir albümden seç";
+//删除
+"Delete" = "silmek";
+//请在iphone的设置中，允许Waiting访问您的相机
+"Please allow Waiting to access your camera in the iphone settings" = "Lütfen Waiting cihazınızın telefon ayarlarınızdaki kameraya erişmesine izin verin";
+//请在iPhone的设置中，允许Waiting访问您的照片
+"Please allow Waiting to access your photos in the iPhone settings." = "Lütfen Waiting ayarlarının fotoğraflarınıza telefonunuzdan erişmesine izin verin";
+//知道了
+"Got it" = "Biliyorum";
+//摄像头不可用，请检查手机摄像头设备
+"Camera is not available, please check your phone camera device" = "Kamera mevcut değil, lütfen telefon kamera cihazınızı kontrol edin";
+//调整裁切区域
+"Set the crop area" = "Kırpma alanını ayarlamak";
+//上传中
+"Uploading" = "Yükleme";
+//当前余额仅能通话1分钟，是否确定开启通话
+"The current balance can only be called for 1 minute. Is it OK to initiate a call?" = "Mevcut bakiye sadece 1 dakika için çağrılabilir.Bir çağrı başlatmak tamam mı?";
+//当前余额不足，请充值后进行操作
+"The current balance is not enough to continue, please recharge" = "Yetersiz bakiye, lütfen kredinizi yeniden şarj edin";
+//确认
+"Confirm" = "Onaylamak";
+//举报
+"Report" = "Rapor";
+//举报成功
+"Report success" = "Başarı bildir";
+//没有会话
+"No session" = "Konuşma yok";
