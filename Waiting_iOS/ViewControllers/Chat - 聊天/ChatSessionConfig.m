@@ -14,7 +14,28 @@
     //包含输入框、表情
     return @[@(NIMInputBarItemTypeTextAndRecord),
              @(NIMInputBarItemTypeEmoticon),
+             @(NIMInputBarItemTypeMore),
              ];
+}
+
+- (NSArray *)mediaItems
+{
+//    NSArray *defaultMediaItems = [NIMKit sharedKit].config.defaultMediaItems;
+    
+    NIMMediaItem *audioChat =  [NIMMediaItem item:@"onTapMediaItemAudioChat:"
+                                      normalImage:[UIImage imageNamed:@"chat_media_voice"]
+                                    selectedImage:[UIImage imageNamed:@"chat_media_voice"]
+                                            title:@"实时语音"];
+    
+    NIMMediaItem *videoChat =  [NIMMediaItem item:@"onTapMediaItemVideoChat:"
+                                      normalImage:[UIImage imageNamed:@"chat_media_video"]
+                                    selectedImage:[UIImage imageNamed:@"chat_media_video"]
+                                            title:@"视频聊天"];
+    
+    NSArray *items = @[audioChat,videoChat];
+    
+    return items;
+    
 }
 
 @end

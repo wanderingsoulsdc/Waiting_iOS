@@ -68,7 +68,8 @@
 //隐私政策
 - (IBAction)privacyPolicyAction:(UIButton *)sender {
     WTWebViewController *vc = [[WTWebViewController alloc] init];
-    vc.url = @"http://app.waitfy.net/h5/about/?id=100002";
+    NSString *lang = [[NSUserDefaults standardUserDefaults] objectForKey:AppLanguage];
+    vc.url = [NSString stringWithFormat:@"%@%@",@"http://app.waitfy.net/h5/about/?id=100002&lang=",kStringNotNull(lang)?lang:@"en"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 //切换语言

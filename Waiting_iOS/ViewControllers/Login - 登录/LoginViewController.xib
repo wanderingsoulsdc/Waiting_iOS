@@ -171,6 +171,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yW0-gt-udj">
+                    <rect key="frame" x="156" y="219" width="62" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="超级登陆"/>
+                    <connections>
+                        <action selector="superLogin:" destination="-1" eventType="touchUpInside" id="uZa-aZ-rWC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -186,11 +194,15 @@
                 <constraint firstAttribute="trailing" secondItem="QW5-aA-22O" secondAttribute="trailing" id="URf-aJ-InC"/>
                 <constraint firstItem="5Rn-Ys-y5B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Wpk-vG-0zk"/>
                 <constraint firstItem="gd7-f5-JvW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="XXq-OX-Tev"/>
+                <constraint firstAttribute="trailing" secondItem="yW0-gt-udj" secondAttribute="trailing" constant="157" id="XrR-YS-44Y"/>
                 <constraint firstItem="gd7-f5-JvW" firstAttribute="top" secondItem="cSH-6a-bni" secondAttribute="bottom" constant="8" id="bhD-XK-7Sb"/>
+                <constraint firstItem="cSH-6a-bni" firstAttribute="top" secondItem="yW0-gt-udj" secondAttribute="bottom" constant="94" id="e3b-d8-kw5"/>
+                <constraint firstItem="yW0-gt-udj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="156" id="ktD-ew-VWK"/>
                 <constraint firstItem="Obc-VV-Nj0" firstAttribute="top" secondItem="cSH-6a-bni" secondAttribute="bottom" constant="65" id="ldf-bA-66g"/>
                 <constraint firstItem="cSH-6a-bni" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="oU1-X9-oxZ"/>
                 <constraint firstItem="QW5-aA-22O" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oo8-Ud-kTu"/>
                 <constraint firstAttribute="trailing" secondItem="cSH-6a-bni" secondAttribute="trailing" constant="80" id="t9z-QA-XvX"/>
+                <constraint firstItem="yW0-gt-udj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="219" id="uNo-07-9Vs"/>
                 <constraint firstItem="5Rn-Ys-y5B" firstAttribute="top" secondItem="cSH-6a-bni" secondAttribute="bottom" constant="130" id="wpe-D6-q87"/>
             </constraints>
             <point key="canvasLocation" x="-785" y="22"/>

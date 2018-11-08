@@ -107,6 +107,14 @@
 //举报
 "Report" = "Report";
 //举报成功
-"Report success" = "Report success";
+"Report success" = "Report success! We will process your report within 24 hours.";
 //没有会话
 "No session" = "No session";
+//拉黑
+"Add to blacklist" = "Add to blacklist";
+//取消拉黑
+"Remove blacklist" = "Remove blacklist";
+//拉黑对方将无法收到对方的消息和视频语音邀请
+"Add to blacklist，you will not be able to receive his messages and video voice invitations" = "Add to blacklist，you will not be able to receive his messages and video voice invitations";
+//已将对方移出黑名单
+"Moved the other party out of the blacklist" = "Moved the other party out of the blacklist";

@@ -8,6 +8,7 @@
 
 #import "NIMKit.h"
 #import "ChatSessionConfig.h"
+#import "BHUserModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

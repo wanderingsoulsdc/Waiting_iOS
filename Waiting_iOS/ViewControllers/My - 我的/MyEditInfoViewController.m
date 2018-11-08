@@ -629,7 +629,7 @@ typedef enum : NSUInteger {
             NSDictionary *dic = object[@"data"];
             NSString *picUrl = dic[@"picurl"];
             if (weakSelf.currentUploadType == UploadImageTypeHead) {
-                [weakSelf.headButton sd_setImageWithURL:[NSURL URLWithString:picUrl] forState:UIControlStateNormal];
+                [weakSelf.headButton sd_setImageWithURL:[NSURL URLWithString:picUrl] forState:UIControlStateNormal placeholderImage:kGetImageFromName(@"waiting_default_image")];
                 weakSelf.headUrlStr = picUrl;
             } else {
                 [self.picArr addObject:picUrl];

@@ -107,6 +107,14 @@
 //举报
 "Report" = "تقرير";
 //举报成功
-"Report success" = "تقرير النجاح";
+"Report success" = "تقرير النجاح! سنقوم بمعالجة التقرير الخاص بك في غضون 24 ساعة.";
 //没有会话
 "No session" = "لا محادثة";
+//拉黑
+"Add to blacklist" = "القائمة السوداء";
+//取消拉黑
+"Remove blacklist" = "أزل القائمة السوداء";
+//拉黑对方将无法收到对方的消息和视频语音邀请
+"Add to blacklist，you will not be able to receive his messages and video voice invitations" = "إضافة إلى القائمة السوداء ، فلن تتمكن من تلقي رسائله ودعوات صوت الفيديو";
+//已将对方移出黑名单
+"Moved the other party out of the blacklist" = "نقل الطرف الآخر من القائمة السوداء";

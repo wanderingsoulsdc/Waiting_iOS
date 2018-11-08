@@ -11,10 +11,8 @@
 		071A23AF1F04FE450054FED1 /* NSArray+JSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 071A23AE1F04FE450054FED1 /* NSArray+JSONString.m */; };
 		07215B841FD0302C000E16DA /* FSTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 07215B811FD0302C000E16DA /* FSTools.m */; };
 		072449472006215E0055B754 /* BHDataReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 072449462006215E0055B754 /* BHDataReportManager.m */; };
-		0730F8181EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0730F8171EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m */; };
 		0730F81C1EEAA99D00F2C8DC /* WLUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0730F81B1EEAA99D00F2C8DC /* WLUnitField.m */; };
 		073A95AC20206FF600C2B67A /* UIDevice+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 073A95AB20206FF600C2B67A /* UIDevice+Orientation.m */; };
-		0754BC711EEC294100E5431D /* BHRegisterSetPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0754BC701EEC294100E5431D /* BHRegisterSetPWViewController.m */; };
 		07551068207315FB00DA7BEA /* BHOrderTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 07551067207315FB00DA7BEA /* BHOrderTools.m */; };
 		076687A61EE4FEB3007FE539 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 076687A51EE4FEB3007FE539 /* main.m */; };
 		076687A91EE4FEB3007FE539 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 076687A81EE4FEB3007FE539 /* AppDelegate.mm */; };
@@ -39,9 +37,6 @@
 		076688271EE50BD3007FE539 /* checkmarkHUD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 076687EA1EE50BD3007FE539 /* checkmarkHUD@2x.png */; };
 		076688281EE50BD3007FE539 /* ShowHUDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 076687EC1EE50BD3007FE539 /* ShowHUDTool.m */; };
 		076688291EE50BD3007FE539 /* SliderMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076687EF1EE50BD3007FE539 /* SliderMenuController.m */; };
-		0766882C1EE50BD3007FE539 /* BHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688021EE50BD3007FE539 /* BHLoginViewController.m */; };
-		0766882D1EE50BD3007FE539 /* BHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688041EE50BD3007FE539 /* BHRegisterViewController.m */; };
-		0766882E1EE50BD3007FE539 /* BHRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076688061EE50BD3007FE539 /* BHRegisterSuccessViewController.m */; };
 		076688311EE50BD3007FE539 /* FSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0766880E1EE50BD3007FE539 /* FSBaseNavigationController.m */; };
 		0768E87E1F31CF1D00AB1D15 /* BHUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768E87A1F31CF1D00AB1D15 /* BHUserModel.m */; };
 		0768E8821F31CFC200AB1D15 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0768E8801F31CFC200AB1D15 /* AlipaySDK.bundle */; };
@@ -295,14 +290,10 @@
 		072449452006215E0055B754 /* BHDataReportManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHDataReportManager.h; sourceTree = "<group>"; };
 		072449462006215E0055B754 /* BHDataReportManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHDataReportManager.m; sourceTree = "<group>"; };
 		072449482006325F0055B754 /* BHDataReportHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHDataReportHeader.h; sourceTree = "<group>"; };
-		0730F8161EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRegisterVerifyCodeViewController.h; sourceTree = "<group>"; };
-		0730F8171EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRegisterVerifyCodeViewController.m; sourceTree = "<group>"; };
 		0730F81A1EEAA99D00F2C8DC /* WLUnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLUnitField.h; sourceTree = "<group>"; };
 		0730F81B1EEAA99D00F2C8DC /* WLUnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLUnitField.m; sourceTree = "<group>"; };
 		073A95AA20206FF600C2B67A /* UIDevice+Orientation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Orientation.h"; sourceTree = "<group>"; };
 		073A95AB20206FF600C2B67A /* UIDevice+Orientation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Orientation.m"; sourceTree = "<group>"; };
-		0754BC6F1EEC294100E5431D /* BHRegisterSetPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRegisterSetPWViewController.h; sourceTree = "<group>"; };
-		0754BC701EEC294100E5431D /* BHRegisterSetPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRegisterSetPWViewController.m; sourceTree = "<group>"; };
 		07551066207315FB00DA7BEA /* BHOrderTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHOrderTools.h; sourceTree = "<group>"; };
 		07551067207315FB00DA7BEA /* BHOrderTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHOrderTools.m; sourceTree = "<group>"; };
 		076687A51EE4FEB3007FE539 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -353,12 +344,6 @@
 		076687F11EE50BD3007FE539 /* ApiHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiHeader.h; sourceTree = "<group>"; };
 		076687F21EE50BD3007FE539 /* ColorHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHeader.h; sourceTree = "<group>"; };
 		076687F31EE50BD3007FE539 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		076688011EE50BD3007FE539 /* BHLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHLoginViewController.h; sourceTree = "<group>"; };
-		076688021EE50BD3007FE539 /* BHLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHLoginViewController.m; sourceTree = "<group>"; };
-		076688031EE50BD3007FE539 /* BHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRegisterViewController.h; sourceTree = "<group>"; };
-		076688041EE50BD3007FE539 /* BHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRegisterViewController.m; sourceTree = "<group>"; };
-		076688051EE50BD3007FE539 /* BHRegisterSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHRegisterSuccessViewController.h; sourceTree = "<group>"; };
-		076688061EE50BD3007FE539 /* BHRegisterSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHRegisterSuccessViewController.m; sourceTree = "<group>"; };
 		0766880D1EE50BD3007FE539 /* FSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBaseNavigationController.h; sourceTree = "<group>"; };
 		0766880E1EE50BD3007FE539 /* FSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBaseNavigationController.m; sourceTree = "<group>"; };
 		0768E8791F31CF1D00AB1D15 /* BHUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHUserModel.h; sourceTree = "<group>"; };
@@ -1136,16 +1121,6 @@
 				C15C3A6621356B7F008BBF38 /* LoginViewController.h */,
 				C15C3A6721356B7F008BBF38 /* LoginViewController.m */,
 				C15C3A6821356B7F008BBF38 /* LoginViewController.xib */,
-				076688011EE50BD3007FE539 /* BHLoginViewController.h */,
-				076688021EE50BD3007FE539 /* BHLoginViewController.m */,
-				076688031EE50BD3007FE539 /* BHRegisterViewController.h */,
-				076688041EE50BD3007FE539 /* BHRegisterViewController.m */,
-				0730F8161EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.h */,
-				0730F8171EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m */,
-				0754BC6F1EEC294100E5431D /* BHRegisterSetPWViewController.h */,
-				0754BC701EEC294100E5431D /* BHRegisterSetPWViewController.m */,
-				076688051EE50BD3007FE539 /* BHRegisterSuccessViewController.h */,
-				076688061EE50BD3007FE539 /* BHRegisterSuccessViewController.m */,
 				07BF36871FD7CBDE00D77E8B /* BHAgreementViewController.h */,
 				07BF36881FD7CBDE00D77E8B /* BHAgreementViewController.m */,
 			);
@@ -2217,10 +2192,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0754BC711EEC294100E5431D /* BHRegisterSetPWViewController.m in Sources */,
 				076E14082056945F00B3AD1B /* BHPopMessageManager.m in Sources */,
 				C1938F492152756200212FB3 /* UIView+NTES.m in Sources */,
-				0766882E1EE50BD3007FE539 /* BHRegisterSuccessViewController.m in Sources */,
 				C1938F612152756200212FB3 /* ijksdl_timer.c in Sources */,
 				C1FA38E620D8F6830025E07F /* XZPickView.m in Sources */,
 				076688251EE50BD3007FE539 /* SGPageTitleView.m in Sources */,
@@ -2326,7 +2299,6 @@
 				07CC430D1F5E747D005E2E0E /* NSObjectSafe.m in Sources */,
 				C1938F522152756200212FB3 /* NTESGLView.m in Sources */,
 				C1FA39B220DB2C080025E07F /* PGDatePickManagerHeaderView.m in Sources */,
-				0766882D1EE50BD3007FE539 /* BHRegisterViewController.m in Sources */,
 				076688261EE50BD3007FE539 /* UIView+SGFrame.m in Sources */,
 				C1938F5F2152756200212FB3 /* color.c in Sources */,
 				C1C1F45B2140FD8400592473 /* NoHighlightButton.m in Sources */,
@@ -2348,14 +2320,12 @@
 				C1938F472152756200212FB3 /* NTESBundleSetting.m in Sources */,
 				C1938F572152756200212FB3 /* renderer_yuv420p.c in Sources */,
 				07ECAAEC1FF0EA5500F8F95B /* UITabBar+Badge.m in Sources */,
-				0766882C1EE50BD3007FE539 /* BHLoginViewController.m in Sources */,
 				C15C3A5F21356661008BBF38 /* MySetViewController.m in Sources */,
 				C1FA399E20DB2C070025E07F /* PGDatePicker.m in Sources */,
 				076688311EE50BD3007FE539 /* FSBaseNavigationController.m in Sources */,
 				C1938F4E2152756200212FB3 /* NTESNetChatViewController.m in Sources */,
 				C1FA390120DA71210025E07F /* UIView+LLSegmentBar.m in Sources */,
 				0775964C1FC5AB720036CC1F /* ZLPhotoModel.m in Sources */,
-				0730F8181EEA7AF200F2C8DC /* BHRegisterVerifyCodeViewController.m in Sources */,
 				C1130E9921586EE1008A446E /* ChatListViewController.m in Sources */,
 				076688171EE50BD3007FE539 /* NSString+Helper.m in Sources */,
 				C148F22C217D7D1C00D6C150 /* WTWebViewController.m in Sources */,

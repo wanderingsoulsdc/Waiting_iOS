@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ChatListModel.h"
+//#import "NIMSessionListCell.h"
+@class NIMAvatarImageView;
+@class NIMRecentSession;
+@class NIMBadgeView;
 
 @interface ChatListCell : UITableViewCell
 
-- (void)configWithData:(ChatListModel *)model;
+@property (nonatomic,strong) NIMAvatarImageView *avatarImageView;
 
+@property (nonatomic,strong) UILabel *nameLabel;
+
+@property (nonatomic,strong) UILabel *messageLabel;
+
+@property (nonatomic,strong) UILabel *timeLabel;
+
+@property (nonatomic,strong) NIMBadgeView *badgeView;
+
+- (void)refresh:(NIMRecentSession*)recent;
 @end

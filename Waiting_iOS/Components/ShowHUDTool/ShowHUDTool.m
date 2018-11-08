@@ -80,6 +80,7 @@
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text = [NSString stringWithFormat:@"%@", alert];
+    hud.label.numberOfLines = 0;
     hud.mode = MBProgressHUDModeText;
     hud.bezelView.backgroundColor = [UIColor colorWithRed:1.0/255.0 green:1.0/255.0 blue:1.0/255.0 alpha:0.7];
     hud.label.textColor = [UIColor whiteColor];

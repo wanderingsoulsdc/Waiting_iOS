@@ -62,7 +62,8 @@
 //注册协议
 - (IBAction)agreementAction:(UIButton *)sender {
     WTWebViewController *vc = [[WTWebViewController alloc] init];
-    vc.url = @"http://app.waitfy.net/h5/about/?id=100001";
+    NSString *lang = [[NSUserDefaults standardUserDefaults] objectForKey:AppLanguage];
+    vc.url = [NSString stringWithFormat:@"%@%@",@"http://app.waitfy.net/h5/about/?id=100001&lang=",kStringNotNull(lang)?lang:@"en"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 //twitter
@@ -114,7 +115,11 @@
              NSLog(@"%@",user.credential);
              NSLog(@"token=%@",user.credential.token);
              NSLog(@"nickname=%@",user.nickname);
-             
+             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+             [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+             NSString *birthdayStr = [dateFormatter stringFromDate:user.birthday];
+             NSLog(@"birthday=%@",birthdayStr);
+
              NSString *email = [user.rawData objectForKey:@"email"];
              if (!kStringNotNull(email)) {
                  email = @"";
@@ -124,7 +129,7 @@
                                        @"photo":user.icon,
                                        @"gender":[NSString stringWithFormat:@"%ld",(long)user.gender],
                                        @"email":email,
-                                       @"birthday":@"1990-09-01",
+                                       @"birthday":birthdayStr,
                                        @"type":@"facebook"
                                        };
              [weakSelf requestLogin:params];
@@ -157,13 +162,13 @@
                         withParaments:params
                      withSuccessBlock:^(NSDictionary *object) {
                          NSLog(@"请求成功");
-                         
+
                          if (NetResponseCheckStaus)
                          {
                              NSString *token = object[@"data"][@"token"];
                              NSString *uid = object[@"data"][@"uid"];
                              [[BHUserModel sharedInstance] analysisUserInfoWithToken:token Uid:uid];
-                             
+
                              [weakSelf loginNIM];
                              [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
                          }
@@ -176,17 +181,18 @@
                          [ShowHUDTool showBriefAlert:NetRequestFailed];
                      }];
     
-//    return;
-//
-//    NSDictionary * params = @{@"tuid":self.userNameTextField.text,
-//                              @"nickname":@"Jonesy",
-//                              @"photo":@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540886524&di=ff83a8b65cbf9fb3a326086b78df0ce2&imgtype=jpg&er=1&src=http%3A%2F%2Fphoto.16pic.com%2F00%2F36%2F76%2F16pic_3676384_b.jpg",
-//                              @"gender":@"1",
-//                              @"email":@"",
-//                              @"birthday":@"1990-09-01",
-//                              @"type":@"twitter"
-//                              };
-//    [self requestLogin:params];
+}
+- (IBAction)superLogin:(UIButton *)sender {
+    //自己测试专用
+    NSDictionary * params = @{@"tuid":@"9988776655",
+                              @"nickname":@"Wander",
+                              @"photo":@"",
+                              @"gender":@"1",
+                              @"email":@"",
+                              @"birthday":@"1990-09-01",
+                              @"type":@"facebook"
+                              };
+    [self requestLogin:params];
 }
 #pragma mark - ******* Request *******
 //检查权限

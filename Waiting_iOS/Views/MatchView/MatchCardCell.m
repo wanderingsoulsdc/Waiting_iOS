@@ -113,7 +113,7 @@
     self.photoNumLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)[model.photoArray count]];
     self.userNameLabel.text = model.userName;
     self.ageAndGenderLabel.text = [NSString stringWithFormat:@"%@ · %@",model.gender_txt,model.age];
-    [self.mainImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadImageUrl] placeholderImage:[UIImage imageNamed:@"login_register_success"]];
+    [self.mainImageView sd_setImageWithURL:[NSURL URLWithString:model.userHeadImageUrl] placeholderImage:[UIImage imageNamed:@"waiting_default_image"]];
 }
 #pragma mark - action
 
@@ -128,7 +128,6 @@
 - (UIImageView *)mainImageView{
     if (!_mainImageView) {
         _mainImageView = [[UIImageView alloc] init];
-        _mainImageView.image = [UIImage imageNamed:@"login_bg"];
         _mainImageView.layer.cornerRadius = 16.0f;
         _mainImageView.layer.masksToBounds = YES;
         _mainImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -165,7 +164,7 @@
 - (UILabel *)photoNumLabel{
     if (!_photoNumLabel) {
         _photoNumLabel = [[UILabel alloc] init];
-        _photoNumLabel.text = @"99";
+        _photoNumLabel.text = @"";
         _photoNumLabel.textAlignment = NSTextAlignmentCenter;
         _photoNumLabel.font = [UIFont systemFontOfSize:12];
         _photoNumLabel.textColor = UIAlplaColorFromRGB(0xFFFFFF, 0.7);

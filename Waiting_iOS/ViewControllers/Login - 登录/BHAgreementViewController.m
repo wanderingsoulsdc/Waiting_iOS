@@ -90,7 +90,7 @@
 }
 - (void)consentButtonAction:(UIButton *)sender
 {
-    NSDictionary * params = @{@"deviceNumber":[[FSDeviceManager sharedInstance] getDeviceID]};
+    NSDictionary * params = @{/*@"deviceNumber":[[FSDeviceManager sharedInstance] getDeviceID]*/};
     [FSNetWorkManager requestWithType:HttpRequestTypeGet
                         withUrlString:kApiCheckAgreement
                         withParaments:params

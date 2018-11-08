@@ -15,7 +15,7 @@
 
 #define kscale (kScreenWidth/2 - 15 - 34/2)/kScreenWidth
 
-@interface HomeViewController ()<UIScrollViewDelegate>
+@interface HomeViewController ()<UIScrollViewDelegate,NIMConversationManagerDelegate>
 
 @property (nonatomic , strong) UIView               * topView;
 @property (nonatomic , strong) UIView               * NavButtonBackView;
@@ -23,6 +23,9 @@
 @property (nonatomic , strong) NoHighlightButton    * midButton;
 @property (nonatomic , strong) NoHighlightButton    * rightButton;
 @property (nonatomic , strong) UIScrollView         * scrollView;
+@property (nonatomic , strong) UILabel              * unReadCountLabel;  //未读消息数显示
+
+@property (nonatomic , assign) NSInteger            sessionUnreadCount;  //未读消息数
 
 @end
 
@@ -41,7 +44,8 @@
     [self layoutSubviews];
     
     // You should add notification here
-    
+    [[NIMSDK sharedSDK].conversationManager addDelegate:self];
+
     // Do any additional setup after loading the view.
 }
 
@@ -58,6 +62,9 @@
     [super viewWillDisappear:animated];
 }
 
+- (void)dealloc{
+    [[NIMSDK sharedSDK].conversationManager removeDelegate:self];
+}
 #pragma mark - ******* UI Methods *******
 
 - (void)createUI{
@@ -68,7 +75,15 @@
     [self.NavButtonBackView addSubview:self.leftButton];
     [self.NavButtonBackView addSubview:self.midButton];
     [self.NavButtonBackView addSubview:self.rightButton];
-    
+    [self.NavButtonBackView addSubview:self.unReadCountLabel];
+//    self.unReadCountLabel.left = self.rightButton.left + 14;
+    [self.unReadCountLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.rightButton.mas_right).offset(-5);
+        make.top.equalTo(self.NavButtonBackView.mas_top).offset(5);
+        make.height.equalTo(@14);
+        make.width.greaterThanOrEqualTo(@14);
+    }];
+
     [self.view addSubview:self.scrollView];
     
     [self layoutSubviews];
@@ -99,7 +114,6 @@
     
     [self.scrollView setContentOffset:CGPointMake(scrollContentOffsetX, 0)];
     self.midButton.selected = YES;
-    
 }
 
 - (void)layoutSubviews{
@@ -194,9 +208,50 @@
     navButtonBackViewLeft = kScreenWidth/2 + 34/2;
 }
 
+#pragma mark - NIMConversationManagerDelegate
+- (void)didAddRecentSession:(NIMRecentSession *)recentSession
+           totalUnreadCount:(NSInteger)totalUnreadCount{
+    self.sessionUnreadCount = totalUnreadCount;
+    [self refreshSessionBadge];
+}
 
+
+- (void)didUpdateRecentSession:(NIMRecentSession *)recentSession
+              totalUnreadCount:(NSInteger)totalUnreadCount{
+    self.sessionUnreadCount = totalUnreadCount;
+    [self refreshSessionBadge];
+}
+
+
+- (void)didRemoveRecentSession:(NIMRecentSession *)recentSession totalUnreadCount:(NSInteger)totalUnreadCount{
+    self.sessionUnreadCount = totalUnreadCount;
+    [self refreshSessionBadge];
+}
+
+- (void)messagesDeletedInSession:(NIMSession *)session{
+    self.sessionUnreadCount = [NIMSDK sharedSDK].conversationManager.allUnreadCount;
+    [self refreshSessionBadge];
+}
+
+- (void)allMessagesDeleted{
+    self.sessionUnreadCount = 0;
+    [self refreshSessionBadge];
+}
+
+- (void)allMessagesRead
+{
+    self.sessionUnreadCount = 0;
+    [self refreshSessionBadge];
+}
 #pragma mark - ******* Private Methods *******
-
+- (void)refreshSessionBadge{
+    if (self.sessionUnreadCount) {
+        self.unReadCountLabel.hidden = NO;
+        self.unReadCountLabel.text = @(self.sessionUnreadCount).stringValue;
+    }else{
+        self.unReadCountLabel.hidden = YES;
+    }
+}
 #pragma mark - ******* Getter *******
 
 - (UIView *)topView{
@@ -213,6 +268,20 @@
         _NavButtonBackView.backgroundColor = UIColorClearColor;
     }
     return _NavButtonBackView;
+}
+
+- (UILabel *)unReadCountLabel{
+    if (!_unReadCountLabel) {
+        _unReadCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 6, 22, 14)];
+        _unReadCountLabel.textAlignment = NSTextAlignmentCenter;
+        _unReadCountLabel.font = [UIFont systemFontOfSize:10];
+        _unReadCountLabel.textColor = UIColorWhite;
+        _unReadCountLabel.backgroundColor = [UIColor redColor];
+        _unReadCountLabel.layer.cornerRadius = 7;
+        _unReadCountLabel.layer.masksToBounds = YES;
+        _unReadCountLabel.hidden = YES;
+    }
+    return _unReadCountLabel;
 }
 
 - (NoHighlightButton *)leftButton{

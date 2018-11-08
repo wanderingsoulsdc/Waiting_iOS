@@ -135,7 +135,7 @@
     
     if (_isNoviceGuide == YES)
     {
-        NSString * version = [[FSDeviceManager sharedInstance] getAppVersion];
+        NSString * version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         NSString * key = [NSString stringWithFormat:@"%@_%@_%@", kGuideImageHasShow, version, @"noviceGuide"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:key];
         

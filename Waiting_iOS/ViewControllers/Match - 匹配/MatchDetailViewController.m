@@ -85,7 +85,8 @@ typedef enum : NSUInteger {
     
     for (int i = 0 ; i < imageArr.count ; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * kScreenWidth, 0, kScreenWidth, self.imageScrollView.height)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageArr[i]] placeholderImage:kGetImageFromName(@"phone_default_head")];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        [imageView sd_setImageWithURL:[NSURL URLWithString:imageArr[i]] placeholderImage:kGetImageFromName(@"waiting_default_image")];
         [self.imageScrollView addSubview:imageView];
     }
     self.imageScrollView.contentSize = CGSizeMake(kScreenWidth * imageArr.count, 0);
@@ -202,9 +203,43 @@ typedef enum : NSUInteger {
         [ShowHUDTool showBriefAlert:ZBLocalized(@"Report success", nil)];
     }];
     [actionSheet addAction:reportButton];
+   
+    WEAKSELF
+    BOOL isBlackList = [[NSUserDefaults standardUserDefaults] boolForKey:self.userModel.userID];
+    if (!isBlackList) {
+        UIAlertAction *blacklistButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Add to blacklist", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [weakSelf addBlickList];
+        }];
+        [actionSheet addAction:blacklistButton];
+    }else{
+        UIAlertAction *blacklistButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Remove blacklist", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [ShowHUDTool showBriefAlert:ZBLocalized(@"Moved the other party out of the blacklist", nil)];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:self.userModel.userID];
+        }];
+        [actionSheet addAction:blacklistButton];
+    }
+    
     
     [self presentViewController:actionSheet animated:YES completion:nil];
 }
+
+//拉黑文字提示
+- (void)addBlickList{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:ZBLocalized(@"Add to blacklist，you will not be able to receive his messages and video voice invitations", nil) preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }];
+    [alert addAction:cancelButton];
+    
+    UIAlertAction *confirmButton = [UIAlertAction actionWithTitle:ZBLocalized(@"Confirm", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:self.userModel.userID];
+    }];
+    [alert addAction:confirmButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
 //聊天
 - (IBAction)chatAction:(UIButton *)sender {
     NIMSession *session = [NIMSession session:self.userModel.userID type:NIMSessionTypeP2P];

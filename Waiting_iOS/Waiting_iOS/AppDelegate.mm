@@ -17,7 +17,6 @@
 #import <AdSupport/AdSupport.h>
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
-#import "BHLoginViewController.h"
 //#import "FSDeviceManager.h"
 #import "IQKeyboardManager.h"
 #import <UMCommon/UMCommon.h>
@@ -33,7 +32,9 @@
 @end
 
 @implementation AppDelegate
-
+{
+    int             _loginCount; //记录自动登录错误次数
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -175,6 +176,7 @@
 
 - (void)launchWindows
 {
+    _loginCount = 0;
     NSString *token = [BHUserModel sharedInstance].token;
     if (!kStringNotNull(token))
     {
@@ -210,9 +212,16 @@
     
     if (error)
     {   // 超时或无网络
-        [[FSLaunchManager sharedInstance]launchWindowWithType:LaunchWindowTypeLogin];
+        if (_loginCount >= 2) { //重试三次
+            [[FSLaunchManager sharedInstance]launchWindowWithType:LaunchWindowTypeLogin];
+        } else {
+            _loginCount ++;
+            NSLog(@"自动登录失败重试");
+            [self checkToken:token];
+        }
         return;
     }
+    _loginCount = 0;
     
     // json解析
     NSDictionary *object = [NSJSONSerialization JSONObjectWithData:returnData
@@ -418,30 +427,30 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 {
     NSLog(@"11");
     // TODO:判断是否在登录页面
-    if ([[[FSLaunchManager sharedInstance] getCurrentVC] isKindOfClass:[BHLoginViewController class]])
-    {
-        [[NSUserDefaults standardUserDefaults] setObject:userInfo forKey:kPushInfoUserDefault];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    else
-    {
+//    if ([[[FSLaunchManager sharedInstance] getCurrentVC] isKindOfClass:[BHLoginViewController class]])
+//    {
+//        [[NSUserDefaults standardUserDefaults] setObject:userInfo forKey:kPushInfoUserDefault];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
+//    else
+//    {
 //        [[FSPushManager sharedInstance] handingPushNotificationDictionary:userInfo];
-    }
+//    }
 }
 
 - (void)handingOpenUrl:(NSURL *)url
 {
     NSLog(@"11");
     // TODO:判断是否在登录页面
-    if ([[[FSLaunchManager sharedInstance] getCurrentVC] isKindOfClass:[BHLoginViewController class]])
-    {
-        [[NSUserDefaults standardUserDefaults] setObject:url forKey:kDeepLinkInfoUserDefault];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    else
-    {
+//    if ([[[FSLaunchManager sharedInstance] getCurrentVC] isKindOfClass:[BHLoginViewController class]])
+//    {
+//        [[NSUserDefaults standardUserDefaults] setObject:url forKey:kDeepLinkInfoUserDefault];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
+//    else
+//    {
 //        [[FSDeepLinkManager sharedInstance] handingOpenUrl:url];
-    }
+//    }
 }
 
 #pragma mark- JPUSHRegisterDelegate

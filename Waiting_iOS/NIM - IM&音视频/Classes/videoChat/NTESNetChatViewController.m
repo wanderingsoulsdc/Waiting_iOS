@@ -663,7 +663,7 @@ NTES_FORBID_INTERACTIVE_POP
             break;
     }
 }
-
+//主叫收到被叫响应
 - (void)onResponse:(UInt64)callID from:(NSString *)callee accepted:(BOOL)accepted{
     if (self.callInfo.callID == callID) {
         if (!accepted) {
@@ -689,7 +689,6 @@ NTES_FORBID_INTERACTIVE_POP
 //点对点通话建立成功
 -(void)onCallEstablished:(UInt64)callID
 {
-
     if (self.callInfo.callID == callID) {
         self.callInfo.startTime = [NSDate date].timeIntervalSince1970;
         [self.timer startTimer:0.5 delegate:self repeats:YES];
