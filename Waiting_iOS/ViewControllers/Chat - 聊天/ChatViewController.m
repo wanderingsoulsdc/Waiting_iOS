@@ -11,6 +11,7 @@
 #import "MatchVideoViewController.h"
 #import "FSNetWorkManager.h"
 #import "MyRechargeViewController.h"
+#import "NIMKitInfoFetchOption.h"
 
 typedef enum : NSUInteger {
     requestTypeVoice,
@@ -19,18 +20,85 @@ typedef enum : NSUInteger {
 
 @interface ChatViewController ()<CAAnimationDelegate>
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * statusViewHeightConstaint; //状态栏视图高度约束
+@property (weak, nonatomic) IBOutlet UIButton   * headImageButton; //导航头像
+@property (weak, nonatomic) IBOutlet UILabel    * headTitleLabel; //导航主标题
+@property (weak, nonatomic) IBOutlet UILabel    * headSubTitleLabel; //导航副标题
+@property (weak, nonatomic) IBOutlet UIView     * naviView; //导航视图
+
 @end
 
 @implementation ChatViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self createUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+#pragma mark - ******* UI About *******
+
+- (void)createUI{
+    /*
+    self.statusViewHeightConstaint.constant = kStatusBarHeight;
+    self.tableView.backgroundColor = UIColorBlue;
+    NSLog(@" === %f === %f === %f === %f",self.view.bounds.origin.x,self.view.bounds.origin.y,self.view.bounds.size.width,self.view.bounds.size.height);
+    NSLog(@" === %f === %f === %f === %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,self.tableView.frame.size.height);
+
+    CGRect frame = self.tableView.frame;
+    frame.origin.y = kStatusBarHeight + 80;
+    self.tableView.frame = frame;
+    [self.tableView.superview layoutIfNeeded];
+    NSLog(@" === %f === %f === %f === %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,self.tableView.frame.size.height);
+    */
+    //上面注释的是改变的代码,下面这两行是为了暂时能看见原来什么样子,这个文件均可改,父类是SDK的文件
+    self.statusViewHeightConstaint.constant = 0;
+    self.naviView.hidden = YES;
+}
+
+//- (void)setupTableView
+//{
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+//    NSLog(@" === %f === %f === %f === %f",self.view.bounds.origin.x,self.view.bounds.origin.y,self.view.bounds.size.width,self.view.bounds.size.height);
+//    NSLog(@" === %f === %f === %f === %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,self.tableView.frame.size.height);
+//
+//    self.tableView.backgroundColor = UIColorClearColor;
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.estimatedRowHeight = 0;
+//    self.tableView.estimatedSectionHeaderHeight = 0;
+//    self.tableView.estimatedSectionFooterHeight = 0;
+//    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    if ([self.sessionConfig respondsToSelector:@selector(sessionBackgroundImage)] && [self.sessionConfig sessionBackgroundImage]) {
+//        UIImageView *imgView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+//        imgView.image = [self.sessionConfig sessionBackgroundImage];
+//        imgView.contentMode = UIViewContentModeScaleAspectFill;
+//        self.tableView.backgroundView = imgView;
+//    }
+//    [self.view addSubview:self.tableView];
+//}
+
+
+- (void)setupNav
+{
+    [self setUpTitleView];
+}
+
+- (void)setUpTitleView
+{
+    NIMKitInfo *info = nil;
+    NIMKitInfoFetchOption *option = [[NIMKitInfoFetchOption alloc] init];
+    option.session = self.session;
+    info = [[NIMKit sharedKit] infoByUser:self.session.sessionId option:option];
+    
+    NSURL *url = info.avatarUrlString ? [NSURL URLWithString:info.avatarUrlString] : nil;
+    [self.headImageButton sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:info.avatarImage];
+    self.headTitleLabel.text = self.sessionTitle;
+    self.headSubTitleLabel.text = self.sessionSubTitle;
 }
 
 #pragma mark - ******* NIMSessionConfig 配置项 *******

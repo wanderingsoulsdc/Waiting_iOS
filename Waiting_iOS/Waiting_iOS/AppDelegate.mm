@@ -8,13 +8,10 @@
 
 #import "AppDelegate.h"
 #import "FSLaunchManager.h"
-#import "WXApi.h"
-#import <AlipaySDK/AlipaySDK.h>
 #import "JPUSHService.h"
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
-#import <AdSupport/AdSupport.h>
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 //#import "FSDeviceManager.h"
@@ -27,7 +24,7 @@
 
 #import "NTESNotificationCenter.h"
 
-@interface AppDelegate () <WXApiDelegate, JPUSHRegisterDelegate>
+@interface AppDelegate () <JPUSHRegisterDelegate>
 
 @end
 
@@ -314,76 +311,14 @@
     }
 }
 
-#pragma mark - 微信支付回调
-
--(void)onResp:(BaseResp*)resp
-{
-    if([resp isKindOfClass:[PayResp class]]){
-        switch (resp.errCode) {
-            case WXSuccess:
-            {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kWechatPayResaultNotification object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"9000", @"resultStatus", nil]];
-            }
-                break;
-                
-            default:
-            {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kWechatPayResaultNotification object:nil userInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"7999", @"resultStatus", nil]];
-            }
-                break;
-        }
-    }
-}
-
 #pragma mark - 
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    
-    if ([url.host isEqualToString:@"luckycat.behe.com"])
-    {
-        [self handingOpenUrl:url];
-    }
-    else if ([url.host isEqualToString:@"pay"])
-    {
-        return  [WXApi handleOpenURL:url delegate:self];
-    }
-    //如果极简 SDK 不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给 SDK
-    if ([url.host isEqualToString:@"safepay"]) {
-        // 支付跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:kAliPayResaultNotification object:nil userInfo:resultDic];
-        }];
-        
-        // 授权跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:kAliPayResaultNotification object:nil userInfo:resultDic];
-        }];
-    }
     return YES;
 }
 // NOTE: 9.0以后使用新API接口
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-    if ([url.host isEqualToString:@"luckycat.behe.com"])
-    {
-        [self handingOpenUrl:url];
-    }
-    else if ([url.host isEqualToString:@"pay"])
-    {
-        return  [WXApi handleOpenURL:url delegate:self];
-    }
-    //如果极简 SDK 不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给 SDK
-    if ([url.host isEqualToString:@"safepay"]) {
-        // 支付跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:kAliPayResaultNotification object:nil userInfo:resultDic];
-        }];
-        
-        // 授权跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processAuth_V2Result:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter]postNotificationName:kAliPayResaultNotification object:nil userInfo:resultDic];
-        }];
-    }
     return YES;
 }
 
@@ -400,17 +335,16 @@
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
-    NSString *advertisingId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
 #if TARGET_MODE==0
     [JPUSHService setupWithOption:launchOptions appKey:kJPushAppKey
                           channel:@"App Store"
                  apsForProduction:YES
-            advertisingIdentifier:advertisingId];
+            advertisingIdentifier:nil];
 #else
     [JPUSHService setupWithOption:launchOptions appKey:kJPushAppKey
                           channel:@"App Store"
                  apsForProduction:NO
-            advertisingIdentifier:advertisingId];
+            advertisingIdentifier:nil];
 #endif
 }
 

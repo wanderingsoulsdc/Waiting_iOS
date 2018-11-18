@@ -10,12 +10,10 @@
 #import <UIKit/UIKit.h>
 #import <sys/utsname.h>
 #import <CoreLocation/CoreLocation.h>
-#import <AdSupport/AdSupport.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import "AFNetworkReachabilityManager.h"
 #import <SystemConfiguration/CaptiveNetwork.h>
-#import <BMKLocationkit/BMKLocationComponent.h>
 
 @interface FSDeviceManager () <CLLocationManagerDelegate>
 
@@ -45,7 +43,6 @@
     dispatch_once(&onceToken, ^{
         
         manager = [[self alloc] init];
-        [manager findCurrentLocation];
     });
     
     return manager;
@@ -153,42 +150,6 @@
     return deviceModel;
 }
 
-/** 用户纬度 */
-- (NSString *)getUserLatitude {
-    // 如果获取不到，则为0.000000
-    if (self.currentLocation.coordinate.latitude <= 0.0)
-    {
-        [self findCurrentLocation];
-    }
-    NSString * latitude = [NSString stringWithFormat:@"%f", self.currentLocation.coordinate.latitude];
-    return latitude;
-}
-
-/** 用户经度 */
-- (NSString *)getUserLongitude {
-    // 如果获取不到，则为0.000000
-    NSString * longitude = [NSString stringWithFormat:@"%f", self.currentLocation.coordinate.longitude];
-    return longitude;
-}
-
-/** 省 */
-- (NSString *)getLoactionProvince {
-    if (self.currentLocation.coordinate.latitude <= 0.0)
-    {
-        return @"";
-    }
-    return self.province;
-}
-
-/** 市 */
-- (NSString *)getLoactionCity {
-    if (self.currentLocation.coordinate.latitude <= 0.0)
-    {
-        return @"";
-    }
-    return self.city;
-}
-
 /** 位置获取时间 */
 - (NSString *)getGpsTime {
     // 始终为当前时间
@@ -252,41 +213,6 @@
     return currentCountry;
 }
 
-/** 设备号 */
-- (NSString *)getDeviceID {
-    
-    NSString *deviceID = @"";
-    deviceID = [[[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString] lowercaseString];
-    //1.取IDFA,可能会取不到,如用户关闭IDFA
-    //    if ([ASIdentifierManager sharedManager].advertisingTrackingEnabled)   // waring log of system
-    if (![deviceID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
-    {
-        [self setIdfaString:deviceID];
-        return deviceID;
-    }
-    else
-    {
-        //2.读取keychain的缓存
-        deviceID = [self getIdfaString];
-        if (deviceID && deviceID!=NULL && deviceID.length>0)
-        {
-            return deviceID;
-        }
-        else
-        {
-            //3.如果取不到,就生成UUID,当成IDFA
-            deviceID = [self getUUID];
-            [self setIdfaString:deviceID];
-            if (deviceID && deviceID!=NULL && deviceID.length>0)
-            {
-                return deviceID;
-            }
-        }
-    }
-    //4.再取不到尼玛我也没办法了,你牛B.
-    return @"";
-}
-
 /** 是否越狱 0未越狱  1已越狱 */
 - (NSString *)getSystemBroke {
     if ([self isJailBreak])
@@ -332,86 +258,6 @@ const char* bh_jailbreak_tool_pathes[] = {
     }
     //    NSLog(@"The device is NOT jail broken!");
     return NO;
-}
-
-#pragma mark - 定位
-
-- (void)findCurrentLocation {
-    self.isFirstLocationUpdate = YES;
-    [self.locationManager requestWhenInUseAuthorization];
-    if (! [CLLocationManager locationServicesEnabled]) {
-        // 定位服务，关闭
-        self.currentLocation = [[CLLocation alloc] init];
-    }
-    // 使用时定位
-    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager requestWhenInUseAuthorization];
-        [self.locationManager startUpdatingLocation];
-    }
-    // 始终定位
-    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways) {
-        [self.locationManager requestAlwaysAuthorization];
-        [self.locationManager startUpdatingLocation];
-    }
-    else
-    {
-        // 当前App的定位权限，设置为永不，或者plist文件，未设置两个定位权限
-        self.currentLocation = [[CLLocation alloc] init];
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    if (self.isFirstLocationUpdate) {
-        // 第一次数据可以是旧值，需舍弃
-        self.isFirstLocationUpdate = NO;
-        return;
-    }
-    
-    // locations中有两个元素，第一个为旧值，第二个为新值
-    CLLocation *newLocation = [locations lastObject];
-    self.currentLocation = newLocation;
-    
-    [self.locationManager stopUpdatingLocation];
-    
-    BMKLocationCoordinateType srctype = BMKLocationCoordinateTypeWGS84;
-    BMKLocationCoordinateType destype = BMKLocationCoordinateTypeBMK09LL;
-    CLLocationCoordinate2D cood = [BMKLocationManager BMKLocationCoordinateConvert:self.currentLocation.coordinate SrcType:srctype DesType:destype];
-    self.currentLocation = [[CLLocation alloc] initWithCoordinate:cood altitude:self.currentLocation.altitude horizontalAccuracy:self.currentLocation.horizontalAccuracy verticalAccuracy:self.currentLocation.verticalAccuracy timestamp:self.currentLocation.timestamp];
-    
-//    self.currentLocation = [[CLLocation alloc] initWithLatitude:38.021022 longitude:114.522569];
-    CLGeocoder * geoCoder = [[CLGeocoder alloc] init];
-    [geoCoder reverseGeocodeLocation:self.currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        CLPlacemark * placemark = [placemarks firstObject];
-        NSDictionary * addressDictionary = placemark.addressDictionary;
-        NSLog(@"详细信息:%@",placemark.addressDictionary);
-        self.province = addressDictionary[@"State"];
-        self.city = addressDictionary[@"City"];
-        if (!kStringNotNull(self.province))
-        {
-            self.province = self.city;
-        }
-    }];
-}
-
-#pragma mark - KeychainIDFA
-
-- (NSString *)getIdfaString {
-    NSString *idfaStr = [self load:@"com.behe.idfa"];
-    return idfaStr;
-}
-
-- (BOOL)setIdfaString:(NSString *)secValue
-{
-    if (secValue && secValue!=NULL && secValue.length>0)
-    {
-        NSString *deviceID = @"com.behe.idfa";
-        [self save:deviceID data:secValue];
-        return YES;
-    }
-    else
-    {
-        return NO;
-    }
 }
 
 - (NSString*)getUUID

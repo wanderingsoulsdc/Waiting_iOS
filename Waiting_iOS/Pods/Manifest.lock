@@ -15,7 +15,6 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
-  - BMKLocationKit (1.2.1)
   - CocoaLumberjack (3.2.1):
     - CocoaLumberjack/Default (= 3.2.1)
     - CocoaLumberjack/Extensions (= 3.2.1)
@@ -71,7 +70,6 @@ PODS:
   - UMCAnalytics (5.5.1):
     - UMCCommon
   - UMCCommon (1.5.2)
-  - WechatOpenSDK (1.8.2)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -79,7 +77,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - Aspects (~> 1.4.1)
-  - BMKLocationKit (~> 1.2.1)
   - CocoaLumberjack (~> 3.2.1)
   - FSActionSheet (~> 1.0.1)
   - IQKeyboardManager (~> 6.1.1)
@@ -101,14 +98,12 @@ DEPENDENCIES:
   - TTGTagCollectionView (= 1.9.0)
   - UMCAnalytics (~> 5.5.0)
   - UMCCommon (~> 1.5.2)
-  - WechatOpenSDK
   - YYKit (~> 1.0.9)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Aspects
-    - BMKLocationKit
     - CocoaLumberjack
     - FSActionSheet
     - IQKeyboardManager
@@ -132,13 +127,11 @@ SPEC REPOS:
     - TZImagePickerController
     - UMCAnalytics
     - UMCCommon
-    - WechatOpenSDK
     - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  BMKLocationKit: c0fd588904738a6865e9311ed445c38452039007
   CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
   FSActionSheet: 69539289555a515c9cba29a00c91fa3d5d3901aa
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
@@ -162,9 +155,8 @@ SPEC CHECKSUMS:
   TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
   UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
-  WechatOpenSDK: 676feec516a11173eafd1fe64b10d27babf28701
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: b514bcfa239b5734586be7f9f257f5749c2aa350
+PODFILE CHECKSUM: a8d7d1c0d4a6e4d06b76ee6264ddc8d3ee6acf79
 
 COCOAPODS: 1.5.2
