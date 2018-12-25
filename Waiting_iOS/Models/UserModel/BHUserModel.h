@@ -43,7 +43,6 @@
 @property (nonatomic, copy) NSString * isSubAccount;        // 是否是子账号  0 不是  1 是
 @property (nonatomic, copy) NSString * agreementUpdate;     // 协议是否有更新 0 无更新  1 有更新
 @property (nonatomic, copy) NSString * permissionAll;       // 基础模块权限
-@property (nonatomic, copy) NSString * permissionWechat;    // 朋友圈权限 0 隐藏  1 显示
 @property (nonatomic, copy) NSString * permissionWcrd;      // 315   0 去掉  1 不去不改
 @property (nonatomic, copy) NSString * permissionSMS;       // 短信灰度测试  0 隐藏  1 显示
 @property (nonatomic, copy) NSString * permissionWiFiAD;    // WiFi广告  0 隐藏  1 显示

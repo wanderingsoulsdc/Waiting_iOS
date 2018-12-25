@@ -28,9 +28,6 @@
 #define kApiWebAccountOrderMacList  kApiHostPort @"order/macorder"     /* 探针详情 - 探针获取到的mac列表 */
 #define kApiWebAccountRaffleRecord  kApiHostPort @"account/raffleRecord"     /* 抽奖管理 - 中奖纪录 */
 #define kApiWebAccountRaffleDownload    kApiHostPort @"account/LotteryMaterial"     /* 抽奖管理 - 下载物料 */
-#define kApiWebWechatApply          kApiHostPort @"order/qualifications"     /* 开通公众号 */
-#define kApiWebWechatQuestion       kApiHostPort @"wechat/guide"     /* 绑定公众号步骤 */
-#define kApiWebWechatRechargeList   kApiHostPort @"account/chatLog"     /* 微信的收支明细 */
 
 #define kApiWebReportAddress        kApiHostPort @"business/addShopMap"      /* 地点分析-地点位置 */
 #define kApiWebReportPassengerAys   kApiHostPort @"business/passengerAys"      /* 客流统计 */
@@ -58,7 +55,6 @@
 #define kApiOrderAD                 kApiHostPort @"order/crowd"         /* 投放广告营销 */
 #define kApiOrderADNew              kApiHostPort @"ad/crowd"            /* 新的投放广告营销流程 */
 #define kApiOrderPush               kApiHostPort @"order/pushCrowd"         /* 投放Push营销 */
-#define kApiOrderWechat             kApiHostPort @"order/chatTime"         /* 投放朋友圈广告 */
 #define kApiOrderWiFiAD             kApiHostPort @"order/choseStore"         /* 投放WiFi广告 */
 #define kApiWebWiFiIntroduce        kApiHostPort @"order/Introduction"      /* 投放WiFi广告 - 功能说明 */
 

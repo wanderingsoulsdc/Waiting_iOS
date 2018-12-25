@@ -11,6 +11,7 @@
 #import "FSNetWorkManager.h"
 #import "BHUserModel.h"
 #import "WTWebViewController.h"
+#import "IQKeyboardManager.h"
 
 @interface LoginViewController ()
 
@@ -40,7 +41,15 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [IQKeyboardManager sharedManager].enable = YES;
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [IQKeyboardManager sharedManager].enable = NO;
+}
+
 #pragma mark - ******* UI *******
 - (void)createUI{
     self.bottomViewHeightConstraint.constant = SafeAreaBottomHeight;
@@ -266,6 +275,15 @@
             NSLog(@"手动登录错误 = %@",error);
         }
     }];
+}
+//自动登录NIM
+- (void)autoLoginNIM{
+    NIMAutoLoginData * autoData = [[NIMAutoLoginData alloc] init];
+    autoData.account = [BHUserModel sharedInstance].userID;
+    autoData.token = [BHUserModel sharedInstance].token;
+    autoData.forcedMode = YES;
+    
+    [[[NIMSDK sharedSDK] loginManager] autoLogin:autoData];
 }
 
 

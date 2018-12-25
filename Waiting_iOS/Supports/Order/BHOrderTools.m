@@ -136,12 +136,6 @@
             [self createPreOrderWithOrderID:orderID withType:@"0"];
         }
             break;
-        case BHOrderTypeWechat:
-        {
-            // 朋友圈广告
-            [self createPreOrderWithOrderID:orderID withType:@"0"];
-        }
-            break;
         case BHOrderTypeWiFiAD:
         {
             // WiFi广告
@@ -163,10 +157,9 @@
                          NSLog(@"请求成功");
                          if (NetResponseCheckStaus)
                          {
-                             if (_type == BHOrderTypeWechat || _type == BHOrderTypeWiFiAD)
+                             if ( _type == BHOrderTypeWiFiAD)
                              {
                                  NSLog(@"朋友圈");
-                                 [self checkWechatPermissionsWithOrderID:orderID];
                              }
                              else
                              {
@@ -179,27 +172,6 @@
                          }
                      } withFailureBlock:^(NSError *error) {
                          NSLog(@"error is %@", error);
-                         _failureBlock(NetRequestFailed);
-                     }];
-}
-
-- (void)checkWechatPermissionsWithOrderID:(NSString *)orderID
-{
-    [FSNetWorkManager requestWithType:HttpRequestTypeGet
-                        withUrlString:kApiCheckWechatPermissions
-                        withParaments:nil
-                     withSuccessBlock:^(NSDictionary *object) {
-                         
-                         NSLog(@"请求成功");
-                         if (NetResponseCheckStaus)
-                         {
-                             _successBlock(orderID, object);
-                         }
-                         else
-                         {
-                             _failureBlock(NetResponseMessage);
-                         }
-                     } withFailureBlock:^(NSError *error) {
                          _failureBlock(NetRequestFailed);
                      }];
 }

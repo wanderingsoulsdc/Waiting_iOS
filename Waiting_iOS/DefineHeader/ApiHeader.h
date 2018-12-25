@@ -138,8 +138,6 @@
 
 #pragma mark - 权限判断
 #define kApiQualificationAudit         @"account/audit"  /* 资质审核状态判断 */
-#define kApiCheckWechatPermissions     @"wechat/index"   /* 判断微信朋友圈广告是否授权 */
-#define KApiCheckWechatADPermissions   @"Wechat/return"  /* 扫码后跳转拦截，请求是否在系统内开通广告主功能 */
 #define kApiGetRaffle                  @"account/getRaffle" /* 抽奖管理 */
 
 
@@ -185,11 +183,6 @@
 
 #pragma mark - Pay
 
-#define kApiWechatGetSign               @"Awxpay/makeOrder"       /* 微信支付签名 */
-#define kApiAlipayGetSign               @"Alipay/makeOrder"         /* 支付宝支付签名 */
-#define kApiWechatCheckStatus           @"Awxpay/checkOrder"      /* 微信支付状态校验 */
-#define kApiAlipayCheckStatus           @"Alipay/checkOrder"        /* 支付宝支付状态校验 */
-
 #pragma mark - 客流分析
 
 #define kApiCouponCheckIsValid          @"account/couponCheck"    /* 校验优惠券是否为当前用户下的 */
@@ -220,10 +213,8 @@
 
 #define kApiGetUserInfo                  @"User/getUserInfo"           /* 获取用户信息 && 校验token */
 #define kApiUploadImage                  @"upload/upload_base"         /* 图片素材上传 */
-#define kApiWechatUploadImage            @"wechatupload/upload_base"   /* 朋友圈图片素材上传 */
 #define kApiOrderPicPreview              @"order/orderPicPreviewApi"   /* 广告素材预览 */
 #define kApiPushOrderPicPreView          @"order/pushOrderPicPreviewApi"  /*Push广告素材预览 */
-#define kApiWechatOrderPicPreview        @"order/saveOrderTempApi"     /* 朋友圈素材预览 */
 #define kApiDataReport                   @"report/adduserbehavior"     /* 数据分析统计上报 */
 
 

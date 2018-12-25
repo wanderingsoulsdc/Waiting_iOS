@@ -55,20 +55,6 @@ typedef enum : NSUInteger {
     BHCreadADsTypeSubAccount,   // 电话 - 从子账号模块进入
 } BHCreadADsType;
 
-/** 绑定微信公众号入口 */
-typedef enum : NSUInteger {
-    BHQualificationWechatTypeMain,  // 首页点击按钮进入
-    BHQualificationWechatTypeMarketingScene,    // 选择营销方式进入
-    BHQualificationWechatTypeQua,      // 资质信息页面进入
-    
-} BHQualificationWechatType;
-
-/** 绑定微信公众号类型 */
-typedef enum : NSUInteger {
-    BHBindWechatTypeWechat,     // 朋友圈广告
-    BHBindWechatTypeWiFiAD,     // WiFi广告
-} BHBindWechatType;
-
 typedef enum : NSUInteger {
     BHConnectNetTypeCreateStore,
     BHConnectNetTypeStoreManager,

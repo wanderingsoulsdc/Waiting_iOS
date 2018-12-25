@@ -48,16 +48,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.02</string>
+	<string>1.0.04</string>
 	<key>FacebookAppID</key>
 	<string>231041614282422</string>
 	<key>FacebookDisplayName</key>
 	<string>Waiting</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>wechat</string>
-		<string>weixin</string>
-		<string>alipay</string>
 		<string>youku</string>
 		<string>fbapi</string>
 		<string>fb-messenger-share-api</string>

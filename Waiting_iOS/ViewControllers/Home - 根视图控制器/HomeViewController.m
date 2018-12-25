@@ -205,7 +205,7 @@
         self.NavButtonBackView.right = kScreenWidth/2 + 34/2;
     }];
     scrollContentOffsetX = kScreenWidth * 2;
-    navButtonBackViewLeft = kScreenWidth/2 + 34/2;
+    navButtonBackViewLeft = self.NavButtonBackView.left;
 }
 
 #pragma mark - NIMConversationManagerDelegate

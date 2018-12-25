@@ -10,7 +10,6 @@
 #ifndef VendorHeader_h
 #define VendorHeader_h
 
-#define kWechatAppKey   @"wx63cac6224b390279"     // 微信支付的APPID
 #define kAppScheme      @"litetreasure"           // 在Info.plist中定义的自己的URL types
 #define kJPushAppKey    @"79d75bda18b0aee8aa3e258c"     // 极光推送的APP KEY
 #define kSoBotAppKey    @"fe0d6fc71bef4996a7a1004dbf9d449c" // 智齿客服的App Key

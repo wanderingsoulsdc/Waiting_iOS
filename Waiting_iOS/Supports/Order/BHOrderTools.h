@@ -13,7 +13,6 @@ typedef enum : NSUInteger {
     BHOrderTypeAD,
     BHOrderTypePhone,
     BHOrderTypeMessage,
-    BHOrderTypeWechat,
     BHOrderTypeWiFiAD,
 } BHOrderType;
 

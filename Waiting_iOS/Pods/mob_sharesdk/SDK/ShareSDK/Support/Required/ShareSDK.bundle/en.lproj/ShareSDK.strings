@@ -61,8 +61,6 @@
 "SMS_Error_108" = "App over send code limit";
 "SMS_Error_109" = "System is a little problem, Please try again later";
 
-"ShareSDK_Error_WechatMini" = "MiniProgram only support WeChat friends to share";
-"ShareSDK_Error_WechatFile" = "WeChat Timeline does not support file sharing";
 "ShareSDK_Error_Register" = "activePlatforms type error";
 "ShareSDK_Error_NORegister" = "ShareSDK has not been initialized yet";
 "ShareSDK_Error_Illegal" = "Illegal operation";
@@ -89,11 +87,6 @@
 
 "ShareSDKConnector_Error_Twitter_Size" = "File size should not exceed 512 MB";
 "ShareSDKConnector_Error_Twitter_Time" = "Duration should be between 0.5 seconds and 140.0 seconds";
-
-"ShareSDKConnector_Error_WeChat_NoLib" = "Please add libWeChat.a into the project and import WXApi.h";
-"ShareSDKConnector_Error_WeChat_NOShare" = "Share platform [WeChat] client does not support sharing";
-"ShareSDKConnector_Error_WeChat_NOClient" = "Share the platform [WeChat] has not yet installed the client! Can not share";
-"ShareSDKConnector_Error_WeChat_NOLibShare" = "Share platform [WeChat] has not yet add libWeChatSDK.a! Unable to do so";
 
 "ShareSDKConnector_Error_Facebook_NOAppkey" = "AppKey is not configured";
 "ShareSDKConnector_Error_Facebook_ShareType" = "The sharing status is unknown";
@@ -129,11 +122,6 @@
 "ShareSDKConnector_Error_KaKao_ShareTalk" = "[Kakao] Talk client sharing failed, please check sharing parameters";
 "ShareSDKConnector_Error_KaKao_Talk" = "Share platform [KaKao] does not support Talk client sharing";
 "ShareSDKConnector_Error_KaKao_Story" = "Share platform [KaKao] does not support Story client sharing";
-
-"ShareSDKConnector_Error_AliPay_NOLib" = "Please add libAPOpenSdk.a into the project and import APOpenAPI.h";
-"ShareSDKConnector_Error_AliPay_NOShare" = "Share platform［AliPay］client version does not support sharing";
-"ShareSDKConnector_Error_AliPay_NOClient" = "Share platform［AliPay］has not yet installed the client! Can not share";
-"ShareSDKConnector_Error_AliPay_NOLibShare" = "Share platform［AliPay］has not yet add libAPOpenSdk.a! Unable to do so";
 
 "ShareSDKConnector_Error_Line_NOLib" = "Please add LineSDK.framework into the project";
 "ShareSDKConnector_Error_Line_NOLibShare" = "Share platform［Line］has not yet add LineSDK.framework! Unable to do so";

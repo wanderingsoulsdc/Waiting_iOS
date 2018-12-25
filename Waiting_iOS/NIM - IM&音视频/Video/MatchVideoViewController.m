@@ -114,6 +114,11 @@
     self.smallVideoView.userInteractionEnabled = YES;
     [self.smallVideoView addGestureRecognizer:tapGesture];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
 #pragma mark - ******* UI Methods *******
 
 - (void)createUI{

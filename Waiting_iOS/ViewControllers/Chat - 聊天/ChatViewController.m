@@ -32,33 +32,34 @@ typedef enum : NSUInteger {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createUI];
+//    [self createUI];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 #pragma mark - ******* UI About *******
 
-- (void)createUI{
-    /*
-    self.statusViewHeightConstaint.constant = kStatusBarHeight;
-    self.tableView.backgroundColor = UIColorBlue;
-    NSLog(@" === %f === %f === %f === %f",self.view.bounds.origin.x,self.view.bounds.origin.y,self.view.bounds.size.width,self.view.bounds.size.height);
-    NSLog(@" === %f === %f === %f === %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,self.tableView.frame.size.height);
-
-    CGRect frame = self.tableView.frame;
-    frame.origin.y = kStatusBarHeight + 80;
-    self.tableView.frame = frame;
-    [self.tableView.superview layoutIfNeeded];
-    NSLog(@" === %f === %f === %f === %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,self.tableView.frame.size.height);
-    */
-    //上面注释的是改变的代码,下面这两行是为了暂时能看见原来什么样子,这个文件均可改,父类是SDK的文件
-    self.statusViewHeightConstaint.constant = 0;
-    self.naviView.hidden = YES;
-}
+//- (void)createUI{
+//
+//    self.statusViewHeightConstaint.constant = kStatusBarHeight;
+//    self.tableView.backgroundColor = UIColorBlue;
+//    NSLog(@" === %f === %f === %f === %f",self.view.bounds.origin.x,self.view.bounds.origin.y,self.view.bounds.size.width,self.view.bounds.size.height);
+//    NSLog(@" === %f === %f === %f === %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,self.tableView.frame.size.height);
+//
+//    CGRect frame = self.tableView.frame;
+//    frame.origin.y = kStatusBarHeight + 80;
+//    self.tableView.frame = frame;
+//    [self.tableView.superview layoutIfNeeded];
+//    NSLog(@" === %f === %f === %f === %f",self.tableView.frame.origin.x,self.tableView.frame.origin.y,self.tableView.frame.size.width,self.tableView.frame.size.height);
+//
+//    //上面注释的是改变的代码,下面这两行是为了暂时能看见原来什么样子,这个文件均可改,父类是SDK的文件
+////    self.statusViewHeightConstaint.constant = 0;
+////    self.naviView.hidden = YES;
+//}
 
 //- (void)setupTableView
 //{
@@ -83,23 +84,23 @@ typedef enum : NSUInteger {
 //}
 
 
-- (void)setupNav
-{
-    [self setUpTitleView];
-}
-
-- (void)setUpTitleView
-{
-    NIMKitInfo *info = nil;
-    NIMKitInfoFetchOption *option = [[NIMKitInfoFetchOption alloc] init];
-    option.session = self.session;
-    info = [[NIMKit sharedKit] infoByUser:self.session.sessionId option:option];
-    
-    NSURL *url = info.avatarUrlString ? [NSURL URLWithString:info.avatarUrlString] : nil;
-    [self.headImageButton sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:info.avatarImage];
-    self.headTitleLabel.text = self.sessionTitle;
-    self.headSubTitleLabel.text = self.sessionSubTitle;
-}
+//- (void)setupNav
+//{
+//    [self setUpTitleView];
+//}
+//
+//- (void)setUpTitleView
+//{
+//    NIMKitInfo *info = nil;
+//    NIMKitInfoFetchOption *option = [[NIMKitInfoFetchOption alloc] init];
+//    option.session = self.session;
+//    info = [[NIMKit sharedKit] infoByUser:self.session.sessionId option:option];
+//
+//    NSURL *url = info.avatarUrlString ? [NSURL URLWithString:info.avatarUrlString] : nil;
+//    [self.headImageButton sd_setImageWithURL:url forState:UIControlStateNormal placeholderImage:info.avatarImage];
+//    self.headTitleLabel.text = self.sessionTitle;
+//    self.headSubTitleLabel.text = self.sessionSubTitle;
+//}
 
 #pragma mark - ******* NIMSessionConfig 配置项 *******
 

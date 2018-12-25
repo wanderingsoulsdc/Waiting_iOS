@@ -61,8 +61,6 @@
 "SMS_Error_108" = "该应用超过发送验证码上限次数";
 "SMS_Error_109" = "发送验证码太频繁，请稍后再试";
 
-"ShareSDK_Error_WechatMini" = "小程序分享只支持微信好友分享";
-"ShareSDK_Error_WechatFile" = "微信朋友圈不支持文件分享";
 "ShareSDK_Error_Register" = "传入参数 activePlatforms 类型错误";
 "ShareSDK_Error_NORegister" = "尚未初始化SDK";
 "ShareSDK_Error_Illegal" = "非法操作";
@@ -89,11 +87,6 @@
 
 "ShareSDKConnector_Error_Twitter_Size" = "视频数据超过最大上传限制512M";
 "ShareSDKConnector_Error_Twitter_Time" = "视频播放时间需要控制在 0.5 - 140.0 秒之间";
-
-"ShareSDKConnector_Error_WeChat_NoLib" = "请将libWeChat.a导入项目并引入WXApi.h";
-"ShareSDKConnector_Error_WeChat_NOShare" = "分享平台［微信］客户端不支持分享功能";
-"ShareSDKConnector_Error_WeChat_NOClient" = "分享平台［微信］尚未安装客户端!无法进行分享";
-"ShareSDKConnector_Error_WeChat_NOLibShare" = "分享平台［微信］尚未导入libWeChatSDK.a库!无法进行相关操作";
 
 "ShareSDKConnector_Error_Facebook_NOAppkey" = "appKey 未配置";
 "ShareSDKConnector_Error_Facebook_ShareType" = "分享状态未知";
@@ -129,11 +122,6 @@
 "ShareSDKConnector_Error_KaKao_ShareTalk" = "[Kakao] 的Talk客户端分享失败，请检查分享参数";
 "ShareSDKConnector_Error_KaKao_Talk" = "分享平台［KaKao］不支持Talk客户端分享";
 "ShareSDKConnector_Error_KaKao_Story" = "分享平台［KaKao］不支持Story客户端分享";
-
-"ShareSDKConnector_Error_AliPay_NOLib" = "请将libAPOpenSdk.a导入项目并引入APOpenAPI";
-"ShareSDKConnector_Error_AliPay_NOShare" = "分享平台［支付宝］客户端不支持分享功能";
-"ShareSDKConnector_Error_AliPay_NOClient" = "分享平台［支付宝］尚未安装客户端!无法进行分享";
-"ShareSDKConnector_Error_AliPay_NOLibShare" = "分享平台［支付宝］尚未导入libAPOpenSdk.a库! 无法进行相关操作";
 
 "ShareSDKConnector_Error_Line_NOLib" = "请将LineSDK.framework导入项目";
 "ShareSDKConnector_Error_Line_NOLibShare" = "分享平台［Line］尚未导入LineSDK.framework! 无法进行相关操作";
