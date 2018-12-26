@@ -22,15 +22,15 @@
 {
 //    NSArray *defaultMediaItems = [NIMKit sharedKit].config.defaultMediaItems;
     
-    NIMMediaItem *audioChat =  [NIMMediaItem item:@"onTapMediaItemAudioChat:"
+    NIMMediaItem * audioChat =  [NIMMediaItem item:@"onTapMediaItemAudioChat:"
                                       normalImage:[UIImage imageNamed:@"chat_media_voice"]
                                     selectedImage:[UIImage imageNamed:@"chat_media_voice"]
-                                            title:@"实时语音"];
+                                            title:ZBLocalized(@"Voice Call", nil)];
     
-    NIMMediaItem *videoChat =  [NIMMediaItem item:@"onTapMediaItemVideoChat:"
+    NIMMediaItem * videoChat =  [NIMMediaItem item:@"onTapMediaItemVideoChat:"
                                       normalImage:[UIImage imageNamed:@"chat_media_video"]
                                     selectedImage:[UIImage imageNamed:@"chat_media_video"]
-                                            title:@"视频聊天"];
+                                            title:ZBLocalized(@"Video Call", nil)];
     
     NSArray *items = @[audioChat,videoChat];
     

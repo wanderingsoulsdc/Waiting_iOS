@@ -118,3 +118,7 @@
 "Add to blacklist，you will not be able to receive his messages and video voice invitations" = "kara listeye ekle his mesajlarını ve video ses davetlerini alamayacaksınız";
 //已将对方移出黑名单
 "Moved the other party out of the blacklist" = "Diğer tarafı kara listeden çıkardı.";
+//视频
+"Video Call" = "Görüntülü";// Arama
+//语音
+"Voice Call" = "Sesli";// Arama

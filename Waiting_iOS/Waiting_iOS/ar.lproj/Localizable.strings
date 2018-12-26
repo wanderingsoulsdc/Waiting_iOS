@@ -118,3 +118,7 @@
 "Add to blacklist，you will not be able to receive his messages and video voice invitations" = "إضافة إلى القائمة السوداء ، فلن تتمكن من تلقي رسائله ودعوات صوت الفيديو";
 //已将对方移出黑名单
 "Moved the other party out of the blacklist" = "نقل الطرف الآخر من القائمة السوداء";
+//视频
+"Video Call" = "مكالمة فيديو";
+//语音
+"Voice Call" = "مكالمة صوتية";
