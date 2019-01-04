@@ -67,8 +67,6 @@ PODS:
   - Toast (3.1.0)
   - TTGTagCollectionView (1.9.0)
   - TZImagePickerController (1.9.8)
-  - UMCAnalytics (5.5.1):
-    - UMCCommon
   - UMCCommon (1.5.2)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -96,7 +94,6 @@ DEPENDENCIES:
   - SDWebImage (= 4.2.2)
   - SVProgressHUD
   - TTGTagCollectionView (= 1.9.0)
-  - UMCAnalytics (~> 5.5.0)
   - UMCCommon (~> 1.5.2)
   - YYKit (~> 1.0.9)
 
@@ -125,7 +122,6 @@ SPEC REPOS:
     - Toast
     - TTGTagCollectionView
     - TZImagePickerController
-    - UMCAnalytics
     - UMCCommon
     - YYKit
 
@@ -153,10 +149,9 @@ SPEC CHECKSUMS:
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   TTGTagCollectionView: 958f20b946dee92a8ba20dc37d10a06737641ae9
   TZImagePickerController: 3b9413ae5d049b1fdc5b0c720ad283f35b679a50
-  UMCAnalytics: 0aff87e39008e2a650e5917430db0da2de2f8495
   UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a8d7d1c0d4a6e4d06b76ee6264ddc8d3ee6acf79
+PODFILE CHECKSUM: c2856bf7c3238774142deaea93e999008d530a4a
 
 COCOAPODS: 1.5.2

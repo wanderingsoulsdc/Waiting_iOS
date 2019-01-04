@@ -569,17 +569,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
-			<string>UMCAnalytics</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Copyright 2011 - 2018 umeng.com. All rights reserved.
-</string>
-			<key>License</key>
-			<string>Copyright</string>
-			<key>Title</key>
 			<string>UMCCommon</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

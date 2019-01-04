@@ -61,7 +61,6 @@
     // 友盟监测
     [UMConfigure setEncryptEnabled:YES];
     [UMConfigure initWithAppkey:UMengAppKey channel:@"App Store"];
-    [MobClick setScenarioType:E_UM_NORMAL];
     
 #if  TARGET_MODE==0 //正式环境
     

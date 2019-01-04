@@ -17,7 +17,7 @@ target ‘Waiting_iOS’ do
   pod 'FSActionSheet', '~> 1.0.1'
   pod 'IQKeyboardManager', '~> 6.1.1'
   pod 'UMCCommon', '~> 1.5.2'
-  pod 'UMCAnalytics', '~> 5.5.0'
+#  pod 'UMCAnalytics', '~> 5.5.0'
   pod 'YYKit', '~> 1.0.9'
   pod 'SVProgressHUD'
   
