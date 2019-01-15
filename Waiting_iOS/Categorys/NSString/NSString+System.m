@@ -50,55 +50,6 @@
 }
 
 /**
- *  IDFA
- *
- *  @return IDFA
- */
-+ (NSString *) idfaString
-{
-//    NSBundle *adSupportBundle = [NSBundle bundleWithPath:@"/System/Library/Frameworks/AdSupport.framework"];
-//    [adSupportBundle load];
-//    
-//    if (adSupportBundle == nil)
-//    {
-//        return @"";
-//    }
-//    else
-//    {
-//        Class asIdentifierMClass = NSClassFromString(@"ASIdentifierManager");
-//        
-//        if(asIdentifierMClass == nil)
-//        {
-//            return @"";
-//        }
-//        else
-//        {
-//            //for no arc
-//            //ASIdentifierManager *asIM = [[[asIdentifierMClass alloc] init] autorelease];
-//            //for arc
-//            ASIdentifierManager *asIM = [[asIdentifierMClass alloc] init];
-//            
-//            if (asIM == nil)
-//            {
-//                return @"";
-//            }
-//            else
-//            {
-//                if(asIM.advertisingTrackingEnabled)
-//                {
-//                    return [asIM.advertisingIdentifier UUIDString];
-//                }
-//                else
-//                {
-//                    return [asIM.advertisingIdentifier UUIDString];
-//                }
-//            }
-//        }
-//    }
-    return @"";
-}
-
-/**
  *  手机版本
  *
  *  @return 手机系统版本

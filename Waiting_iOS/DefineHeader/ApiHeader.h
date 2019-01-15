@@ -181,8 +181,6 @@
 
 #define kApiADListQuaStatus            @"account/ListQuaStatus"      /* 资质页面，获取当前资质解锁百分比 */
 
-#pragma mark - Pay
-
 #pragma mark - 客流分析
 
 #define kApiCouponCheckIsValid          @"account/couponCheck"    /* 校验优惠券是否为当前用户下的 */

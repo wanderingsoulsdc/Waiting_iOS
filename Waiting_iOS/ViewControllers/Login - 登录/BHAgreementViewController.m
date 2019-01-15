@@ -12,7 +12,6 @@
 #import "FSNetWorkManager.h"
 #import <Masonry/Masonry.h>
 #import "BHUserModel.h"
-#import "JPUSHService.h"
 #import "FSDeviceManager.h"
 
 @interface BHAgreementViewController ()
@@ -113,41 +112,9 @@
 
 - (void)continueLoginFlowWithData:(NSDictionary *)object
 {
-    // 处理后续的登录
-//    NSInteger treasureCount = [[object objectForKey:@"shop"] integerValue];
-//    [[BHUserModel sharedInstance] analysisUserInfoWithDictionary:object Mobile:self.mobile Passwd:self.password Token:self.token];
-//
-//    // 设置Jpush 别名
-//    [JPUSHService setAlias:[BHUserModel sharedInstance].userID completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
-//    } seq:0];
-    
-//    // 判断探针的数量，等于0执行绑定操作，大于0进入到首页
-//    if (treasureCount == 0)
-//    {
-//        BHBindStoreViewController * bindVC = [[BHBindStoreViewController alloc] init];
-//        bindVC.type = BHBindStoreChannelTypeLogin;
-//        [self.navigationController pushViewController:bindVC animated:YES];
-//    }
-//    else
-//    {
+
         [[FSLaunchManager sharedInstance] launchWindowWithType:LaunchWindowTypeMain];
-        
-//        // 处理推送消息 和 deeplink 消息
-//        NSDictionary * pushInfo = [[NSUserDefaults standardUserDefaults] objectForKey:kPushInfoUserDefault];
-//        NSURL        * url = [[NSUserDefaults standardUserDefaults] objectForKey:kDeepLinkInfoUserDefault];
-//        if (kDictNotNull(pushInfo))
-//        {
-//            [[FSPushManager sharedInstance] handingPushNotificationDictionary: pushInfo];
-//            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kPushInfoUserDefault];
-//            [[NSUserDefaults standardUserDefaults] synchronize];
-//        }
-//        else if (url != nil)
-//        {
-//            [[FSDeepLinkManager sharedInstance] handingOpenUrl:url];
-//            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kDeepLinkInfoUserDefault];
-//            [[NSUserDefaults standardUserDefaults] synchronize];
-//        }
-//    }
+
 }
 
 // 判断是否允许跳转页面，即是否要进行拦截

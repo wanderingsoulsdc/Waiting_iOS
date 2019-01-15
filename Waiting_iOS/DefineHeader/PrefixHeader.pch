@@ -27,7 +27,6 @@
 #import "FSLaunchManager.h"
 #import "BHDataReportManager.h"
 #import "BHWebViewController.h"
-#import <UMAnalytics/MobClick.h>
 #import "NSDictionary+YYAdd.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>

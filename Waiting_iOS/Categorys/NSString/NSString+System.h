@@ -16,8 +16,7 @@
 // 得到APP版本号
 + (NSString *)getAppVersion;
 
-// 得到APPIDFA
-+ (NSString *)idfaString;
+
 
 // 得到手机Version
 + (NSString *)getIPhoneVersion;

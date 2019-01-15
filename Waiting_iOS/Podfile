@@ -13,7 +13,7 @@ target ‘Waiting_iOS’ do
   pod 'SDWebImage', '4.2.2'
   pod 'MJRefresh', '~> 3.1.15.6'
   pod 'RSKImageCropper', '~> 2.1.0'
-  pod 'JPush'
+#  pod 'JPush' # 暂时不用推送
   pod 'FSActionSheet', '~> 1.0.1'
   pod 'IQKeyboardManager', '~> 6.1.1'
   pod 'UMCCommon', '~> 1.5.2'

@@ -153,7 +153,6 @@
         if ([url.path hasSuffix:@"/video/videoDetil"])
         {
             // 视频
-            [MobClick event:@"study_video_detail" attributes:@{@"title":@"视频详情"}];
             
 //            NSString * detailURL = [NSString stringWithFormat:@"%@?%@", kApiWebMovieDetail, url.query];
 //            BHMovieDetailViewController * movieDetailVC = [[BHMovieDetailViewController alloc] init];
